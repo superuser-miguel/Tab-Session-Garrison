@@ -60,7 +60,7 @@
     "url": "git+https://github.com/sienori/Tab-Session-Manager.git"
   },
   "author": "Sienori",
-  "license": "MPL-2.0",
+  "license": "GPL-3.0-or-later",
   "description": "WebExtensions for saving and restoring sessions.",
   "bugs": {
     "url": "https://github.com/sienori/Tab-Session-Manager/issues"
