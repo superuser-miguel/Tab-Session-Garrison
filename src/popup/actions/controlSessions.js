@@ -48,6 +48,15 @@ export const sendSessionRemoveMessage = async id => {
   });
 };
 
+export const sendSessionsRemoveMessage = async ids => {
+  log.info(logDir, "sendSessionsRemoveMessage()", ids);
+  return await browser.runtime.sendMessage({
+    message: "removeMany",
+    ids: ids,
+    isSendResponce: true
+  });
+};
+
 export const sendSessionSaveMessage = async (name, property = "saveAllWindows") => {
   log.info(logDir, "sendSessionSaveMessage()", name, property);
   return await browser.runtime.sendMessage({
@@ -265,6 +274,11 @@ export const sendExportSessionMessage = (id = null) => {
 export const sendUndoMessage = async () => {
   log.log(logDir, "sendUndoMessage()");
   browser.runtime.sendMessage({ message: "undo" });
+};
+
+export const sendUndoManyMessage = async count => {
+  log.log(logDir, "sendUndoManyMessage()", count);
+  return await browser.runtime.sendMessage({ message: "undoMany", count: count });
 };
 
 export const sendRedoMessage = async () => {

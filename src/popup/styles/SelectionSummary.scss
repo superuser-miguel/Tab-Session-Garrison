@@ -1,0 +1,63 @@
+.selectionSummary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: var(--main-text);
+
+  .summaryInner {
+    text-align: center;
+    padding: 24px;
+
+    .count {
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 2px;
+        padding: 8px 16px;
+        margin-bottom: 10px;
+        min-width: 160px;
+        cursor: pointer;
+
+        svg {
+          width: 14px;
+          margin-right: 8px;
+        }
+      }
+
+      .removeSelected {
+        color: #fff;
+        background-color: var(--confirm);
+
+        svg {
+          fill: #fff;
+        }
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+
+      .clearSelected {
+        color: var(--main-text);
+        background-color: var(--line);
+
+        &:hover {
+          background-color: var(--line2);
+        }
+      }
+    }
+  }
+}

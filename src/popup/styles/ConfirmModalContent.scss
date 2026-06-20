@@ -1,0 +1,35 @@
+.confirmModalContent {
+  .message {
+    color: var(--main-text);
+    margin: 0 0 16px;
+    line-height: 1.5;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      border: none;
+      border-radius: 2px;
+      padding: 6px 14px;
+      margin-left: 8px;
+      cursor: pointer;
+      color: var(--main-text);
+      background-color: var(--line);
+
+      &:hover {
+        background-color: var(--line2);
+      }
+
+      &.confirmButton {
+        color: #fff;
+        background-color: var(--confirm);
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+  }
+}

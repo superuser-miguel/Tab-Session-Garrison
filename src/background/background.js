@@ -92,6 +92,16 @@ const onMessageListener = async (request, sender, sendResponse) => {
       await removeSession(request.id, request.isSendResponce);
       recordChange(beforeSession, null);
       break;
+    case "removeMany": {
+      // Delete several sessions in one round-trip. Each delete + undo record is
+      // awaited sequentially so the undo history's read-modify-write never races.
+      for (const id of request.ids) {
+        const before = await getSessions(id);
+        await removeSession(id, request.isSendResponce);
+        await recordChange(before, null);
+      }
+      break;
+    }
     case "rename": {
       const beforeSession = await getSessions(request.id);
       const afterSession = await renameSession(request.id, request.name);
@@ -159,6 +169,10 @@ const onMessageListener = async (request, sender, sendResponse) => {
     }
     case "undo":
       return undo();
+    case "undoMany":
+      // Restore a batch in one click. Sequential awaits keep history consistent.
+      for (let i = 0; i < request.count; i++) await undo();
+      break;
     case "redo":
       return redo();
     case "updateUndoStatus":

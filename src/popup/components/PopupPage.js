@@ -13,8 +13,10 @@ import {
   getSessions,
   sendSessionSaveMessage,
   sendSessionRemoveMessage,
+  sendSessionsRemoveMessage,
   sendSessionUpdateMessage,
   sendUndoMessage,
+  sendUndoManyMessage,
   sendEndTrackingByWindowDeleteMessage
 } from "../actions/controlSessions";
 import { deleteWindow, deleteTab } from "../../common/editSessions.js";
@@ -23,6 +25,8 @@ import Header from "./Header";
 import OptionsArea from "./OptionsArea";
 import SessionsArea, { getSortedSessions } from "./SessionsArea";
 import SessionDetailsArea from "./SessionDetailsArea";
+import SelectionSummary from "./SelectionSummary";
+import ConfirmModalContent from "./ConfirmModalContent";
 import Notification from "./Notification";
 import SaveArea from "./SaveArea";
 import Menu from "./Menu";
@@ -42,6 +46,8 @@ export default class PopupPage extends Component {
       searchInfo: [],
       isInitSessions: false,
       selectedSession: {},
+      selectedSessionIds: [],
+      selectionAnchorId: "",
       filterValue: "_displayAll",
       sortValue: "newest",
       isShowSearchBar: false,
@@ -385,18 +391,127 @@ export default class PopupPage extends Component {
     log.info(logDir, "=>searchSessions()", searchedSessionIds);
   };
 
-  selectSession = async id => {
-    if (id === this.state.selectedSession.id) return;
-    log.info(logDir, "selectSession()", id);
+  // Ids of the currently visible sessions, in the same sorted/filtered order
+  // the list renders them — used for Shift range-select and Ctrl+A.
+  getOrderedSessionIds = () => {
+    const { sessions, sortValue, filterValue, searchWords, searchedSessionIds } = this.state;
+    return getSortedSessions(
+      sessions,
+      sortValue,
+      filterValue,
+      searchWords,
+      searchedSessionIds
+    ).map(s => s.id);
+  };
 
-    let selectedSession = this.state.sessions.find(session => session.id === id);
-    this.setState({ selectedSession: selectedSession || {} });
+  // modifiers: { ctrl, shift }. Plain select replaces the selection and moves
+  // the anchor; Ctrl toggles a single row; Shift selects the range from the
+  // fixed anchor to the cursor. The cursor (detail pane / focus) always moves.
+  selectSession = async (id, modifiers = {}) => {
+    const { ctrl, shift } = modifiers;
+    log.info(logDir, "selectSession()", id, modifiers);
+
+    const orderedIds = this.getOrderedSessionIds();
+    let selectedSessionIds;
+    let anchorId = this.state.selectionAnchorId || this.state.selectedSession.id || id;
+
+    if (shift) {
+      const a = orderedIds.indexOf(anchorId);
+      const b = orderedIds.indexOf(id);
+      if (a === -1 || b === -1) selectedSessionIds = [id];
+      else {
+        const [lo, hi] = a <= b ? [a, b] : [b, a];
+        selectedSessionIds = orderedIds.slice(lo, hi + 1);
+      }
+    } else if (ctrl) {
+      const set = new Set(this.state.selectedSessionIds);
+      if (set.has(id)) set.delete(id);
+      else set.add(id);
+      selectedSessionIds = orderedIds.filter(x => set.has(x));
+      anchorId = id;
+    } else {
+      selectedSessionIds = [id];
+      anchorId = id;
+    }
+
+    this.setState({ selectedSessionIds, selectionAnchorId: anchorId });
+
+    // Move the cursor / detail-pane session to the clicked row.
+    const cursor = this.state.sessions.find(session => session.id === id) || {};
     setSettings("selectedSessionId", id);
+    this.setState({ selectedSession: cursor });
 
-    selectedSession = await getSessions(id);
-    if (!selectedSession) return;
-    if (selectedSession.id !== this.state.selectedSession.id) return;
-    this.setState({ selectedSession: selectedSession || {} });
+    // When more than one is selected the detail pane shows a summary, so skip
+    // the heavier full-session fetch (matters when you've got a lot of sessions).
+    if (selectedSessionIds.length > 1) return;
+
+    const full = await getSessions(id);
+    if (!full) return;
+    if (full.id !== this.state.selectedSession.id) return;
+    this.setState({ selectedSession: full });
+  };
+
+  toggleSelectSession = id => this.selectSession(id, { ctrl: true });
+
+  selectAllSessions = () => {
+    const orderedIds = this.getOrderedSessionIds();
+    this.setState({ selectedSessionIds: orderedIds });
+  };
+
+  clearSelection = () => {
+    const cursorId = this.state.selectedSession.id;
+    this.setState({
+      selectedSessionIds: cursorId ? [cursorId] : [],
+      selectionAnchorId: cursorId || ""
+    });
+  };
+
+  removeSelectedSessions = async () => {
+    const ids = this.state.selectedSessionIds;
+    if (!ids || ids.length === 0) return;
+    if (ids.length === 1) return this.removeSession(ids[0]);
+
+    log.info(logDir, "removeSelectedSessions()", ids);
+    const count = ids.length;
+    try {
+      await sendSessionsRemoveMessage(ids);
+      this.setState({ selectedSessionIds: [] });
+      this.openNotification({
+        message: browser.i18n
+          .getMessage("removedSessionsLabel", [count.toString()])
+          .replace(/^$/, `${count} sessions deleted`),
+        type: "warn",
+        buttonLabel: browser.i18n.getMessage("undoLabel"),
+        onClick: () => sendUndoManyMessage(count)
+      });
+    } catch (e) {
+      this.openNotification({
+        message: browser.i18n.getMessage("failedDeleteSessionLabel"),
+        type: "error"
+      });
+    }
+  };
+
+  // Routed from the Delete key. Confirms first when more than one is selected.
+  requestRemoveSelected = () => {
+    const ids = this.state.selectedSessionIds;
+    if (!ids || ids.length === 0) return;
+    if (ids.length === 1) {
+      this.removeSession(ids[0]);
+      return;
+    }
+    const message = browser.i18n
+      .getMessage("confirmRemoveSessionsLabel", [ids.length.toString()])
+      .replace(/^$/, `Delete ${ids.length} selected sessions?`);
+    this.openModal(
+      browser.i18n.getMessage("remove").replace(/^$/, "Delete"),
+      <ConfirmModalContent
+        message={message}
+        confirmLabel={browser.i18n.getMessage("remove").replace(/^$/, "Delete")}
+        onConfirm={this.removeSelectedSessions}
+        closeModal={this.closeModal}
+      />
+    );
   };
 
   saveSession = async (name, property) => {
@@ -568,6 +683,7 @@ export default class PopupPage extends Component {
             <SessionsArea
               sessions={this.state.sessions || []}
               selectedSessionId={this.state.selectedSession.id || ""}
+              selectedSessionIds={this.state.selectedSessionIds}
               filterValue={this.state.filterValue}
               sortValue={this.state.sortValue}
               searchWords={this.state.searchWords}
@@ -575,6 +691,10 @@ export default class PopupPage extends Component {
               trackingSessions={this.state.trackingSessions}
               removeSession={this.removeSession}
               selectSession={this.selectSession}
+              toggleSelectSession={this.toggleSelectSession}
+              selectAllSessions={this.selectAllSessions}
+              clearSelection={this.clearSelection}
+              requestRemoveSelected={this.requestRemoveSelected}
               openMenu={this.openMenu}
               toggleSearchBar={this.toggleSearchBar}
               isInitSessions={this.state.isInitSessions}
@@ -591,22 +711,30 @@ export default class PopupPage extends Component {
             />
           </div>
           <div className="column">
-            <SessionDetailsArea
-              session={this.state.selectedSession}
-              searchWords={
-                this.state.searchedSessionIds.includes(this.state.selectedSession.id)
-                  ? this.state.searchWords
-                  : []
-              }
-              tagList={this.state.tagList}
-              isTracking={this.state.trackingSessions.includes(this.state.selectedSession.id)}
-              removeSession={this.removeSession}
-              removeWindow={this.removeWindow}
-              removeTab={this.removeTab}
-              openMenu={this.openMenu}
-              openModal={this.openModal}
-              closeModal={this.closeModal}
-            />
+            {this.state.selectedSessionIds.length > 1 ? (
+              <SelectionSummary
+                count={this.state.selectedSessionIds.length}
+                removeSelectedSessions={this.requestRemoveSelected}
+                clearSelection={this.clearSelection}
+              />
+            ) : (
+              <SessionDetailsArea
+                session={this.state.selectedSession}
+                searchWords={
+                  this.state.searchedSessionIds.includes(this.state.selectedSession.id)
+                    ? this.state.searchWords
+                    : []
+                }
+                tagList={this.state.tagList}
+                isTracking={this.state.trackingSessions.includes(this.state.selectedSession.id)}
+                removeSession={this.removeSession}
+                removeWindow={this.removeWindow}
+                removeTab={this.removeTab}
+                openMenu={this.openMenu}
+                openModal={this.openModal}
+                closeModal={this.closeModal}
+              />
+            )}
           </div>
         </div>
         <Menu menu={this.state.menu} />

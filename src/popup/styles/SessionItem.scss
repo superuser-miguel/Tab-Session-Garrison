@@ -89,11 +89,15 @@
     }
   }
 
-  &.isSelected {
+  &.isSelected,
+  &.isMultiSelected {
     background-color: var(--highlight-bg);
+    .selectButton {
+      box-shadow: inset 3px 0 0 var(--highlight);
+    }
   }
 
-  &:not(.isSelected):hover {
+  &:not(.isSelected):not(.isMultiSelected):hover {
     background-color: var(--line);
     .tag {
       background-color: var(--line2);

@@ -96,18 +96,43 @@ export default class SessionsArea extends Component {
     sessionsArea.scrollTo(0, top);
   };
 
-  handleSessionSelect = id => {
-    this.props.selectSession(id);
+  handleSessionSelect = (id, e) => {
+    const modifiers = e ? { ctrl: e.ctrlKey || e.metaKey, shift: e.shiftKey } : {};
+    this.props.selectSession(id, modifiers);
   };
 
   handleKeyDown = e => {
-    const { selectSession, optionsAreaRef, saveAreaRef, selectedSessionId } = this.props;
+    const {
+      selectSession,
+      toggleSelectSession,
+      selectAllSessions,
+      clearSelection,
+      requestRemoveSelected,
+      optionsAreaRef,
+      saveAreaRef,
+      selectedSessionId
+    } = this.props;
+
+    const isAccel = e.ctrlKey || e.metaKey;
 
     if (e.key === "ArrowUp") {
-      selectSession(this.prevSession.id);
+      // Shift extends the selection; plain arrow moves it.
+      selectSession(this.prevSession.id, { shift: e.shiftKey });
       e.preventDefault();
     } else if (e.key === "ArrowDown") {
-      selectSession(this.nextSession.id);
+      selectSession(this.nextSession.id, { shift: e.shiftKey });
+      e.preventDefault();
+    } else if (isAccel && (e.key === "a" || e.key === "A")) {
+      selectAllSessions();
+      e.preventDefault();
+    } else if (e.key === " ") {
+      toggleSelectSession(selectedSessionId);
+      e.preventDefault();
+    } else if (e.key === "Delete" || e.key === "Backspace") {
+      requestRemoveSelected();
+      e.preventDefault();
+    } else if (e.key === "Escape") {
+      clearSelection();
       e.preventDefault();
     } else if (e.key === "Tab" && e.shiftKey) {
       optionsAreaRef.focus();
@@ -118,7 +143,7 @@ export default class SessionsArea extends Component {
     } else if (e.key === "Enter" && e.shiftKey) {
       const openBehavior = getSettings("openButtonBehavior");
       sendOpenMessage(selectedSessionId, openBehavior);
-    } else if (e.key !== "Enter" && !e.shiftKey) {
+    } else if (e.key !== "Enter" && !e.shiftKey && !isAccel) {
       this.props.toggleSearchBar(true);
     }
   };
@@ -147,6 +172,7 @@ export default class SessionsArea extends Component {
     const {
       sessions,
       selectedSessionId,
+      selectedSessionIds,
       filterValue,
       sortValue,
       searchWords,
@@ -196,6 +222,7 @@ export default class SessionsArea extends Component {
               <SessionItem
                 session={session}
                 isSelected={selectedSessionId === session.id}
+                isMultiSelected={selectedSessionIds.includes(session.id)}
                 isTracking={trackingSessions.includes(session.id)}
                 ref={selectedSessionId === session.id ? this.selectedItemRef : null}
                 order={sortedSessions.findIndex(sortedSession => sortedSession.id === session.id)}
