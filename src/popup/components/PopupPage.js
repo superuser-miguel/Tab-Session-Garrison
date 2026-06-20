@@ -19,6 +19,7 @@ import {
   sendUndoManyMessage,
   sendEndTrackingByWindowDeleteMessage
 } from "../actions/controlSessions";
+import { applyTheme, watchTheme } from "../actions/applyTheme";
 import { deleteWindow, deleteTab } from "../../common/editSessions.js";
 import openUrl from "../actions/openUrl";
 import Header from "./Header";
@@ -118,7 +119,8 @@ export default class PopupPage extends Component {
       document.body.style.height = "100%";
     }
 
-    document.body.dataset.theme = getSettings("theme");
+    await applyTheme();
+    watchTheme();
 
     this.setState({
       sortValue: getSettings("sortValue") || "newest",

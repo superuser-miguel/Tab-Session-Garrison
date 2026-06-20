@@ -396,6 +396,10 @@ export default [
           {
             name: "darkLabel",
             value: "dark"
+          },
+          {
+            name: "matchFirefoxLabel",
+            value: "firefox"
           }
         ]
       },

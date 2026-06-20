@@ -10,6 +10,7 @@
     }
   },
   "permissions": [
+    "theme",
     "storage",
     "unlimitedStorage",
     "tabs",
