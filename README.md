@@ -38,8 +38,8 @@ Everything Tab Session Manager does — save and restore the state of windows an
 
 This is a **personal fork**, built and used on **Firefox (Linux)**. A few things to know:
 
-- **Not on the add-on stores.** You install it yourself (below). The upstream extension is on the [Firefox](https://addons.mozilla.org/firefox/addon/tab-session-manager/), Chrome, and Edge stores if you want the official, signed, cross-browser build.
-- **Firefox-focused.** The Chrome build still compiles but isn't tested here.
+- **Firefox only, for now.** This fork targets Firefox and nothing else; Chrome/Edge may come later. If you need those today, the [original Tab Session Manager](https://addons.mozilla.org/firefox/addon/tab-session-manager/) is on the Firefox, Chrome, and Edge stores.
+- **Not on the add-on stores.** You install it yourself (below).
 - **Cloud sync is disabled** in local builds — it relies on API keys that aren't part of the source. Local saving, restoring, auto-save, and everything above work normally.
 - **No telemetry.** Sessions are stored by the browser, on your machine.
 
@@ -84,7 +84,7 @@ npm install
 npm run watch-dev      # rebuilds on save; output lands in dev/firefox
 ```
 
-Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#installing)). A Chrome build also lands in `dev/chrome`, though it's untested in this fork.
+Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#installing)).
 
 ---
 
@@ -96,6 +96,7 @@ Planned, not yet built:
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
 - **Theme-matching popup** — follow the active Firefox theme's colors
 - **Branding** — logo, icons, and screenshots of its own
+- **Chrome / Edge** — possibly, further down the line
 
 ---
 
