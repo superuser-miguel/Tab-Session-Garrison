@@ -106,5 +106,9 @@ Tab Session Garrison stands entirely on [**Tab Session Manager**](https://github
 
 ## License
 
-[Mozilla Public License 2.0](LICENSE) — the same license as the upstream project.
-Copyright © 2017– Sienori and contributors. Fork modifications © 2026 superuser-miguel.
+Tab Session Garrison is free software, licensed under the **[GNU General Public License v3.0 or later](LICENSE)**.
+
+It's a fork of [Tab Session Manager](https://github.com/sienori/Tab-Session-Manager) © 2017– Sienori, originally released under the **Mozilla Public License 2.0**. Because the upstream code carries no "Incompatible With Secondary Licenses" notice, MPL-2.0 permits this fork to be distributed under the GPL. Sienori's copyright and the original MPL-2.0 text are preserved in **[LICENSE.MPL](LICENSE.MPL)**, and the MPL-covered portions remain available under MPL-2.0 as well.
+
+- Upstream code: © 2017– Sienori — MPL-2.0 (see [LICENSE.MPL](LICENSE.MPL))
+- This fork's changes: © 2026 superuser-miguel — GPL-3.0-or-later
