@@ -1,4 +1,4 @@
-# <sub><img src="/src/icons/icon.svg" width=64px height=64px></sub> Tab-Session-Manager
+# <sub><img src="/src/icons/icon.svg" width=64px height=64px></sub> Tab-Session-Garrison
 
 #### Save and restore the state of browser windows and tabs. It also supports automatic saving.
 
