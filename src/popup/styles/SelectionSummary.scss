@@ -37,6 +37,19 @@
         }
       }
 
+      .openSelected {
+        color: #fff;
+        background-color: var(--open);
+
+        svg {
+          fill: #fff;
+        }
+
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+
       .removeSelected {
         color: #fff;
         background-color: var(--confirm);
