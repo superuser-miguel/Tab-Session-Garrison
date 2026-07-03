@@ -31,4 +31,5 @@ export default async details => {
   setSettings("isShowUpdated", true);
   await updateOldSessions();
   setAutoSave();
+  scheduleBackupAlarm();
 };
