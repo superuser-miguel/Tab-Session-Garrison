@@ -67,7 +67,7 @@ export const handleBackupSettingsChange = changes => {
 // Sanitized "<backupFolder>/" prefix for backup file paths. The download folder
 // is the only writable location, so backupFolder is always a subpath of it.
 const backupBaseFolder = () => {
-  const raw = getSettings("backupFolder") || "TabSessionManager - Backup";
+  const raw = getSettings("backupFolder") || "Tab Session Garrison - Backup";
   const cleaned = raw
     .replace(/[:?."<>|]/g, "-")
     .replace(/\\/g, "/")
