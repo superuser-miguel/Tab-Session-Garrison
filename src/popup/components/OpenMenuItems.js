@@ -13,6 +13,9 @@ export default props => {
   const handleAddToCurrentWindow = () => {
     sendOpenMessage(props.session.id, "addToCurrentWindow");
   };
+  const handleAddToCurrentWindowAsGroup = () => {
+    sendOpenMessage(props.session.id, "addToCurrentWindowAsGroup");
+  };
   const handleClickSection = e => {
     e.stopPropagation();
   };
