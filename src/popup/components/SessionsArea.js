@@ -141,10 +141,11 @@ export default class SessionsArea extends Component {
     } else if (e.key === "Tab" && !e.shiftKey) {
       saveAreaRef.focus();
       e.preventDefault();
-    } else if (e.key === "Enter" && e.shiftKey) {
-      const openBehavior = getSettings("openButtonBehavior");
-      sendOpenMessage(selectedSessionId, openBehavior);
-    } else if (e.key !== "Enter" && !e.shiftKey && !isAccel) {
+    } else if (e.key === "Enter") {
+      // Restore the selection: one session directly, several via a confirm.
+      requestOpenSelected();
+      e.preventDefault();
+    } else if (!e.shiftKey && !isAccel) {
       this.props.toggleSearchBar(true);
     }
   };
