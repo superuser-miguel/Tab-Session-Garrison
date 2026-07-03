@@ -55,6 +55,39 @@
       color: var(--sub-text);
     }
 
+    .tabGroupsIndicator {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      width: 100%;
+      padding: 2px 0;
+
+      .tabGroupChip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        max-width: 100%;
+        font-size: 11px;
+        color: var(--main-text);
+        background-color: var(--line);
+        border-radius: 10px;
+        padding: 2px 8px;
+
+        .chipDot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+
+        .chipLabel {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+
     .buttonsContainer {
       display: flex;
       flex-direction: row;
