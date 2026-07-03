@@ -61,7 +61,7 @@ export default props => {
 
   return (
     <div id="header">
-      <div className="title">Tab Session Manager</div>
+      <div className="title">Tab Session Garrison</div>
       <div className="rightButtons">
         {shouldShowCloudSync && <SyncStatus syncStatus={syncStatus} />}
         <button
