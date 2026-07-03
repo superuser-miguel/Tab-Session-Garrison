@@ -74,7 +74,7 @@ export const exportSettings = async () => {
 
   await browser.downloads.download({
     url: downloadUrl,
-    filename: `TabSessionManager_Settings.json`,
+    filename: `TabSessionGarrison_Settings.json`,
     saveAs: true
   });
 };
