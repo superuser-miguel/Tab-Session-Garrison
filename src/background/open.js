@@ -95,7 +95,7 @@ export async function openSession(session, property = "openInNewWindow") {
       }
     } else if (property === "addToCurrentWindowAsGroup") {
       // Multi-window sessions: fold every window's tabs into the current window,
-      // each window becoming its own group named after the session.
+      // preserving each window's original groups.
       await addToCurrentWindow(true);
     } else {
       openInNewWindow();
