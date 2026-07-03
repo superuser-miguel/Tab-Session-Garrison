@@ -5,12 +5,6 @@
   "extDescription": {
     "message": "احفظ و استعد حالة النوافذ و التبويبات. كما أنها تدعم الحفظ التلقائي."
   },
-  "donateWithPaypalLabel": {
-    "message": "تبرع بواسطة PayPal"
-  },
-  "donateLabel": {
-    "message": "تبرع"
-  },
   "openSessionListInTabLabel": {
     "message": "فتح قائمة الجلسة في تبويب"
   },
@@ -740,41 +734,14 @@
   "reset": {
     "message": "إعادة تعيين"
   },
-  "backersLabel": {
-    "message": "الداعمون"
-  },
   "LicenseLabel": {
     "message": "الترخيص"
-  },
-  "donationLabel": {
-    "message": "الرجاء قدم تبرع"
-  },
-  "donationCaptionLabel": {
-    "message": "شكرا لك لاستخدام Tab Session Garrison.<br> دعمك سوف يكون تشجيع كبير،كما أني اواصل تطوير الوظائف الإضافية.<br>إذا أعجبك Tab Session Garrison، سوف أكون مسرورا إذا قدمت تبرعات."
-  },
-  "amazonTitleLabel": {
-    "message": "بطاقات هدايا amazon.co.jp"
-  },
-  "sponsorsLabel": {
-    "message": "Sponsors"
   },
   "addonPageLabel": {
     "message": "صفحة الاضافة"
   },
   "extensionPageLabel": {
     "message": "صفحة الإضافة"
-  },
-  "firefoxLabel": {
-    "message": "Firefox Add-ons"
-  },
-  "chromeLabel": {
-    "message": "Chrome Web Store"
-  },
-  "edgeLabel": {
-    "message": "Edge Add-ons"
-  },
-  "privacyPolicyLabel": {
-    "message": "سياسة الخصوصية"
   },
   "importMessage": {
     "message": "الجلسات مستوردة."
@@ -787,9 +754,6 @@
   },
   "sessionLabel": {
     "message": "الجلسة"
-  },
-  "amazonUrl": {
-    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=ar_DZ"
   },
   "addonUrl": {
     "message": "https://addons.mozilla.org/ar-DZ/firefox/addon/tab-session-manager/?src=optionpage"

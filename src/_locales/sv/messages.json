@@ -5,12 +5,6 @@
   "extDescription": {
     "message": "Sparar och återställer läget på fönster och flikar. Den kan även spara automatiskt."
   },
-  "donateWithPaypalLabel": {
-    "message": "Donera via PayPal"
-  },
-  "donateLabel": {
-    "message": "Donera"
-  },
   "openSessionListInTabLabel": {
     "message": "Öppna sessionslistan i fliken"
   },
@@ -740,41 +734,14 @@
   "reset": {
     "message": "Återställ"
   },
-  "backersLabel": {
-    "message": "Backers"
-  },
   "LicenseLabel": {
     "message": "Licens"
-  },
-  "donationLabel": {
-    "message": "Donera gärna en slant"
-  },
-  "donationCaptionLabel": {
-    "message": "Tack för att du använder Tab Session Garrison.<br>Ditt stöd kommer att göra mig väldigt glad, eftersom jag kan fortsätta att utveckla tillägget.<br>Om du gillar Tab Session Garrison, skulle jag verkligen uppskatta en donation från dig."
-  },
-  "amazonTitleLabel": {
-    "message": "amazon.co.jp eGift Cards"
-  },
-  "sponsorsLabel": {
-    "message": "Sponsorer"
   },
   "addonPageLabel": {
     "message": "Tilläggssida"
   },
   "extensionPageLabel": {
     "message": "Utökningssida"
-  },
-  "firefoxLabel": {
-    "message": "Firefox-tillägg"
-  },
-  "chromeLabel": {
-    "message": "Chrome Web Store"
-  },
-  "edgeLabel": {
-    "message": "Edge-tillägg"
-  },
-  "privacyPolicyLabel": {
-    "message": "Integritetspolicy"
   },
   "importMessage": {
     "message": "Sessioner importerade."
@@ -787,9 +754,6 @@
   },
   "sessionLabel": {
     "message": "Session"
-  },
-  "amazonUrl": {
-    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=en_US"
   },
   "addonUrl": {
     "message": "https://addons.mozilla.org/sv-SE/firefox/addon/tab-session-manager/?src=optionpage"

@@ -5,12 +5,6 @@
   "extDescription": {
     "message": "Speichern und Wiederherstellen aller Fenster und Tabs. Unterstützt automatisches Speichern."
   },
-  "donateWithPaypalLabel": {
-    "message": "Spenden via PayPal"
-  },
-  "donateLabel": {
-    "message": "Spenden"
-  },
   "openSessionListInTabLabel": {
     "message": "Öffne die Sitzungsliste im Tab"
   },
@@ -740,41 +734,14 @@
   "reset": {
     "message": "Zurücksetzen"
   },
-  "backersLabel": {
-    "message": "Unterstützer/innen"
-  },
   "LicenseLabel": {
     "message": "Lizenz"
-  },
-  "donationLabel": {
-    "message": "Bitte spende etwas"
-  },
-  "donationCaptionLabel": {
-    "message": "Danke, dass du Tab Session Garrison nutzst.<br>Deine Unterstützung ist ein großer Ansporn bei der Weiterentwicklung dieses Add-ons.<br>Wenn dir Tab Session Garrison gefällt, erwäge bitte eine Spende."
-  },
-  "amazonTitleLabel": {
-    "message": "amazon.co.jp eGift Cards"
-  },
-  "sponsorsLabel": {
-    "message": "Sponsoren"
   },
   "addonPageLabel": {
     "message": "Add-on Seite"
   },
   "extensionPageLabel": {
     "message": "Erweiterungs Seite"
-  },
-  "firefoxLabel": {
-    "message": "Firefox Addons"
-  },
-  "chromeLabel": {
-    "message": "Chrome Web Store"
-  },
-  "edgeLabel": {
-    "message": "Edge Addons"
-  },
-  "privacyPolicyLabel": {
-    "message": "Datenschutzrichtlinie"
   },
   "importMessage": {
     "message": "Sitzungen importiert."
@@ -787,9 +754,6 @@
   },
   "sessionLabel": {
     "message": "Sitzung"
-  },
-  "amazonUrl": {
-    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=en_US"
   },
   "addonUrl": {
     "message": "https://addons.mozilla.org/de/firefox/addon/tab-session-manager/?src=optionpage"

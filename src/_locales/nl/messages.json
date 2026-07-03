@@ -5,12 +5,6 @@
   "extDescription": {
     "message": "Sla de status van vensters en tabbladen op en herstel ze. Het ondersteunt ook automatisch opslaan."
   },
-  "donateWithPaypalLabel": {
-    "message": "Doneren via PayPal"
-  },
-  "donateLabel": {
-    "message": "Doneren"
-  },
   "openSessionListInTabLabel": {
     "message": "Open sessielijst in tabblad"
   },
@@ -740,41 +734,14 @@
   "reset": {
     "message": "Reset"
   },
-  "backersLabel": {
-    "message": "Backers"
-  },
   "LicenseLabel": {
     "message": "Licentie"
-  },
-  "donationLabel": {
-    "message": "Doe alstublieft een donatie"
-  },
-  "donationCaptionLabel": {
-    "message": "Bedankt voor het gebruik van Tab Session Garrison.<br>Uw steun zal een grote aanmoediging zijn, terwijl ik de add-on verder ontwikkel.<br>Als u van Tab Session Garrison houdt, zou ik blij zijn als u zou kunnen overwegen om te doneren."
-  },
-  "amazonTitleLabel": {
-    "message": "amazon.co.jp eGift Kaarten"
-  },
-  "sponsorsLabel": {
-    "message": "Sponsors"
   },
   "addonPageLabel": {
     "message": "Add-on page"
   },
   "extensionPageLabel": {
     "message": "Extension page"
-  },
-  "firefoxLabel": {
-    "message": "Firefox Add-ons"
-  },
-  "chromeLabel": {
-    "message": "Chrome Web Store"
-  },
-  "edgeLabel": {
-    "message": "Edge Add-ons"
-  },
-  "privacyPolicyLabel": {
-    "message": "Privacy policy"
   },
   "importMessage": {
     "message": "Sessies geïmporteerd."
@@ -787,9 +754,6 @@
   },
   "sessionLabel": {
     "message": "Sessie"
-  },
-  "amazonUrl": {
-    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=en_US"
   },
   "addonUrl": {
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
