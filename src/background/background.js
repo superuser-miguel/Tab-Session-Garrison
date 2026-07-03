@@ -14,7 +14,12 @@ import {
 import Sessions from "./sessions";
 import { replacePage } from "./replace";
 import importSessions from "./import";
-import { backupSessions, resetLastBackupTime } from "./backup";
+import {
+  backupSessions,
+  resetLastBackupTime,
+  scheduleBackupAlarm,
+  handleBackupSettingsChange
+} from "./backup";
 import {
   loadCurrentSession,
   saveCurrentSession,
