@@ -134,7 +134,7 @@ export default class PopupPage extends Component {
     this.firstFilterValue = getSettings("filterValue");
     this.firstSelectedSessionId = getSettings("selectedSessionId");
 
-    const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber", "lastEditedTime"];
+    const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber", "lastEditedTime", "tabGroups"];
     this.port = Math.random();
     browser.runtime.onMessage.addListener(this.handleMessage);
     browser.runtime.sendMessage({
