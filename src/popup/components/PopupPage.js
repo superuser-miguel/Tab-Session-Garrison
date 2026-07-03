@@ -11,6 +11,7 @@ import {
 import { updateLogLevel, overWriteLogLevel } from "src/common/log";
 import {
   getSessions,
+  sendOpenMessage,
   sendSessionSaveMessage,
   sendSessionRemoveMessage,
   sendSessionsRemoveMessage,
