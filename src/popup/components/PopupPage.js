@@ -512,6 +512,40 @@ export default class PopupPage extends Component {
     );
   };
 
+  // Multi-open always opens each selected session in its own new window, in
+  // list order — mirrors removeSelectedSessions().
+  openSelectedSessions = async () => {
+    const ids = this.state.selectedSessionIds;
+    if (!ids || ids.length === 0) return;
+    log.info(logDir, "openSelectedSessions()", ids);
+    for (const id of ids) {
+      await sendOpenMessage(id, "openInNewWindow");
+    }
+  };
+
+  // Routed from the Enter key and the "Open all" button. Confirms first when
+  // more than one is selected, since each opens a separate window.
+  requestOpenSelected = () => {
+    const ids = this.state.selectedSessionIds;
+    if (!ids || ids.length === 0) return;
+    if (ids.length === 1) {
+      sendOpenMessage(ids[0], getSettings("openButtonBehavior"));
+      return;
+    }
+    const message = browser.i18n
+      .getMessage("confirmOpenSessionsLabel", [ids.length.toString()])
+      .replace(/^$/, `Open ${ids.length} selected sessions? This opens ${ids.length} new windows.`);
+    this.openModal(
+      browser.i18n.getMessage("open").replace(/^$/, "Open"),
+      <ConfirmModalContent
+        message={message}
+        confirmLabel={browser.i18n.getMessage("open").replace(/^$/, "Open")}
+        onConfirm={this.openSelectedSessions}
+        closeModal={this.closeModal}
+      />
+    );
+  };
+
   saveSession = async (name, property) => {
     log.info(logDir, "saveSession()", name, property);
     try {
