@@ -179,8 +179,14 @@ const setWindowTitle = (session, windowId, currentWindow) => {
 };
 
 //現在のウィンドウにタブを生成
-async function createTabs(session, win, currentWindow, isAddtoCurrentWindow = false) {
-  log.log(logDir, "createTabs()", session, win, currentWindow, isAddtoCurrentWindow);
+async function createTabs(
+  session,
+  win,
+  currentWindow,
+  isAddtoCurrentWindow = false,
+  groupAsOne = false
+) {
+  log.log(logDir, "createTabs()", session, win, currentWindow, isAddtoCurrentWindow, groupAsOne);
   let sortedTabs = [];
 
   for (let tab in session.windows[win]) {
