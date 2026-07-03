@@ -108,6 +108,7 @@ export default class SessionsArea extends Component {
       selectAllSessions,
       clearSelection,
       requestRemoveSelected,
+      requestOpenSelected,
       optionsAreaRef,
       saveAreaRef,
       selectedSessionId
