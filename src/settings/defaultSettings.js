@@ -296,8 +296,8 @@ export default [
             title: "backupFolderLabel",
             captions: ["backupFolderCaptionLabel"],
             type: "text",
-            placeholder: "TabSessionManager - Backup",
-            default: "TabSessionManager - Backup"
+            placeholder: "Tab Session Garrison - Backup",
+            default: "Tab Session Garrison - Backup"
           }
         ]
       }
