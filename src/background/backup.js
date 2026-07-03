@@ -1,16 +1,61 @@
 import browser from "webextension-polyfill";
+import moment from "moment";
 import log from "loglevel";
 import Sessions from "./sessions.js";
 import { getSettings, setSettings } from "src/settings/settings";
 import exportSessions from "./export.js";
+import getSessions from "./getSessions.js";
+import { buildZip, writeBackupFile } from "./backupZip.js";
+import { addEntry } from "./backupManifest.js";
 
 const logDir = "background/backup";
 
 export const backupSessions = async () => {
   if (!getSettings("ifBackup")) return;
 
+  // New backup engine (opt-in, additive). Legacy behavior below is retained
+  // untouched until the Session/Incremental tiers replace it.
+  if (getSettings("backupComplete")) await backupComplete();
+
   if (getSettings("individualBackup")) backupIndividualSessions();
   else backupAllSessions();
+};
+
+// Complete tier: a full, timestamped snapshot of every session, written as a
+// single .zip into <backupFolder>/complete/. Kept indefinitely — space is
+// managed by compression, not deletion.
+const backupComplete = async () => {
+  log.log(logDir, "backupComplete()");
+  const sessions = await getSessions().catch(() => {});
+  if (!sessions || sessions.length === 0) return;
+
+  const folder = backupBaseFolder();
+  const stamp = moment().format("YYYY-MM-DD HH-mm-ss");
+  const jsonName = `TSG-complete-${stamp}.json`;
+  const zipBytes = buildZip({ [jsonName]: JSON.stringify(sessions, null, "  ") });
+  const filename = `${folder}complete/TSG-complete-${stamp}.zip`;
+
+  const downloadId = await writeBackupFile(zipBytes, filename);
+  if (downloadId) {
+    await addEntry("complete", {
+      downloadId,
+      filename,
+      time: Date.now(),
+      sessionsCount: sessions.length
+    });
+  }
+};
+
+// Sanitized "<backupFolder>/" prefix for backup file paths. The download folder
+// is the only writable location, so backupFolder is always a subpath of it.
+const backupBaseFolder = () => {
+  const raw = getSettings("backupFolder") || "TabSessionManager - Backup";
+  const cleaned = raw
+    .replace(/[:?."<>|]/g, "-")
+    .replace(/\\/g, "/")
+    .replace(/\/{2,}/g, "/")
+    .replace(/^\/+|\/+$/g, "");
+  return cleaned ? `${cleaned}/` : "";
 };
 
 const backupIndividualSessions = async () => {
