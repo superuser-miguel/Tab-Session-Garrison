@@ -70,7 +70,7 @@ const onStartupListener = async () => {
   else if (startupBehavior === "startupSession") openStartupSessions();
   setAutoSave();
   syncCloudAuto();
-  browser.alarms.create("backupSessions", { delayInMinutes: 0.5 });
+  scheduleBackupAlarm();
 };
 
 const onMessageListener = async (request, sender, sendResponse) => {
