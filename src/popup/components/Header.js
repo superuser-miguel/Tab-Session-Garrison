@@ -94,13 +94,6 @@ export default props => {
           </button>
         )}
         <button
-          className="heartButton"
-          onClick={handleHeartClick}
-          title={browser.i18n.getMessage("donateLabel")}
-        >
-          <HeartIcon />
-        </button>
-        <button
           className={"openInTabButton"}
           onClick={openSessionListInTab}
           title={browser.i18n.getMessage("openSessionListInTabLabel")}
