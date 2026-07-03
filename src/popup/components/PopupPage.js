@@ -747,6 +747,7 @@ export default class PopupPage extends Component {
             {this.state.selectedSessionIds.length > 1 ? (
               <SelectionSummary
                 count={this.state.selectedSessionIds.length}
+                openSelectedSessions={this.requestOpenSelected}
                 removeSelectedSessions={this.requestRemoveSelected}
                 clearSelection={this.clearSelection}
               />
