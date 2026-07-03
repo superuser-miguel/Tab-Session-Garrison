@@ -43,3 +43,20 @@ export const handleSaveTabGroupsChange = async (id, checked) => {
   }
   setSettings(id, checked);
 };
+
+// Firefox/Chrome tab-group color names → CSS hex, for rendering group indicators
+// in the session list and detail pane.
+export const tabGroupColorHex = name => {
+  const colors = {
+    grey: "#8b8b95",
+    blue: "#3b7ded",
+    red: "#e2483d",
+    yellow: "#f5c518",
+    green: "#3fb84f",
+    pink: "#ff6bba",
+    purple: "#9a5cf0",
+    cyan: "#3bc9d4",
+    orange: "#ff9f43"
+  };
+  return colors[name] || colors.grey;
+};
