@@ -22,6 +22,9 @@ export default props => {
   const handleAddToCurrentWindow = () => {
     sendOpenMessage(props.session.id, "addToCurrentWindow");
   };
+  const handleAddToCurrentWindowAsGroup = () => {
+    sendOpenMessage(props.session.id, "addToCurrentWindowAsGroup");
+  };
   const handleReplaceCurrentSession = () => {
     replaceCurrentSession(props.session.id);
   };
