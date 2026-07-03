@@ -46,6 +46,24 @@ const backupComplete = async () => {
   }
 };
 
+// Schedule the recurring backup alarm: a first run ~30s after startup, then
+// every backupInterval minutes while the browser is open.
+export const scheduleBackupAlarm = () => {
+  const interval = Number(getSettings("backupInterval")) || 30;
+  browser.alarms.create("backupSessions", { delayInMinutes: 0.5, periodInMinutes: interval });
+};
+
+// Re-arm the alarm when the interval (or the backup on/off switch) changes, so
+// settings take effect without a browser restart.
+export const handleBackupSettingsChange = changes => {
+  const oldV = changes?.Settings?.oldValue;
+  const newV = changes?.Settings?.newValue;
+  if (!newV) return;
+  if (oldV?.backupInterval !== newV.backupInterval || oldV?.ifBackup !== newV.ifBackup) {
+    scheduleBackupAlarm();
+  }
+};
+
 // Sanitized "<backupFolder>/" prefix for backup file paths. The download folder
 // is the only writable location, so backupFolder is always a subpath of it.
 const backupBaseFolder = () => {
