@@ -185,6 +185,9 @@
   "addToCurrentWindowCaptionLabel": {
     "message": "Add tabs to the current window. If the session contains multiple windows, open it in the new window."
   },
+  "addToCurrentWindowAsGroupLabel": {
+    "message": "Add to current window as group"
+  },
   "EditSessionLabel": {
     "message": "Edit a session"
   },
