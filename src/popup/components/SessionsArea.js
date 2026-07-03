@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
-import { getSettings } from "src/settings/settings";
-import { sendOpenMessage } from "../actions/controlSessions";
 import SessionItem from "./SessionItem";
 import "../styles/SessionsArea.scss";
 
