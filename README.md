@@ -90,12 +90,21 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 
 ## Roadmap
 
-Planned, not yet built:
+**In progress**
 
-- **Richer backups** — write outside the Downloads folder, with timestamping, rotation, and compression
+- **Backup overhaul** — the original backup was a single confusing toggle that dumped one unpruned file per auto-save (tens of thousands of them, forever). Replacing it with a clear **three-tier engine**, all under the download folder, that **never deletes your history** and uses **zip compression** to manage space instead:
+  - **Complete** — a full, compressed snapshot of every session, kept indefinitely for disaster recovery _(built)_
+  - **Session** — one file per saved session, updated in place _(next)_
+  - **Incremental** — append-only point-in-time history of auto-saves; recent snapshots stay as loose, browsable files and older ones roll up into zips once a date/size threshold is hit _(next)_
+  - **Restore-from-backup UI** — browse and restore snapshots without hand-importing files _(after the engine)_
+
+**Planned**
+
+- **Firefox Tab Groups** — reliably save and restore native tab groups (title, color, collapsed state, membership)
+- **Firefox Split View** — persist and restore side-by-side split tabs, _if_ the WebExtension API exposes them (under investigation)
+- **UI refresh** — a less utilitarian popup layout, and finishing the popup that follows Firefox's active theme colors
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
-- **Theme-matching popup** — follow the active Firefox theme's colors
-- **Branding** — logo, icons, and screenshots of its own
+- **Own branding** — logo, icons, and screenshots of its own
 - **Chrome / Edge** — possibly, further down the line
 
 ---
