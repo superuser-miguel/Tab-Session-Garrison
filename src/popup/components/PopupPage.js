@@ -727,6 +727,7 @@ export default class PopupPage extends Component {
               selectAllSessions={this.selectAllSessions}
               clearSelection={this.clearSelection}
               requestRemoveSelected={this.requestRemoveSelected}
+              requestOpenSelected={this.requestOpenSelected}
               openMenu={this.openMenu}
               toggleSearchBar={this.toggleSearchBar}
               isInitSessions={this.state.isInitSessions}
