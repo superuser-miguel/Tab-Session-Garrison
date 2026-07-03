@@ -362,7 +362,7 @@ export default class ImportSessionsComponent extends Component {
           captions={["importCaptionLabel", "importCaptionLabel2"]}
           extraCaption={
             <p className="caption">
-              - Tab Session Manager (.json)
+              - Tab Session Garrison / Tab Session Manager (.json)
               <br />
               - Session Buddy (.json)
               <br />
