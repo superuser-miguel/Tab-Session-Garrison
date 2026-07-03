@@ -69,12 +69,12 @@ export async function openSession(session, property = "openInNewWindow") {
 
       createTabs(session, win, currentWindow);
     };
-    const addToCurrentWindow = async () => {
-      log.log(logDir, "openSession() addToCurrentWindow()");
+    const addToCurrentWindow = async (groupAsOne = false) => {
+      log.log(logDir, "openSession() addToCurrentWindow()", groupAsOne);
       const currentTabs = await browser.tabs.query({ currentWindow: true });
       const currentWinId = currentTabs[0].windowId;
       const currentWindow = await browser.windows.get(currentWinId, { populate: true });
-      createTabs(session, win, currentWindow, true);
+      createTabs(session, win, currentWindow, true, groupAsOne);
     };
 
     if (isFirstWindowFlag) {
@@ -89,7 +89,14 @@ export async function openSession(session, property = "openInNewWindow") {
         case "addToCurrentWindow":
           await addToCurrentWindow();
           break;
+        case "addToCurrentWindowAsGroup":
+          await addToCurrentWindow(true);
+          break;
       }
+    } else if (property === "addToCurrentWindowAsGroup") {
+      // Multi-window sessions: fold every window's tabs into the current window,
+      // each window becoming its own group named after the session.
+      await addToCurrentWindow(true);
     } else {
       openInNewWindow();
     }
