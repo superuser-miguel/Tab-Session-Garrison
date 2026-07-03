@@ -41,6 +41,11 @@ export default props => {
           {browser.i18n.getMessage("addToCurrentWindowLabel")}
         </button>
       </li>
+      <li>
+        <button onClick={handleAddToCurrentWindowAsGroup}>
+          {browser.i18n.getMessage("addToCurrentWindowAsGroupLabel")}
+        </button>
+      </li>
     </ul>
   );
 };
