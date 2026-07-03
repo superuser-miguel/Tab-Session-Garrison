@@ -158,9 +158,9 @@ const createTabGroups = async (windowId, tabs, tabGroupsInfo) => {
   }
 };
 
-// Put every restored tab from this window into ONE new tab group named after
-// the session, flattening any groups the session already had. Used by the
-// "Add to Current Window as Group" menu action.
+// Wrap every restored tab from this window into ONE new tab group named after
+// the session. Used by "Add to Current Window as Group" only when the session
+// had no groups of its own (otherwise the original groups are preserved).
 const createSingleGroup = async (windowId, tabs, session) => {
   const tabIds = tabs.map(tab => tabList[tab.id]).filter(id => id != null);
   if (tabIds.length === 0) return;
