@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Sparar och återställer läget på fönster och flikar. Den kan även spara automatiskt."
@@ -615,10 +615,10 @@
     "message": "Visa alternativsidan efter uppdatering"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Visa alternativsidan när Tab Session Manager är uppdaterad. Du ser vad som är nytt mycket snabbare."
+    "message": "Visa alternativsidan när Tab Session Garrison är uppdaterad. Du ser vad som är nytt mycket snabbare."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager har uppdaterats!"
+    "message": "Tab Session Garrison har uppdaterats!"
   },
   "seeMoreLabel": {
     "message": "Se mer"
@@ -750,7 +750,7 @@
     "message": "Donera gärna en slant"
   },
   "donationCaptionLabel": {
-    "message": "Tack för att du använder Tab Session Manager.<br>Ditt stöd kommer att göra mig väldigt glad, eftersom jag kan fortsätta att utveckla tillägget.<br>Om du gillar Tab Session Manager, skulle jag verkligen uppskatta en donation från dig."
+    "message": "Tack för att du använder Tab Session Garrison.<br>Ditt stöd kommer att göra mig väldigt glad, eftersom jag kan fortsätta att utveckla tillägget.<br>Om du gillar Tab Session Garrison, skulle jag verkligen uppskatta en donation från dig."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Cards"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/sv-SE/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Denna sidan kan inte öppnas av Tab Session Manager."
+    "message": "Denna sidan kan inte öppnas av Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Kopiera webbadressen"

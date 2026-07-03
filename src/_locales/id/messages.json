@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Anda bisa menyimpan dan mengembalikan tab dan jendela yang terbuka. Juga mendukung penghematan otomatis."
@@ -615,10 +615,10 @@
     "message": "Display option page when updating"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Display the options page when Tab Session Manager is updated. You can know the update contents quickly."
+    "message": "Display the options page when Tab Session Garrison is updated. You can know the update contents quickly."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager has been updated!"
+    "message": "Tab Session Garrison has been updated!"
   },
   "seeMoreLabel": {
     "message": "See more"
@@ -750,7 +750,7 @@
     "message": "Silakan memberi donasi"
   },
   "donationCaptionLabel": {
-    "message": "Terima kasih telah menggunakan Tab Session Manager.<br>Dukunganmu akan menjadi dorongan besar, karena saya akan terus mengembangkan pengaya ini.<br>Jika Anda menyukai Tab Session Manager, saya akan sangat menghargai jika Anda bisa mempertimbangkan memberikan sumbangan."
+    "message": "Terima kasih telah menggunakan Tab Session Garrison.<br>Dukunganmu akan menjadi dorongan besar, karena saya akan terus mengembangkan pengaya ini.<br>Jika Anda menyukai Tab Session Garrison, saya akan sangat menghargai jika Anda bisa mempertimbangkan memberikan sumbangan."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp Kartu eGift"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Halaman ini tidak bisa dibuka oleh Tab Session Manager."
+    "message": "Halaman ini tidak bisa dibuka oleh Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Copy URL"

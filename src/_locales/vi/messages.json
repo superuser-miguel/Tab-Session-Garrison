@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Lưu và khôi phục lại trạng thái của cửa sổ và thẻ. Nó cũng hỗ trợ việc lưu tự động."
@@ -615,10 +615,10 @@
     "message": "Hiển thị trang tùy chọn khi cập nhật"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Hiển thị trang tùy chọn khi Tab Session Manager được cập nhật. Bạn có thể nhanh chóng biết được nội dung cập nhật."
+    "message": "Hiển thị trang tùy chọn khi Tab Session Garrison được cập nhật. Bạn có thể nhanh chóng biết được nội dung cập nhật."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager đã được cập nhật!"
+    "message": "Tab Session Garrison đã được cập nhật!"
   },
   "seeMoreLabel": {
     "message": "Xem thêm"
@@ -750,7 +750,7 @@
     "message": "Hãy tài trợ cho tôi"
   },
   "donationCaptionLabel": {
-    "message": "Cảm ơn bạn đã sử dụng Tab Session Manager.<br>Sự hỗ trợ của bạn sẽ là một sự động viên lớn, khi tôi tiếp tục phát triển tiện ích này.<br>Nếu bạn thích Tab Session Manager, tôi rất vui lòng nếu bạn xem xét tài trợ."
+    "message": "Cảm ơn bạn đã sử dụng Tab Session Garrison.<br>Sự hỗ trợ của bạn sẽ là một sự động viên lớn, khi tôi tiếp tục phát triển tiện ích này.<br>Nếu bạn thích Tab Session Garrison, tôi rất vui lòng nếu bạn xem xét tài trợ."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Cards"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/vi/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Trang này không thể mở được bởi Tab Session Manager."
+    "message": "Trang này không thể mở được bởi Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Sao chép URL"

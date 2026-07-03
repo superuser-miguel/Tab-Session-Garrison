@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "කවුළු සහ ටැබ් වල තත්වය සුරකින්න සහ ප්‍රතිසාධනය කරන්න. එය ස්වයංක්‍රීය ඉතිරිකිරීම් සඳහාද සහාය වේ."
@@ -615,10 +615,10 @@
     "message": "යාවත්කාලීන කිරීමේදී විකල්ප පිටුව පෙන්වන්න"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Tab Session Manager යාවත්කාලීන වූ විට විකල්ප පිටුව පෙන්වන්න. යාවත්කාලීන අන්තර්ගතයන් ඔබට ඉක්මනින් දැනගත හැකිය."
+    "message": "Tab Session Garrison යාවත්කාලීන වූ විට විකල්ප පිටුව පෙන්වන්න. යාවත්කාලීන අන්තර්ගතයන් ඔබට ඉක්මනින් දැනගත හැකිය."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager යාවත්කාලීන කර ඇත!"
+    "message": "Tab Session Garrison යාවත්කාලීන කර ඇත!"
   },
   "seeMoreLabel": {
     "message": "තව බලන්න"
@@ -750,7 +750,7 @@
     "message": "කරුණාකර පරිත්‍යාගයක් කරන්න"
   },
   "donationCaptionLabel": {
-    "message": "Tab Session Manager භාවිතා කිරීම ගැන ඔබට ස්තුතියි.<br>මම add-on එක දිගටම දියුණු කරන නිසා ඔබේ සහයෝගය විශාල දිරිගැන්වීමක් වේවි.<br>ඔබ ටැබ් සැසි කළමනාකරුට කැමති නම්, ඔබට පරිත්‍යාග කිරීම ගැන සලකා බැලිය හැකි නම් මම සතුටු වෙමි."
+    "message": "Tab Session Garrison භාවිතා කිරීම ගැන ඔබට ස්තුතියි.<br>මම add-on එක දිගටම දියුණු කරන නිසා ඔබේ සහයෝගය විශාල දිරිගැන්වීමක් වේවි.<br>ඔබ ටැබ් සැසි කළමනාකරුට කැමති නම්, ඔබට පරිත්‍යාග කිරීම ගැන සලකා බැලිය හැකි නම් මම සතුටු වෙමි."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift කාඩ්පත්"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "මෙම පිටුව Tab Session Manager විසින් විවෘත කළ නොහැක."
+    "message": "මෙම පිටුව Tab Session Garrison විසින් විවෘත කළ නොහැක."
   },
   "copyUrlLabel": {
     "message": "URL පිටපත් කරන්න"

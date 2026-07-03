@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Pencerelerin ve sekmelerin durumunu kaydeder ve geri yükler. Otomatik kaydetmeyi de destekler."
@@ -615,10 +615,10 @@
     "message": "Güncelleme sırasında seçenek sayfası görüntülensin"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Tab Session Manager güncellendiğinde seçenekler sayfası görüntülenir. Güncelleme içeriğini hızlıca öğrenebilirsiniz."
+    "message": "Tab Session Garrison güncellendiğinde seçenekler sayfası görüntülenir. Güncelleme içeriğini hızlıca öğrenebilirsiniz."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager güncellendi!"
+    "message": "Tab Session Garrison güncellendi!"
   },
   "seeMoreLabel": {
     "message": "Daha fazlasını gör"
@@ -750,7 +750,7 @@
     "message": "Lütfen bağış yapın"
   },
   "donationCaptionLabel": {
-    "message": "Tab Session Manager eklentisini kullandığınız için teşekkürler.<br>Desteğiniz eklentiyi geliştirmem için büyük bir teşvik olacak.<br>Tab Session Manager eklentisini beğendiyseniz, bağış yapmayı değerlendirin."
+    "message": "Tab Session Garrison eklentisini kullandığınız için teşekkürler.<br>Desteğiniz eklentiyi geliştirmem için büyük bir teşvik olacak.<br>Tab Session Garrison eklentisini beğendiyseniz, bağış yapmayı değerlendirin."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp hediye kartları"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Bu sayfa Tab Session Manager tarafından açılamaz."
+    "message": "Bu sayfa Tab Session Garrison tarafından açılamaz."
   },
   "copyUrlLabel": {
     "message": "Adresi kopyala"

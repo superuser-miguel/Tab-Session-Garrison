@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Ablakok és fülek állapotának mentése és visszaállítása. Automatikus állapot mentés is támogatva van."
@@ -615,10 +615,10 @@
     "message": "Beállítás oldal megjelenítése frissítéskor"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Beállítások oldal megjelenítése amikor Tab Session Manager frissült. Így gyorsan áttekinthető a frissítés tartalma."
+    "message": "Beállítások oldal megjelenítése amikor Tab Session Garrison frissült. Így gyorsan áttekinthető a frissítés tartalma."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager frissítve!"
+    "message": "Tab Session Garrison frissítve!"
   },
   "seeMoreLabel": {
     "message": "Bővebben"
@@ -750,7 +750,7 @@
     "message": "Kérjük adakozzon"
   },
   "donationCaptionLabel": {
-    "message": "Köszönöm hogy a Tab Session Manager -t használod!<br>A támogatásod nagy ösztönzést jelent számomra, hogy folytassam ennek a kiegészítőnek a fejlesztését.<br>Ha tetszik a Tab Session Manager, örülnék ha megfontolnád az adakozást."
+    "message": "Köszönöm hogy a Tab Session Garrison -t használod!<br>A támogatásod nagy ösztönzést jelent számomra, hogy folytassam ennek a kiegészítőnek a fejlesztését.<br>Ha tetszik a Tab Session Garrison, örülnék ha megfontolnád az adakozást."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp elektronikus ajándék kártya"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/hu/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Ez az oldal nem nyitható meg a Tab Session Manager által."
+    "message": "Ez az oldal nem nyitható meg a Tab Session Garrison által."
   },
   "copyUrlLabel": {
     "message": "URL másolása"

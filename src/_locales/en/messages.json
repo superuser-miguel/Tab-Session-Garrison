@@ -630,10 +630,10 @@
     "message": "Display option page when updating"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Display the options page when Tab Session Manager is updated. You can know the update contents quickly."
+    "message": "Display the options page when Tab Session Garrison is updated. You can know the update contents quickly."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager has been updated!"
+    "message": "Tab Session Garrison has been updated!"
   },
   "seeMoreLabel": {
     "message": "See more"
@@ -765,7 +765,7 @@
     "message": "Please make a donation"
   },
   "donationCaptionLabel": {
-    "message": "Thank you for using Tab Session Manager.<br>Your support will be a big encouragement, as I continue to develop the add-on.<br>If you like Tab Session Manager, I would be pleased if you could consider donating."
+    "message": "Thank you for using Tab Session Garrison.<br>Your support will be a big encouragement, as I continue to develop the add-on.<br>If you like Tab Session Garrison, I would be pleased if you could consider donating."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Cards"
@@ -810,7 +810,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "This page can not be opened by Tab Session Manager."
+    "message": "This page can not be opened by Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Copy URL"

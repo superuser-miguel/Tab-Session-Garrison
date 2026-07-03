@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Зберігання та відновлення стану вікон і вкладок. Також підтримує автозбереження."
@@ -615,10 +615,10 @@
     "message": "Показувати сторінку \"Інформація\" якщо оновився"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Показувати сторінку \"Інформація\" якщо оновився Tab Session Manager. Ви маєте можливість швидко дізнатися про зміст оновлення."
+    "message": "Показувати сторінку \"Інформація\" якщо оновився Tab Session Garrison. Ви маєте можливість швидко дізнатися про зміст оновлення."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager було оновлено!"
+    "message": "Tab Session Garrison було оновлено!"
   },
   "seeMoreLabel": {
     "message": "Дивитися більше"
@@ -750,7 +750,7 @@
     "message": "Будь ласка, подякуйте автору"
   },
   "donationCaptionLabel": {
-    "message": "Дякую, що використовуєте Tab Session Manager. <br> Ваша підтримка буде чудовим стимулом до продовження розробки цього доповнення. <br>Якщо вам сподобався Tab Session Manager, я буду дуже вдячний вашим пожертвам."
+    "message": "Дякую, що використовуєте Tab Session Garrison. <br> Ваша підтримка буде чудовим стимулом до продовження розробки цього доповнення. <br>Якщо вам сподобався Tab Session Garrison, я буду дуже вдячний вашим пожертвам."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Cards"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Цю сторінку не можна відкрити в Tab Session Manager."
+    "message": "Цю сторінку не можна відкрити в Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Копіювати URL"

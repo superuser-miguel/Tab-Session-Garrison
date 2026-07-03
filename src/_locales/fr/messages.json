@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Enregistrer et restaurer l’état des fenêtres et onglets. Prend également en charge la sauvegarde automatique."
@@ -615,10 +615,10 @@
     "message": "Afficher la page options après une mise à jour"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Afficher la page options après une mise à jour de Tab Session Manager. Vous êtes ainsi tenu au courant du contenu de la mise à jour."
+    "message": "Afficher la page options après une mise à jour de Tab Session Garrison. Vous êtes ainsi tenu au courant du contenu de la mise à jour."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager a été mise à jour !"
+    "message": "Tab Session Garrison a été mise à jour !"
   },
   "seeMoreLabel": {
     "message": "Plus de détails"
@@ -750,7 +750,7 @@
     "message": "Faites un don"
   },
   "donationCaptionLabel": {
-    "message": "Merci d’utiliser Tab Session Manager.<br>Votre soutien sera un grand encouragement, car je continue de développer l’extension. <br>Si vous aimez Session Manager, je serais heureux si vous pouviez envisager de faire un don."
+    "message": "Merci d’utiliser Tab Session Garrison.<br>Votre soutien sera un grand encouragement, car je continue de développer l’extension. <br>Si vous aimez Session Manager, je serais heureux si vous pouviez envisager de faire un don."
   },
   "amazonTitleLabel": {
     "message": "Cartes Cadeaux (amazon.co.jp)"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/fr/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Cette page ne peut pas être ouverte par Tab Session Manager."
+    "message": "Cette page ne peut pas être ouverte par Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Copier l’URL"
