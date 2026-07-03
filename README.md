@@ -15,7 +15,8 @@ Everything Tab Session Manager does — save and restore the state of windows an
 - **Multi-select** sessions with Ctrl/Cmd-click, Shift-click ranges, or the keyboard
 - **Full keyboard navigation** of the session list — move, extend, select-all, restore, and delete without touching the mouse
 - **Bulk delete** with a single **"undo all"** — clear out dozens of stale auto-saves at once, and still get them back if you misclick
-- An **"N selected" summary** panel so you always know what a bulk action will hit
+- **Bulk restore** — open every selected session at once, each in its own new window (with a confirm so a stray keypress doesn't flood your screen)
+- An **"N selected" summary** panel — with **Open all** and **Delete** actions — so you always know what a bulk action will hit
 
 ### Keyboard & selection reference
 
