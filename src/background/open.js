@@ -228,7 +228,10 @@ async function createTabs(
 
   if (isEnabledTabGroups) {
     await Promise.all(openedTabs);
-    if (groupAsOne) createSingleGroup(currentWindow.id, sortedTabs, session);
+    // "As group" preserves the session's original groups; it only wraps tabs
+    // into one session-named group when the session had no groups of its own.
+    const hasOriginalGroups = sortedTabs.some(tab => tab.groupId > 0);
+    if (groupAsOne && !hasOriginalGroups) createSingleGroup(currentWindow.id, sortedTabs, session);
     else createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
   }
 
