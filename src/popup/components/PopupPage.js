@@ -295,7 +295,7 @@ export default class PopupPage extends Component {
         break;
       }
       case "deleteAll": {
-        const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber"];
+        const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber", "tabGroups"];
         sessions = await getSessions(null, keys);
         searchInfo = [];
         selectedSession = {};
