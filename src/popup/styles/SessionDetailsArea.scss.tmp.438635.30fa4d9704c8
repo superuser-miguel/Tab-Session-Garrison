@@ -1,0 +1,136 @@
+#sessionDetailArea {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  .sessionHeader {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 5px;
+    .lineContainer {
+      display: flex;
+      justify-content: space-between;
+      line-height: 1.5em;
+    }
+    .sessionName {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.5em;
+    }
+
+    .menuButton {
+      flex-shrink: 0;
+      padding: 0;
+      padding-left: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: opacity 200ms;
+      svg {
+        width: 5px;
+        height: 16px;
+        fill: var(--sub-text);
+        transition: fill 100ms;
+      }
+      &:hover svg {
+        fill: var(--highlight);
+      }
+      &:focus svg {
+        outline: var(--button) 1px solid;
+      }
+    }
+
+    .date {
+      flex-shrink: 0;
+      color: var(--sub-text);
+      overflow: hidden;
+      word-break: break-all;
+      display: inline-block;
+    }
+
+    .windowsInfo {
+      color: var(--sub-text);
+    }
+
+    .tabGroupsIndicator {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      width: 100%;
+      padding: 2px 0;
+
+      .tabGroupChip {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        max-width: 100%;
+        font-size: 11px;
+        color: var(--main-text);
+        background-color: var(--line);
+        border-radius: 10px;
+        padding: 2px 8px;
+
+        .chipDot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+
+        .chipLabel {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .buttonsContainer {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 1;
+
+      button {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin-left: 15px;
+        color: var(--highlight);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 100ms;
+        svg {
+          width: 13px;
+          margin-right: 2px;
+          fill: var(--highlight);
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+        &.remove {
+          &:hover,
+          &:focus {
+            color: var(--confirm);
+            svg {
+              fill: var(--confirm);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .noSession {
+    p {
+      color: var(--sub-text);
+      margin: 0;
+    }
+  }
+}
