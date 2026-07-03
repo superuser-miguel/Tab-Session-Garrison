@@ -268,6 +268,23 @@ export default [
         default: false,
         childElements: [
           {
+            id: "backupComplete",
+            title: "backupCompleteLabel",
+            captions: ["backupCompleteCaptionLabel"],
+            type: "checkbox",
+            default: false
+          },
+          {
+            id: "backupInterval",
+            title: "backupIntervalLabel",
+            captions: ["backupIntervalCaptionLabel"],
+            type: "number",
+            min: 1,
+            step: 1,
+            placeholder: 30,
+            default: 30
+          },
+          {
             id: "individualBackup",
             title: "individualBackupLabel",
             captions: ["individualBackupCaptionLabel"],
