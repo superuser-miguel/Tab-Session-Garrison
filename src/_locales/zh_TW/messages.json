@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "儲存與還原視窗跟分頁的瀏覽狀態。並支援自動儲存功能。"
@@ -615,10 +615,10 @@
     "message": "更新時顯示選項頁面"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "更新 Tab Session Manager 時顯示選項頁面。讓您可以快速瞭解更新內容。"
+    "message": "更新 Tab Session Garrison 時顯示選項頁面。讓您可以快速瞭解更新內容。"
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager 已更新！"
+    "message": "Tab Session Garrison 已更新！"
   },
   "seeMoreLabel": {
     "message": "顯示更多"
@@ -750,7 +750,7 @@
     "message": "您可以贊助我！"
   },
   "donationCaptionLabel": {
-    "message": "感謝您使用 Tab Session Manager。<br>您的支持是我繼續開發這個附加元件的動力。<br>若您喜歡 Tab Session Manager，希望您能夠贊助我。"
+    "message": "感謝您使用 Tab Session Garrison。<br>您的支持是我繼續開發這個附加元件的動力。<br>若您喜歡 Tab Session Garrison，希望您能夠贊助我。"
   },
   "amazonTitleLabel": {
     "message": "贊助我 amazon 電子禮品卡"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/zh-TW/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Tab Session Manager 無法開啟此頁面。"
+    "message": "Tab Session Garrison 無法開啟此頁面。"
   },
   "copyUrlLabel": {
     "message": "複製 URL"

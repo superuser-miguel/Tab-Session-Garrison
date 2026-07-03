@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Lagra og gjenopprett vindauger og faner. Støttar òg automatisk lagring."
@@ -615,10 +615,10 @@
     "message": "Opna innstillingssida etter ei oppdatering"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Opna innstillingssida når Tab Session Manager vart oppdatert, så du kan finna ut av kva som er nytt så fort som mogleg."
+    "message": "Opna innstillingssida når Tab Session Garrison vart oppdatert, så du kan finna ut av kva som er nytt så fort som mogleg."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager har vorte oppdatert."
+    "message": "Tab Session Garrison har vorte oppdatert."
   },
   "seeMoreLabel": {
     "message": "Sjå meir"
@@ -750,7 +750,7 @@
     "message": "Doner gjerne ein slant"
   },
   "donationCaptionLabel": {
-    "message": "Takk for at du bruker Tab Session Manager.<br>Støtta din er ei stor oppmuntring for meg, mens eg fortsett å utvikla utvidinga.<br>Viss du likar Tab Session Manager, vil eg verkeleg settja pris på ein donasjon."
+    "message": "Takk for at du bruker Tab Session Garrison.<br>Støtta din er ei stor oppmuntring for meg, mens eg fortsett å utvikla utvidinga.<br>Viss du likar Tab Session Garrison, vil eg verkeleg settja pris på ein donasjon."
   },
   "amazonTitleLabel": {
     "message": "Elektronisk gåvekort frå «amazon.co.jp»"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/nn-NO/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Denne sida kan ikkje opnas av Tab Session Manager."
+    "message": "Denne sida kan ikkje opnas av Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Kopier URL"

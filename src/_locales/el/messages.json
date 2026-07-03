@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Αποθηκεύει και επαναφέρει παράθυρα και καρτέλες. Υποστηρίζει και αυτόματη αποθήκευση."
@@ -615,10 +615,10 @@
     "message": "Εμφάνιση επιλογών μετά από ενημέρωση"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Να εμφανίζεται η σελίδα των επιλογών μετά από ενημέρωση του Tab Session Manager. Μπορείτε έτσι να δείτε γρήγορα τι έχει ενημερωθεί."
+    "message": "Να εμφανίζεται η σελίδα των επιλογών μετά από ενημέρωση του Tab Session Garrison. Μπορείτε έτσι να δείτε γρήγορα τι έχει ενημερωθεί."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Το Tab Session Manager ενημερώθηκε!"
+    "message": "Το Tab Session Garrison ενημερώθηκε!"
   },
   "seeMoreLabel": {
     "message": "Δείτε περισσότερα"
@@ -750,7 +750,7 @@
     "message": "Παρακαλούμε κάντε μας μια δωρεά"
   },
   "donationCaptionLabel": {
-    "message": "Ευχαριστούμε που χρησιμοποιείτε το Tab Session Manager.<br>Η υποοστήριξή σας μου δίνει κουράγιο ώστε να συνεχίσω την ανάπτυξη αυτού του πρόσθετου.<br>Αν σας αρέσει το Tab Session Manager και μπορείτε και να συνεισφέρετε κάτι, θα σας ήμουν υπόχρεος."
+    "message": "Ευχαριστούμε που χρησιμοποιείτε το Tab Session Garrison.<br>Η υποοστήριξή σας μου δίνει κουράγιο ώστε να συνεχίσω την ανάπτυξη αυτού του πρόσθετου.<br>Αν σας αρέσει το Tab Session Garrison και μπορείτε και να συνεισφέρετε κάτι, θα σας ήμουν υπόχρεος."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Cards"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Το Tab Session Manager δεν μπορεί να ανοίξει αυτή τη σελίδα."
+    "message": "Το Tab Session Garrison δεν μπορεί να ανοίξει αυτή τη σελίδα."
   },
   "copyUrlLabel": {
     "message": "Αντιγραφή URL"

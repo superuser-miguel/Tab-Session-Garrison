@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Salva e ripristina lo stato di finestre e schede. Supporta anche il salvataggio automatico."
@@ -615,10 +615,10 @@
     "message": "Mostra pagina impostazioni durante l'aggiornamento"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Mostra la pagina delle impostazioni quando Tab Session Manager viene aggiornato. Ti permette di conoscere rapidamente le novità dell'aggiornamento."
+    "message": "Mostra la pagina delle impostazioni quando Tab Session Garrison viene aggiornato. Ti permette di conoscere rapidamente le novità dell'aggiornamento."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager è stato aggiornato!"
+    "message": "Tab Session Garrison è stato aggiornato!"
   },
   "seeMoreLabel": {
     "message": "Mostra altro"
@@ -750,7 +750,7 @@
     "message": "Per favore, considera una donazione"
   },
   "donationCaptionLabel": {
-    "message": "Grazie per utilizzare Tab Session Manager.<br>Il tuo supporto sarà un grande incoraggiamento mentre continuo a sviluppare questo componente aggiuntivo.<br>Se ti piace Tab Session Manager, sarei felice se potessi prendere in considerazione una donazione."
+    "message": "Grazie per utilizzare Tab Session Garrison.<br>Il tuo supporto sarà un grande incoraggiamento mentre continuo a sviluppare questo componente aggiuntivo.<br>Se ti piace Tab Session Garrison, sarei felice se potessi prendere in considerazione una donazione."
   },
   "amazonTitleLabel": {
     "message": "Buoni Regalo amazon.co.jp"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Questa pagina non può essere aperta da Tab Session Manager."
+    "message": "Questa pagina non può essere aperta da Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Copia URL"

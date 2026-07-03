@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Ļauj saglabāt un atjaunot logus un to cilņu stāvokli. Kā arī atbalsta automātisko saglabāšanu."
@@ -615,10 +615,10 @@
     "message": "Display option page when updating"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Display the options page when Tab Session Manager is updated. You can know the update contents quickly."
+    "message": "Display the options page when Tab Session Garrison is updated. You can know the update contents quickly."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager atjaunināts!"
+    "message": "Tab Session Garrison atjaunināts!"
   },
   "seeMoreLabel": {
     "message": "Skatīt vairāk"
@@ -750,7 +750,7 @@
     "message": "Lūdzu, ziedojiet"
   },
   "donationCaptionLabel": {
-    "message": "Paldies, ka izmantojat Tab Session Manager.<br>Jūsu atbalsts būs liels iedrošinājums, lai es turpinātu uzlabot papildinājumu.<br>Ja jums patīk un izmantojat Tab Session Manager ikdienā, es priecātos, ja jūs apsvērtu iespēju ziedot."
+    "message": "Paldies, ka izmantojat Tab Session Garrison.<br>Jūsu atbalsts būs liels iedrošinājums, lai es turpinātu uzlabot papildinājumu.<br>Ja jums patīk un izmantojat Tab Session Garrison ikdienā, es priecātos, ja jūs apsvērtu iespēju ziedot."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp e-Dāvanu kartes"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/lv/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Šo lapu nevar atvērt izmantojot Tab Session Manager."
+    "message": "Šo lapu nevar atvērt izmantojot Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Kopēt vietnes URL"

@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "창과 탭의 상태를 저장하고 복원합니다. 자동 저장 또한 지원합니다."
@@ -615,10 +615,10 @@
     "message": "업데이트 후 설정 페이지 열기"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Tab Session Manager가 업데이트 되면, 설정 페이지를 표시합니다. 업데이트 내용을 빠르게 알 수 있습니다."
+    "message": "Tab Session Garrison가 업데이트 되면, 설정 페이지를 표시합니다. 업데이트 내용을 빠르게 알 수 있습니다."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager 업데이트 완료!"
+    "message": "Tab Session Garrison 업데이트 완료!"
   },
   "seeMoreLabel": {
     "message": "더보기"
@@ -750,7 +750,7 @@
     "message": "후원을 통해 응원해주세요"
   },
   "donationCaptionLabel": {
-    "message": "Tab Session Manager을 사용해주셔서 감사합니다.<br>보내주신 응원은 저희가 계속 만들어나갈 수 있는 큰 힘이 되어줍니다.<br>Tab Session Manager를 좋아하신다면, 후원을 통한 응원을 고려해주세요."
+    "message": "Tab Session Garrison을 사용해주셔서 감사합니다.<br>보내주신 응원은 저희가 계속 만들어나갈 수 있는 큰 힘이 되어줍니다.<br>Tab Session Garrison를 좋아하신다면, 후원을 통한 응원을 고려해주세요."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift 카드"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "이 페이지는 Tab Session Manager로 열릴 수 없습니다."
+    "message": "이 페이지는 Tab Session Garrison로 열릴 수 없습니다."
   },
   "copyUrlLabel": {
     "message": "URL 복사"

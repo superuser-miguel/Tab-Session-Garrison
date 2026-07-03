@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Zapisz i przywróć stan okien i kart. Obsługuje także automatyczne zapisywanie."
@@ -615,10 +615,10 @@
     "message": "Wyświetl kartę opcji po aktualizacji"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Wyświetl kartę opcji po aktualizacji Tab Session Manager. Możesz szybko poznać zawartość aktualizacji."
+    "message": "Wyświetl kartę opcji po aktualizacji Tab Session Garrison. Możesz szybko poznać zawartość aktualizacji."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager został zaktualizowany!"
+    "message": "Tab Session Garrison został zaktualizowany!"
   },
   "seeMoreLabel": {
     "message": "Zobacz więcej"
@@ -750,7 +750,7 @@
     "message": "Proszę o dotację"
   },
   "donationCaptionLabel": {
-    "message": "Dziękuję za korzystanie z Tab Session Managera.<br>Twoje wsparcie będzie wielką zachętą do dalszego rozwijania dodatku.<br>Jeśli podoba ci się Tab Session Manager, byłbym bardzo wdzięczny za wszelkie datki."
+    "message": "Dziękuję za korzystanie z Tab Session Garrisona.<br>Twoje wsparcie będzie wielką zachętą do dalszego rozwijania dodatku.<br>Jeśli podoba ci się Tab Session Garrison, byłbym bardzo wdzięczny za wszelkie datki."
   },
   "amazonTitleLabel": {
     "message": "eKarty podarunkowe amazon.co.jp"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/pl/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Ta strona nie może zostać otwarta przez Tab Session Managera."
+    "message": "Ta strona nie może zostać otwarta przez Tab Session Garrisona."
   },
   "copyUrlLabel": {
     "message": "Kopiuj URL"

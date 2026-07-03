@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Tab Session Manager"
+    "message": "Tab Session Garrison"
   },
   "extDescription": {
     "message": "Sla de status van vensters en tabbladen op en herstel ze. Het ondersteunt ook automatisch opslaan."
@@ -615,10 +615,10 @@
     "message": "Display option page when updating"
   },
   "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Display the options page when Tab Session Manager is updated. You can know the update contents quickly."
+    "message": "Display the options page when Tab Session Garrison is updated. You can know the update contents quickly."
   },
   "NotificationOnUpdateLabel": {
-    "message": "Tab Session Manager has been updated!"
+    "message": "Tab Session Garrison has been updated!"
   },
   "seeMoreLabel": {
     "message": "See more"
@@ -750,7 +750,7 @@
     "message": "Doe alstublieft een donatie"
   },
   "donationCaptionLabel": {
-    "message": "Bedankt voor het gebruik van Tab Session Manager.<br>Uw steun zal een grote aanmoediging zijn, terwijl ik de add-on verder ontwikkel.<br>Als u van Tab Session Manager houdt, zou ik blij zijn als u zou kunnen overwegen om te doneren."
+    "message": "Bedankt voor het gebruik van Tab Session Garrison.<br>Uw steun zal een grote aanmoediging zijn, terwijl ik de add-on verder ontwikkel.<br>Als u van Tab Session Garrison houdt, zou ik blij zijn als u zou kunnen overwegen om te doneren."
   },
   "amazonTitleLabel": {
     "message": "amazon.co.jp eGift Kaarten"
@@ -795,7 +795,7 @@
     "message": "https://addons.mozilla.org/en-US/firefox/addon/tab-session-manager/?src=optionpage"
   },
   "replacedPageMessage": {
-    "message": "Deze pagina kan niet worden geopend door Tab Session Manager."
+    "message": "Deze pagina kan niet worden geopend door Tab Session Garrison."
   },
   "copyUrlLabel": {
     "message": "Copy URL"
