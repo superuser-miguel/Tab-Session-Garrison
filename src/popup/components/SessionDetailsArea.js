@@ -125,6 +125,22 @@ export default class SessionDetailsArea extends Component {
             <span className="date">{moment(session.date).format(getSettings("dateFormat"))}</span>
           </div>
 
+          {session.tabGroups && session.tabGroups.length > 0 && (
+            <div className="lineContainer">
+              <div className="tabGroupsIndicator">
+                {session.tabGroups.map((g, i) => (
+                  <span key={i} className="tabGroupChip">
+                    <span
+                      className="chipDot"
+                      style={{ backgroundColor: tabGroupColorHex(g.color) }}
+                    />
+                    <span className="chipLabel">{g.title || g.color}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="lineContainer">
             <span className="windowsInfo">
               {generateWindowsInfo(session.windowsNumber, session.tabsNumber)}
