@@ -38,9 +38,24 @@ export async function setAutoSave(changes, areaName) {
     if (!getSettings("ifAutoSave")) return;
     log.info(logDir, "setAutoSave");
     browser.alarms.create("autoSaveRegular", {
-      periodInMinutes: Number(getSettings("autoSaveInterval"))
+      periodInMinutes: Number(getSettings("autoSaveInterval")) || 15
     });
   }
+}
+
+// Self-heal the periodic autosave alarm. In MV3 the background context is
+// ephemeral and runtime.onStartup can fail to fire after a suspend/restart,
+// leaving the alarm missing and autosave silently stopped (upstream #1624).
+// init() calls this on every background wake. It only creates the alarm when
+// it is absent, so a running alarm's countdown is never reset.
+export async function ensureAutoSaveAlarm() {
+  if (!getSettings("ifAutoSave")) return;
+  const existing = await browser.alarms.get("autoSaveRegular");
+  if (existing) return;
+  log.info(logDir, "ensureAutoSaveAlarm() recreating missing alarm");
+  browser.alarms.create("autoSaveRegular", {
+    periodInMinutes: Number(getSettings("autoSaveInterval")) || 15
+  });
 }
 
 function isChangeAutoSaveSettings(changes, areaName) {
