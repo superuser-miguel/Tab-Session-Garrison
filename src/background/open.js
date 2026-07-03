@@ -217,7 +217,8 @@ async function createTabs(
 
   if (isEnabledTabGroups) {
     await Promise.all(openedTabs);
-    createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
+    if (groupAsOne) createSingleGroup(currentWindow.id, sortedTabs, session);
+    else createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
   }
 
   if (isEnabledWindowTitle) {
