@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import browser from "webextension-polyfill";
 import DeleteIcon from "../icons/delete.svg";
+import NewWindowIcon from "../icons/newWindow.svg";
 import "../styles/SelectionSummary.scss";
 
 export default class SelectionSummary extends Component {
   render() {
-    const { count, removeSelectedSessions, clearSelection } = this.props;
+    const { count, openSelectedSessions, removeSelectedSessions, clearSelection } = this.props;
     const countLabel = browser.i18n
       .getMessage("selectedSessionsCountLabel", [count.toString()])
       .replace(/^$/, `${count} sessions selected`);
@@ -15,6 +16,10 @@ export default class SelectionSummary extends Component {
         <div className="summaryInner">
           <p className="count">{countLabel}</p>
           <div className="buttons">
+            <button type="button" className="openSelected" onClick={openSelectedSessions}>
+              <NewWindowIcon />
+              <span>{browser.i18n.getMessage("openSelectedLabel").replace(/^$/, "Open all")}</span>
+            </button>
             <button type="button" className="removeSelected" onClick={removeSelectedSessions}>
               <DeleteIcon />
               <span>{browser.i18n.getMessage("remove").replace(/^$/, "Delete")}</span>
