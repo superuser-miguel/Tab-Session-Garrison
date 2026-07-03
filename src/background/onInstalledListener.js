@@ -6,6 +6,7 @@ import { init } from "./background";
 import updateOldSessions from "./updateOldSessions";
 import { setSessionStartTime } from "./save";
 import { setAutoSave } from "./autoSave";
+import { scheduleBackupAlarm } from "./backup";
 
 const logDir = "background/onInstalledListener";
 
