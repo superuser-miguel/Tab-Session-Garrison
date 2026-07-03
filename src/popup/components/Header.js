@@ -50,10 +50,6 @@ const openSessionListInTab = () => {
 export default props => {
   const { openModal, syncStatus, needsSync, undoStatus } = props;
 
-  const handleHeartClick = () => {
-    openModal(browser.i18n.getMessage("donationLabel"), <DonationMessage />);
-  };
-
   const handleSyncClick = async () => {
     await browser.runtime.sendMessage({
       message: "syncCloud"
