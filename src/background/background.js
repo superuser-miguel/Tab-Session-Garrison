@@ -2,6 +2,7 @@ import browser from "webextension-polyfill";
 import log from "loglevel";
 import {
   setAutoSave,
+  ensureAutoSaveAlarm,
   handleTabUpdated,
   handleTabRemoved,
   autoSaveWhenWindowClose,
