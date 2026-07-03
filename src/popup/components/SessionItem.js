@@ -83,6 +83,20 @@ export default class Session extends Component {
             <span className="windowsInfo">
               {generateWindowsInfo(session.windowsNumber, session.tabsNumber)}
             </span>
+            {session.tabGroups && session.tabGroups.length > 0 && (
+              <span
+                className="groupDots"
+                title={session.tabGroups.map(g => g.title || g.color).join(", ")}
+              >
+                {session.tabGroups.map((g, i) => (
+                  <span
+                    key={i}
+                    className="groupDot"
+                    style={{ backgroundColor: tabGroupColorHex(g.color) }}
+                  />
+                ))}
+              </span>
+            )}
             <span className="date">{moment(session.date).format(getSettings("dateFormat"))}</span>
           </div>
         </button>
