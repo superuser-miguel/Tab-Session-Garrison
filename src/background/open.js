@@ -158,6 +158,17 @@ const createTabGroups = async (windowId, tabs, tabGroupsInfo) => {
   }
 };
 
+// Put every restored tab from this window into ONE new tab group named after
+// the session, flattening any groups the session already had. Used by the
+// "Add to Current Window as Group" menu action.
+const createSingleGroup = async (windowId, tabs, session) => {
+  const tabIds = tabs.map(tab => tabList[tab.id]).filter(id => id != null);
+  if (tabIds.length === 0) return;
+  const groupId = await browser.tabs.group({ createProperties: { windowId }, tabIds });
+  const color = session?.tabGroups?.[0]?.color || "blue";
+  await updateTabGroups(groupId, { title: session.name || "", color, collapsed: false });
+};
+
 const setWindowTitle = (session, windowId, currentWindow) => {
   const windowTitle = session?.windowsInfo?.[windowId]?.title || "";
   const activeTabTitle = Object.values(session.windows[windowId]).find(
