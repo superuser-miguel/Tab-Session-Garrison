@@ -33,7 +33,6 @@ import SaveArea from "./SaveArea";
 import Menu from "./Menu";
 import Modal from "./Modal";
 import Error from "./Error";
-import DonationMessage from "./DonationMessage";
 import "../styles/PopupPage.scss";
 import { makeSearchInfo } from "../../common/makeSearchInfo";
 
