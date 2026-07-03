@@ -213,6 +213,7 @@ const onChangeStorageListener = async (changes, areaName) => {
   setAutoSave(changes, areaName);
   updateLogLevel();
   resetLastBackupTime(changes);
+  handleBackupSettingsChange(changes);
 };
 
 const onAlarmListener = async alarmInfo => {
