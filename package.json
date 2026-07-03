@@ -9,6 +9,7 @@
     "browser-image-compression": "^1.0.14",
     "browser-info": "^1.2.0",
     "clone": "^2.1.2",
+    "fflate": "^0.8.3",
     "lodash": "^4.17.21",
     "loglevel": "^1.6.7",
     "moment": "^2.29.4",
@@ -42,9 +43,9 @@
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^1.6.0",
+    "prettier": "^3.0.0",
     "sass": "^1.86.0",
     "sass-loader": "^14.2.1",
-    "prettier": "^3.0.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^4.8.0",
     "zip-webpack-plugin": "^4.0.1"
