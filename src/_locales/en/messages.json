@@ -398,6 +398,18 @@
   "ifBackupCaptionLabel": {
     "message": "When browser starts up, create a backup file of sessions and save it in the download folder."
   },
+  "backupCompleteLabel": {
+    "message": "Complete snapshot (recommended)"
+  },
+  "backupCompleteCaptionLabel": {
+    "message": "Periodically save a full, compressed (.zip) snapshot of every session into a <b>complete</b> subfolder. Kept indefinitely for disaster recovery — old snapshots are never deleted."
+  },
+  "backupIntervalLabel": {
+    "message": "Backup interval (minutes)"
+  },
+  "backupIntervalCaptionLabel": {
+    "message": "How often backups run while the browser is open. A backup also runs shortly after startup."
+  },
   "individualBackupLabel": {
     "message": "Individual backup"
   },
