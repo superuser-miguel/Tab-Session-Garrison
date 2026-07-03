@@ -31,7 +31,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 | Ctrl/Cmd + A | Select all visible sessions (respects filter/search) |
 | Delete / Backspace | Delete the selection (confirms when more than one) |
 | Esc | Collapse back to a single selection |
-| Enter / Shift + Enter | Restore the selected session |
+| Enter / Shift + Enter | Restore the selection — one session directly, or several each in their own new window (confirms first) |
 
 ---
 
