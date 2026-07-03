@@ -58,6 +58,7 @@ export const init = async () => {
   updateLogLevel();
   log.info(logDir, "init()");
   await Sessions.init();
+  await ensureAutoSaveAlarm();
   IsInit = true;
 };
 
