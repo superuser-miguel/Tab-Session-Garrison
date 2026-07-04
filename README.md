@@ -2,7 +2,7 @@
 
 **Keyboard-first session management for Firefox.** Save and restore windows and tabs — with fast multi-select, full keyboard navigation, and tab-group awareness for wrangling large numbers of saved sessions.
 
-![Tab Session Garrison popup](docs/screenshots/popup.png)
+![Tab Session Garrison — session list with multi-select](docs/screenshots/multi-select-1.png)
 
 > _Using the original Tab Session Manager icon for now — its own logo is on the roadmap._
 
