@@ -44,6 +44,22 @@ export const handleSaveTabGroupsChange = async (id, checked) => {
   setSettings(id, checked);
 };
 
+// Return only the tab groups actually referenced by a saved tab in `windows`.
+// Masks phantom groups at read/display time — e.g. leftovers in older
+// "Window closed" sessions saved before the window-prune fix — WITHOUT touching
+// stored data. If windows aren't available (not yet loaded), returns as-is.
+export const referencedTabGroups = (tabGroups, windows) => {
+  if (!Array.isArray(tabGroups) || tabGroups.length === 0) return tabGroups;
+  if (!windows) return tabGroups;
+  const referenced = new Set();
+  for (const win of Object.values(windows)) {
+    for (const tab of Object.values(win || {})) {
+      if (tab && tab.groupId > 0) referenced.add(tab.groupId);
+    }
+  }
+  return tabGroups.filter(g => referenced.has(g.id));
+};
+
 // Firefox/Chrome tab-group color names → CSS hex, for rendering group indicators
 // in the session list and detail pane.
 export const tabGroupColorHex = name => {
