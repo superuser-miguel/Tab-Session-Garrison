@@ -137,6 +137,15 @@ export const autoSaveWhenWindowClose = async removedWindowId => {
       delete session.windowsInfo[windowId];
     }
   }
+  // The temp session holds tab groups from every window; drop the ones that
+  // belonged to the windows we just removed, or the saved single-window
+  // session shows phantom groups from other windows.
+  if (session.tabGroups) {
+    session.tabGroups = session.tabGroups.filter(
+      group => String(group.windowId) === String(removedWindowId)
+    );
+    if (session.tabGroups.length === 0) delete session.tabGroups;
+  }
   const removedWindow = session.windows[removedWindowId];
   if (removedWindow == undefined) return;
 
