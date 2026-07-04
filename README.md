@@ -35,6 +35,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 ### Reliability & polish
 
 - **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
+- **Colour-coded auto-saves** — the three automatic save types are now distinct at a glance: **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power) — each with its own icon and tint
 - **Cleaner, consistent UI** — rounded pill tags and group chips, theme-aware colors
 
 ### Keyboard & selection reference
