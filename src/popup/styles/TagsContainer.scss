@@ -24,10 +24,34 @@
       margin-right: 5px;
       overflow: hidden;
 
+      &.tagRegular {
+        color: var(--tag-regular);
+        background-color: var(--tag-regular-bg);
+        .autoSaveIcon {
+          fill: var(--tag-regular);
+        }
+      }
+      &.tagWinClose {
+        color: var(--tag-winclose);
+        background-color: var(--tag-winclose-bg);
+        .winCloseIcon {
+          fill: var(--tag-winclose);
+        }
+      }
+      &.tagBrowserExit {
+        color: var(--tag-browserexit);
+        background-color: var(--tag-browserexit-bg);
+        .browserExitIcon {
+          fill: var(--tag-browserexit);
+        }
+      }
+
       .tagIcon,
       .autoSaveIcon,
       .startupIcon,
-      .trackingIcon {
+      .trackingIcon,
+      .winCloseIcon,
+      .browserExitIcon {
         width: 11px;
         margin-right: 3px;
         fill: var(--sub-text);
@@ -35,6 +59,10 @@
       }
       .autoSaveIcon {
         width: 16px;
+      }
+      .winCloseIcon,
+      .browserExitIcon {
+        width: 13px;
       }
       .startupIcon {
         width: 14px;
