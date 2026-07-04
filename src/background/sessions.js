@@ -189,6 +189,12 @@ export default {
           }
         }
 
+        // Mask phantom tab groups (unreferenced by any saved tab) at read time,
+        // so the list-row group dots stay correct on older sessions too.
+        if (session.tabGroups) {
+          session.tabGroups = referencedTabGroups(session.tabGroups, cursor.value.windows);
+        }
+
         sessions.push(session);
         if (sessions.length === count) {
           sendResponse(sessions, false);
