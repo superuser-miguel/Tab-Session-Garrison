@@ -73,7 +73,7 @@ export default class Session extends Component {
           </span>
           <ul className="tagsContainer">
             {session.tag.map((tag, index) => (
-              <li className="tag" key={index}>
+              <li className={`tag ${generateTagClass(tag)}`} key={index}>
                 {generateTagIcon(tag)}
                 <span>{generateTagLabel(tag)}</span>
               </li>
