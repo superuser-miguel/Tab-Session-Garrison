@@ -4,7 +4,7 @@ import browser from "webextension-polyfill";
 import moment from "moment";
 import { getSettings } from "src/settings/settings";
 import { sendOpenMessage } from "../actions/controlSessions";
-import { tabGroupColorHex, referencedTabGroups } from "../../common/tabGroups";
+import { tabGroupColorHex, referencedTabGroups } from "../../common/tabGroupUtils";
 import generateWindowsInfo from "../actions/generateWindowsInfo";
 import NameContainer from "./NameContainer";
 import TagsContainer from "./TagsContainer";

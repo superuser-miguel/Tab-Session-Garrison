@@ -4,7 +4,7 @@ import Highlighter from "react-highlight-words";
 import { getSettings } from "src/settings/settings";
 import { sendOpenMessage } from "../actions/controlSessions";
 import { generateTagLabel, generateTagIcon } from "../actions/generateTagLabel";
-import { tabGroupColorHex } from "../../common/tabGroups";
+import { tabGroupColorHex } from "../../common/tabGroupUtils";
 import generateWindowsInfo from "../actions/generateWindowsInfo";
 import SessionMenuItems from "./SessionMenuItems";
 import OpenMenuItems from "./OpenMenuItems";
