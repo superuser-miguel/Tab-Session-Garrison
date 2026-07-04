@@ -1,5 +1,6 @@
 import Sessions from "./sessions";
 import log from "loglevel";
+import { referencedTabGroups } from "../common/tabGroups";
 
 const logDir = "background/sessions";
 
