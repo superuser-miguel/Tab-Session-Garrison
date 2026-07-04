@@ -122,8 +122,12 @@ export default {
     return new Promise((resolve, reject) => {
       request.onsuccess = () => {
         if (request.result) {
-          log.log(logDir, "=>get()", request.result);
-          resolve(request.result);
+          const result = request.result;
+          if (result.tabGroups) {
+            result.tabGroups = referencedTabGroups(result.tabGroups, result.windows);
+          }
+          log.log(logDir, "=>get()", result);
+          resolve(result);
         } else reject(request);
       };
       request.onerror = e => {
