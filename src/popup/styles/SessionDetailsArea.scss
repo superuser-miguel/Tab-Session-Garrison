@@ -57,24 +57,10 @@
 
     .tabGroupsIndicator {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      flex-wrap: wrap;
+      gap: 6px;
       width: 100%;
       padding: 2px 0;
-
-      .tabGroupsWindowRow {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .windowLabel {
-        font-size: 10px;
-        color: var(--sub-text);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
 
       .tabGroupChip {
         display: inline-flex;
@@ -98,6 +84,12 @@
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+        }
+
+        .chipWin {
+          color: var(--sub-text);
+          font-size: 10px;
+          flex-shrink: 0;
         }
       }
     }
