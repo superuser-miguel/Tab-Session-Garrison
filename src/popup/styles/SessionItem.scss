@@ -68,13 +68,19 @@
         .tagIcon,
         .autoSaveIcon,
         .startupIcon,
-        .trackingIcon {
+        .trackingIcon,
+        .winCloseIcon,
+        .browserExitIcon {
           width: 11px;
           margin-right: 3px;
           fill: var(--sub-text);
         }
         .autoSaveIcon {
           width: 16px;
+        }
+        .winCloseIcon,
+        .browserExitIcon {
+          width: 13px;
         }
         .startupIcon {
           width: 14px;
