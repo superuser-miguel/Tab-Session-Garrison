@@ -42,6 +42,14 @@ html {
     --success: #058b00;
     --info: #0a84ff;
 
+    // Per-type colours for the auto-save tag pills
+    --tag-regular: #2f66e0;
+    --tag-regular-bg: #e7eefc;
+    --tag-winclose: #b96a12;
+    --tag-winclose-bg: #f8eddd;
+    --tag-browserexit: #7047d6;
+    --tag-browserexit-bg: #eee7fb;
+
     &[data-theme="dark"] {
       --main-text: #e6e6e6;
       --sub-text: #aaaaaa;
