@@ -73,6 +73,55 @@ export default class SessionDetailsArea extends Component {
     );
   };
 
+  // Tab-group chips, bucketed by the window each group belongs to. Since
+  // "Regularly" saves every open window, a session can carry groups from
+  // several windows; labeling them by window makes that clear instead of a
+  // flat row that looks like phantom extras.
+  renderTabGroups(session) {
+    const groups = session.tabGroups || [];
+    if (groups.length === 0) return null;
+
+    const windowOrder = Object.keys(session.windows || {});
+    const isMultiWindow = windowOrder.length > 1;
+
+    const buckets = [];
+    const seen = new Set();
+    windowOrder.forEach((wid, idx) => {
+      const wGroups = groups.filter(g => String(g.windowId) === String(wid));
+      if (wGroups.length) {
+        buckets.push({ ordinal: idx + 1, groups: wGroups });
+        seen.add(String(wid));
+      }
+    });
+    const orphan = groups.filter(g => !seen.has(String(g.windowId)));
+    if (orphan.length) buckets.push({ ordinal: null, groups: orphan });
+
+    const windowWord = browser.i18n.getMessage("windowLabel").replace(/^$/, "Window");
+
+    return (
+      <div className="lineContainer">
+        <div className="tabGroupsIndicator">
+          {buckets.map((b, bi) => (
+            <div key={bi} className="tabGroupsWindowRow">
+              {isMultiWindow && b.ordinal && (
+                <span className="windowLabel">{`${windowWord} ${b.ordinal}`}</span>
+              )}
+              {b.groups.map((g, i) => (
+                <span key={i} className="tabGroupChip">
+                  <span
+                    className="chipDot"
+                    style={{ backgroundColor: tabGroupColorHex(g.color) }}
+                  />
+                  <span className="chipLabel">{g.title || g.color}</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const {
       session,
