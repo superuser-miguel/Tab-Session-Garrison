@@ -78,8 +78,8 @@ export default class SessionDetailsArea extends Component {
   // several windows; labeling them by window makes that clear instead of a
   // flat row that looks like phantom extras.
   renderTabGroups(session) {
-    const groups = session.tabGroups || [];
-    if (groups.length === 0) return null;
+    const groups = referencedTabGroups(session.tabGroups || [], session.windows);
+    if (!groups || groups.length === 0) return null;
 
     const windowOrder = Object.keys(session.windows || {});
     const isMultiWindow = windowOrder.length > 1;
