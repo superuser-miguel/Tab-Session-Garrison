@@ -1,22 +1,41 @@
 # <sub><img src="/src/icons/icon.svg" width="64" height="64"></sub> Tab Session Garrison
 
-**Keyboard-first session management for Firefox.** Save and restore windows and tabs — with fast multi-select and full keyboard navigation for wrangling large numbers of saved sessions.
+**Keyboard-first session management for Firefox.** Save and restore windows and tabs — with fast multi-select, full keyboard navigation, and tab-group awareness for wrangling large numbers of saved sessions.
 
-> _Branding (logo, screenshots) is getting its own refresh — see the roadmap. For now the original Tab Session Manager icon stands in._
+![Tab Session Garrison popup](docs/screenshots/popup.png)
 
-Tab Session Garrison is a personal fork of [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by Sienori, focused on power-user controls: selecting, navigating, and deleting sessions without leaving the keyboard, and clearing out the noise that builds up when you auto-save constantly.
+> _Using the original Tab Session Manager icon for now — its own logo is on the roadmap._
+
+Tab Session Garrison is a personal fork of [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by Sienori, focused on power-user controls: selecting, navigating, restoring, and deleting sessions without leaving the keyboard — and clearing out the noise that builds up when you auto-save constantly.
 
 ---
 
 ## Features
 
-Everything Tab Session Manager does — save and restore the state of windows and tabs, automatic timed saving, tagging, search, import/export — **plus:**
+Everything Tab Session Manager does — save and restore the state of windows and tabs, automatic timed saving, tagging, search, import/export, and native tab-group save/restore — **plus:**
+
+### Selection & bulk actions
 
 - **Multi-select** sessions with Ctrl/Cmd-click, Shift-click ranges, or the keyboard
-- **Full keyboard navigation** of the session list — move, extend, select-all, restore, and delete without touching the mouse
+- **Full keyboard navigation** of the list — move, extend, select-all, restore, and delete without touching the mouse
 - **Bulk delete** with a single **"undo all"** — clear out dozens of stale auto-saves at once, and still get them back if you misclick
 - **Bulk restore** — open every selected session at once, each in its own new window (with a confirm so a stray keypress doesn't flood your screen)
 - An **"N selected" summary** panel — with **Open all** and **Delete** actions — so you always know what a bulk action will hit
+
+![Multi-select and the N-selected panel](docs/screenshots/multi-select.png)
+
+### Tab groups
+
+- **Group indicators** — every session shows its Firefox tab groups at a glance: colored, named chips **grouped by window** in the detail pane, and colored dots on each list row
+- **Add a session to your current window as a tab group** — drop a saved session's tabs into the window you're in, tidied into one named group (and it preserves the session's own groups when it already has them)
+- **Phantom-group masking** — older auto-saves that captured stray groups from other windows are cleaned up at display time, non-destructively
+
+![Tab-group chips and dots](docs/screenshots/tab-groups.png)
+
+### Reliability & polish
+
+- **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
+- **Cleaner, consistent UI** — rounded pill tags and group chips, theme-aware colors
 
 ### Keyboard & selection reference
 
@@ -98,10 +117,10 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
   - **Session** — one file per saved session, updated in place _(next)_
   - **Incremental** — append-only point-in-time history of auto-saves; recent snapshots stay as loose, browsable files and older ones roll up into zips once a date/size threshold is hit _(next)_
   - **Restore-from-backup UI** — browse and restore snapshots without hand-importing files _(after the engine)_
+- **Tab Groups polish** — group save/restore, on-demand grouping, and visual indicators are in; still hardening edge cases (restoring into windows that already have groups, multi-window merges)
 
 **Planned**
 
-- **Firefox Tab Groups** — reliably save and restore native tab groups (title, color, collapsed state, membership)
 - **Firefox Split View** — persist and restore side-by-side split tabs, _if_ the WebExtension API exposes them (under investigation)
 - **UI refresh** — a less utilitarian popup layout, and finishing the popup that follows Firefox's active theme colors
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
@@ -112,7 +131,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 
 ## Credit
 
-Tab Session Garrison stands entirely on [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by **Sienori** (forked at v7.3.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser, actively maintained session manager, install the original and **[support Sienori's work](https://www.patreon.com/sienori)**. This fork just adds keyboard ergonomics on top.
+Tab Session Garrison stands entirely on [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by **Sienori** (forked at v7.3.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser, actively maintained session manager, install the original and **[support Sienori's work](https://www.patreon.com/sienori)**. This fork just adds keyboard ergonomics and tab-group niceties on top.
 
 ## License
 
