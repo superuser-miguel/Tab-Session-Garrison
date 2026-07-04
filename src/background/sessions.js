@@ -158,6 +158,12 @@ export default {
             }
           }
 
+          // Mask phantom tab groups using the full record's windows, even when
+          // the projection omits them.
+          if (session.tabGroups) {
+            session.tabGroups = referencedTabGroups(session.tabGroups, cursor.value.windows);
+          }
+
           sessions.push(session);
           cursor.continue();
         } else {
