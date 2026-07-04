@@ -122,7 +122,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 
 **Planned**
 
-- **Firefox Split View** — persist and restore side-by-side split tabs, _if_ the WebExtension API exposes them (under investigation)
+- **Firefox Split View** — _investigated (Jul 2026):_ Firefox **does** expose split state (each tab carries a `splitViewId`), and Tab Session Garrison already **captures** it when you save. **Restoring** a split isn't possible yet — Firefox has no API to _create_ a split from an extension ([bug 2016928](https://bugzilla.mozilla.org/show_bug.cgi?id=2016928) / [WECG #967](https://github.com/w3c/webextensions/issues/967)). Once that ships, restore drops in with no re-work
 - **UI refresh** — a less utilitarian popup layout, and finishing the popup that follows Firefox's active theme colors
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
 - **Own branding** — logo, icons, and screenshots of its own
