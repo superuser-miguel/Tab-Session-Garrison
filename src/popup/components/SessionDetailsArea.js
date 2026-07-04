@@ -73,50 +73,34 @@ export default class SessionDetailsArea extends Component {
     );
   };
 
-  // Tab-group chips, bucketed by the window each group belongs to. Since
-  // "Regularly" saves every open window, a session can carry groups from
-  // several windows; labeling them by window makes that clear instead of a
-  // flat row that looks like phantom extras.
+  // Tab-group chips as one flat, wrapping row. A session (esp. a "Regularly"
+  // save of every open window) can carry groups from several windows, so on
+  // multi-window sessions each chip gets a small ·<window#> suffix to show
+  // which window it came from without stacking a label per window.
   renderTabGroups(session) {
     const groups = referencedTabGroups(session.tabGroups || [], session.windows);
     if (!groups || groups.length === 0) return null;
 
     const windowOrder = Object.keys(session.windows || {});
     const isMultiWindow = windowOrder.length > 1;
-
-    const buckets = [];
-    const seen = new Set();
-    windowOrder.forEach((wid, idx) => {
-      const wGroups = groups.filter(g => String(g.windowId) === String(wid));
-      if (wGroups.length) {
-        buckets.push({ ordinal: idx + 1, groups: wGroups });
-        seen.add(String(wid));
-      }
-    });
-    const orphan = groups.filter(g => !seen.has(String(g.windowId)));
-    if (orphan.length) buckets.push({ ordinal: null, groups: orphan });
-
-    const windowWord = browser.i18n.getMessage("windowLabel").replace(/^$/, "Window");
+    const windowOrdinal = wid => {
+      const idx = windowOrder.indexOf(String(wid));
+      return idx >= 0 ? idx + 1 : null;
+    };
 
     return (
       <div className="lineContainer">
         <div className="tabGroupsIndicator">
-          {buckets.map((b, bi) => (
-            <div key={bi} className="tabGroupsWindowRow">
-              {isMultiWindow && b.ordinal && (
-                <span className="windowLabel">{`${windowWord} ${b.ordinal}`}</span>
-              )}
-              {b.groups.map((g, i) => (
-                <span key={i} className="tabGroupChip">
-                  <span
-                    className="chipDot"
-                    style={{ backgroundColor: tabGroupColorHex(g.color) }}
-                  />
-                  <span className="chipLabel">{g.title || g.color}</span>
-                </span>
-              ))}
-            </div>
-          ))}
+          {groups.map((g, i) => {
+            const ord = windowOrdinal(g.windowId);
+            return (
+              <span key={i} className="tabGroupChip">
+                <span className="chipDot" style={{ backgroundColor: tabGroupColorHex(g.color) }} />
+                <span className="chipLabel">{g.title || g.color}</span>
+                {isMultiWindow && ord && <span className="chipWin">·{ord}</span>}
+              </span>
+            );
+          })}
         </div>
       </div>
     );
