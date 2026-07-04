@@ -22,7 +22,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 - **Bulk restore** — open every selected session at once, each in its own new window (with a confirm so a stray keypress doesn't flood your screen)
 - An **"N selected" summary** panel — with **Open all** and **Delete** actions — so you always know what a bulk action will hit
 
-![Multi-select and the N-selected panel](docs/screenshots/multi-select.png)
+![Bulk delete asks for confirmation](docs/screenshots/multi-select-2.png)
 
 ### Tab groups
 
