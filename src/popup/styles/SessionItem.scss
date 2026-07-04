@@ -106,6 +106,28 @@
         margin-bottom: 2px;
         margin-right: 2px;
         overflow: hidden;
+
+        &.tagRegular {
+          color: var(--tag-regular);
+          background-color: var(--tag-regular-bg);
+          svg {
+            fill: var(--tag-regular);
+          }
+        }
+        &.tagWinClose {
+          color: var(--tag-winclose);
+          background-color: var(--tag-winclose-bg);
+          svg {
+            fill: var(--tag-winclose);
+          }
+        }
+        &.tagBrowserExit {
+          color: var(--tag-browserexit);
+          background-color: var(--tag-browserexit-bg);
+          svg {
+            fill: var(--tag-browserexit);
+          }
+        }
       }
     }
   }
