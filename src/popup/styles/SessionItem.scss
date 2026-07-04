@@ -142,7 +142,7 @@
 
   &:not(.isSelected):not(.isMultiSelected):hover {
     background-color: var(--line);
-    .tag {
+    .tag:not(.tagRegular):not(.tagWinClose):not(.tagBrowserExit) {
       background-color: var(--line2);
     }
   }
