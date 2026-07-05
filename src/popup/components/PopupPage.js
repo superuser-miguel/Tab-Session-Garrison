@@ -55,7 +55,7 @@ export default class PopupPage extends Component {
       searchWords: [],
       searchedSessionIds: [],
       isInTab: false,
-      sidebarWidth: 300,
+      sidebarWidth: 330,
       notification: {
         message: "",
         type: "info",
