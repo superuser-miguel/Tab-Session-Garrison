@@ -452,8 +452,8 @@ export default [
             type: "number",
             min: 100,
             max: 800,
-            placeholder: 300,
-            default: 300
+            placeholder: 330,
+            default: 330
           }
         ]
       },
