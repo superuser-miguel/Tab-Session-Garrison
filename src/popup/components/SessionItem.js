@@ -50,6 +50,41 @@ export default class Session extends Component {
     if (shouldFocus) this.sessionItemElement.current.focus();
   }
 
+  // Group dots for the list row: capped at 5, distinct colours first (so you see
+  // variety rather than five identical greys), with a muted +N for the rest. The
+  // full group list stays available on hover via the title tooltip.
+  renderGroupDots(session) {
+    const groups = session.tabGroups;
+    if (!groups || groups.length === 0) return null;
+
+    const MAX = 5;
+    const seen = new Set();
+    const distinctFirst = [];
+    const rest = [];
+    for (const g of groups) {
+      if (seen.has(g.color)) rest.push(g);
+      else {
+        seen.add(g.color);
+        distinctFirst.push(g);
+      }
+    }
+    const shown = distinctFirst.concat(rest).slice(0, MAX);
+    const overflow = groups.length - shown.length;
+
+    return (
+      <span className="groupDots" title={groups.map(g => g.title || g.color).join(", ")}>
+        {shown.map((g, i) => (
+          <span
+            key={i}
+            className="groupDot"
+            style={{ backgroundColor: tabGroupColorHex(g.color) }}
+          />
+        ))}
+        {overflow > 0 && <span className="groupOverflow">+{overflow}</span>}
+      </span>
+    );
+  }
+
   render() {
     const { session, isSelected, isMultiSelected, isTracking, order, searchWords,
       handleSessionSelect } = this.props;
