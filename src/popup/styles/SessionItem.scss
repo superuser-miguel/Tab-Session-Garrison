@@ -33,7 +33,17 @@
         font-size: 11px;
         color: var(--sub-text);
         overflow: hidden;
-        word-break: break-all;
+        white-space: nowrap;
+      }
+
+      // The count can truncate (…) when cramped; the date must never break.
+      .windowsInfo {
+        min-width: 0;
+        text-overflow: ellipsis;
+      }
+
+      .date {
+        flex-shrink: 0;
       }
 
       .groupDots {
