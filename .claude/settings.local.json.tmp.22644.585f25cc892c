@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\(Object.entries\\(require\\('./package.json'\\).scripts\\).map\\(\\([k,v]\\)=>k+': '+v\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(npm -v)",
+      "Bash(timeout 300 npm run build)",
+      "WebFetch(domain:support.mozilla.org)",
+      "Bash(cd /home/definitive_group/.claude/projects/-home-definitive-group-my-progs-Tab-Session-Garrison/memory/)",
+      "Bash(cat MEMORY.md)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\('fflate', require\\('fflate/package.json'\\).version\\)\")",
+      "Bash(git check-ignore *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git push *)",
+      "Bash(node -e \"const m=require\\('./dev/firefox/manifest.json'\\); console.log\\('name field:', m.name\\); console.log\\('version:', m.version\\); console.log\\('gecko id:', m.browser_specific_settings?.gecko?.id\\)\")",
+      "Bash(node -e \"console.log\\(require\\('./dev/firefox/_locales/en/messages.json'\\).extName.message\\)\")",
+      "Bash(timeout 300000 npx webpack --config webpack.config.dev.js)",
+      "Bash(git branch *)",
+      "WebFetch(domain:github.com)",
+      "Bash(node -e \"const m=require\\('./temp/firefox/manifest.json'\\); console.log\\('version:', m.version\\); console.log\\('id:', m.browser_specific_settings.gecko.id\\); console.log\\('update_url:', m.browser_specific_settings.gecko.update_url\\)\")"
+    ]
+  }
+}
