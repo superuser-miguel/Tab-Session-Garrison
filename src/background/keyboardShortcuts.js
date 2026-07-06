@@ -58,7 +58,7 @@ export const onCommandListener = async command => {
     }
     case "saveCurrentWindow": {
       const name = await getCurrentTabName();
-      saveCurrentSession(name, [], "saveOnlyCurrentWindow");
+      saveCurrentSession(name, ["manual"], "saveOnlyCurrentWindow");
       showDoneBadge();
       break;
     }
