@@ -87,7 +87,7 @@ const onMessageListener = async (request, sender, sendResponse) => {
     case "saveCurrentSession":
       const name = request.name;
       const property = request.property;
-      const afterSession = await saveCurrentSession(name, [], property);
+      const afterSession = await saveCurrentSession(name, ["manual"], property);
       recordChange(null, afterSession);
       return afterSession;
     case "open":
