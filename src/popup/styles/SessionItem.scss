@@ -149,6 +149,13 @@
             fill: var(--tag-browserexit);
           }
         }
+        &.tagManual {
+          color: var(--tag-manual);
+          background-color: var(--tag-manual-bg);
+          svg {
+            fill: var(--tag-manual);
+          }
+        }
       }
     }
   }
