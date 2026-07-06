@@ -5,5 +5,5 @@
   "devDirectory": "dev",
   "distDirectory": "dist",
   "tempDirectory": "temp",
-  "extName": "tab_session_manager"
+  "extName": "tab_session_garrison"
 }
