@@ -35,21 +35,28 @@ export default class TagsContainer extends Component {
     const { sessionId, tags, isTracking } = this.props;
     return (
       <div className="tagsContainer">
-        {tags.map((tag, index) => (
-          <div className={`tag ${generateTagClass(tag)} ${isTracking ? "isTracking" : ""}`} key={index}>
-            {generateTagIcon(tag)}
-            <span>{generateTagLabel(tag)}</span>
-            <button
-              className="removeTagButton"
-              onClick={() => {
-                sendTagRemoveMessage(sessionId, tag);
-              }}
-              title={browser.i18n.getMessage("removeTagLabel")}
-            >
-              <PlusIcon />
-            </button>
-          </div>
-        ))}
+        {tags.map((tag, index) => {
+          // Type tags (manual / auto-save kinds) describe how a session was
+          // saved — they're not user labels, so they aren't removable.
+          const isType = TYPE_TAGS.includes(tag);
+          return (
+            <div className={`tag ${generateTagClass(tag)} ${isTracking ? "isTracking" : ""}`} key={index}>
+              {generateTagIcon(tag)}
+              <span>{generateTagLabel(tag)}</span>
+              {!isType && (
+                <button
+                  className="removeTagButton"
+                  onClick={() => {
+                    sendTagRemoveMessage(sessionId, tag);
+                  }}
+                  title={browser.i18n.getMessage("removeTagLabel")}
+                >
+                  <PlusIcon />
+                </button>
+              )}
+            </div>
+          );
+        })}
         <button className="addTagButton" onClick={this.handleAddTagClick}>
           <TagIcon />
           <span>{browser.i18n.getMessage("addTagLabel")}</span>
