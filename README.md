@@ -53,6 +53,8 @@ Every session is one of four types, shown as a coloured pill:
 
 The three automatic types carry a stored marker, so they're always exact. **Manual Save** is stamped on every save you make from now on. For older sessions saved before this feature — and for anything **imported** or **cloud-restored** that arrived without a type — it's _inferred_ from the absence of an auto-save marker. In practice that inference is accurate: a session you manually saved in Tab Session Manager and imported here still reads as a Manual Save. The type pills are descriptors, not labels, so they can't be removed — but your own custom tags still can.
 
+![The four colour-coded session types in the list](docs/screenshots/manual-save.png)
+
 ### Keyboard & selection reference
 
 | Input | Action |
