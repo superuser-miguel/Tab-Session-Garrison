@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import browser from "webextension-polyfill";
 import { sendTagRemoveMessage, sendTagAddMessage } from "../actions/controlSessions";
-import { generateTagLabel, generateTagIcon, generateTagClass } from "../actions/generateTagLabel";
+import {
+  generateTagLabel,
+  generateTagIcon,
+  generateTagClass,
+  TYPE_TAGS
+} from "../actions/generateTagLabel";
 import TagInputModalContent from "./TagInputModalContent";
 import PlusIcon from "../icons/plus.svg";
 import TagIcon from "../icons/tag.svg";
