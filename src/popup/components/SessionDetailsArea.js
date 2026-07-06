@@ -150,7 +150,7 @@ export default class SessionDetailsArea extends Component {
           <div className="lineContainer">
             <TagsContainer
               sessionId={session.id}
-              tags={session.tag}
+              tags={getDisplayTags(session)}
               tagList={tagList}
               isTracking={isTracking}
               openModal={openModal}
