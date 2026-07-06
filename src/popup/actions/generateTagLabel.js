@@ -78,6 +78,8 @@ export const generateTagClass = tag => {
       return "tagWinClose";
     case "browserExit":
       return "tagBrowserExit";
+    case "manual":
+      return "tagManual";
     default:
       return "";
   }
