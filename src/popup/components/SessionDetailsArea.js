@@ -5,6 +5,7 @@ import moment from "moment";
 import { getSettings } from "src/settings/settings";
 import { sendOpenMessage } from "../actions/controlSessions";
 import { tabGroupColorHex, referencedTabGroups } from "../../common/tabGroupUtils";
+import { getDisplayTags } from "../actions/generateTagLabel";
 import generateWindowsInfo from "../actions/generateWindowsInfo";
 import NameContainer from "./NameContainer";
 import TagsContainer from "./TagsContainer";
