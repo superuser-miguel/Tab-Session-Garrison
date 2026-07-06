@@ -92,17 +92,20 @@ This is a **personal fork**, built and used on **Firefox (Linux)**. A few things
 
 Temporary add-ons unload when Firefox restarts.
 
-### Keep it (permanent)
+### Keep it (permanent, auto-updating)
 
-Firefox won't permanently install an unsigned extension, so sign it through Mozilla as an **unlisted** (self-distributed) add-on — automated, free, and it keeps your normal Firefox:
+Firefox won't permanently install an unsigned extension, so it's distributed as an **unlisted** (self-signed) add-on — signed through Mozilla but **never published or listed**, and it keeps your normal Firefox. Once installed, Firefox **auto-updates** it by polling [`updates.json`](updates.json) in this repo, so you only install by hand once:
 
 ```bash
 npm install -g web-ext
-cd dev/firefox
-web-ext sign --channel=unlisted --api-key="user:XXXX:YY" --api-secret="ZZZZ"
+npm run build
+web-ext sign --source-dir temp/firefox --channel unlisted \
+  --api-key "user:XXXX:YY" --api-secret "ZZZZ"
 ```
 
-Then install the resulting `.xpi` via `about:addons` → ⚙ → **Install Add-on From File**. (API keys come from AMO → Developer Hub → *Manage API Keys*.)
+Install the resulting signed `.xpi` via `about:addons` → ⚙ → **Install Add-on From File** — after that, new versions arrive automatically. (API keys come from AMO → Developer Hub → *Manage API Keys*.)
+
+The full cut-a-release procedure — version bump, signing, GitHub Release, and updating the auto-update manifest — lives in **[RELEASING.md](RELEASING.md)**.
 
 ---
 
