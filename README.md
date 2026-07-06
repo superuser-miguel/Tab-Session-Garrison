@@ -125,6 +125,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 **Planned**
 
 - **Firefox Split View** — _investigated (Jul 2026):_ Firefox **does** expose split state (each tab carries a `splitViewId`), and Tab Session Garrison already **captures** it when you save. **Restoring** a split isn't possible yet — Firefox has no API to _create_ a split from an extension ([bug 2016928](https://bugzilla.mozilla.org/show_bug.cgi?id=2016928) / [WECG #967](https://github.com/w3c/webextensions/issues/967)). Once that ships, restore drops in with no re-work
+- **Fast list loading** — the popup currently deserializes every full session record (favicons and all) just to paint the list, so a large profile is slow to open. Rebuild the load path to be genuinely fast on thousands of sessions — a lightweight index the list reads from, with heavy records fetched only on selection, plus lazy/off-thread loading where it helps
 - **Trash can** — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes; restore or empty it on your terms
 - **UI refresh** — a less utilitarian popup layout, and finishing the popup that follows Firefox's active theme colors
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
