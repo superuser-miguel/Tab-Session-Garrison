@@ -57,6 +57,8 @@ export const generateTagIcon = tag => {
       return <WindowCloseIcon className="winCloseIcon" />;
     case "browserExit":
       return <BrowserExitIcon className="browserExitIcon" />;
+    case "manual":
+      return <ManualSaveIcon className="manualSaveIcon" />;
     case "_startup":
       return <StartupIcon className="startupIcon" />;
     case "_tracking":
