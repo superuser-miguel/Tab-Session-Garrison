@@ -87,7 +87,8 @@
         .startupIcon,
         .trackingIcon,
         .winCloseIcon,
-        .browserExitIcon {
+        .browserExitIcon,
+        .manualSaveIcon {
           width: 11px;
           margin-right: 3px;
           fill: var(--sub-text);
@@ -98,6 +99,9 @@
         .winCloseIcon,
         .browserExitIcon {
           width: 13px;
+        }
+        .manualSaveIcon {
+          width: 11px;
         }
         .startupIcon {
           width: 14px;
