@@ -37,8 +37,21 @@ Everything Tab Session Manager does — save and restore the state of windows an
 ### Reliability & polish
 
 - **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
-- **Colour-coded auto-saves** — the three automatic save types are now distinct at a glance: **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power) — each with its own icon and tint
+- **Session types at a glance** — every session shows how it was saved, each with its own icon and tint: **Manual Save** (green bookmark), **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power). The saves you deliberately keep finally stand out from the auto-save noise (see [How a session gets its type](#how-a-session-gets-its-type))
 - **Cleaner, consistent UI** — rounded pill tags and group chips, theme-aware colors
+
+### How a session gets its type
+
+Every session is one of four types, shown as a coloured pill:
+
+| Pill | Meaning |
+|---|---|
+| 📑 **Manual Save** (green) | You saved it yourself — the **Save** button or the keyboard shortcut |
+| **Regularly** (blue) | The timed auto-save |
+| **Window closed** (amber) | Captured automatically when you closed a window |
+| **Browser exited** (red) | Captured automatically when Firefox last quit |
+
+The three automatic types carry a stored marker, so they're always exact. **Manual Save** is stamped on every save you make from now on. For older sessions saved before this feature — and for anything **imported** or **cloud-restored** that arrived without a type — it's _inferred_ from the absence of an auto-save marker. In practice that inference is accurate: a session you manually saved in Tab Session Manager and imported here still reads as a Manual Save. The type pills are descriptors, not labels, so they can't be removed — but your own custom tags still can.
 
 ### Keyboard & selection reference
 
