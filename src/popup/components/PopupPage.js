@@ -191,7 +191,7 @@ export default class PopupPage extends Component {
   };
 
   updateTagList = sessions => {
-    const reservedTags = ["regular", "winClose", "browserExit", "temp", "_startup", "_tracking"];
+    const reservedTags = ["manual", "regular", "winClose", "browserExit", "temp", "_startup", "_tracking"];
     const allTags = sessions
       .map(session => session.tag)
       .flat()
