@@ -170,7 +170,7 @@
 
   &:not(.isSelected):not(.isMultiSelected):hover {
     background-color: var(--line);
-    .tag:not(.tagRegular):not(.tagWinClose):not(.tagBrowserExit) {
+    .tag:not(.tagRegular):not(.tagWinClose):not(.tagBrowserExit):not(.tagManual) {
       background-color: var(--line2);
     }
   }
