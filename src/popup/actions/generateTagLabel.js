@@ -4,8 +4,31 @@ import TagIcon from "../icons/tag.svg";
 import AutoSaveIcon from "../icons/update.svg";
 import WindowCloseIcon from "../icons/windowClose.svg";
 import BrowserExitIcon from "../icons/browserExit.svg";
+import ManualSaveIcon from "../icons/bookmark.svg";
 import StartupIcon from "../icons/star.svg";
 import TrackingIcon from "../icons/circle.svg";
+
+// The stored discriminators that mark how a session was saved. `manual` is
+// stamped on user-initiated saves; the three auto types are pushed by autoSave.
+// These are types, not user labels — they render without a remove button.
+export const TYPE_TAGS = ["manual", "regular", "winClose", "browserExit"];
+const AUTO_SAVE_TAGS = ["regular", "winClose", "browserExit"];
+
+// A manual save is anything the user kept themselves — i.e. it carries none of
+// the auto-save discriminators (nor the hidden temp buffer tag).
+export const isManualSave = session =>
+  Array.isArray(session.tag) &&
+  !session.tag.some(t => AUTO_SAVE_TAGS.includes(t) || t === "temp");
+
+// Tags to render for a session. New manual saves already carry a stored `manual`
+// tag; legacy bare saves (and pre-stamp imports) get a synthetic `manual` chip
+// prepended at display time so the whole library reads consistently.
+export const getDisplayTags = session => {
+  const tags = session.tag || [];
+  if (tags.includes("manual")) return tags;
+  if (isManualSave(session)) return ["manual", ...tags];
+  return tags;
+};
 
 export const generateTagLabel = tag => {
   switch (tag) {
@@ -15,6 +38,8 @@ export const generateTagLabel = tag => {
       return browser.i18n.getMessage("winCloseSessionNameShort");
     case "browserExit":
       return browser.i18n.getMessage("browserExitSessionNameShort");
+    case "manual":
+      return "Manual Save";
     case "_startup":
       return browser.i18n.getMessage("startupLabel");
     case "_tracking":
