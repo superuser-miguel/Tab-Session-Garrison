@@ -2,4 +2,6 @@ node_modules/
 dist
 dev
 temp
+web-ext-artifacts
+*.xpi
 src/credentials.js*~
