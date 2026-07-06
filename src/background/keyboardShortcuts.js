@@ -52,7 +52,7 @@ export const onCommandListener = async command => {
   switch (command) {
     case "saveAllWindow": {
       const name = await getCurrentTabName();
-      saveCurrentSession(name, [], "saveAllWindows");
+      saveCurrentSession(name, ["manual"], "saveAllWindows");
       showDoneBadge();
       break;
     }
