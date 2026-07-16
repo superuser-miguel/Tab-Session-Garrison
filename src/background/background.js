@@ -44,7 +44,7 @@ import { signInGoogle, signOutGoogle } from "./cloudAuth";
 import { syncCloud, syncCloudAuto, getSyncStatus } from "./cloudSync";
 import { updateLogLevel, overWriteLogLevel } from "../common/log";
 import { getsearchInfo } from "./search";
-import { recordChange, undo, redo, updateUndoStatus } from "./undo";
+import { recordChange, recordChanges, undo, redo, updateUndoStatus } from "./undo";
 import { compressAllSessions } from "./compressAllSessions";
 import { startTracking, endTrackingByWindowDelete, updateTrackingStatus } from "./track";
 
