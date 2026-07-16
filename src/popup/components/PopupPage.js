@@ -208,6 +208,7 @@ export default class PopupPage extends Component {
       case "saveSession":
       case "updateSession":
       case "deleteSession":
+      case "deleteManySessions":
       case "deleteAll":
         return this.changeSessions(request);
       case "updateSyncStatus":
