@@ -134,7 +134,16 @@ export default class PopupPage extends Component {
     this.firstFilterValue = getSettings("filterValue");
     this.firstSelectedSessionId = getSettings("selectedSessionId");
 
-    const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber", "lastEditedTime", "tabGroups"];
+    const keys = [
+      "id",
+      "name",
+      "date",
+      "tag",
+      "tabsNumber",
+      "windowsNumber",
+      "lastEditedTime",
+      "tabGroups"
+    ];
     this.port = Math.random();
     browser.runtime.onMessage.addListener(this.handleMessage);
     browser.runtime.sendMessage({
@@ -191,7 +200,15 @@ export default class PopupPage extends Component {
   };
 
   updateTagList = sessions => {
-    const reservedTags = ["manual", "regular", "winClose", "browserExit", "temp", "_startup", "_tracking"];
+    const reservedTags = [
+      "manual",
+      "regular",
+      "winClose",
+      "browserExit",
+      "temp",
+      "_startup",
+      "_tracking"
+    ];
     const allTags = sessions
       .map(session => session.tag)
       .flat()
@@ -402,13 +419,9 @@ export default class PopupPage extends Component {
   // the list renders them — used for Shift range-select and Ctrl+A.
   getOrderedSessionIds = () => {
     const { sessions, sortValue, filterValue, searchWords, searchedSessionIds } = this.state;
-    return getSortedSessions(
-      sessions,
-      sortValue,
-      filterValue,
-      searchWords,
-      searchedSessionIds
-    ).map(s => s.id);
+    return getSortedSessions(sessions, sortValue, filterValue, searchWords, searchedSessionIds).map(
+      s => s.id
+    );
   };
 
   // modifiers: { ctrl, shift }. Plain select replaces the selection and moves
