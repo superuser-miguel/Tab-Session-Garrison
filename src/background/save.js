@@ -104,7 +104,7 @@ export async function loadCurrentSession(name, tag, property) {
   });
 }
 
-async function sendMessage(message, options = {}) {
+export async function sendMessage(message, options = {}) {
   await browser.runtime
     .sendMessage({
       message: message,
