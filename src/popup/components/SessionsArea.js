@@ -45,6 +45,10 @@ export const getSortedSessions = (
   searchWords,
   searchedSessionIds
 ) => {
+  // Set for O(1) membership instead of Array.includes per session (the filter
+  // below would otherwise be O(sessions * matches) on every keystroke).
+  const searchedIdSet = new Set(searchedSessionIds);
+
   let sortedSessions = sessions.map(session => ({
     id: session.id,
     date: session.date,
@@ -55,7 +59,7 @@ export const getSortedSessions = (
   sortedSessions = sortedSessions.filter(
     session =>
       matchesFilter(session.tag, filterValue) &&
-      matchesSearch(searchWords, session.id, searchedSessionIds)
+      matchesSearch(searchWords, session.id, searchedIdSet)
   );
 
   switch (sortValue) {
