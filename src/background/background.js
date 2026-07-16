@@ -100,13 +100,18 @@ const onMessageListener = async (request, sender, sendResponse) => {
       recordChange(beforeSession, null);
       break;
     case "removeMany": {
-      // Delete several sessions in one round-trip. Each delete + undo record is
-      // awaited sequentially so the undo history's read-modify-write never races.
+      // Delete several sessions in one round-trip. Read each record (needed for
+      // undo), delete it with the per-item popup message suppressed, then record
+      // the whole batch in a SINGLE undo-history write and notify the popup once.
+      // The old code re-serialized the favicon-heavy history and re-rendered the
+      // popup once per session — O(n^2) data churn and N re-renders.
+      const befores = [];
       for (const id of request.ids) {
-        const before = await getSessions(id);
-        await removeSession(id, request.isSendResponce);
-        await recordChange(before, null);
+        befores.push(await getSessions(id));
+        await removeSession(id, false);
       }
+      await recordChanges(befores.map(before => ({ before, after: null })));
+      sendMessage("deleteManySessions", { ids: request.ids });
       break;
     }
     case "rename": {
