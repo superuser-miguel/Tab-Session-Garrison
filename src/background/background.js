@@ -29,7 +29,8 @@ import {
   deleteAllSessions,
   updateSession,
   renameSession,
-  setSessionStartTime
+  setSessionStartTime,
+  sendMessage
 } from "./save";
 import getSessions from "./getSessions";
 import { openSession } from "./open";
