@@ -192,7 +192,11 @@ export default class SessionsArea extends Component {
       searchedSessionIds
     );
 
-    const order = sortedSessions.findIndex(sortedSession => sortedSession.id === selectedSessionId);
+    // Precompute id -> display order once, so each row is an O(1) lookup instead
+    // of an O(n) findIndex (which made the whole render O(n^2) on large profiles).
+    const orderById = new Map(sortedSessions.map((sortedSession, index) => [sortedSession.id, index]));
+
+    const order = orderById.get(selectedSessionId) ?? -1;
     const maxOrder = sortedSessions.length - 1;
     this.nextSession = sortedSessions[order < maxOrder ? order + 1 : maxOrder];
     this.prevSession = sortedSessions[order > 0 ? order - 1 : 0];
