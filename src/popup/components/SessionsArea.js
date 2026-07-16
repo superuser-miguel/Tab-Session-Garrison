@@ -229,7 +229,7 @@ export default class SessionsArea extends Component {
                 isMultiSelected={selectedSessionIds.includes(session.id)}
                 isTracking={trackingSessions.includes(session.id)}
                 ref={selectedSessionId === session.id ? this.selectedItemRef : null}
-                order={sortedSessions.findIndex(sortedSession => sortedSession.id === session.id)}
+                order={orderById.get(session.id)}
                 searchWords={searchWords}
                 removeSession={removeSession}
                 handleSessionSelect={this.handleSessionSelect}
