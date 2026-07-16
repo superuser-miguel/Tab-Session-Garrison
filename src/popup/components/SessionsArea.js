@@ -20,9 +20,9 @@ const matchesFilter = (tags, filterValue) => {
   }
 };
 
-const matchesSearch = (searchWords, sessionId, searchedSessionIds) => {
+const matchesSearch = (searchWords, sessionId, searchedIdSet) => {
   if (searchWords.join() === "") return true;
-  return searchedSessionIds.includes(sessionId);
+  return searchedIdSet.has(sessionId);
 };
 
 const newestSort = (a, b) => b.date - a.date;
