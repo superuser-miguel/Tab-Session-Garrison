@@ -233,11 +233,11 @@ export default class SessionsArea extends Component {
         {sessions.map(
           session =>
             matchesFilter(session.tag, filterValue) &&
-            matchesSearch(searchWords, session.id, searchedSessionIds) && (
+            matchesSearch(searchWords, session.id, searchedIdSet) && (
               <SessionItem
                 session={session}
                 isSelected={selectedSessionId === session.id}
-                isMultiSelected={selectedSessionIds.includes(session.id)}
+                isMultiSelected={selectedIdSet.has(session.id)}
                 isTracking={trackingSessions.includes(session.id)}
                 ref={selectedSessionId === session.id ? this.selectedItemRef : null}
                 order={orderById.get(session.id)}
