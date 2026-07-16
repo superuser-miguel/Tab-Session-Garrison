@@ -294,6 +294,14 @@ export default class PopupPage extends Component {
         searchInfo.splice(infoIndex, 1);
         break;
       }
+      case "deleteManySessions": {
+        // One update for a whole bulk delete, instead of a re-render per session.
+        const removedIds = new Set(request.ids);
+        if (removedIds.has(selectedSession.id)) selectedSession = {};
+        sessions = this.state.sessions.filter(session => !removedIds.has(session.id));
+        searchInfo = this.state.searchInfo.filter(info => !removedIds.has(info.id));
+        break;
+      }
       case "deleteAll": {
         const keys = ["id", "name", "date", "tag", "tabsNumber", "windowsNumber", "tabGroups"];
         sessions = await getSessions(null, keys);
