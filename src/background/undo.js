@@ -26,6 +26,25 @@ export const recordChange = async (beforeSession, afterSession) => {
   updateUndoStatus();
 };
 
+// Append several change entries in ONE history read-modify-write. A bulk delete
+// used to call recordChange() per session, rewriting the (favicon-heavy) history
+// each time — O(n^2) in data volume. This keeps one entry per change, so undoMany
+// still replays them individually.
+export const recordChanges = async changesList => {
+  const entries = changesList.filter(
+    change => change.before !== undefined && change.after !== undefined
+  );
+  if (entries.length === 0) return;
+
+  let { changes, currentIndex } = await getHistory();
+  if (currentIndex < changes.length - 1) changes.splice(currentIndex + 1);
+  for (const { before, after } of entries) changes.push({ before, after });
+  currentIndex = changes.length - 1;
+
+  await setHistory(changes, currentIndex);
+  updateUndoStatus();
+};
+
 export const undo = async () => {
   let { changes, currentIndex } = await getHistory();
   if (currentIndex < 0) return;
