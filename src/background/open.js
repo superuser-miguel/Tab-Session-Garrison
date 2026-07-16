@@ -231,8 +231,15 @@ async function createTabs(
     // "As group" preserves the session's original groups; it only wraps tabs
     // into one session-named group when the session had no groups of its own.
     const hasOriginalGroups = sortedTabs.some(tab => tab.groupId > 0);
-    if (groupAsOne && !hasOriginalGroups) createSingleGroup(currentWindow.id, sortedTabs, session);
-    else createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
+    if (groupAsOne && !hasOriginalGroups) {
+      createSingleGroup(currentWindow.id, sortedTabs, session);
+    } else if (groupAsOne || getSettings("saveTabGroupsV2")) {
+      // On a normal restore only regroup when "Save tab groups" is enabled;
+      // with it off, restore tabs flat instead of recreating (and thereby
+      // re-saving) groups the user opted out of — upstream issue #1635. An
+      // explicit "add as group" action still groups regardless of the setting.
+      createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
+    }
   }
 
   if (isEnabledWindowTitle) {
