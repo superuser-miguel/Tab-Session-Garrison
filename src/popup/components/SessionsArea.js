@@ -207,6 +207,11 @@ export default class SessionsArea extends Component {
     this.nextSession = sortedSessions[order < maxOrder ? order + 1 : maxOrder];
     this.prevSession = sortedSessions[order > 0 ? order - 1 : 0];
 
+    // Sets for O(1) per-row membership. Array.includes here made the row map
+    // O(n^2) during an active search or a large multi-selection (e.g. Ctrl+A).
+    const searchedIdSet = new Set(searchedSessionIds);
+    const selectedIdSet = new Set(selectedSessionIds);
+
     const shouldShowNoSessionMessage =
       isInitSessions &&
       sortedSessions.length === 0 &&
