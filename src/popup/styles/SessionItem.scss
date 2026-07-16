@@ -2,6 +2,13 @@
   position: relative;
   background-color: var(--main-bg);
 
+  // Skip layout/paint for rows scrolled out of view on large profiles, while
+  // keeping every row in the DOM (so flexbox `order` sorting, keyboard nav, and
+  // the ref-based scroll-to-selected all still work). `auto` remembers each
+  // row's real height once rendered; the fallback covers not-yet-seen rows.
+  content-visibility: auto;
+  contain-intrinsic-size: auto 52px;
+
   .selectButton {
     border: none;
     border-bottom: 1px solid var(--line);
