@@ -156,7 +156,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 - **Trash can** — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes; restore or empty it on your terms
 - **UI refresh** — a less utilitarian popup layout, and finishing the popup that follows Firefox's active theme colors
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
-- **Own branding** — logo, icons, and screenshots of its own
+- **Own branding** — the logo and icons are now its own (a green session-stack mark); a full visual identity and fresh screenshots are still to come
 - **Chrome / Edge** — possibly, further down the line
 
 ---
