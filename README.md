@@ -37,7 +37,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 - **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
 - **Session types at a glance** — every session shows how it was saved, each with its own icon and tint: **Manual Save** (green bookmark), **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power). The saves you deliberately keep finally stand out from the auto-save noise (see [How a session gets its type](#how-a-session-gets-its-type))
 - **Restore respects your settings** — with **Save tab groups** turned off, restoring a session no longer recreates (and thereby re-saves) the tab groups you opted out of; tabs come back flat ([upstream #1635](https://github.com/sienori/Tab-Session-Manager/issues/1635))
-- **Cleaner, consistent UI** — rounded pill tags and group chips, theme-aware colors
+- **A cohesive visual identity** — its own green session-stack logo and a boxed "card" layout across the popup and options pages, with one consistent green accent, pill buttons, and **dark theme by default**. In Settings, the section you're scrolled to is spotlighted while the rest dims, so a long settings page stops feeling like a wall
 
 ### Fast on large profiles
 
@@ -85,7 +85,7 @@ This is a **personal fork**, built and used on **Firefox (Linux)**. A few things
 
 - **Firefox only, for now.** This fork targets Firefox and nothing else; Chrome/Edge may come later. If you need those today, the [original Tab Session Manager](https://addons.mozilla.org/firefox/addon/tab-session-manager/) is on the Firefox, Chrome, and Edge stores.
 - **Not on the add-on stores.** You install it yourself (below).
-- **Cloud sync is disabled** in local builds — it relies on API keys that aren't part of the source. Local saving, restoring, auto-save, and everything above work normally.
+- **Local-only by design.** No cloud sync, no accounts — the upstream Google Drive sync isn't offered here. Everything lives in your browser, on your machine.
 - **No telemetry.** Sessions are stored by the browser, on your machine.
 
 ---
@@ -154,7 +154,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 - **fzf-style search** — today's search is a plain substring filter over tab titles, shown in sort order with no ranking. Rebuild it as a fuzzy finder in the spirit of [fzf](https://github.com/junegunn/fzf): subsequence matching (`ghb` → GitHub), results **ranked by match quality** (word-boundary/prefix/contiguity bonuses) so the best hit floats to the top, matched characters highlighted so you see *why* a session matched, and **URLs** searched, not just titles. Per-field weighted scoring (name > hostname > tab title), a cheap subsequence prefilter before the expensive scoring pass, and a natural first candidate for off-thread (Web Worker) search-as-you-type — dovetails with **Fast list loading** above
 - **Rename saved windows** — give each window in a saved session its own editable name, right where you'd expect it: the pencil / right-click menu already on every window header in the detail pane (today that menu only offers "add current tab"). Firefox has no reliable window-name API to capture from, so an in-app rename is the robust answer — and it's the natural home for defaulting a window's name to its tab group's name when the window is a single group
 - **Trash can** — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes; restore or empty it on your terms
-- **UI refresh** — a less utilitarian popup layout, finishing the popup that follows Firefox's active theme colors, and a visual revamp of the options pages (Settings / Session / Shortcut / Information). Includes reworking the **Import Sessions** screen so a large import is a **scrollable list** you can **remove individual entries from** before committing — instead of the current all-or-nothing import
+- **UI refresh** — _largely shipped:_ the popup and options pages now share a green "card" system, pill buttons, dark-by-default theming, and a scroll-focus Settings view. Still to come: a fixed "window" frame for the settings focus view, finishing the theme-follows-Firefox popup, and reworking the **Import Sessions** screen so a large import is a **scrollable list** you can **remove individual entries from** before committing (instead of all-or-nothing)
 - **Import a URL list into a tab group** — paste a plain list of URLs and turn it into a saved session (optionally opened as one named tab group), OneTab-style
 - **Save & close (stash)** — a one-gesture "send this window to a session" that saves the current window *and closes its tabs* to clear clutter and free memory — OneTab's signature move — with an optional restore-and-remove mode for a true one-shot stash
 - **Pin & lock sessions** — star a session to keep it at the top, and lock it so it can't be deleted by accident (OneTab star/lock); pairs naturally with the **Trash can**

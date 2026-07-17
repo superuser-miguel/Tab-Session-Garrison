@@ -28,6 +28,12 @@ html {
       flex-grow: 0;
       flex-shrink: 0;
     }
+    // Region 2: inset the detail column so its box sits off the popup edges,
+    // mirroring the sidebar's margins (5px gap to the list, 10px elsewhere).
+    .column:not(.sidebar) {
+      box-sizing: border-box;
+      padding: 10px 10px 10px 5px;
+    }
   }
 
   ::-moz-selection {

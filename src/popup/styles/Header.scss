@@ -1,6 +1,8 @@
 #header {
+  position: relative;
   padding: 10px;
-  background-color: var(--line);
+  // Flat, clean header on the main background.
+  background-color: var(--main-bg);
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
@@ -9,12 +11,34 @@
   -moz-user-select: none;
   -webkit-user-select: none;
 
+  // Thin green accent line, inset ~10px from each edge.
+  &::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--tsg-accent);
+  }
+
   .title {
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--sub-text);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: 10px;
+    // Brand-forward: bigger logo, smaller neutral text.
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--main-text);
     cursor: default;
     flex-shrink: 0;
+
+    .titleLogo {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+    }
   }
 
   .rightButtons {
@@ -28,11 +52,19 @@
       display: flex;
       align-items: center;
       background-color: transparent;
-      border: none;
+      // Boxed to match the popup's card/box language. Uses --sub-text so the
+      // outline stays visible on the flat header (esp. the faded undo/redo).
+      border: 1px solid var(--sub-text);
+      border-radius: 8px;
       cursor: pointer;
       outline: none;
-      padding: 0;
-      margin-left: 10px;
+      padding: 3px 6px;
+      margin-left: 8px;
+      transition: border-color 100ms;
+      &:hover,
+      &:focus {
+        border-color: var(--highlight);
+      }
     }
 
     .separation {

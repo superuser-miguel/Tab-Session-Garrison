@@ -3,6 +3,10 @@
     "tab-session-garrison@superuser-miguel": {
       "updates": [
         {
+          "version": "0.2.0",
+          "update_link": "https://github.com/superuser-miguel/Tab-Session-Garrison/releases/download/v0.2.0/tab_session_garrison-0.2.0.xpi"
+        },
+        {
           "version": "0.1.2",
           "update_link": "https://github.com/superuser-miguel/Tab-Session-Garrison/releases/download/v0.1.2/tab_session_garrison-0.1.2.xpi"
         },

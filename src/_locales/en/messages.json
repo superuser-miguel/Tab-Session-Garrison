@@ -525,7 +525,7 @@
     "message": "Cloud sync"
   },
   "enabledCloudSyncLabel": {
-    "message": "Enable cloud sync (Beta)"
+    "message": "Enable cloud sync (Experimental)"
   },
   "enabledCloudSyncCaptionLabel": {
     "message": "Save sessions to Google Drive™ and sync with other computers."

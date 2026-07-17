@@ -88,7 +88,7 @@ export const applyTheme = async () => {
 
   if (setting !== "firefox") {
     removeOverrides();
-    document.body.dataset.theme = setting || "light";
+    document.body.dataset.theme = setting || "dark";
     return;
   }
 

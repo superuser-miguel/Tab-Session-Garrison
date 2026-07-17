@@ -19,9 +19,10 @@
         background-color: var(--main-bg);
         color: var(--main-text);
         text-overflow: ellipsis;
-        border: var(--button) solid 1px;
-        border-radius: 2px;
-        padding: 3px 20px 3px 5px;
+        // Region 3: match the list-card box language (thin border, 8px radius).
+        border: var(--line) solid 1px;
+        border-radius: 8px;
+        padding: 3px 20px 3px 8px;
         width: 100%;
         height: 30px;
         outline: none;
@@ -29,7 +30,7 @@
 
         &:hover,
         &:focus {
-          border-color: var(--highlight);
+          border-color: var(--tsg-accent);
         }
       }
 
@@ -48,8 +49,8 @@
       }
       &:hover::before,
       &:focus::before {
-        border-bottom: 2px solid var(--highlight);
-        border-right: 2px solid var(--highlight);
+        border-bottom: 2px solid var(--tsg-accent);
+        border-right: 2px solid var(--tsg-accent);
       }
     }
 
@@ -64,16 +65,27 @@
       padding: 0;
     }
     .searchButton {
-      width: 25px;
-      margin-left: 3px;
+      // Region 3: a boxed button matching the select boxes.
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      margin-left: 5px;
       z-index: 1;
+      border: var(--line) solid 1px;
+      border-radius: 8px;
+      transition: border-color 100ms;
       svg {
         height: 14px;
         fill: var(--sub-text);
+        transition: fill 100ms;
+      }
+      &:hover,
+      &:focus {
+        border-color: var(--tsg-accent);
       }
       &:hover svg,
       &:focus svg {
-        fill: var(--highlight);
+        fill: var(--tsg-accent);
       }
     }
   }

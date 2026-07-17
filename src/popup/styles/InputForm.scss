@@ -17,13 +17,13 @@ $transition: 150ms ease;
     min-width: 10px;
     height: calc(100% - 4px);
     border: var(--button) solid 1px;
-    border-radius: 2px 0px 0px 2px;
+    border-radius: 8px 0px 0px 8px;
     margin-right: -1px;
     outline: none;
     transition: border-color $transition;
   }
   input:focus {
-    border-color: var(--highlight);
+    border-color: var(--tsg-accent);
     z-index: 1;
   }
 
@@ -35,7 +35,7 @@ $transition: 150ms ease;
     background-color: var(--main-bg);
     color: var(--main-text);
     border: var(--button) solid 1px;
-    border-radius: 0px 2px 2px 0px;
+    border-radius: 0px 8px 8px 0px;
     height: 100%;
     width: 20px;
     max-width: inherit;
@@ -50,9 +50,9 @@ $transition: 150ms ease;
 
     &:hover,
     &:focus {
-      border-color: var(--highlight);
+      border-color: var(--tsg-accent);
       svg {
-        fill: var(--highlight);
+        fill: var(--tsg-accent);
       }
     }
   }

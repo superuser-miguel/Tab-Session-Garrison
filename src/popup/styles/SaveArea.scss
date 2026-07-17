@@ -13,9 +13,9 @@
       border-right: var(--main-bg) solid 1px;
       &:hover,
       &:focus {
-        border: var(--highlight) solid 1px;
+        border: var(--tsg-accent) solid 1px;
         & + .saveOptionButton {
-          border: var(--highlight) solid 1px;
+          border: var(--tsg-accent) solid 1px;
           border-left: var(--main-bg) solid 0px;
         }
       }
@@ -23,10 +23,11 @@
     .saveOptionButton {
       padding: 0px;
       width: 16px;
+      border-radius: 0px 8px 8px 0px;
       border-left: var(--main-bg) solid 1px;
       &:hover,
       &:focus {
-        border: var(--highlight) solid 1px;
+        border: var(--tsg-accent) solid 1px;
       }
       svg {
         width: 10px;

@@ -1,6 +1,5 @@
 import browser from "webextension-polyfill";
 import browserInfo from "browser-info";
-import SignInButton from "../options/components/SignInButton";
 import CompressAllSessionsForm from "../options/components/CompressAllSessionsForm";
 import { isEnabledTabGroups, handleSaveTabGroupsChange } from "../common/tabGroups";
 
@@ -304,34 +303,6 @@ export default [
     ]
   },
   {
-    category: "cloudSyncLabel",
-    elements: [
-      {
-        id: "enabledCloudSync",
-        title: "enabledCloudSyncLabel",
-        captions: ["enabledCloudSyncCaptionLabel"],
-        type: "extra",
-        extraForm: SignInButton,
-        childElements: [
-          {
-            id: "enabledAutoSync",
-            title: "enabledAutoSyncLabel",
-            captions: ["enabledAutoSyncCaptionLabel"],
-            type: "checkbox",
-            default: false
-          },
-          {
-            id: "includesAutoSaveToSync",
-            title: "includesAutoSaveToSyncLabel",
-            captions: ["includesAutoSaveToSyncCaptionLabel"],
-            type: "checkbox",
-            default: true
-          }
-        ]
-      }
-    ]
-  },
-  {
     category: "popupLabel",
     elements: [
       {
@@ -404,7 +375,7 @@ export default [
         title: "themeLabel",
         captions: ["themeCaptionLabel"],
         type: "select",
-        default: "light",
+        default: "dark",
         options: [
           {
             name: "lightLabel",

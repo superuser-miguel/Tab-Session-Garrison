@@ -5,7 +5,7 @@
   .inputForm {
     height: 30px;
     input {
-      border-radius: 2px;
+      border-radius: 8px;
       padding-left: 25px;
       padding-right: 25px;
       z-index: 0;
@@ -44,7 +44,7 @@
     }
     &:hover svg,
     &:focus svg {
-      fill: var(--highlight);
+      fill: var(--tsg-accent);
     }
   }
 }

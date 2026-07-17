@@ -26,12 +26,6 @@
   opacity: 0.32;
 }
 
-// Scroll "gear-wheel" detents: sections settle onto the focus line instead of
-// sliding continuously past it, so a section (e.g. "Other") isn't skipped.
-.settingsList .categoryContainer {
-  scroll-snap-align: start;
-}
-
 // Shortcuts: give the reset button 20px more breathing room from the right edge.
 .shortcutsList .categoryContainer {
   padding-right: 40px;

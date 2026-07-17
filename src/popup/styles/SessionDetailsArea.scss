@@ -7,9 +7,15 @@
   -moz-user-select: none;
   -webkit-user-select: none;
 
+  // Region 2: the whole detail pane lives in one bordered box.
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
   .sessionHeader {
     border-bottom: 1px solid var(--line);
     padding-bottom: 5px;
+    // Keep the date / Open-Delete / menu button off the new box's right border.
+    padding-right: 8px;
     .lineContainer {
       display: flex;
       justify-content: space-between;

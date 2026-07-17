@@ -61,7 +61,10 @@ export default props => {
 
   return (
     <div id="header">
-      <div className="title">Tab Session Garrison</div>
+      <div className="title">
+        <img className="titleLogo" src="/icons/icon.svg" alt="" />
+        <span>Tab Session Garrison</span>
+      </div>
       <div className="rightButtons">
         {shouldShowCloudSync && <SyncStatus syncStatus={syncStatus} />}
         <button

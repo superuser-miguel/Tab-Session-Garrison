@@ -278,12 +278,13 @@ input[type="button"],
 .button {
   min-width: 100px;
   text-align: center;
-  padding: 5px;
+  padding: 5px 16px;
   height: 30px;
   font-size: 13px;
   color: var(--main-text);
   border: 1px solid var(--button);
-  border-radius: 2px;
+  // Pill-shaped buttons.
+  border-radius: 999px;
   background-color: var(--line);
   cursor: pointer;
   white-space: nowrap;

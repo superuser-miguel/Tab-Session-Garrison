@@ -7,12 +7,17 @@
   // the ref-based scroll-to-selected all still work). `auto` remembers each
   // row's real height once rendered; the fallback covers not-yet-seen rows.
   content-visibility: auto;
-  contain-intrinsic-size: auto 52px;
+  contain-intrinsic-size: auto 76px;
+
+  // Card treatment: each session is a thin bordered box with a small gap.
+  // No `overflow: hidden` — it clipped the tag chips / second info line.
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 0 6px 6px;
 
   .selectButton {
     border: none;
-    border-bottom: 1px solid var(--line);
-    padding: 8px 5px;
+    padding: 10px 10px;
     width: 100%;
     text-align: left;
     background-color: rgba(0, 0, 0, 0);
@@ -169,13 +174,15 @@
 
   &.isSelected,
   &.isMultiSelected {
+    border-color: var(--tsg-accent);
     background-color: var(--highlight-bg);
     .selectButton {
-      box-shadow: inset 3px 0 0 var(--highlight);
+      box-shadow: none;
     }
   }
 
   &:not(.isSelected):not(.isMultiSelected):hover {
+    border-color: var(--button);
     background-color: var(--line);
     .tag:not(.tagRegular):not(.tagWinClose):not(.tagBrowserExit):not(.tagManual) {
       background-color: var(--line2);
