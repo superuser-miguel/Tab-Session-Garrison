@@ -15,7 +15,7 @@ const SideBar = props => (
         <br />
         Session
         <br />
-        Manager
+        Garrison
       </span>
     </div>
     <ul>
