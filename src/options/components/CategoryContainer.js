@@ -1,12 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import browser from "webextension-polyfill";
 import OptionContainer from "./OptionContainer";
 import "../styles/CategoryContainer.scss";
 
-export default props => {
-  const { category, elements } = props;
+export default forwardRef((props, ref) => {
+  const { category, elements, isActive } = props;
   return (
-    <li className="categoryContainer">
+    <li className={`categoryContainer ${isActive ? "isActive" : ""}`} ref={ref}>
       <fieldset>
         <legend>
           <p className="categoryTitle">
@@ -30,4 +30,4 @@ export default props => {
       </fieldset>
     </li>
   );
-};
+});

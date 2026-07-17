@@ -54,7 +54,11 @@ export default class KeyboardShortcutPage extends Component {
       <div>
         <p className="contentTitle">{browser.i18n.getMessage("keyboardShortcutsLabel")}</p>
         <hr />
-        {this.state.isInit && <ul>{<CategoryContainer {...shortcutCategory} />}</ul>}
+        {this.state.isInit && (
+          <ul className="shortcutsList">
+            <CategoryContainer {...shortcutCategory} isActive={true} />
+          </ul>
+        )}
       </div>
     );
   }

@@ -12,12 +12,19 @@ import defaultSettings from "src/settings/defaultSettings";
 import CategoryContainer from "./CategoryContainer";
 import OptionContainer from "./OptionContainer";
 
+// Distance from the top of the viewport that marks the "focus line": the active
+// section is the last one whose top has scrolled above this line.
+const FOCUS_OFFSET = 150;
+
 export default class SettingsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isInit: false
+      isInit: false,
+      activeCategory: 0
     };
+    this.sectionRefs = [];
+    this.ticking = false;
     this.init();
   }
 
@@ -29,13 +36,54 @@ export default class SettingsPage extends Component {
     browser.storage.local.onChanged.addListener(handleSettingsChange);
   }
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onScroll, { passive: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("resize", this.onScroll);
+  }
+
+  // rAF-throttle scroll/resize so we only recompute the active section once per frame.
+  onScroll = () => {
+    if (this.ticking) return;
+    this.ticking = true;
+    requestAnimationFrame(() => {
+      this.updateActiveCategory();
+      this.ticking = false;
+    });
+  };
+
+  updateActiveCategory() {
+    // The last sections can't scroll up past a fixed focus line (there's no
+    // content below them to scroll). So as the page bottoms out, slide the focus
+    // line down toward the viewport bottom, letting each trailing section
+    // ("Other", then import/export) take focus in turn.
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const remaining = Math.max(0, maxScroll - window.scrollY);
+    const line = FOCUS_OFFSET + Math.max(0, window.innerHeight - FOCUS_OFFSET - remaining);
+
+    let active = 0;
+    this.sectionRefs.forEach((el, index) => {
+      if (el && el.getBoundingClientRect().top <= line) active = index;
+    });
+    if (active !== this.state.activeCategory) this.setState({ activeCategory: active });
+  }
+
   render() {
+    const categories = [...defaultSettings, additionalCategory];
     const settingsContent = (
-      <ul>
-        {defaultSettings.map((category, index) => (
-          <CategoryContainer {...category} key={index} />
+      <ul className="settingsList">
+        {categories.map((category, index) => (
+          <CategoryContainer
+            {...category}
+            key={index}
+            isActive={index === this.state.activeCategory}
+            ref={el => (this.sectionRefs[index] = el)}
+          />
         ))}
-        <CategoryContainer {...additionalCategory} />
       </ul>
     );
 
@@ -50,7 +98,7 @@ export default class SettingsPage extends Component {
 }
 
 const additionalCategory = {
-  category: "",
+  category: "importExportLabel",
   elements: [
     {
       id: "importSettings",

@@ -14,41 +14,43 @@ export default props => {
     <div>
       <p className="contentTitle">{browser.i18n.getMessage("informationLabel")}</p>
       <hr />
-      <OptionsContainer
-        title={"extName"}
-        captions={[""]}
-        type={"none"}
-        updated={query.action === "updated"}
-        extraCaption={
-          <p className="caption">
-            <a href={`${repoUrl}/releases`} target="_blank">
-              Version {extensionVersion}
-            </a>
-          </p>
-        }
-      />
-
-      <OptionsContainer
-        title={"licenseLabel"}
-        captions={["GNU General Public License, Version 3.0 or later"]}
-        useRawCaptions={true}
-        type={"none"}
-      />
-      <hr />
-      <OptionsContainer
-        title={""}
-        captions={[""]}
-        type={"none"}
-        extraCaption={
-          <div>
-            <p>
-              <a href={repoUrl} target="_blank">
-                GitHub
+      <div className="contentCard">
+        <OptionsContainer
+          title={"extName"}
+          captions={[""]}
+          type={"none"}
+          updated={query.action === "updated"}
+          extraCaption={
+            <p className="caption">
+              <a href={`${repoUrl}/releases`} target="_blank">
+                Version {extensionVersion}
               </a>
             </p>
-          </div>
-        }
-      />
+          }
+        />
+
+        <OptionsContainer
+          title={"licenseLabel"}
+          captions={["GNU General Public License, Version 3.0 or later"]}
+          useRawCaptions={true}
+          type={"none"}
+        />
+        <hr />
+        <OptionsContainer
+          title={""}
+          captions={[""]}
+          type={"none"}
+          extraCaption={
+            <div>
+              <p>
+                <a href={repoUrl} target="_blank">
+                  GitHub
+                </a>
+              </p>
+            </div>
+          }
+        />
+      </div>
     </div>
   );
 };

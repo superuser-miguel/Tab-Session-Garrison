@@ -1,3 +1,10 @@
+// Gentle scroll detents for the Settings scroll-spy (targets are the sections;
+// other pages have no snap targets, so their scrolling is unaffected).
+html {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 150px;
+}
+
 body {
   background-color: var(--main-bg);
 
@@ -9,6 +16,7 @@ body {
   --main-bg: #ffffff;
   --sub-bg: #ffffff;
   --new: #ff4f4f;
+  --tsg-accent: #1f9d5f;
 
   &[data-theme="dark"] {
     --main-text: #e6e6e6;
@@ -19,6 +27,7 @@ body {
     --main-bg: #181818;
     --sub-bg: #101010;
     --new: #ed5f5f;
+    --tsg-accent: #4fd08a;
   }
 }
 

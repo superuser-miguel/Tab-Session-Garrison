@@ -254,6 +254,9 @@
   "settingsLabel": {
     "message": "Settings"
   },
+  "importExportLabel": {
+    "message": "Import / Export"
+  },
   "sessionsLabel": {
     "message": "Sessions"
   },
