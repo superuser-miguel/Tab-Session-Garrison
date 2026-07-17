@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 16.933333 16.933334">
-  <g id="layer1" transform="translate(0,-280.06664)">
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458335"
-       width="12.700001"
-       height="12.699994"
-       x="2.1166668"
-       y="282.18332"
-       ry="1.2111329e-005" />
-    <path
-       style="fill:#36b2b2;fill-opacity:1;stroke-width:1"
-       d="M 0 0 L 0 64 L 64 64 L 64 15 L 64 12 L 52 0 L 0 0 z M 8 8 L 16 8 L 16 24 L 48 24 L 48 8 L 49 8 L 56 15 L 56 56 L 8 56 L 8 8 z M 36 8 L 40 8 L 40 20 L 36 20 L 36 8 z "
-       transform="matrix(0.26458334,0,0,0.26458334,0,280.06664)" />
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="tsgBgMin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2bb673"/>
+      <stop offset="1" stop-color="#14743f"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#tsgBgMin)"/>
+  <g transform="translate(28 33)">
+    <rect x="0" y="0"  width="72" height="17" rx="5" fill="#ffffff"/>
+    <rect x="0" y="27" width="72" height="17" rx="5" fill="#ffffff"/>
+    <rect x="0" y="54" width="72" height="17" rx="5" fill="#ffffff"/>
   </g>
 </svg>
