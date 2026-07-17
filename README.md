@@ -38,7 +38,16 @@ Everything Tab Session Manager does — save and restore the state of windows an
 
 - **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
 - **Session types at a glance** — every session shows how it was saved, each with its own icon and tint: **Manual Save** (green bookmark), **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power). The saves you deliberately keep finally stand out from the auto-save noise (see [How a session gets its type](#how-a-session-gets-its-type))
+- **Restore respects your settings** — with **Save tab groups** turned off, restoring a session no longer recreates (and thereby re-saves) the tab groups you opted out of; tabs come back flat ([upstream #1635](https://github.com/sienori/Tab-Session-Manager/issues/1635))
 - **Cleaner, consistent UI** — rounded pill tags and group chips, theme-aware colors
+
+### Fast on large profiles
+
+The popup was reworked to stay responsive when you've got hundreds — or thousands — of saved sessions:
+
+- **Instant list interactions** — selecting, searching, and arrow-keying no longer walk the whole list on every keystroke; per-row array scans were replaced with `Map` / `Set` lookups
+- **Off-screen rows cost nothing** — `content-visibility` lets the browser lay out and paint only the rows actually on screen, deferring the rest until you scroll to them
+- **Near-instant bulk delete** — deleting dozens of sessions used to rewrite the whole (favicon-heavy) undo history once _per session_; it's now a single batched write with one screen update
 
 ### How a session gets its type
 
