@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tab Session Garrison — keyboard-first session manager for Firefox</title>
+<meta name="description" content="A power-user fork of Tab Session Manager for Firefox: full keyboard navigation, multi-select, bulk restore/delete with undo-all, tab-group awareness, and speed on profiles with hundreds of sessions.">
+<style>
+  :root {
+    --bg: #f5f8f6; --surface: #ffffff; --text: #16201a; --muted: #566158;
+    --border: #e2eae5; --accent: #1f9d5f; --accent-2: #14743f;
+    --ok: #1f9d5f; --no: #c3ccc6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121814; --surface: #1b231e; --text: #eaf1ec; --muted: #9fac a3;
+      --border: #29342d; --accent: #4fd08a; --accent-2: #2ea86a;
+      --ok: #4fd08a; --no: #414d46;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 72px 0 48px; }
+  .icon {
+    width: 88px; height: 88px; border-radius: 22px; display: block; margin: 0 auto 22px;
+    box-shadow: 0 10px 30px rgba(20,116,63,.35);
+  }
+  h1 { font-size: 2.6rem; margin: 0 0 6px; letter-spacing: -.02em; }
+  .tagline { font-size: 1.25rem; color: var(--text); font-weight: 600; margin: 0 auto 14px; max-width: 34ch; }
+  .lede { color: var(--muted); max-width: 58ch; margin: 0 auto 26px; }
+  .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 11px; text-decoration: none;
+    font-weight: 600; border: 1px solid var(--border);
+  }
+  .btn.primary { background: var(--accent); color: #fff; border-color: transparent; }
+  .badge {
+    display: inline-block; margin-bottom: 18px; padding: 4px 12px; border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    color: var(--accent); font-size: .82rem; font-weight: 600;
+  }
+  .note { color: var(--muted); font-size: .88rem; margin: 18px auto 0; }
+  .shot {
+    display: block; max-width: 620px; width: 100%; height: auto; margin: 40px auto 0;
+    border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  }
+
+  h2 { font-size: 1.6rem; letter-spacing: -.01em; margin: 0 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 26px; }
+
+  /* Comparison table */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; }
+  table { width: 100%; border-collapse: collapse; min-width: 620px; background: var(--surface); }
+  th, td { padding: 13px 14px; text-align: center; border-bottom: 1px solid var(--border); }
+  th:first-child, td:first-child { text-align: left; font-weight: 600; }
+  thead th { font-size: .8rem; color: var(--muted); font-weight: 600; }
+  tbody tr:last-child td { border-bottom: 0; }
+  tr.me { background: color-mix(in srgb, var(--accent) 9%, transparent); }
+  tr.me td:first-child { color: var(--accent); }
+  .y { color: var(--ok); font-weight: 700; }
+  .n { color: var(--no); }
+
+  /* Features */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  /* Roadmap */
+  .road { list-style: none; padding: 0; margin: 0; color: var(--muted); }
+  .road li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .road li:last-child { border: 0; }
+  .road b { color: var(--text); }
+
+  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+  footer p { margin: 6px 0; }
+  code, kbd {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    padding: 1px 6px; border-radius: 6px; font-size: .9em;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <svg class="icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-label="Tab Session Garrison icon">
+    <defs>
+      <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2bb673"/><stop offset="1" stop-color="#14743f"/>
+      </linearGradient>
+    </defs>
+    <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#bg)"/>
+    <g transform="translate(26 30)">
+      <rect x="0" y="0"  width="76" height="18" rx="5" fill="#ffffff"/>
+      <rect x="0" y="25" width="76" height="18" rx="5" fill="#ffffff" opacity=".9"/>
+      <rect x="0" y="50" width="76" height="18" rx="5" fill="#ffffff" opacity=".78"/>
+      <circle cx="11" cy="9"  r="4" fill="#14743f"/>
+      <circle cx="11" cy="34" r="4" fill="#2bb673"/>
+      <circle cx="11" cy="59" r="4" fill="#8fe0b4"/>
+    </g>
+  </svg>
+  <span class="badge">Personal fork · Firefox · daily-driven</span>
+  <h1>Tab Session Garrison</h1>
+  <p class="tagline">Save, restore, and wrangle hundreds of sessions — without leaving the keyboard.</p>
+  <p class="lede">
+    A power-user fork of <strong>Tab Session Manager</strong> for Firefox. Everything the
+    original does — save/restore, auto-save, tags, search, native tab groups — plus
+    <strong>full keyboard navigation</strong>, <strong>multi-select</strong>, bulk actions
+    with a single <strong>undo-all</strong>, and speed that holds up on big profiles.
+  </p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/superuser-miguel/Tab-Session-Garrison/releases/latest">Download (.xpi)</a>
+    <a class="btn" href="https://github.com/superuser-miguel/Tab-Session-Garrison">View on GitHub</a>
+  </div>
+  <p class="note">Firefox only · you install it yourself (self-signed, auto-updating) · no telemetry</p>
+  <img class="shot" src="screenshots/multi-select-1.png" alt="Tab Session Garrison with nine sessions selected and the Open all / Delete summary panel">
+</header>
+
+<section class="wrap">
+  <h2>Why Tab Session Garrison?</h2>
+  <p class="sub">It's a fork of Tab Session Manager — the whole engine is kept; power-user ergonomics and speed are added on top.</p>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Full-session save/restore</th>
+          <th>Keyboard multi-select</th>
+          <th>Bulk actions + undo-all</th>
+          <th>Tab-group aware</th>
+          <th>Fast on large profiles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Firefox built-in restore</td><td class="n">~</td><td class="n">✗</td><td class="n">✗</td><td class="n">~</td><td class="n">~</td></tr>
+        <tr><td>OneTab</td><td class="y">✓</td><td class="n">✗</td><td class="n">~</td><td class="n">✗</td><td class="y">✓</td></tr>
+        <tr><td>Tab Session Manager</td><td class="y">✓</td><td class="n">✗</td><td class="n">~</td><td class="y">✓</td><td class="n">✗</td></tr>
+        <tr class="me"><td>Tab Session Garrison</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Features</h2>
+  <p class="sub">Built for selecting, restoring, and clearing sessions at speed — mouse optional.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Keyboard-first multi-select</h3>
+      <p>Ctrl/Cmd-click, Shift-click ranges, or the keyboard: arrows to move, <kbd>Shift</kbd>+arrows to extend, <kbd>Space</kbd> to toggle, <kbd>Ctrl</kbd>+<kbd>A</kbd> to select all (respecting your filter).</p>
+    </div>
+    <div class="card">
+      <h3>Bulk restore &amp; delete</h3>
+      <p>Open every selected session at once — each in its own window — or clear dozens of stale auto-saves in one go, with a single <strong>undo-all</strong> if you misfire.</p>
+    </div>
+    <div class="card">
+      <h3>Tab-group aware</h3>
+      <p>Colored dots on each row and named chips grouped by window in the detail pane. Drop a saved session into your current window as one tidy named group.</p>
+    </div>
+    <div class="card">
+      <h3>Session types at a glance</h3>
+      <p>Every session shows how it was saved — <strong>Manual Save</strong> (green), <strong>Regularly</strong> (blue), <strong>Window closed</strong> (amber), <strong>Browser exited</strong> (red) — so deliberate saves stand out from the noise.</p>
+    </div>
+    <div class="card">
+      <h3>Durable auto-save</h3>
+      <p>Fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted — the alarm now self-heals.</p>
+    </div>
+    <div class="card">
+      <h3>Restore respects your settings</h3>
+      <p>With <em>Save tab groups</em> turned off, restoring no longer recreates — and re-saves — the groups you opted out of. Tabs come back flat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Fast, even on big profiles</h2>
+  <p class="sub">The popup was rebuilt to stay responsive when you've got hundreds — or thousands — of saved sessions.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Instant list interactions</h3>
+      <p>Selecting, searching, and arrow-keying stay snappy: per-row array scans were replaced with <code>Map</code> / <code>Set</code> lookups, so a keystroke no longer walks the whole list.</p>
+    </div>
+    <div class="card">
+      <h3>Off-screen rows cost nothing</h3>
+      <p>With <code>content-visibility</code>, the browser only lays out and paints the rows you can actually see — the rest wait until you scroll to them.</p>
+    </div>
+    <div class="card">
+      <h3>Bulk delete in one write</h3>
+      <p>Deleting dozens of sessions used to rewrite the whole undo history per item. Now it's a single batched operation with one screen update — near-instant.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Roadmap</h2>
+  <p class="sub">Honest about what's next.</p>
+  <ul class="road">
+    <li><b>Backup overhaul</b> — a three-tier engine under your download folder that never deletes history: a full compressed <em>Complete</em> snapshot (shipped), plus per-session and append-only <em>Incremental</em> tiers, with a restore-from-backup UI.</li>
+    <li><b>fzf-style search</b> — fuzzy subsequence matching (<code>ghb</code> → GitHub), results ranked by match quality with the best hit floated to the top, matched characters highlighted, and URLs searched — not just titles.</li>
+    <li><b>Rename saved windows</b> — give each window in a saved session its own editable name, right from the header in the detail pane.</li>
+    <li><b>Firefox Split View</b> — split state is already captured on save; restoring waits on a Firefox extension API to recreate splits.</li>
+    <li><b>Trash can</b> — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes.</li>
+    <li><b>Faster still</b> — a lightweight index store for instant loads on thousands of sessions, fetching heavy records only on selection.</li>
+    <li><b>Own branding</b> — logo, icons, and screenshots of its own.</li>
+    <li><b>Chrome / Edge</b> — possibly, further down the line.</li>
+  </ul>
+</section>
+
+<footer class="wrap">
+  <section>
+    <p><strong>Tab Session Garrison</strong> is free software, <strong>GPL-3.0-or-later</strong>.</p>
+    <p>A fork of <a href="https://github.com/sienori/Tab-Session-Manager">Tab Session Manager</a> © 2017– Sienori (MPL-2.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser build, install the original and <a href="https://www.patreon.com/sienori">support Sienori's work</a>.</p>
+    <p><a href="https://github.com/superuser-miguel/Tab-Session-Garrison">github.com/superuser-miguel/Tab-Session-Garrison</a></p>
+  </section>
+</footer>
+
+</body>
+</html>
