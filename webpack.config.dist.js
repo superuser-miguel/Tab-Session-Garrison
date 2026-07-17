@@ -116,13 +116,7 @@ module.exports = [
             from: "*",
             to: path.resolve(__dirname, `${config.tempDirectory}/copiedSource/`),
             globOptions: {
-              ignore: [
-                "**/BACKERS.md",
-                "**/crowdin.yml",
-                "**/*.patch",
-                "**/screenshots/**",
-                "**/ideas/**"
-              ]
+              ignore: ["**/*.patch", "**/screenshots/**", "**/ideas/**"]
             }
           }
         ]

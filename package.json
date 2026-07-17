@@ -1,5 +1,5 @@
 {
-  "name": "tab-session-manager",
+  "name": "tab-session-garrison",
   "version": "0.1.2",
   "engines": {
     "node": "24.13.0",
@@ -58,15 +58,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sienori/Tab-Session-Manager.git"
+    "url": "git+https://github.com/superuser-miguel/Tab-Session-Garrison.git"
   },
-  "author": "Sienori",
+  "author": "superuser-miguel",
+  "contributors": [
+    "Sienori (original Tab Session Manager, https://github.com/sienori/Tab-Session-Manager)"
+  ],
   "license": "GPL-3.0-or-later",
-  "description": "WebExtensions for saving and restoring sessions.",
+  "description": "Keyboard-first Firefox session manager — a power-user fork of Tab Session Manager.",
   "bugs": {
-    "url": "https://github.com/sienori/Tab-Session-Manager/issues"
+    "url": "https://github.com/superuser-miguel/Tab-Session-Garrison/issues"
   },
-  "homepage": "https://github.com/sienori/Tab-Session-Manager#readme",
+  "homepage": "https://github.com/superuser-miguel/Tab-Session-Garrison#readme",
   "main": ".src/manifest.json",
   "keywords": [
     "webextensions",

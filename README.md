@@ -167,7 +167,7 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 
 ## Credit
 
-Tab Session Garrison stands entirely on [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by **Sienori** (forked at v7.3.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser, actively maintained session manager, install the original and **[support Sienori's work](https://www.patreon.com/sienori)**. This fork just adds keyboard ergonomics and tab-group niceties on top.
+Tab Session Garrison stands entirely on [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by **Sienori** (forked at v7.3.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser, actively maintained session manager, install [the original](https://github.com/sienori/Tab-Session-Manager). This fork just adds keyboard ergonomics and tab-group niceties on top.
 
 ## License
 
