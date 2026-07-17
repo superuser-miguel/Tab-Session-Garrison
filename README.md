@@ -4,8 +4,6 @@
 
 ![Tab Session Garrison — nine sessions selected, with the Open all / Delete summary panel](docs/screenshots/multi-select-1.png)
 
-> _Using the original Tab Session Manager icon for now — its own logo is on the roadmap._
-
 Tab Session Garrison is a personal fork of [**Tab Session Manager**](https://github.com/sienori/Tab-Session-Manager) by Sienori, focused on power-user controls: selecting, navigating, restoring, and deleting sessions without leaving the keyboard — and clearing out the noise that builds up when you auto-save constantly.
 
 ---
