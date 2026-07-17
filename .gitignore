@@ -5,3 +5,7 @@ temp
 web-ext-artifacts
 *.xpi
 src/credentials.js*~
+
+# Internal only: WIP visual / UI idea screenshots. Never committed to the
+# (public) repo, never shipped in the extension, never in the source archive.
+ideas/
