@@ -156,6 +156,10 @@ Load `dev/firefox/manifest.json` via **about:debugging** (see [Installing](#inst
 - **Trash can** — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes; restore or empty it on your terms
 - **UI refresh** — a less utilitarian popup layout, finishing the popup that follows Firefox's active theme colors, and a visual revamp of the options pages (Settings / Session / Shortcut / Information). Includes reworking the **Import Sessions** screen so a large import is a **scrollable list** you can **remove individual entries from** before committing — instead of the current all-or-nothing import
 - **Import a URL list into a tab group** — paste a plain list of URLs and turn it into a saved session (optionally opened as one named tab group), OneTab-style
+- **Save & close (stash)** — a one-gesture "send this window to a session" that saves the current window *and closes its tabs* to clear clutter and free memory — OneTab's signature move — with an optional restore-and-remove mode for a true one-shot stash
+- **Pin & lock sessions** — star a session to keep it at the top, and lock it so it can't be deleted by accident (OneTab star/lock); pairs naturally with the **Trash can**
+- **Share a session as a link list** — copy or export a saved session as a plain URL / Markdown list (the reverse of the URL-list import), generated locally with no server
+- **Send a tab to your phone (offline QR)** — a QR code for a single tab's URL, generated **100% locally** with a bundled generator — no upload, unlike OneTab's server-hosted share page
 - **Duplicate cleanup** — collapse the near-identical snapshots that pile up from frequent auto-saving
 - **Own branding** — the logo and icons are now its own (a green session-stack mark); a full visual identity and fresh screenshots are still to come
 - **Chrome / Edge** — possibly, further down the line
