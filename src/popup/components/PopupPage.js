@@ -404,12 +404,18 @@ export default class PopupPage extends Component {
       .filter(session => searchWords.every(word => session.name.toLowerCase().includes(word)))
       .map(session => session.id);
 
-    const matchedIdsByTabTitle = this.state.searchInfo
-      .filter(info => searchWords.every(word => info.tabsTitle.includes(word)))
+    // Matches on tab titles or on tab-group names — each field is matched as a
+    // whole, so every search word has to appear somewhere within that one field.
+    const matchedIdsByTabOrGroupTitle = this.state.searchInfo
+      .filter(
+        info =>
+          searchWords.every(word => info.tabsTitle.includes(word)) ||
+          searchWords.every(word => (info.groupsTitle || "").includes(word))
+      )
       .map(info => info.id);
 
     const searchedSessionIds = Array.from(
-      new Set(matchedIdsBySessionName.concat(matchedIdsByTabTitle))
+      new Set(matchedIdsBySessionName.concat(matchedIdsByTabOrGroupTitle))
     );
     this.setState({ searchedSessionIds: searchedSessionIds });
     log.info(logDir, "=>searchSessions()", searchedSessionIds);
