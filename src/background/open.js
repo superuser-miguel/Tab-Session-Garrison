@@ -135,26 +135,38 @@ const createTabGroups = async (windowId, tabs, tabGroupsInfo) => {
   for (let tab of tabs) {
     if (!(tab.groupId > 0)) continue;
 
+    // A tab that failed to open has no entry in tabList. Pushing the undefined
+    // would make the whole tabs.group() call throw and lose the entire group,
+    // so drop it and restore the group with the tabs that did open.
+    const openedTabId = tabList[tab.id];
+    if (openedTabId == null) continue;
+
     if (!groups[tab.groupId])
       groups[tab.groupId] = {
         originalGroupId: tab.groupId,
         tabIds: []
       };
-    groups[tab.groupId].tabIds.push(tabList[tab.id]);
+    groups[tab.groupId].tabIds.push(openedTabId);
   }
 
   for (let group of Object.values(groups)) {
-    browser.tabs.group(
-      {
+    if (group.tabIds.length === 0) continue;
+    // browser.tabs.group() is promise-based on Firefox, and promise-based on
+    // Chrome too via webextension-polyfill. The upstream Chrome-style callback
+    // passed here never fired, so updateTabGroups() never ran and groups came
+    // back with Firefox's defaults — no name, default colour, expanded.
+    // See upstream #1631 (names lost) and #1583 (names + colours lost).
+    try {
+      const groupId = await browser.tabs.group({
         createProperties: { windowId: windowId },
         tabIds: group.tabIds
-      },
-      groupId => {
-        const groupInfo = tabGroupsInfo.find(info => info.id === group.originalGroupId);
-        if (!groupInfo) return;
-        if (getSettings("saveTabGroupsV2")) updateTabGroups(groupId, groupInfo);
-      }
-    );
+      });
+      const groupInfo = tabGroupsInfo.find(info => info.id === group.originalGroupId);
+      if (!groupInfo) continue;
+      if (getSettings("saveTabGroupsV2")) await updateTabGroups(groupId, groupInfo);
+    } catch (e) {
+      log.error(logDir, "createTabGroups()", e);
+    }
   }
 };
 
@@ -232,13 +244,13 @@ async function createTabs(
     // into one session-named group when the session had no groups of its own.
     const hasOriginalGroups = sortedTabs.some(tab => tab.groupId > 0);
     if (groupAsOne && !hasOriginalGroups) {
-      createSingleGroup(currentWindow.id, sortedTabs, session);
+      await createSingleGroup(currentWindow.id, sortedTabs, session);
     } else if (groupAsOne || getSettings("saveTabGroupsV2")) {
       // On a normal restore only regroup when "Save tab groups" is enabled;
       // with it off, restore tabs flat instead of recreating (and thereby
       // re-saving) groups the user opted out of — upstream issue #1635. An
       // explicit "add as group" action still groups regardless of the setting.
-      createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
+      await createTabGroups(currentWindow.id, sortedTabs, session.tabGroups || []);
     }
   }
 
