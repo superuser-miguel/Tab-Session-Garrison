@@ -56,7 +56,7 @@ const isJSON = arg => {
   arg = typeof arg === "function" ? arg() : arg;
   if (typeof arg !== "string") return false;
   try {
-    arg = !JSON ? eval("(" + arg + ")") : JSON.parse(arg);
+    JSON.parse(arg);
     return true;
   } catch (e) {
     return false;
@@ -371,7 +371,7 @@ export default class ImportSessionsComponent extends Component {
               - Firefox Session Store Backup (.jsonlz4 .baklz4)
               <br />
               <a
-                href="https://github.com/sienori/Tab-Session-Manager/wiki/Q&A:-How-to-import-sessions-from-other-extensions"
+                href="https://superuser-miguel.github.io/Tab-Session-Garrison/help/import-sessions.html"
                 target="_blank"
               >
                 {browser.i18n.getMessage("importCaptionLabel3")}{" "}

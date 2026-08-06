@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importing sessions from other extensions — Tab Session Garrison</title>
+<meta name="description" content="Which session file formats Tab Session Garrison can import, where to find each file, and what to do when an import is rejected.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="../icon.svg" alt="">
+    <a href="../index.html">Tab Session Garrison</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h1>Importing sessions from other extensions</h1>
+<p class="lede">
+  Tab Session Garrison reads four session file formats. Imported sessions are
+  <b>added</b> to your list — nothing already saved is replaced or overwritten.
+</p>
+
+<h2>How to import</h2>
+<ol>
+  <li>Open <b>Settings → Sessions</b> (the gear icon in the popup, then <b>Sessions</b>)</li>
+  <li>Under <b>Import</b>, choose one or more files — several at once is fine</li>
+  <li>Each file is listed with its status; click <b>Save</b> to commit the import</li>
+</ol>
+
+<h2>Supported formats</h2>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th>Source</th><th>File</th><th>Where to find it</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tab Session Garrison<br>Tab Session Manager</td>
+      <td><code>.json</code></td>
+      <td>Exported from <b>Settings → Sessions → Export</b>, or an automatic backup from the backup folder</td>
+    </tr>
+    <tr>
+      <td>Session Buddy</td>
+      <td><code>.json</code></td>
+      <td>In Session Buddy, use its export command and choose the JSON format (not CSV or HTML)</td>
+    </tr>
+    <tr>
+      <td>Session Manager<br>(legacy Firefox add-on)</td>
+      <td><code>.session</code></td>
+      <td>The add-on&rsquo;s <code>sessions</code> folder inside your old Firefox profile</td>
+    </tr>
+    <tr>
+      <td>Firefox Session Store Backup</td>
+      <td><code>.jsonlz4</code><br><code>.baklz4</code></td>
+      <td>The <code>sessionstore-backups</code> folder in your Firefox profile — see below</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Finding Firefox&rsquo;s own session store backups</h3>
+<p>
+  Firefox continuously writes its current window/tab state to compressed files in your
+  profile. These are the last resort when a crash or a bad restart lost your windows.
+</p>
+<ol>
+  <li>Open <code>about:profiles</code></li>
+  <li>For the profile you use, click <b>Open Folder</b> next to <b>Root Directory</b></li>
+  <li>Open the <code>sessionstore-backups</code> folder</li>
+</ol>
+<p>You will typically see:</p>
+<ul>
+  <li><code>recovery.jsonlz4</code> — the most recent state Firefox wrote</li>
+  <li><code>recovery.baklz4</code> — the previous copy of the above</li>
+  <li><code>previous.jsonlz4</code> — the state from your last Firefox session</li>
+  <li><code>upgrade.jsonlz4-<i>20211001010123</i></code> — a snapshot taken before a Firefox update</li>
+</ul>
+<div class="card">
+  <p>
+    Copy the files somewhere else before importing rather than picking them out of the live
+    profile folder — Firefox rewrites them while it&rsquo;s running.
+  </p>
+</div>
+
+<h2>Formats that are not supported</h2>
+<p>
+  OneTab, browser bookmark exports (<code>.html</code>), and plain lists of URLs won&rsquo;t
+  import through the session importer. For a plain list of URLs, use
+  <b>Settings → Sessions → Import URL list</b> instead, which builds a session from one URL
+  per line.
+</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>The file imports but produces no sessions</h3>
+<p>
+  The importer identifies a <code>.json</code> file by its internal structure, not by its
+  name. If a file is valid JSON but matches neither the Tab Session Manager nor the
+  Session Buddy layout, it is skipped silently. Re-export from the source extension and pick
+  its native JSON format.
+</p>
+
+<h3>The file is rejected outright</h3>
+<p>
+  Check the extension is one of <code>.json</code>, <code>.session</code>,
+  <code>.jsonlz4</code> or <code>.baklz4</code>. Compressed archives (<code>.zip</code>)
+  must be unpacked first.
+</p>
+
+<h3>Imported sessions have the wrong date</h3>
+<p>
+  Formats other than Tab Session Manager&rsquo;s carry limited metadata. Where a source file
+  has no timestamp, the import time is used instead.
+</p>
+
+<h3>Duplicates after importing</h3>
+<p>
+  Importing the same file twice creates a second copy of each session — the importer does not
+  de-duplicate. Use multi-select in the popup (<kbd>Ctrl</kbd>-click, <kbd>Shift</kbd>-click,
+  or the keyboard) and delete the extra copies in one action; a single <b>undo</b> brings them
+  all back if you overshoot.
+</p>
+
+<h2>Still stuck?</h2>
+<p>
+  <a href="https://github.com/superuser-miguel/Tab-Session-Garrison/issues">Open an issue</a>
+  with the source extension, its version, and the file extension you tried.
+</p>
+
+<footer class="end">
+  <a href="../index.html">← Tab Session Garrison</a> ·
+  <a href="indexeddb-error.html">IndexedDB error</a> ·
+  <a href="https://github.com/superuser-miguel/Tab-Session-Garrison">Source on GitHub</a>
+</footer>
+
+</div>
+</body>
+</html>

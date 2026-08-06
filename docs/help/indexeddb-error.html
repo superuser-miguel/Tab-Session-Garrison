@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixing the IndexedDB error — Tab Session Garrison</title>
+<meta name="description" content="What the IndexedDB error means in Tab Session Garrison, why it happens, and how to fix it without losing your saved sessions.">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="help.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="../icon.svg" alt="">
+    <a href="../index.html">Tab Session Garrison</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h1>&ldquo;Failed to load sessions&rdquo; — the IndexedDB error</h1>
+<p class="lede">
+  Tab Session Garrison keeps every saved session in your browser&rsquo;s <b>IndexedDB</b> storage.
+  If it can&rsquo;t open that database, the popup shows an error instead of your session list.
+  This page walks through the causes, cheapest fix first.
+</p>
+
+<div class="card warn">
+  <p><b>Your sessions are almost certainly still there.</b> This error means the database
+  could not be <i>opened</i> — not that it was erased. Work through the steps below before
+  reinstalling or clearing any storage, because some of those actions <b>will</b> delete
+  your sessions for real.</p>
+</div>
+
+<h2>1. Reload the extension</h2>
+<p>
+  The error panel has a <b>Reload extension</b> link. Click it. If the database was
+  temporarily locked — for example another Firefox window was mid-shutdown when the popup
+  opened — this is all it takes.
+</p>
+
+<h2>2. Restart the browser</h2>
+<p>
+  Fully quit and reopen Firefox (not just close the window). This releases any stale lock
+  on the profile&rsquo;s storage and clears the most common transient failure.
+</p>
+
+<h2>3. Check that you are not in permanent private-browsing mode</h2>
+<p>
+  Firefox blocks persistent extension storage when history is disabled, which makes
+  IndexedDB unavailable. Check:
+</p>
+<ol>
+  <li>Open <code>about:preferences#privacy</code></li>
+  <li>Under <b>History</b>, if the mode is <b>Never remember history</b>, switch it to
+      <b>Remember history</b> (or <b>Use custom settings</b> with
+      <i>Always use private browsing mode</i> unchecked)</li>
+  <li>Restart Firefox</li>
+</ol>
+<p>
+  Note that this is a per-profile setting — a normal window in a profile configured this way
+  is still effectively private.
+</p>
+
+<h2>4. Check that IndexedDB is enabled</h2>
+<ol>
+  <li>Open <code>about:config</code> and accept the warning</li>
+  <li>Search for <code>dom.indexedDB.enabled</code></li>
+  <li>It must be <b>true</b>. If it&rsquo;s false, double-click to flip it, then restart Firefox</li>
+</ol>
+
+<h2>5. Check that site data isn&rsquo;t being cleared on exit</h2>
+<p>
+  Privacy settings and cleanup extensions that wipe cookies and site data can take extension
+  storage with them. In <code>about:preferences#privacy</code>, look at
+  <b>Cookies and Site Data</b> → <i>Delete cookies and site data when Firefox is closed</i>.
+  If it&rsquo;s on, and you also run a cleaner add-on (Cookie AutoDelete and similar), try
+  disabling that cleanup temporarily to see whether the error stops recurring.
+</p>
+
+<h2>6. Check disk space and profile permissions</h2>
+<p>
+  IndexedDB fails to open when the volume holding your Firefox profile is full or read-only.
+  Free up space, then restart. You can find the profile folder via <code>about:profiles</code>
+  → <b>Root Directory</b> → <b>Open Folder</b>.
+</p>
+
+<h2>7. If the error persists: rescue your data first</h2>
+<p>
+  Only at this point consider clearing storage or reinstalling — both destroy saved sessions.
+  Before you do either:
+</p>
+<ul>
+  <li>
+    <b>If the popup ever loads:</b> open <b>Settings → Sessions → Export</b> and save the
+    <code>.json</code> file somewhere outside the profile.
+  </li>
+  <li>
+    <b>If it never loads:</b> check for automatic backups. Their folder is set in
+    <b>Settings → Backup</b>, and defaults to <i>Tab Session Garrison - Backup</i> inside your
+    downloads folder. Those <code>.json</code> files can be imported later.
+  </li>
+</ul>
+<p>
+  With a copy in hand, remove and reinstall the extension, then re-import through
+  <b>Settings → Sessions → Import</b>. See
+  <a href="import-sessions.html">Importing sessions</a> for the supported formats.
+</p>
+
+<h2>Still stuck?</h2>
+<p>
+  Open an issue with the browser version, the exact error text, and anything from the
+  <b>Browser Console</b> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>) at the moment the
+  popup fails:
+  <a href="https://github.com/superuser-miguel/Tab-Session-Garrison/issues">report it on GitHub</a>.
+</p>
+
+<footer class="end">
+  <a href="../index.html">← Tab Session Garrison</a> ·
+  <a href="import-sessions.html">Importing sessions</a> ·
+  <a href="https://github.com/superuser-miguel/Tab-Session-Garrison">Source on GitHub</a>
+</footer>
+
+</div>
+</body>
+</html>

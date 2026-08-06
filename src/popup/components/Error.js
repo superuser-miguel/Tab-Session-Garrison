@@ -1,18 +1,13 @@
 import React from "react";
 import browser from "webextension-polyfill";
-import browserInfo from "browser-info";
 import log from "loglevel";
 import openUrl from "../actions/openUrl";
 import "../styles/Error.scss";
 
 const logDir = "popup/components/Error";
 
-const openIndexedDBWiki = () => {
-  const url =
-    browserInfo().name === "Chrome"
-      ? "https://github.com/sienori/Tab-Session-Manager/wiki/IndexedDB-Error-for-Chrome"
-      : "https://github.com/sienori/Tab-Session-Manager/wiki/IndexedDB-Error";
-  openUrl(url);
+const openIndexedDBHelp = () => {
+  openUrl("https://superuser-miguel.github.io/Tab-Session-Garrison/help/indexeddb-error.html");
 };
 
 const errorContent = {
@@ -26,7 +21,7 @@ const errorContent = {
         {browser.i18n.getMessage("reloadExtensionLabel")}
       </a>
       <br />
-      <a onClick={openIndexedDBWiki}>{browser.i18n.getMessage("howToSolveLabel")}</a>
+      <a onClick={openIndexedDBHelp}>{browser.i18n.getMessage("howToSolveLabel")}</a>
     </div>
   )
 };
