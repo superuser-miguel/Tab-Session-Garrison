@@ -48,8 +48,17 @@ parallel self-hosted channel cannot coexist on this id).
      --source-dir temp/firefox \
      --channel listed \
      --api-key "$AMO_JWT_ISSUER" \
-     --api-secret "$AMO_JWT_SECRET"
+     --api-secret "$AMO_JWT_SECRET" \
+     --amo-metadata amo-metadata.json
    ```
+   `amo-metadata.json` (repo root) carries the API-required fields: the license
+   (exact builtin slug `GPL-3.0-only` — AMO has no "or-later" variant) and the
+   listing categories.
+
+   For **listed** submissions web-ext exits with "Approval: timeout exceeded"
+   after ~15 min of polling — **that is success**, not failure: the version is
+   in the human-review queue and the CLI just stops waiting. The signed xpi
+   becomes downloadable from the version page it prints once review approves.
    Because the build is webpack-minified, AMO requires the **source archive** —
    upload the `copiedSource` zip when prompted in the developer hub
    (build instructions for reviewers are in `BUILD.md`).
