@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Якщо назва сесії в списку займає більше одного рядка, вона буде скорочуватися до одного рядку."
   },
-  "cloudSyncLabel": {
-    "message": "Хмарна синхронізація"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Увімкнути хмарну синхронізацію (бета-версія)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Збережіть сесії в Google Drive™ та синхронізуйте їх з іншими комп'ютерами."
-  },
-  "syncingLabel": {
-    "message": "Синхронізація"
-  },
-  "downloadingLabel": {
-    "message": "Завантаження"
-  },
-  "uploadingLabel": {
-    "message": "Вивантаження"
-  },
-  "deletingLabel": {
-    "message": "Видалення"
-  },
-  "syncCompletedLabel": {
-    "message": "Синхронізацію завершено."
-  },
-  "signInRequiredLabel": {
-    "message": "Вимагає авторизації для хмарної синхронізації."
-  },
-  "signInLabel": {
-    "message": "Увійти"
-  },
-  "signOutLabel": {
-    "message": "Вийти"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Автоматично синхронізувати"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Виконувати синхронізацію з хмарою, коли запущений браузер чи при збереженні сесії."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Синхронізувати автозбереження сеансів"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Відвантажити/завантажити автозбережені сеанси в хмару синхронізації."
-  },
   "popupLabel": {
     "message": "Спливаюче вікно"
   },

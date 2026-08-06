@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "إذا كان اسم الدورة في قائمة جلسات العمل التي تكون أكثر من سطر واحد، يتم اقتطاع سطر واحد وعرضه."
   },
-  "cloudSyncLabel": {
-    "message": "المزامنة السحابية"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "تمكين المزامنة السحابية (بيتا)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "حفظ الجلسات إلى Google DriveTM والمزامنة مع أجهزة كمبيوتر أخرى."
-  },
-  "syncingLabel": {
-    "message": "مزامنة"
-  },
-  "downloadingLabel": {
-    "message": "جاري التنزيل"
-  },
-  "uploadingLabel": {
-    "message": "جاري التحميل"
-  },
-  "deletingLabel": {
-    "message": "يتم الحذف"
-  },
-  "syncCompletedLabel": {
-    "message": "إكتملت عملية المزامنة."
-  },
-  "signInRequiredLabel": {
-    "message": "Requires sign in for cloud sync."
-  },
-  "signInLabel": {
-    "message": "تسجيل الدخول"
-  },
-  "signOutLabel": {
-    "message": "تسجيل خروج"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Automatically sync"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Execute cloud sync when the browser is launched and when the session is saved."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "مزامنة حفظ الجلسات تلقائياً"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "تحميل / تحميل جلسات حفظ تلقائي في المزامنة السحابية."
-  },
   "popupLabel": {
     "message": "نافذة منبثقة"
   },

@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Wenn der Sitzungsname in der Sitzungsliste länger als eine Zeile ist, wird dieser am Ende abgeschnitten."
   },
-  "cloudSyncLabel": {
-    "message": "Cloud-Sync"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Cloud-Sync aktivieren (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Sitzungen in Google Drive™ speichern und mit anderen Computern synchronisieren."
-  },
-  "syncingLabel": {
-    "message": "Synchronisiere"
-  },
-  "downloadingLabel": {
-    "message": "Lade herunter"
-  },
-  "uploadingLabel": {
-    "message": "Wird hochgeladen"
-  },
-  "deletingLabel": {
-    "message": "Wird gelöscht"
-  },
-  "syncCompletedLabel": {
-    "message": "Synchronisierung abgeschlossen."
-  },
-  "signInRequiredLabel": {
-    "message": "Erfordert die Anmeldung für die Cloud-Synchronisierung."
-  },
-  "signInLabel": {
-    "message": "Anmelden"
-  },
-  "signOutLabel": {
-    "message": "Abmelden"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Automatisch synchronisieren"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Cloud-Sync ausführen, wenn der Browser gestartet wird und wenn die Sitzung gespeichert wird."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Automatisch gespeicherte Sitzungen synchronisieren"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Upload und Download von automatisch gespeicherten Sitzungen via Cloud-Sync."
-  },
   "popupLabel": {
     "message": "Popup"
   },

@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "אם שם הפעילות ברשימת הפעילויות משתרע על יותר משורה אחת, הוא נחתך ומוצג בשורה אחת."
   },
-  "cloudSyncLabel": {
-    "message": "סנכרון ענן"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "הפעל סנכרון ענן (בטא)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "שמור הפעלות ב-Google Drive™ וסנכרן עם מחשבים אחרים."
-  },
-  "syncingLabel": {
-    "message": "מסנכרן"
-  },
-  "downloadingLabel": {
-    "message": "מוריד"
-  },
-  "uploadingLabel": {
-    "message": "מעלה"
-  },
-  "deletingLabel": {
-    "message": "מוחק"
-  },
-  "syncCompletedLabel": {
-    "message": "סנכרון הושלם."
-  },
-  "signInRequiredLabel": {
-    "message": "Requires sign in for cloud sync."
-  },
-  "signInLabel": {
-    "message": "התחבר"
-  },
-  "signOutLabel": {
-    "message": "התנתק"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Automatically sync"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Execute cloud sync when the browser is launched and when the session is saved."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "סנכרן פעילויות הנשמרות אוטומטית"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "העלה/הורד פעילויות הנשמרות אוטומטית בסנכרון ענן."
-  },
   "popupLabel": {
     "message": "פופאפ"
   },

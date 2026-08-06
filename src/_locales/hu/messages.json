@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Munkamenet név méretre vágása a munkamenet listában, ha kilógna a sorából."
   },
-  "cloudSyncLabel": {
-    "message": "Szinkronizálás a felhővel"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Szinkronizálás a felhővel engedélyezése (Béta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Munkamenetek mentése Google Drive™ -ra és szinkronizálás más számítógépekkel."
-  },
-  "syncingLabel": {
-    "message": "Szinkronizálás"
-  },
-  "downloadingLabel": {
-    "message": "Letöltés"
-  },
-  "uploadingLabel": {
-    "message": "Feltöltés"
-  },
-  "deletingLabel": {
-    "message": "Törlés"
-  },
-  "syncCompletedLabel": {
-    "message": "Szinkronizálás kész."
-  },
-  "signInRequiredLabel": {
-    "message": "Bejelentkezés szükséges a felhővel való szinkronizáláshoz."
-  },
-  "signInLabel": {
-    "message": "Bejelentkezés"
-  },
-  "signOutLabel": {
-    "message": "Kijelentkezés"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Automatikus szinkronizálás"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Felhővel való szinkronizálás végrehajtása amikor a böngésző indul és amikor a munkamenet elmentődik."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Automatikusan mentett munkamenetek szinkronizálása"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "A felhővel való szinkronizálásnál az automatikusan mentett munkameneteket is töltsük fel/le."
-  },
   "popupLabel": {
     "message": "Felugró ablak"
   },

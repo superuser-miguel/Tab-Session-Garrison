@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Ja sesijas nosaukums sesiju sarakstā aizņem vairāk nekā vienu rindu, tas tiek saīsināts vienā rindā un parādīts."
   },
-  "cloudSyncLabel": {
-    "message": "Mākoņa sinhronizācija"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Iespējot mākoņa sinhronizāciju (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Saglabāt sesijas Google Drive™ un sinhronizēt tās ar citiem datoriem."
-  },
-  "syncingLabel": {
-    "message": "Notiek sinhronizēšana"
-  },
-  "downloadingLabel": {
-    "message": "Lejupielādē"
-  },
-  "uploadingLabel": {
-    "message": "Augšupielādē"
-  },
-  "deletingLabel": {
-    "message": "Dzēš"
-  },
-  "syncCompletedLabel": {
-    "message": "Sinhronizācija pabeigta."
-  },
-  "signInRequiredLabel": {
-    "message": "Nepieciešams pierakstīties, lai varētu veikt mākoņa sinhronizāciju."
-  },
-  "signInLabel": {
-    "message": "Pierakstīties"
-  },
-  "signOutLabel": {
-    "message": "Izrakstīties"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Sinhronizēt automātiski"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Veikt mākoņa sinhronizāciju, kad pārlūks palaists vai kad sesija saglabāta."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Sinhronizēt automātiski saglabātās sesijas"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Mākoņu sinhronizācijas laikā augšupielādēt un lejupielādēt automātiski saglabātās sesijas."
-  },
   "popupLabel": {
     "message": "Uznirstošais logs"
   },

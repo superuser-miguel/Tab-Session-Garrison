@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Si el nombre de la sesión en la lista de sesiones se extiende a más de una línea, se trunca en una línea y se muestra."
   },
-  "cloudSyncLabel": {
-    "message": "Sincronización en la nube"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Habilitar sincronización en la nube (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Guardar sesiones en Google Drive™ y sincronizar con otros equipos."
-  },
-  "syncingLabel": {
-    "message": "Sincronizando"
-  },
-  "downloadingLabel": {
-    "message": "Descargando"
-  },
-  "uploadingLabel": {
-    "message": "Cargando"
-  },
-  "deletingLabel": {
-    "message": "Eliminando"
-  },
-  "syncCompletedLabel": {
-    "message": "Sincronización completa."
-  },
-  "signInRequiredLabel": {
-    "message": "Requiere iniciar sesión para sincronizar la nube."
-  },
-  "signInLabel": {
-    "message": "Iniciar sesión"
-  },
-  "signOutLabel": {
-    "message": "Cerrar sesión"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Sincronizar automáticamente"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Ejecutar sincronización en la nube cuando se inicia el navegador y cuando se guarda la sesión."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Sincronizar sesiones de auto guardado"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Subir / descargar sesiones de guardado automático en la nube."
-  },
   "popupLabel": {
     "message": "Popup"
   },

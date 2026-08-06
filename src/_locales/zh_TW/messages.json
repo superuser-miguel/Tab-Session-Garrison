@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "如果瀏覽工作階段名稱長度超過單行範圍，截斷為單行顯示。"
   },
-  "cloudSyncLabel": {
-    "message": "雲端同步"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "啟用雲端同步 (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "儲存瀏覽工作階段至 Google Drive™ 並與其他電腦同步。"
-  },
-  "syncingLabel": {
-    "message": "正在同步"
-  },
-  "downloadingLabel": {
-    "message": "正在下載"
-  },
-  "uploadingLabel": {
-    "message": "正在上傳"
-  },
-  "deletingLabel": {
-    "message": "正在刪除"
-  },
-  "syncCompletedLabel": {
-    "message": "同步完成。"
-  },
-  "signInRequiredLabel": {
-    "message": "需要登入帳號才能使用雲端同步功能。"
-  },
-  "signInLabel": {
-    "message": "登入"
-  },
-  "signOutLabel": {
-    "message": "登出"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "自動同步"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "當瀏覽器啟動或儲存瀏覽工作階段時，自動執行雲端同步。"
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "同步並儲存瀏覽工作階段"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "在雲端同步時上傳/下載自動儲存的瀏覽工作階段。"
-  },
   "popupLabel": {
     "message": "彈出式視窗"
   },

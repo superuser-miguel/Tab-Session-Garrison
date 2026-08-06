@@ -6,7 +6,6 @@ import Sessions from "./sessions.js";
 import { getSettings } from "src/settings/settings";
 import { returnReplaceParameter } from "./replace.js";
 import ignoreUrls from "./ignoreUrls";
-import { pushRemovedQueue, syncCloudAuto } from "./cloudSync.js";
 import { getValidatedTag } from "./tag.js";
 import { queryTabGroups, isEnabledTabGroups } from "../common/tabGroups";
 import { compressDataUrl } from "../common/compressDataUrl";
@@ -113,20 +112,17 @@ export async function sendMessage(message, options = {}) {
     .catch(() => {});
 }
 
-export async function saveSession(session, isSendResponce = true, saveBySync = false) {
+export async function saveSession(session, isSendResponce = true) {
   log.log(logDir, "saveSession()", session, isSendResponce);
   try {
     const shouldSaveDeviceName = getSettings("shouldSaveDeviceName");
-    if (shouldSaveDeviceName && !saveBySync) {
+    if (shouldSaveDeviceName) {
       const deviceName = getSettings("deviceName");
       const validatedTag = getValidatedTag(deviceName, session);
       if (validatedTag !== "") session.tag.push(deviceName);
     }
     await Sessions.put(session);
-    if (isSendResponce) {
-      sendMessage("saveSession", { session: session, saveBySync: saveBySync });
-      if (!saveBySync) syncCloudAuto();
-    }
+    if (isSendResponce) sendMessage("saveSession", { session: session });
     return session;
   } catch (e) {
     log.error(logDir, "saveSession()", e);
@@ -138,7 +134,6 @@ export async function removeSession(id, isSendResponce = true) {
   log.log(logDir, "removeSession()", id, isSendResponce);
   try {
     await Sessions.delete(id);
-    pushRemovedQueue(id);
     if (isSendResponce) sendMessage("deleteSession", { id: id });
   } catch (e) {
     log.error(logDir, "removeSession()", e);
@@ -149,14 +144,13 @@ export async function removeSession(id, isSendResponce = true) {
 export async function updateSession(
   session,
   isSendResponce = true,
-  shouldUpdateEditedTime = true,
-  saveBySync = false
+  shouldUpdateEditedTime = true
 ) {
   log.log(logDir, "updateSession()", session, isSendResponce, shouldUpdateEditedTime);
   try {
     if (shouldUpdateEditedTime) session.lastEditedTime = Date.now();
     await Sessions.put(session);
-    if (isSendResponce) sendMessage("updateSession", { session: session, saveBySync: saveBySync });
+    if (isSendResponce) sendMessage("updateSession", { session: session });
     return session;
   } catch (e) {
     log.error(logDir, "updateSession()", e);

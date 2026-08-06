@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Если имя сессии в списке занимает более одной строки, оно обрезается и отображается в таком виде."
   },
-  "cloudSyncLabel": {
-    "message": "Облачная синхронизация"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Включить облачную синхронизацию (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Сохраните сессии в Google Drive™ и синхронизируйте их с другими компьютерами."
-  },
-  "syncingLabel": {
-    "message": "Синхронизация"
-  },
-  "downloadingLabel": {
-    "message": "Скачивание"
-  },
-  "uploadingLabel": {
-    "message": "Выгрузка"
-  },
-  "deletingLabel": {
-    "message": "Удаление"
-  },
-  "syncCompletedLabel": {
-    "message": "Синхронизация завершена."
-  },
-  "signInRequiredLabel": {
-    "message": "Для синхронизации с облаком необходимо выполнить вход."
-  },
-  "signInLabel": {
-    "message": "Войти"
-  },
-  "signOutLabel": {
-    "message": "Выйти"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Синхронизировать автоматически"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Выполнять синхронизацию при запуске браузера и при сохранении сессии."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Синхронизировать автосохранённые сессии"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Выгружать и скачивать автосохранённые сессии."
-  },
   "popupLabel": {
     "message": "Всплывающее окно"
   },

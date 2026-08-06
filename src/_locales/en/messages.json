@@ -3,7 +3,7 @@
     "message": "Tab Session Garrison"
   },
   "extDescription": {
-    "message": "Save and restore the state of windows and tabs. It also supports automatic saving."
+    "message": "Keyboard-first session manager: save and restore windows and tabs, with multi-select, full keyboard navigation, and Firefox tab-group awareness."
   },
   "openSessionListInTabLabel": {
     "message": "Open session list in tab"
@@ -450,7 +450,7 @@
     "message": "Save device name to session"
   },
   "shouldSaveDeviceNameCaptionLabel": {
-    "message": "Add the device name as a tag when saving a session. When using cloud sync, you can distinguish it from sessions on other devices."
+    "message": "Add the device name as a tag when saving a session, so sessions imported or restored from another machine stay distinguishable."
   },
   "deviceNameLabel": {
     "message": "Device name"
@@ -520,51 +520,6 @@
   },
   "truncateTitleCaptionLabel": {
     "message": "If the session name in the session list extends over more than one line, it is truncated on one line and displayed."
-  },
-  "cloudSyncLabel": {
-    "message": "Cloud sync"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Enable cloud sync (Experimental)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Save sessions to Google Drive™ and sync with other computers."
-  },
-  "syncingLabel": {
-    "message": "Syncing"
-  },
-  "downloadingLabel": {
-    "message": "Downloading"
-  },
-  "uploadingLabel": {
-    "message": "Uploading"
-  },
-  "deletingLabel": {
-    "message": "Deleting"
-  },
-  "syncCompletedLabel": {
-    "message": "Sync completed."
-  },
-  "signInRequiredLabel": {
-    "message": "Requires sign in for cloud sync."
-  },
-  "signInLabel": {
-    "message": "Sign in"
-  },
-  "signOutLabel": {
-    "message": "Sign out"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Automatically sync"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Execute cloud sync when the browser is launched and when the session is saved."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Sync auto save sessions"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Upload / download auto save sessions in cloud sync."
   },
   "popupLabel": {
     "message": "Popup"

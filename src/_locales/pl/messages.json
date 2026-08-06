@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Jeśli nazwa sesji na liście sesji jest dłuższa niż jedna linia, jest ona obcinana do jednej inii i wyświetlana."
   },
-  "cloudSyncLabel": {
-    "message": "Synchronizacja w chmurze"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Włącz synchronizację w chmurze (beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Zapisz sesje na Dysku Google i synchronizuj z innymi komputerami."
-  },
-  "syncingLabel": {
-    "message": "Synchronizowanie"
-  },
-  "downloadingLabel": {
-    "message": "Pobieranie"
-  },
-  "uploadingLabel": {
-    "message": "Wysyłanie"
-  },
-  "deletingLabel": {
-    "message": "Usuwanie"
-  },
-  "syncCompletedLabel": {
-    "message": "Synchronizacja zakończona."
-  },
-  "signInRequiredLabel": {
-    "message": "Wymaga zalogowania w celu synchronizacji z chmurą."
-  },
-  "signInLabel": {
-    "message": "Zaloguj się"
-  },
-  "signOutLabel": {
-    "message": "Wyloguj"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Synchronizuj automatycznie"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Wykonaj synchronizację z chmurą po uruchomieniu przeglądarki i zapisaniu sesji."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Synchronizuj automatycznie zapisane sesje"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Wyślij / pobierz automatycznie zapisane sesje do / z chmury."
-  },
   "popupLabel": {
     "message": "Wyskakujące okno"
   },

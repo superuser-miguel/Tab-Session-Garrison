@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Se o nome da sessão na lista sessão se estende por mais de uma linha, é truncado para exibição em uma linha."
   },
-  "cloudSyncLabel": {
-    "message": "Sincronização na nuvem"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Ativar sincronização na nuvem (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Salvar sessões no Google Drive™ e sincronizar com outros computadores."
-  },
-  "syncingLabel": {
-    "message": "Sincronizando"
-  },
-  "downloadingLabel": {
-    "message": "Baixando"
-  },
-  "uploadingLabel": {
-    "message": "Fazendo upload"
-  },
-  "deletingLabel": {
-    "message": "Excluindo"
-  },
-  "syncCompletedLabel": {
-    "message": "Sincronização completa."
-  },
-  "signInRequiredLabel": {
-    "message": "Sincronizar na nuvem requer login."
-  },
-  "signInLabel": {
-    "message": "Iniciar sessão"
-  },
-  "signOutLabel": {
-    "message": "Finalizar sessão"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Sincronizar automaticamente"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Executar sincronização na nuvem ao iniciar o navegador e ao salvar a sessão."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Sincronizar sessões de salvamento automático"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Enviar / baixar sessões de salvamento automático em sincronização na nuvem."
-  },
   "popupLabel": {
     "message": "Pop-up"
   },

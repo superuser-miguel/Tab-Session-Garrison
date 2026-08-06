@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Si le nom d'une session dans la liste de sessions s’étend sur plusieurs lignes, il sera tronqué pour être affiché sur une seule ligne."
   },
-  "cloudSyncLabel": {
-    "message": "Synchronisation infonuagique"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Activer la synchronisation (bêta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Enregistrer les sessions sur Google Drive™ et synchroniser avec les autres ordinateurs."
-  },
-  "syncingLabel": {
-    "message": "Synchronisation en cours"
-  },
-  "downloadingLabel": {
-    "message": "Téléchargement…"
-  },
-  "uploadingLabel": {
-    "message": "Mise en ligne…"
-  },
-  "deletingLabel": {
-    "message": "Suppression en cours"
-  },
-  "syncCompletedLabel": {
-    "message": "Synchronisation terminée."
-  },
-  "signInRequiredLabel": {
-    "message": "Nécessite de se connecter pour la synchronisation infonuagique."
-  },
-  "signInLabel": {
-    "message": "Se connecter"
-  },
-  "signOutLabel": {
-    "message": "Se déconnecter"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Synchroniser automatiquement"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Exécuter une synchronisation infonuagique quand le navigateur se lance et quand la session est sauvegardée."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Synchroniser les sessions autosauvegardées"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Charger / télécharger via une synchronisation cloud les sessions enregistrées automatiquement."
-  },
   "popupLabel": {
     "message": "Pop-up"
   },

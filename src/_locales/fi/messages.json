@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Jos istunnon nimi ylittää istuntolistalla yhden rivin pituuden, katkaistaan se yhdelle riville ja näytetään."
   },
-  "cloudSyncLabel": {
-    "message": "Pilvisynkronointi"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Käytä pilvisynkronointia (beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Tallenna istunnot Google Driveen™ ja synkronoi ne muiden tietokoneiden kanssa."
-  },
-  "syncingLabel": {
-    "message": "Synkronoidaan"
-  },
-  "downloadingLabel": {
-    "message": "Ladataan"
-  },
-  "uploadingLabel": {
-    "message": "Lähetetään"
-  },
-  "deletingLabel": {
-    "message": "Poistetaan"
-  },
-  "syncCompletedLabel": {
-    "message": "Synkronointi on suoritettu."
-  },
-  "signInRequiredLabel": {
-    "message": "Pilvisynkronointi edellyttää kirjautumista."
-  },
-  "signInLabel": {
-    "message": "Kirjaudu sisään"
-  },
-  "signOutLabel": {
-    "message": "Kirjaudu ulos"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Synkronoi automaattisesti"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Suorita pilvisynkronointi selaimen käynnistyessä ja istuntoa tallennettaessa."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Synkronoi automaattisestitallennetut istunnot"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Lähetä/lataa automaattisesti tallennetut istunnot pilvisynkronoinnissa."
-  },
   "popupLabel": {
     "message": "Ponnahdus"
   },

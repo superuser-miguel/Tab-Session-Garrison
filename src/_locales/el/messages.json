@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Αν το όνομα της συνεδρίας ξεπερνάει τη μία γραμμή, να αποκόπτεται κατά την εμφάνιση."
   },
-  "cloudSyncLabel": {
-    "message": "Συγχρονισμός στο Cloud"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Ενεργοποίηση συγχρονισμού στο Cloud (beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Αποθήκευση συνεδριών στο Google Drive™ και συγχρονισμός με άλλους υπολογιστές."
-  },
-  "syncingLabel": {
-    "message": "Γίνεται συγχρονισμός"
-  },
-  "downloadingLabel": {
-    "message": "Γίνεται λήψη"
-  },
-  "uploadingLabel": {
-    "message": "Γίνεται μεταφόρτωση"
-  },
-  "deletingLabel": {
-    "message": "Γίνεται διαγραφή"
-  },
-  "syncCompletedLabel": {
-    "message": "Ο συγχρονισμός ολοκληρώθηκε."
-  },
-  "signInRequiredLabel": {
-    "message": "Απαιτείται σύνδεση για συγχρονισμό στο σύννεφο."
-  },
-  "signInLabel": {
-    "message": "Σύνδεση"
-  },
-  "signOutLabel": {
-    "message": "Αποσύνδεση"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Αυτόματος συγχρονισμός"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Εκτέλεση του συγχρονισμού στο cloud κατά την εκκίνηση του προγράμματος περιήγησης και κατά την αποθήκευση της συνεδρίας."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Συγχρονισμός αυτόματα αποθηκευμένων συνεδριών"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Αποστολή/λήψη αυτόματα αποθηκευμένων συνεδριών στο σύννεφο."
-  },
   "popupLabel": {
     "message": "Αναδυόμενο παράθυρο"
   },

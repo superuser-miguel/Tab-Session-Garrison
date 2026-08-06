@@ -7,7 +7,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "tab-session-garrison@superuser-miguel",
-      "update_url": "https://raw.githubusercontent.com/superuser-miguel/Tab-Session-Garrison/main/updates.json"
+      "update_url": "https://raw.githubusercontent.com/superuser-miguel/Tab-Session-Garrison/main/updates.json",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
     }
   },
   "permissions": [
@@ -18,10 +21,8 @@
     "tabGroups",
     "cookies",
     "downloads",
-    "identity",
     "alarms"
   ],
-  "optional_permissions": ["https://www.googleapis.com/*"],
   "options_ui": {
     "page": "options/index.html",
     "open_in_tab": true

@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "如果会话名称长度超过一行，则不显示超出的部分。"
   },
-  "cloudSyncLabel": {
-    "message": "云同步"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "启用云同步（Beta）"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "保存会话到 Google Drive™ 并与其它计算机同步。"
-  },
-  "syncingLabel": {
-    "message": "正在同步"
-  },
-  "downloadingLabel": {
-    "message": "正在下载"
-  },
-  "uploadingLabel": {
-    "message": "正在上传"
-  },
-  "deletingLabel": {
-    "message": "正在删除"
-  },
-  "syncCompletedLabel": {
-    "message": "同步完成。"
-  },
-  "signInRequiredLabel": {
-    "message": "云同步需要登录使用。"
-  },
-  "signInLabel": {
-    "message": "登录"
-  },
-  "signOutLabel": {
-    "message": "登出"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "自动同步"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "当浏览器启动和保存会话时，执行云同步操作。"
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "同步自动保存的会话"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "在云同步时上传/下载自动保存的会话。"
-  },
   "popupLabel": {
     "message": "弹出窗口"
   },

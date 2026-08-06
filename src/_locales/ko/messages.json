@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "세션 목록에서 세션 이름이 한 줄을 넘어가면, 일부 생략하여 한 줄로 보입니다."
   },
-  "cloudSyncLabel": {
-    "message": "클라우드 동기화"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "클라우드 동기화 활성화 (베타)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Google Drive에 세션을 저장하여 다른 장치와 동기화합니다."
-  },
-  "syncingLabel": {
-    "message": "동기화 중"
-  },
-  "downloadingLabel": {
-    "message": "내려받는 중"
-  },
-  "uploadingLabel": {
-    "message": "올리는 중"
-  },
-  "deletingLabel": {
-    "message": "지우는 중"
-  },
-  "syncCompletedLabel": {
-    "message": "동기화 완료"
-  },
-  "signInRequiredLabel": {
-    "message": "Requires sign in for cloud sync."
-  },
-  "signInLabel": {
-    "message": "로그인"
-  },
-  "signOutLabel": {
-    "message": "로그아웃"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "자동 동기화"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "브라우저가 실행될 때와 세션이 저장될 때 클라우드 동기화 실행."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "자동 저장된 세션을 동기화"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "클라우드 내 자동 저장된 세션을 올리기 / 내려받기"
-  },
   "popupLabel": {
     "message": "팝업"
   },

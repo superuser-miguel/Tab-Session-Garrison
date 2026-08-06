@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Viss namnet til økta i øktlista er lengre enn éi linje, vert den forkorta slik at den vert vist fram på kun éi linje."
   },
-  "cloudSyncLabel": {
-    "message": "Skysynkronisering"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Slå på skysynkronisering (beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Lagra økter på Google Drive™ og synkroniser med andre datamaskinar."
-  },
-  "syncingLabel": {
-    "message": "Synkroniserer"
-  },
-  "downloadingLabel": {
-    "message": "Lastar ned"
-  },
-  "uploadingLabel": {
-    "message": "Lastar opp"
-  },
-  "deletingLabel": {
-    "message": "Sletter"
-  },
-  "syncCompletedLabel": {
-    "message": "Fullførte synkroniseringa."
-  },
-  "signInRequiredLabel": {
-    "message": "Krev innlogging for synkronisering."
-  },
-  "signInLabel": {
-    "message": "Logg inn"
-  },
-  "signOutLabel": {
-    "message": "Logg ut"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Synkroniser automatisk"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Synkroniser når nettlesaren startar opp og når ei økt vert lagra."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Synkroniser automatisk lagra økter"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Last opp/ned automatisk lagra økter med skysynkronisering."
-  },
   "popupLabel": {
     "message": "Sprettoppvindu"
   },

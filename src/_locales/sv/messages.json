@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Om namnet på sessionen överskrids i sessionslistan kommer det att kortas ner och visas på en rad."
   },
-  "cloudSyncLabel": {
-    "message": "Molnsynkronisering"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Aktivera molnsynkronisering (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Spara sessioner till Google Drive™ och synkronisera med andra datorer."
-  },
-  "syncingLabel": {
-    "message": "Synkroniserar"
-  },
-  "downloadingLabel": {
-    "message": "Laddar ner"
-  },
-  "uploadingLabel": {
-    "message": "Laddar upp"
-  },
-  "deletingLabel": {
-    "message": "Tar bort"
-  },
-  "syncCompletedLabel": {
-    "message": "Synkroniserad."
-  },
-  "signInRequiredLabel": {
-    "message": "Kräver inloggning för molnsynkronisering."
-  },
-  "signInLabel": {
-    "message": "Logga in"
-  },
-  "signOutLabel": {
-    "message": "Logga ut"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Synkronisera automatiskt"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Kör molnsynkronisering när webbläsaren startas och när sessionen sparas."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Synkronisera automatiskt spara sessioner"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Ladda upp / ladda ner automatiskt sparade sessioner i molnsynkronisering."
-  },
   "popupLabel": {
     "message": "Poppupp"
   },

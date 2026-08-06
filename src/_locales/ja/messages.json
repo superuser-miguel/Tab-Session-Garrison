@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "セッションリストのセッション名が複数行に渡る場合、1行に切り詰めて表示します。"
   },
-  "cloudSyncLabel": {
-    "message": "クラウド同期"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "クラウド同期を有効にする (ベータ版)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "セッションをGoogle Drive™に保存して他のデバイスと同期します。"
-  },
-  "syncingLabel": {
-    "message": "同期中"
-  },
-  "downloadingLabel": {
-    "message": "ダウンロード中"
-  },
-  "uploadingLabel": {
-    "message": "アップロード中"
-  },
-  "deletingLabel": {
-    "message": "削除中"
-  },
-  "syncCompletedLabel": {
-    "message": "同期が完了しました。"
-  },
-  "signInRequiredLabel": {
-    "message": "クラウド同期にはサインインが必要です。"
-  },
-  "signInLabel": {
-    "message": "サインイン"
-  },
-  "signOutLabel": {
-    "message": "サインアウト"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "自動的に同期する"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "ブラウザ起動時とセッション保存時に自動的にクラウド同期を実行します。"
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "自動保存セッションを同期する"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "クラウド同期時に自動保存されたセッションをアップロード・ダウンロードします。"
-  },
   "popupLabel": {
     "message": "ポップアップ"
   },

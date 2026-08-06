@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Se il nome della sessione nella lista delle sessioni si estende su più righe, viene troncato in un'unica riga."
   },
-  "cloudSyncLabel": {
-    "message": "Sincronizzazione Cloud"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Abilita sincronizzazione cloud (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Salva le sessioni in Google Drive™ e le sincronizza con gli altri computer."
-  },
-  "syncingLabel": {
-    "message": "Sincronizzazione in corso"
-  },
-  "downloadingLabel": {
-    "message": "Download in corso"
-  },
-  "uploadingLabel": {
-    "message": "Upload in corso"
-  },
-  "deletingLabel": {
-    "message": "Eliminazione in corso"
-  },
-  "syncCompletedLabel": {
-    "message": "Sincronizzazione completata."
-  },
-  "signInRequiredLabel": {
-    "message": "È richiesto l'accesso per la sincronizzazione cloud."
-  },
-  "signInLabel": {
-    "message": "Accedi"
-  },
-  "signOutLabel": {
-    "message": "Disconnetti"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Sincronizza automaticamente"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Esegue la sincronizzazione in cloud quando il browser viene avviato e quando la sessione viene salvata."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Sincronizza sessioni salvate automaticamente"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Carica e scarica sul cloud le sessioni salvate automaticamente."
-  },
   "popupLabel": {
     "message": "Popup"
   },

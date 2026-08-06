@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "සැසි ලැයිස්තුවේ සැසියේ නම පේළි එකකට වඩා වැඩි නම්, එය එක් පේළියක කප්පාදු කර දර්ශනය වේ."
   },
-  "cloudSyncLabel": {
-    "message": "වලාකුළු සමමුහුර්තකරණය"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "වලාකුළු සමමුහුර්තකරණය සබල කරන්න (බීටා)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "සැසි Google Drive™ වෙත සුරකින්න සහ අනෙකුත් පරිගණක සමඟ සමමුහුර්ත කරන්න."
-  },
-  "syncingLabel": {
-    "message": "සමමුහුර්ත කිරීම"
-  },
-  "downloadingLabel": {
-    "message": "බාගත කිරීමේ"
-  },
-  "uploadingLabel": {
-    "message": "උඩුගත කිරීම"
-  },
-  "deletingLabel": {
-    "message": "මකා දැමීම"
-  },
-  "syncCompletedLabel": {
-    "message": "සමමුහුර්ත කිරීම සම්පූර්ණයි."
-  },
-  "signInRequiredLabel": {
-    "message": "වලාකුළු සමමුහුර්ත කිරීම සඳහා පුරනය වීම අවශ්‍ය වේ."
-  },
-  "signInLabel": {
-    "message": "පිවිසෙන්න"
-  },
-  "signOutLabel": {
-    "message": "නික්මෙන්න"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "ස්වයංක්‍රීයව සමමුහුර්ත කරන්න"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "බ්‍රවුසරය දියත් කරන විට සහ සැසිය සුරකින විට වලාකුළු සමමුහුර්තකරණය ක්‍රියාත්මක කරන්න."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "ස්වයංක්‍රීය සුරැකුම් සැසි සමමුහුර්ත කරන්න"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "වලාකුළු සමමුහුර්තකරණය තුළ ස්වයංක්‍රීය සුරැකීමේ සැසි උඩුගත කරන්න / බාගන්න."
-  },
   "popupLabel": {
     "message": "මතුවන"
   },

@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Oturum listesindeki oturum adı tek bir satırdan uzunsa, tek satır olarak kısaltılır ve görüntülenir."
   },
-  "cloudSyncLabel": {
-    "message": "Bulut eşitlemesi"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Bulut eşitlemesi kullanılsın (Beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Oturumlar Google Drive™ üzerine kaydedilir ve diğer bilgisayarlarla eşitlenir."
-  },
-  "syncingLabel": {
-    "message": "Eşitleniyor"
-  },
-  "downloadingLabel": {
-    "message": "İndiriliyor"
-  },
-  "uploadingLabel": {
-    "message": "Yükleniyor"
-  },
-  "deletingLabel": {
-    "message": "Siliniyor"
-  },
-  "syncCompletedLabel": {
-    "message": "Eşitleme tamamlandı."
-  },
-  "signInRequiredLabel": {
-    "message": "Bulut eşitlemesi için oturum açmalısınız."
-  },
-  "signInLabel": {
-    "message": "Oturum aç"
-  },
-  "signOutLabel": {
-    "message": "Oturumu kapat"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Otomatik olarak eşitlensin"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Tarayıcı başlatıldığında ve oturum kaydedildiğinde bulut eşitlemesi yapılır."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Otomatik kaydedilen oturumlar eşitlensin"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Bulut eşitlemesinde otomatik olarak kaydedilmiş oturumlar yüklenir ya da indirilir."
-  },
   "popupLabel": {
     "message": "Açılan pencere"
   },

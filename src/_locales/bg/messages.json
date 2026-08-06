@@ -503,51 +503,6 @@
   "truncateTitleCaptionLabel": {
     "message": "Ако името на сесия в списъка е на повече редове, то ще бъде съкратено и показано на един ред."
   },
-  "cloudSyncLabel": {
-    "message": "Синхронизиране в облака"
-  },
-  "enabledCloudSyncLabel": {
-    "message": "Включване на синхронизирането в облака (beta)"
-  },
-  "enabledCloudSyncCaptionLabel": {
-    "message": "Запазване на сесиите в Google Drive™ и синхронизиране с други устройства."
-  },
-  "syncingLabel": {
-    "message": "Синхронизиране"
-  },
-  "downloadingLabel": {
-    "message": "Изтегляне"
-  },
-  "uploadingLabel": {
-    "message": "Качване"
-  },
-  "deletingLabel": {
-    "message": "Изтриване"
-  },
-  "syncCompletedLabel": {
-    "message": "Синхронизацията завърши"
-  },
-  "signInRequiredLabel": {
-    "message": "Изисква влизане за синхронизиране в облака."
-  },
-  "signInLabel": {
-    "message": "Вписване"
-  },
-  "signOutLabel": {
-    "message": "Отписване"
-  },
-  "enabledAutoSyncLabel": {
-    "message": "Автоматично синхронизиране"
-  },
-  "enabledAutoSyncCaptionLabel": {
-    "message": "Извършване на синхронизация в облака при стартиране на браузъра и при запазване на сесията."
-  },
-  "includesAutoSaveToSyncLabel": {
-    "message": "Синхронизиране на автоматичното запазване на сесии"
-  },
-  "includesAutoSaveToSyncCaptionLabel": {
-    "message": "Качване/изтегляне на автоматичното запазване на сесии при облачно синхронизиране."
-  },
   "popupLabel": {
     "message": "Изскачащо меню"
   },
