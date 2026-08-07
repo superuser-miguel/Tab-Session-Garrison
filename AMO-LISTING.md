@@ -93,7 +93,7 @@ Source: https://github.com/superuser-miguel/Tab-Session-Garrison
 | Support email | *(your call — AMO requires one of site/email)* |
 | License | GPL-3.0-or-later |
 | Privacy policy | Required only if you collect data. Manifest declares `data_collection_permissions: none`, so a short "no data is collected or transmitted" statement is enough. |
-| Tags | session, tabs, tab groups, keyboard, backup, restore |
+| Tags | ~~free-form tags~~ — AMO only offers a fixed, curated tag list now; none of its entries fit a session manager, so this was deliberately left empty (2026-08-06). Categories carry discovery. |
 
 ## Screenshots
 
