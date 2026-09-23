@@ -1,6 +1,12 @@
 {
-  "categories": ["tabs", "privacy-security"],
+  "categories": [
+    "tabs",
+    "privacy-security"
+  ],
   "version": {
-    "license": "GPL-3.0-only"
+    "license": "GPL-3.0-only",
+    "release_notes": {
+      "en-US": "Faster, and fixes for backups and restore.\n\nSpeed\n- The popup opens dramatically faster on large profiles: the session list and search now read a small index instead of decoding every saved session (every tab and favicon) each time.\n- Auto-save does much less work in the background after every tab change.\n- Large sessions scroll smoothly in the detail pane.\n\nFixes\n- Backups: with backups on, the \"all sessions\" mode wrote a full, uncompressed copy of every session every 30 minutes. It's back to once per browser session, and the compressed Complete backup is skipped when nothing has changed.\n- Opening a session in a new window did nothing when the Firefox homepage was saved without \"https://\". New windows now open on a blank page first.\n- Backups still going to the old \"TabSessionManager - Backup\" folder now use \"Tab_Session_Garrison_Backup\" (only if you never changed it). Existing backup files stay where they are.\n\nPolish\n- The undo/redo arrows match the other header icons.\n- The placeholder page for not-yet-loaded tabs uses the green theme.\n\nNote: this update upgrades the internal session database. Your sessions are kept; going back to 0.3.0 afterwards isn't supported."
+    }
   }
 }

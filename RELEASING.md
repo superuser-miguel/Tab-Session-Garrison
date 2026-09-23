@@ -53,7 +53,9 @@ parallel self-hosted channel cannot coexist on this id).
    ```
    `amo-metadata.json` (repo root) carries the API-required fields: the license
    (exact builtin slug `GPL-3.0-only` — AMO has no "or-later" variant) and the
-   listing categories.
+   listing categories — plus this version's **release notes**
+   (`version.release_notes["en-US"]`). **Replace the notes every release**;
+   reuse the same text for the GitHub Release in step 5.
 
    For **listed** submissions web-ext exits with "Approval: timeout exceeded"
    after ~15 min of polling — **that is success**, not failure: the version is
