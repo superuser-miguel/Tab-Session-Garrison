@@ -9,10 +9,14 @@ Versions ≤ 0.2.1 were self-distributed as **unlisted** signed xpis updating vi
 [`updates.json`](updates.json). Because the add-on id is unchanged
 (`tab-session-garrison@superuser-miguel`), those installs upgrade cleanly to the
 listed build and keep their data (IndexedDB + storage.local).
-`updates.json` is frozen at 0.2.1 as a migration bridge — never add newer
-entries to it, and never re-add `update_url` to `src/manifest-ff.json`
-(version numbers are unique per add-on id **across both channels**, so a
-parallel self-hosted channel cannot coexist on this id).
+Those old installs carry `update_url` in their manifest, so Firefox checks
+[`updates.json`](updates.json) for them — **not** AMO. `updates.json` is the
+migration bridge: its newest entry points at the **AMO-signed 0.3.0** xpi on
+GitHub Releases. Installing it drops `update_url`, and from then on the
+install updates from AMO. It only ever needs that one bridge entry; never
+list an xpi that isn't AMO-signed, and never re-add `update_url` to
+`src/manifest-ff.json` (version numbers are unique per add-on id **across
+both channels**, so a parallel self-hosted channel cannot coexist on this id).
 
 ## One-time setup
 
@@ -83,4 +87,4 @@ parallel self-hosted channel cannot coexist on this id).
 - The add-on **id** (`tab-session-garrison@superuser-miguel`) must stay stable
   forever — it is the identity AMO updates and user data are keyed to.
 - No `update_url` in any manifest (not permitted on the listed channel).
-- `updates.json` stays frozen at 0.2.1.
+- `updates.json` stays at the 0.3.0 bridge entry (AMO-signed xpi) — it exists only to move pre-0.3.0 installs onto AMO.
