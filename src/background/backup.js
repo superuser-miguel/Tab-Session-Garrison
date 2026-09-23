@@ -6,7 +6,7 @@ import { getSettings, setSettings } from "src/settings/settings";
 import exportSessions from "./export.js";
 import getSessions from "./getSessions.js";
 import { buildZip, writeBackupFile } from "./backupZip.js";
-import { addEntry } from "./backupManifest.js";
+import { addEntry, getManifest } from "./backupManifest.js";
 
 const logDir = "background/backup";
 
@@ -21,11 +21,32 @@ export const backupSessions = async () => {
   else backupAllSessions();
 };
 
+// Cheap signature of the session store (ids + edit times) used to skip a
+// Complete snapshot when nothing changed since the previous one.
+const getSessionsFingerprint = async () => {
+  const sessions = await Sessions.getAll(["id", "lastEditedTime"]).catch(() => []);
+  const text = sessions
+    .map(s => `${s.id}:${s.lastEditedTime}`)
+    .sort()
+    .join("|");
+  let hash = 5381;
+  for (let i = 0; i < text.length; i++) hash = ((hash << 5) + hash + text.charCodeAt(i)) | 0;
+  return `${sessions.length}:${hash >>> 0}`;
+};
+
 // Complete tier: a full, timestamped snapshot of every session, written as a
 // single .zip into <backupFolder>/complete/. Kept indefinitely — space is
-// managed by compression, not deletion.
+// managed by compression, not deletion — so a snapshot is only written when
+// the sessions changed since the last one.
 const backupComplete = async () => {
   log.log(logDir, "backupComplete()");
+  const fingerprint = await getSessionsFingerprint();
+  const lastEntry = (await getManifest()).complete.slice(-1)[0];
+  if (lastEntry?.fingerprint === fingerprint) {
+    log.log(logDir, "backupComplete() unchanged, skipped");
+    return;
+  }
+
   const sessions = await getSessions().catch(() => {});
   if (!sessions || sessions.length === 0) return;
 
@@ -41,7 +62,8 @@ const backupComplete = async () => {
       downloadId,
       filename,
       time: Date.now(),
-      sessionsCount: sessions.length
+      sessionsCount: sessions.length,
+      fingerprint
     });
   }
 };
@@ -106,10 +128,16 @@ const backupIndividualSessions = async () => {
   setSettings("lastBackupTime", currentTime);
 };
 
+// Legacy "all sessions" mode writes an uncompressed dump of everything under a
+// new timestamped name each run, so it must not follow the periodic alarm —
+// limit it to once per browser session, as it behaved before 0.3.0.
 const backupAllSessions = async () => {
+  const { didBackupAllSessions } = await browser.storage.session.get("didBackupAllSessions");
+  if (didBackupAllSessions) return;
   log.log(logDir, "backupAllSessions");
   const folder = getSettings("backupFolder");
   await exportSessions(null, folder, true);
+  await browser.storage.session.set({ didBackupAllSessions: true });
 };
 
 export const resetLastBackupTime = changes => {
