@@ -58,7 +58,7 @@ Every session is one of four types, shown as a coloured pill:
 | **Window closed** (amber) | Captured automatically when you closed a window |
 | **Browser exited** (red) | Captured automatically when Firefox last quit |
 
-The three automatic types carry a stored marker, so they're always exact. **Manual Save** is stamped on every save you make from now on. For older sessions saved before this feature — and for anything **imported** or **cloud-restored** that arrived without a type — it's _inferred_ from the absence of an auto-save marker. In practice that inference is accurate: a session you manually saved in Tab Session Manager and imported here still reads as a Manual Save. The type pills are descriptors, not labels, so they can't be removed — but your own custom tags still can.
+The three automatic types carry a stored marker, so they're always exact. **Manual Save** is stamped on every save you make from now on. For older sessions saved before this feature — and for anything **imported** that arrived without a type — it's _inferred_ from the absence of an auto-save marker. In practice that inference is accurate: a session you manually saved in Tab Session Manager and imported here still reads as a Manual Save. The type pills are descriptors, not labels, so they can't be removed — but your own custom tags still can.
 
 ![The four colour-coded session types in the list](docs/screenshots/manual-save.png)
 
@@ -92,42 +92,28 @@ This is a **personal fork**, built and used on **Firefox (Linux)**. A few things
 
 ## Installing
 
-### Try it (temporary)
+**[Get it on addons.mozilla.org](https://addons.mozilla.org/firefox/addon/3035144/)** — the listed, Mozilla-reviewed build. Firefox keeps it up to date automatically.
+
+Each release's AMO-signed `.xpi` is also attached to [GitHub Releases](https://github.com/superuser-miguel/Tab-Session-Garrison/releases) (install via `about:addons` → ⚙ → **Install Add-on From File**). It's the same add-on, so it still gets updates from AMO.
+
+> **Upgrading from a pre-0.3.0 self-signed build?** Nothing to do — it's the same add-on id, so your install moves to the AMO build on its next update check and keeps all your sessions and settings.
+
+### Try a local build (temporary)
 
 1. Build it (see [Developing](#developing)), or use an existing `dev/firefox` build.
 2. Firefox → `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on** → pick `manifest.json` inside `dev/firefox`.
 
-Temporary add-ons unload when Firefox restarts.
-
-### Keep it (permanent, auto-updating)
-
-Firefox won't permanently install an unsigned extension, so it's distributed as an **unlisted** (self-signed) add-on — signed through Mozilla but **never published or listed**, and it keeps your normal Firefox. Once installed, Firefox **auto-updates** it by polling [`updates.json`](updates.json) in this repo, so you only install by hand once:
-
-```bash
-npm install -g web-ext
-npm run build
-web-ext sign --source-dir temp/firefox --channel unlisted \
-  --api-key "user:XXXX:YY" --api-secret "ZZZZ"
-```
-
-Install the resulting signed `.xpi` via `about:addons` → ⚙ → **Install Add-on From File** — after that, new versions arrive automatically. (API keys come from AMO → Developer Hub → *Manage API Keys*.)
-
-The full cut-a-release procedure — version bump, signing, GitHub Release, and updating the auto-update manifest — lives in **[RELEASING.md](RELEASING.md)**.
+Temporary add-ons unload when Firefox restarts. The cut-a-release procedure (version bump, build, AMO submission, GitHub mirror) lives in **[RELEASING.md](RELEASING.md)**.
 
 ---
 
 ## Developing
 
-> Target: Node 24.13.0 / npm 11.7.0 — builds fine on Node 22+ with a harmless engine warning.
+> Node 22+ / npm 10+. The production build is deterministic — see [BUILD.md](BUILD.md).
 
 ```bash
 git clone https://github.com/superuser-miguel/Tab-Session-Garrison
 cd Tab-Session-Garrison
-
-# Cloud-sync credentials are gitignored and absent from the repo.
-# A stub lets the build complete (cloud sync stays off locally):
-printf 'export const clientId = "";\nexport const clientSecret = "";\n' > src/credentials.js
-
 npm install
 npm run watch-dev      # rebuilds on save; output lands in dev/firefox
 ```
