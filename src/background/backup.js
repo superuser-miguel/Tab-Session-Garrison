@@ -10,6 +10,10 @@ import { addEntry, getManifest } from "./backupManifest.js";
 
 const logDir = "background/backup";
 
+const DEFAULT_BACKUP_FOLDER = "Tab_Session_Garrison_Backup";
+// Earlier defaults: upstream Tab Session Manager's, then this fork's first one.
+const LEGACY_BACKUP_FOLDERS = ["TabSessionManager - Backup", "Tab Session Garrison - Backup"];
+
 export const backupSessions = async () => {
   if (!getSettings("ifBackup")) return;
 
@@ -89,7 +93,7 @@ export const handleBackupSettingsChange = changes => {
 // Sanitized "<backupFolder>/" prefix for backup file paths. The download folder
 // is the only writable location, so backupFolder is always a subpath of it.
 const backupBaseFolder = () => {
-  const raw = getSettings("backupFolder") || "Tab_Session_Garrison_Backup";
+  const raw = getSettings("backupFolder") || DEFAULT_BACKUP_FOLDER;
   const cleaned = raw
     .replace(/[:?."<>|]/g, "-")
     .replace(/\\/g, "/")
@@ -140,9 +144,24 @@ const backupAllSessions = async () => {
   await browser.storage.session.set({ didBackupAllSessions: true });
 };
 
+// One-time move of an untouched legacy default to the current default. A
+// folder the user chose themselves is left alone. Existing backup files stay
+// where they are; new ones go to the new folder.
+export const migrateBackupFolder = async () => {
+  if (!LEGACY_BACKUP_FOLDERS.includes(getSettings("backupFolder"))) return;
+  log.info(logDir, "migrateBackupFolder()", getSettings("backupFolder"));
+  await setSettings("backupFolder", DEFAULT_BACKUP_FOLDER);
+};
+
 export const resetLastBackupTime = changes => {
+  const oldFolder = changes?.Settings?.oldValue?.backupFolder;
+  const newFolder = changes?.Settings?.newValue?.backupFolder;
+  // Moving off a legacy default isn't a real destination change: don't
+  // re-export every session (thousands of downloads on a large profile).
+  const isLegacyFolderMigration =
+    LEGACY_BACKUP_FOLDERS.includes(oldFolder) && newFolder === DEFAULT_BACKUP_FOLDER;
   const isChangedBackupSettings =
     (!changes?.Settings?.oldValue?.ifBackup && changes?.Settings?.newValue?.ifBackup) ||
-    changes?.Settings?.oldValue?.backupFolder !== changes?.Settings?.newValue?.backupFolder;
+    (oldFolder !== newFolder && !isLegacyFolderMigration);
   if (isChangedBackupSettings) setSettings("lastBackupTime", 0);
 };
