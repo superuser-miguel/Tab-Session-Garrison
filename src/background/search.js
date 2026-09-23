@@ -1,9 +1,7 @@
-import browser from "webextension-polyfill";
 import Sessions from "./sessions.js";
-import { makeSearchInfo } from "../common/makeSearchInfo.js";
 
+// Search text is precomputed per session in the searchText store (see
+// sessions.js), so opening the popup no longer decodes every full record.
 export const getsearchInfo = async () => {
-  const sessions = await Sessions.getAll(["id", "windows", "tabGroups"]).catch(() => {});
-  const searchInfo = sessions.map(session => makeSearchInfo(session));
-  return searchInfo;
+  return await Sessions.getSearchInfo().catch(() => []);
 };

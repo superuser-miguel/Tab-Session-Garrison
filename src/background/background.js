@@ -56,7 +56,13 @@ export const init = async () => {
   overWriteLogLevel();
   updateLogLevel();
   log.info(logDir, "init()");
-  await Sessions.init();
+  try {
+    await Sessions.init();
+  } catch (e) {
+    // Leave IsInit false: the popup's getInitState check then shows the
+    // IndexedDB error page instead of an empty list.
+    return;
+  }
   await ensureAutoSaveAlarm();
   IsInit = true;
 };
