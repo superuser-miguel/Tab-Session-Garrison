@@ -53,7 +53,7 @@
       align-items: center;
       background-color: transparent;
       // Boxed to match the popup's card/box language. Uses --sub-text so the
-      // outline stays visible on the flat header (esp. the faded undo/redo).
+      // outline stays visible on the flat header.
       border: 1px solid var(--sub-text);
       border-radius: 8px;
       cursor: pointer;
@@ -86,10 +86,16 @@
       &:hover svg {
         fill: var(--highlight);
       }
+      // Same colour as the other header icons even when there's nothing to
+      // undo/redo; disabled only drops the hover highlight (the count badge
+      // shows availability).
       &.disable {
-        cursor: unset;
-        svg {
-          opacity: 0.2;
+        cursor: default;
+        &:hover,
+        &:focus {
+          border-color: var(--sub-text);
+        }
+        &:hover svg {
           fill: var(--sub-text);
         }
       }
