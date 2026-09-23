@@ -11,6 +11,10 @@
       justify-content: space-between;
       padding: 3px 0px;
       width: 100%;
+      // Skip layout/paint for off-screen rows in large sessions while keeping
+      // them in the DOM (in-page find, focus); same approach as SessionItem.
+      content-visibility: auto;
+      contain-intrinsic-size: auto 24px;
 
       &:hover,
       &:focus,
