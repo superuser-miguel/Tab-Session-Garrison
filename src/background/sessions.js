@@ -178,47 +178,51 @@ export default {
     });
   },
 
-  getAllWithStream: (sendResponse, needKeys, count) => {
+  // Pages through the store with getAll(range, count) — one request per batch
+  // instead of one cursor round-trip per record (after upstream PR #1650).
+  getAllWithStream: async (sendResponse, needKeys, count) => {
     log.log(logDir, "getAllWithStream()", needKeys, count);
     const db = DB;
-    const transaction = db.transaction("sessions", "readonly");
-    const store = transaction.objectStore("sessions");
-    const request = store.openCursor();
+    let lastKey = null;
 
-    let sessions = [];
+    try {
+      while (true) {
+        const rawBatch = await new Promise((resolve, reject) => {
+          const store = db.transaction("sessions", "readonly").objectStore("sessions");
+          const range = lastKey === null ? null : IDBKeyRange.lowerBound(lastKey, true);
+          const request = store.getAll(range, count);
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = e => reject(e);
+        });
 
-    request.onsuccess = e => {
-      const cursor = request.result;
-      if (cursor) {
-        let session = {};
-        if (needKeys == null) {
-          session = cursor.value;
-        } else {
-          for (let i of needKeys) {
-            session[i] = cursor.value[i];
+        const sessions = rawBatch.map(item => {
+          let session = {};
+          if (needKeys == null) {
+            session = item;
+          } else {
+            for (let i of needKeys) {
+              session[i] = item[i];
+            }
           }
-        }
 
-        // Mask phantom tab groups (unreferenced by any saved tab) at read time,
-        // so the list-row group dots stay correct on older sessions too.
-        if (session.tabGroups) {
-          session.tabGroups = referencedTabGroups(session.tabGroups, cursor.value.windows);
-        }
+          // Mask phantom tab groups (unreferenced by any saved tab) at read time,
+          // so the list-row group dots stay correct on older sessions too.
+          if (session.tabGroups) {
+            session.tabGroups = referencedTabGroups(session.tabGroups, item.windows);
+          }
+          return session;
+        });
 
-        sessions.push(session);
-        if (sessions.length === count) {
-          sendResponse(sessions, false);
-          sessions = [];
-        }
-        cursor.continue();
-      } else {
-        log.log(logDir, "=>getAllWithStream()");
-        sendResponse(sessions, true);
+        // Page on the raw record's key, so callers needn't request "id".
+        const isEnd = !count || rawBatch.length < count;
+        if (!isEnd) lastKey = rawBatch[rawBatch.length - 1].id;
+        sendResponse(sessions, isEnd);
+        if (isEnd) break;
       }
-    };
-    request.onerror = e => {
+      log.log(logDir, "=>getAllWithStream()");
+    } catch (e) {
       log.error(logDir, "getAllWithStream()", e);
-    };
+    }
   },
 
   search: (index, key) => {
