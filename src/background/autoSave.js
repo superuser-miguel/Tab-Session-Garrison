@@ -2,7 +2,7 @@ import browser from "webextension-polyfill";
 import { v4 as uuidv4 } from "uuid";
 import log from "loglevel";
 import { openSession } from "./open.js";
-import { getSessionsByTag, getLatestSessionByTag } from "./tag.js";
+import { getSessionsByTag, getLatestSessionByTag, getLatestSessionIdByTag } from "./tag.js";
 import { loadCurrentSession, saveSession, removeSession } from "./save.js";
 import { getSettings } from "src/settings/settings";
 import { getTrackingInfo, updateTrackingSession } from "./track.js";
@@ -75,10 +75,10 @@ const updateTemp = async () => {
   try {
     const name = await getCurrentTabName();
     let session = await loadCurrentSession(name, ["temp"], "default");
-    const tempSession = await getLatestSessionByTag("temp");
+    const tempSessionId = await getLatestSessionIdByTag("temp");
 
     //現在のセッションをtempとして保存
-    if (tempSession) session.id = tempSession.id;
+    if (tempSessionId) session.id = tempSessionId;
     await saveSession(session, false);
 
     const { isTracking } = await getTrackingInfo();

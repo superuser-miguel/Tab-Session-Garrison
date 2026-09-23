@@ -69,46 +69,34 @@ export async function removeTag(id, tag) {
   return await updateSession(session);
 }
 
-//指定されたタグを含むセッションを新しい順に取得 needKeysにはtag, dateが必須
+const dateValue = session => moment(session.date).valueOf();
+
+//指定されたタグを含むセッションを新しい順に取得 needKeysにはdateが必須
+// Served by the summaries tag index: only matching sessions are read, and
+// light needKeys never touch the full records.
 export async function getSessionsByTag(tag, needKeys = null) {
   log.log(logDir, "getSessionsByTag()", tag, needKeys);
-  const newestSort = (a, b) => {
-    return moment(b.date).unix() - moment(a.date).unix();
-  };
-  const isIncludesTag = (element, index, array) => {
-    return element.tag.includes(tag);
-  };
-
-  let sessions = await Sessions.getAll(needKeys).catch(() => {});
-  sessions = sessions.filter(isIncludesTag);
-  sessions.sort(newestSort);
-
+  const sessions = await Sessions.getByTag(tag, needKeys).catch(() => []);
+  sessions.sort((a, b) => dateValue(b) - dateValue(a));
   return sessions;
 }
 
+// Id of the newest session carrying `tag`, from summaries alone.
+export async function getLatestSessionIdByTag(tag) {
+  const sessions = await Sessions.getByTag(tag, ["id", "date"]).catch(() => []);
+  let latest;
+  for (const session of sessions) {
+    if (!latest || dateValue(session) > dateValue(latest)) latest = session;
+  }
+  return latest?.id;
+}
+
+// The newest session carrying `tag`, as a full record.
 export async function getLatestSessionByTag(tag) {
   log.log(logDir, "getLatestSessionByTag()", tag);
-  const newestSort = (a, b) => {
-    return moment(b.date).unix() - moment(a.date).unix();
-  };
-  const isIncludesTag = (element, index, array) => {
-    return element.tag.includes(tag);
-  };
-
-  // Get all session keys with the necessary fields
-  const needKeys = ["id", "tag", "date"];
-  let sessionsKeyList = await Sessions.getAll(needKeys).catch(() => []);
-
-  sessionsKeyList = sessionsKeyList.filter(isIncludesTag);
-  sessionsKeyList.sort(newestSort);
-
-  if (sessionsKeyList.length === 0) return;
-  const latestSession = sessionsKeyList[0];
-
-  // Fetch the full session data for the latest session
-  let session = await Sessions.get(latestSession.id).catch(() => {});
-
-  return session;
+  const id = await getLatestSessionIdByTag(tag);
+  if (!id) return;
+  return await Sessions.get(id).catch(() => {});
 }
 
 export async function applyDeviceName() {
