@@ -20,7 +20,10 @@ export async function openSession(session, property = "openInNewWindow") {
     };
     const openInNewWindow = async () => {
       log.log(logDir, "openSession() openInNewWindow()");
-      let createData = {};
+      // Open on about:blank rather than the user's homepage: that first tab is
+      // removed once the session's tabs open, and a homepage saved without a
+      // scheme makes windows.create reject outright (upstream #1630).
+      let createData = { url: "about:blank" };
 
       const firstTab = session.windows[win][Object.keys(session.windows[win])[0]];
       createData.incognito = firstTab.incognito;
