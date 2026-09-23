@@ -13,7 +13,7 @@ body {
   --sub-text: #737373;
   --line: #ededf0;
   --button: #d7d7db;
-  --highlight: #36b2b2;
+  --highlight: #1f9d5f;
   --main-bg: #ffffff;
 
   &[data-theme="dark"] {
@@ -21,7 +21,7 @@ body {
     --sub-text: #aaaaaa;
     --line: #373737;
     --button: #929292;
-    --highlight: #36b2b2;
+    --highlight: #4fd08a;
     --main-bg: #181818;
   }
 }
