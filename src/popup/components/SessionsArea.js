@@ -216,11 +216,13 @@ export default class SessionsArea extends Component {
       searchWords,
       searchedSessionIds,
       isInitSessions,
+      isRebuildingIndex,
       removeSession,
       error,
       sessionsAreaRef,
       openMenu,
-      trackingSessions
+      trackingSessions,
+      rowSettings
     } = this.props;
     const sortedSessions = getSortedSessions(
       sessions,
@@ -284,9 +286,18 @@ export default class SessionsArea extends Component {
                 removeSession={removeSession}
                 handleSessionSelect={this.handleSessionSelect}
                 openMenu={openMenu}
+                truncateTitle={rowSettings.truncateTitle}
+                isShowOpenButtons={rowSettings.isShowOpenButtons}
+                dateFormat={rowSettings.dateFormat}
                 key={session.id}
               />
             )
+        )}
+        {!isInitSessions && isRebuildingIndex && (
+          <div className="noSession">
+            <p>{browser.i18n.getMessage("optimizingSessionsLabel")}</p>
+            <p>{browser.i18n.getMessage("optimizingSessionsCaptionLabel")}</p>
+          </div>
         )}
         {shouldShowNoSessionMessage && (
           <div className="noSession">

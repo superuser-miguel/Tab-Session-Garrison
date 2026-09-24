@@ -742,5 +742,11 @@
   },
   "copiedLabel": {
     "message": "Copied."
+  },
+  "optimizingSessionsLabel": {
+    "message": "Optimizing your sessions…"
+  },
+  "optimizingSessionsCaptionLabel": {
+    "message": "This happens once after an update and can take a moment on large profiles."
   }
 }

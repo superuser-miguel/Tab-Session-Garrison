@@ -1,3 +1,4 @@
+import browser from "webextension-polyfill";
 import log from "loglevel";
 import { referencedTabGroups } from "../common/tabGroupUtils";
 import { makeSearchInfo } from "../common/makeSearchInfo";
@@ -78,7 +79,18 @@ const countStore = storeName =>
   promisifyRequest(DB.transaction(storeName, "readonly").objectStore(storeName).count());
 
 // Regenerate summaries + searchText from the full records, in one transaction.
+// While it runs, storage.session.isRebuildingIndex lets an open popup explain
+// the wait instead of sitting blank.
 const rebuildIndex = async () => {
+  await browser.storage.session.set({ isRebuildingIndex: true }).catch(() => {});
+  try {
+    await writeIndex();
+  } finally {
+    await browser.storage.session.remove("isRebuildingIndex").catch(() => {});
+  }
+};
+
+const writeIndex = async () => {
   const startTime = performance.now();
   const transaction = DB.transaction(ALL_STORES, "readwrite");
   const summaries = transaction.objectStore("summaries");

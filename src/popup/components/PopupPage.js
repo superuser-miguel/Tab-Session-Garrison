@@ -67,6 +67,8 @@ export default class PopupPage extends Component {
         redoCount: 0
       },
       tagList: [],
+      rowSettings: {},
+      isRebuildingIndex: false,
       trackingSessions: [],
       menu: {
         isOpen: false,
@@ -119,8 +121,17 @@ export default class PopupPage extends Component {
     this.setState({
       sortValue: getSettings("sortValue") || "newest",
       isInTab: isInTab,
-      sidebarWidth: getSettings("sidebarWidth")
+      sidebarWidth: getSettings("sidebarWidth"),
+      rowSettings: this.getRowSettings()
     });
+
+    // The first open after an update may wait on a one-time index build in the
+    // background; show that instead of an empty list.
+    browser.storage.session.onChanged?.addListener(this.handleSessionStorageChange);
+    browser.storage.session
+      .get("isRebuildingIndex")
+      .then(({ isRebuildingIndex }) => this.setState({ isRebuildingIndex: !!isRebuildingIndex }))
+      .catch(() => {});
 
     const isInit = await browser.runtime.sendMessage({ message: "getInitState" });
     if (!isInit) this.setState({ error: { isError: true, type: "indexedDB" } });
@@ -155,7 +166,7 @@ export default class PopupPage extends Component {
       }
     }
 
-    browser.storage.local.onChanged.addListener(handleSettingsChange);
+    browser.storage.local.onChanged.addListener(this.handleStorageChange);
     window.addEventListener("unload", this.handleUnload, { once: true });
     browser.runtime.sendMessage({ message: "updateUndoStatus" });
     browser.runtime.sendMessage({ message: "updateTrackingStatus" });
@@ -169,6 +180,29 @@ export default class PopupPage extends Component {
         onClick: () => openUrl("../options/index.html#information?action=updated")
       });
       setSettings("isShowUpdated", false);
+    }
+  };
+
+  // Settings that change how a list row looks. Rows are PureComponents, so
+  // these are passed down as props to re-render them when they change.
+  getRowSettings = () => ({
+    truncateTitle: getSettings("truncateTitle"),
+    isShowOpenButtons: getSettings("isShowOpenButtons"),
+    dateFormat: getSettings("dateFormat")
+  });
+
+  handleSessionStorageChange = changes => {
+    if (!changes.isRebuildingIndex) return;
+    this.setState({ isRebuildingIndex: !!changes.isRebuildingIndex.newValue });
+  };
+
+  handleStorageChange = (changes, area) => {
+    handleSettingsChange(changes, area);
+    if (!changes.Settings) return;
+    const rowSettings = this.getRowSettings();
+    const current = this.state.rowSettings;
+    if (Object.keys(rowSettings).some(key => rowSettings[key] !== current[key])) {
+      this.setState({ rowSettings });
     }
   };
 
@@ -313,7 +347,8 @@ export default class PopupPage extends Component {
   };
 
   handleUnload = () => {
-    browser.storage.local.onChanged.removeListener(handleSettingsChange);
+    browser.storage.local.onChanged.removeListener(this.handleStorageChange);
+    browser.storage.session.onChanged?.removeListener(this.handleSessionStorageChange);
   };
 
   changeFilterValue = value => {
@@ -709,6 +744,7 @@ export default class PopupPage extends Component {
               searchWords={this.state.searchWords}
               searchedSessionIds={this.state.searchedSessionIds || []}
               trackingSessions={this.state.trackingSessions}
+              rowSettings={this.state.rowSettings}
               removeSession={this.removeSession}
               selectSession={this.selectSession}
               toggleSelectSession={this.toggleSelectSession}
@@ -719,6 +755,7 @@ export default class PopupPage extends Component {
               openMenu={this.openMenu}
               toggleSearchBar={this.toggleSearchBar}
               isInitSessions={this.state.isInitSessions}
+              isRebuildingIndex={this.state.isRebuildingIndex}
               error={this.state.error}
               sessionsAreaRef={this.sessionsAreaElement}
               optionsAreaRef={this.optionsAreaElement.current}

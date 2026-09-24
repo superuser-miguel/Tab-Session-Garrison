@@ -101,7 +101,10 @@ export default class Session extends PureComponent {
       isTracking,
       order,
       searchWords,
-      handleSessionSelect
+      handleSessionSelect,
+      truncateTitle,
+      isShowOpenButtons,
+      dateFormat
     } = this.props;
 
     return (
@@ -116,7 +119,7 @@ export default class Session extends PureComponent {
           onContextMenu={this.handleSessionRightClick}
           ref={this.sessionItemElement}
         >
-          <span className={`name ${getSettings("truncateTitle") ? "isTruncate" : ""}`}>
+          <span className={`name ${truncateTitle ? "isTruncate" : ""}`}>
             <Highlighter
               searchWords={searchWords}
               textToHighlight={session.name.trim() === "" ? "_" : session.name}
@@ -136,11 +139,11 @@ export default class Session extends PureComponent {
               {generateWindowsInfo(session.windowsNumber, session.tabsNumber)}
             </span>
             {this.renderGroupDots(session)}
-            <span className="date">{moment(session.date).format(getSettings("dateFormat"))}</span>
+            <span className="date">{moment(session.date).format(dateFormat)}</span>
           </div>
         </button>
 
-        {getSettings("isShowOpenButtons") && (
+        {isShowOpenButtons && (
           <div className="buttonsContainer">
             <button
               className="open"
