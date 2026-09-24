@@ -24,6 +24,12 @@ const openSessionListInTab = () => {
   window.close();
 };
 
+// Corner badge with the number of steps available; hidden at zero.
+const CountBadge = ({ count }) =>
+  count > 0 ? <span className="countBadge">{count > 99 ? "99+" : count}</span> : null;
+
+const labelWithCount = (label, count) => (count > 0 ? `${label} (${count})` : label);
+
 export default props => {
   const { undoStatus } = props;
 
@@ -37,18 +43,18 @@ export default props => {
         <button
           className={`undoButton ${undoStatus.undoCount == 0 ? "disable" : ""}`}
           onClick={sendUndoMessage}
-          title={browser.i18n.getMessage("undoLabel")}
+          title={labelWithCount(browser.i18n.getMessage("undoLabel"), undoStatus.undoCount)}
         >
           <UndoIcon />
-          <div className="count">{undoStatus.undoCount > 0 && undoStatus.undoCount}</div>
+          <CountBadge count={undoStatus.undoCount} />
         </button>
         <button
           className={`redoButton ${undoStatus.redoCount == 0 ? "disable" : ""}`}
           onClick={sendRedoMessage}
-          title={browser.i18n.getMessage("redoLabel")}
+          title={labelWithCount(browser.i18n.getMessage("redoLabel"), undoStatus.redoCount)}
         >
           <RedoIcon />
-          <div className="count">{undoStatus.redoCount > 0 && undoStatus.redoCount}</div>
+          <CountBadge count={undoStatus.redoCount} />
         </button>
         <div className="separation" />
         <button

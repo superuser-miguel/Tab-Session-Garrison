@@ -76,12 +76,22 @@
     .undoButton,
     .redoButton {
       position: relative;
-      .count {
+      .countBadge {
         position: absolute;
-        top: 10px;
-        left: 20px;
+        top: -7px;
+        right: -7px;
+        min-width: 16px;
+        height: 16px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: var(--tsg-accent);
+        color: var(--main-bg);
         font-size: 10px;
-        color: var(--sub-text);
+        font-weight: 700;
+        line-height: 16px;
+        text-align: center;
+        pointer-events: none;
       }
       &:hover svg {
         fill: var(--highlight);
