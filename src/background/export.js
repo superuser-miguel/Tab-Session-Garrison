@@ -7,10 +7,12 @@ import { init } from "./background";
 
 const logDir = "background/export";
 
+// Resolves true when every file was handed to the downloads API, false if the
+// session is missing or any download was rejected.
 export default async function exportSessions(id = null, folderName = "", isBackup = false) {
   log.log(logDir, "exportSessions()", id, folderName, isBackup);
   let sessions = await getSessions(id);
-  if (sessions == undefined) return;
+  if (sessions == undefined) return false;
   if (!Array.isArray(sessions)) sessions = [sessions];
 
   // セッションが多すぎるとメッセージサイズの制限やパフォーマンス上の問題を引き起こすので、セッションを分割する
@@ -24,6 +26,7 @@ export default async function exportSessions(id = null, folderName = "", isBacku
     );
   }
 
+  let isAllStarted = true;
   for (const [index, chunkSession] of chunkSessions.entries()) {
     const downloadUrl = await createObjectURL(chunkSession);
     const replacedFolderName = replaceFolderName(folderName);
@@ -42,7 +45,9 @@ export default async function exportSessions(id = null, folderName = "", isBacku
       });
 
     if (downloadId) recordDownloadUrl(downloadId, downloadUrl, isBackup);
+    else isAllStarted = false;
   }
+  return isAllStarted;
 }
 
 function generateFileName(sessions, isBackup) {

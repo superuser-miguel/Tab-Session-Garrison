@@ -115,6 +115,7 @@ const backupIndividualSessions = async () => {
     userSave: browser.i18n.getMessage("displayUserLabel")
   };
   const sessions = await Sessions.getAll(["id", "lastEditedTime", "tag"]).catch(() => {});
+  const failedEditedTimes = [];
 
   for (let session of sessions) {
     if (session.lastEditedTime < lastBackupTime) continue;
@@ -126,10 +127,17 @@ const backupIndividualSessions = async () => {
     else if (session.tag.includes("browserExit")) folderName += `\/${labels.browserExit}`;
     else folderName += `\/${labels.userSave}`;
 
-    await exportSessions(session.id, folderName, true);
+    const isExported = await exportSessions(session.id, folderName, true);
+    if (!isExported) failedEditedTimes.push(session.lastEditedTime || 0);
   }
 
-  setSettings("lastBackupTime", currentTime);
+  // Only move the mark past what was actually written: after a failure, the
+  // next run retries from the oldest failed session instead of skipping it.
+  const nextBackupTime =
+    failedEditedTimes.length > 0 ? Math.min(...failedEditedTimes) : currentTime;
+  if (failedEditedTimes.length > 0)
+    log.warn(logDir, "backupIndividualSessions() failed", failedEditedTimes.length);
+  setSettings("lastBackupTime", nextBackupTime);
 };
 
 // Legacy "all sessions" mode writes an uncompressed dump of everything under a
