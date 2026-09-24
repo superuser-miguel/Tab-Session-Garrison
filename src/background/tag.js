@@ -38,15 +38,24 @@ export const getValidatedTag = (tag, session) => {
   return tag;
 };
 
+// A comma separates tags: "Alex C, Sascha Araki" adds two tags in one step.
+// Each piece is validated on its own (reserved names, duplicates — including
+// duplicates within the same input), and the session is saved once so the
+// whole input is a single undo step.
 export async function addTag(id, tag) {
   log.log(logDir, "addTag()", id, tag);
   let session = await Sessions.get(id).catch(() => {});
   if (!session) return;
 
-  const validatedTag = getValidatedTag(tag, session);
-  if (validatedTag === "") return;
+  let isAdded = false;
+  for (const piece of tag.split(/[,，]/)) {
+    const validatedTag = getValidatedTag(piece, session);
+    if (validatedTag === "") continue;
+    session.tag.push(validatedTag);
+    isAdded = true;
+  }
+  if (!isAdded) return;
 
-  session.tag.push(validatedTag);
   return await updateSession(session);
 }
 
