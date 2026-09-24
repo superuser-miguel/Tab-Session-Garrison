@@ -1,6 +1,6 @@
 {
   "name": "tab-session-garrison",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "engines": {
     "node": ">=22",
     "npm": ">=10"
@@ -54,7 +54,8 @@
     "watch-dev": "webpack --config webpack.config.dev.js --watch",
     "build": "webpack --config webpack.config.dist.js",
     "format": "prettier --write \"src/**/*.{js,jsx,json,scss,html,md}\" \"*.{js,json,md}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,json,scss,html,md}\" \"*.{js,json,md}\""
+    "format:check": "prettier --check \"src/**/*.{js,jsx,json,scss,html,md}\" \"*.{js,json,md}\"",
+    "sign": "npx web-ext sign --source-dir temp/firefox --channel listed --api-key \"$AMO_JWT_ISSUER\" --api-secret \"$AMO_JWT_SECRET\" --amo-metadata amo-metadata.json"
   },
   "repository": {
     "type": "git",

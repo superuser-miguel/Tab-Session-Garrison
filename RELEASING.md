@@ -26,7 +26,7 @@ both channels**, so a parallel self-hosted channel cannot coexist on this id).
    export AMO_JWT_ISSUER="user:XXXXX:YYY"
    export AMO_JWT_SECRET="ZZZZ..."
    ```
-2. `npm install -g web-ext`
+2. web-ext runs via `npx` (no global install needed).
 
 ## Cut a release
 
@@ -43,18 +43,20 @@ both channels**, so a parallel self-hosted channel cannot coexist on this id).
    Unpacked Firefox build → `temp/firefox`; zip → `dist/tab_session_garrison-for-firefox-<v>.zip`;
    source archive for AMO review → `dist/copiedSource…zip` (see `BUILD.md`).
 
-3. **Sanity check:** `web-ext lint --source-dir temp/firefox` — expect 0 errors
+3. **Sanity check:** `npx web-ext lint --source-dir temp/firefox` — expect 0 errors
    (vendor-bundle warnings are known noise).
 
 4. **Submit (listed):**
    ```bash
-   web-ext sign \
-     --source-dir temp/firefox \
-     --channel listed \
-     --api-key "$AMO_JWT_ISSUER" \
-     --api-secret "$AMO_JWT_SECRET" \
-     --amo-metadata amo-metadata.json
+   npm run sign
    ```
+   That runs `npx web-ext sign --source-dir temp/firefox --channel listed
+   --amo-metadata amo-metadata.json` with the exported keys. **Always use it**
+   rather than a hand-typed `web-ext sign`: 0.3.1 was accidentally signed on
+   the *unlisted* channel from an old command in shell history, which burns
+   the version number (AMO versions are unique across both channels), so the
+   listed release had to become 0.3.2. If devhub shows a version tagged
+   **"Self"**, it went unlisted — bump and resubmit.
    `amo-metadata.json` (repo root) carries the API-required fields: the license
    (exact builtin slug `GPL-3.0-only` — AMO has no "or-later" variant) and the
    listing categories — plus this version's **release notes**
