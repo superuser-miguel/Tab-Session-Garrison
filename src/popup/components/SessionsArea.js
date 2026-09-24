@@ -90,8 +90,37 @@ export const getSortedSessions = (
   return sortedSessions;
 };
 
+// Progressive first render: rows are mounted top-of-list first (in display
+// order), then the rest a chunk per task, so a large profile paints at once
+// and the page never blocks on mounting thousands of rows in one go.
+const INITIAL_RENDER_COUNT = 60;
+const RENDER_CHUNK = 250;
+
 export default class SessionsArea extends Component {
   selectedItemRef = React.createRef();
+  state = { renderLimit: INITIAL_RENDER_COUNT };
+
+  componentWillUnmount() {
+    clearTimeout(this.growTimer);
+  }
+
+  // Called after each render: schedule the next chunk until every row that
+  // matches the current filter/search is mounted. Once all sessions are
+  // mounted the limit is lifted for good.
+  scheduleRenderGrowth(visibleCount) {
+    const { renderLimit } = this.state;
+    if (renderLimit === Infinity || this.growTimer) return;
+    const { sessions, isInitSessions } = this.props;
+    if (isInitSessions && renderLimit >= sessions.length) {
+      this.setState({ renderLimit: Infinity });
+      return;
+    }
+    if (renderLimit >= visibleCount) return;
+    this.growTimer = setTimeout(() => {
+      this.growTimer = null;
+      this.setState(state => ({ renderLimit: state.renderLimit + RENDER_CHUNK }));
+    }, 0);
+  }
 
   scrollTo = top => {
     const sessionsArea = this.props.sessionsAreaRef.current;
@@ -152,7 +181,12 @@ export default class SessionsArea extends Component {
     }
   };
 
+  componentDidMount() {
+    this.scheduleRenderGrowth(this.visibleCount);
+  }
+
   componentDidUpdate() {
+    this.scheduleRenderGrowth(this.visibleCount);
     const { filterValue, sortValue, searchWords, isInitSessions } = this.props;
     const { prevFilterValue, prevSortValue, prevSearchWords } = this;
 
@@ -203,6 +237,10 @@ export default class SessionsArea extends Component {
     );
 
     const order = orderById.get(selectedSessionId) ?? -1;
+    // Always mount at least down to the selected row, so the initial
+    // scroll-to-selected lands where the fully rendered list will have it.
+    const renderLimit = Math.max(this.state.renderLimit, order + 1 + INITIAL_RENDER_COUNT);
+    this.visibleCount = sortedSessions.length;
     const maxOrder = sortedSessions.length - 1;
     this.nextSession = sortedSessions[order < maxOrder ? order + 1 : maxOrder];
     this.prevSession = sortedSessions[order > 0 ? order - 1 : 0];
@@ -233,7 +271,8 @@ export default class SessionsArea extends Component {
         {sessions.map(
           session =>
             matchesFilter(session.tag, filterValue) &&
-            matchesSearch(searchWords, session.id, searchedIdSet) && (
+            matchesSearch(searchWords, session.id, searchedIdSet) &&
+            orderById.get(session.id) < renderLimit && (
               <SessionItem
                 session={session}
                 isSelected={selectedSessionId === session.id}

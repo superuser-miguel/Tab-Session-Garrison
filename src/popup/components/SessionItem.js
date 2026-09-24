@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import browser from "webextension-polyfill";
 import Highlighter from "react-highlight-words";
 import { getSettings } from "src/settings/settings";
@@ -18,7 +18,10 @@ import NewWindowIcon from "../icons/newWindow.svg";
 import DeleteIcon from "../icons/delete.svg";
 import "../styles/SessionItem.scss";
 
-export default class Session extends Component {
+// PureComponent: a row re-renders only when its own props change (its session,
+// selection state, display order, search words). With thousands of sessions,
+// re-rendering every row on each popup state change dominated load time.
+export default class Session extends PureComponent {
   constructor(props) {
     super(props);
     this.sessionItemElement = React.createRef();
@@ -91,14 +94,23 @@ export default class Session extends Component {
   }
 
   render() {
-    const { session, isSelected, isMultiSelected, isTracking, order, searchWords,
-      handleSessionSelect } = this.props;
+    const {
+      session,
+      isSelected,
+      isMultiSelected,
+      isTracking,
+      order,
+      searchWords,
+      handleSessionSelect
+    } = this.props;
 
     return (
-      <div className={`sessionItem ${isSelected ? "isSelected" : ""} ${isMultiSelected ? "isMultiSelected" : ""} ${isTracking ? "isTracking" : ""}`}
+      <div
+        className={`sessionItem ${isSelected ? "isSelected" : ""} ${isMultiSelected ? "isMultiSelected" : ""} ${isTracking ? "isTracking" : ""}`}
         style={{ order: order }}
       >
-        <button className="selectButton"
+        <button
+          className="selectButton"
           onClick={e => handleSessionSelect(session.id, e)}
           onDoubleClick={this.handleOpenClick}
           onContextMenu={this.handleSessionRightClick}

@@ -173,6 +173,10 @@ export default class PopupPage extends Component {
   };
 
   updateTagList = sessions => {
+    this.setState({ tagList: this.computeTagList(sessions) });
+  };
+
+  computeTagList = sessions => {
     const reservedTags = [
       "manual",
       "regular",
@@ -189,8 +193,7 @@ export default class PopupPage extends Component {
     const uniqueTags = Array.from(new Set(allTags))
       .filter(tag => !reservedTags.includes(tag))
       .sort((a, b) => a.localeCompare(b));
-
-    this.setState({ tagList: uniqueTags });
+    return uniqueTags;
   };
 
   handleMessage = request => {
@@ -212,17 +215,20 @@ export default class PopupPage extends Component {
 
   handleResponseAllSessions = async request => {
     if (request.port != this.port) return;
-    const sessions = request.sessions.filter(session => session.id !== this.firstSelectedSessionId);
-    this.setState({
-      sessions: this.state.sessions.concat(sessions),
-      filterValue: this.firstFilterValue || "_displayAll"
-    });
+    const received = request.sessions.filter(session => session.id !== this.firstSelectedSessionId);
+    const sessions = this.state.sessions.concat(received);
+    const filterValue = this.firstFilterValue || "_displayAll";
+
+    // One state update per response (the list arrives in a single message for
+    // the usual light keys): each setState here re-renders the whole list.
+    this.setState(
+      request.isEnd
+        ? { sessions, filterValue, tagList: this.computeTagList(sessions), isInitSessions: true }
+        : { sessions, filterValue }
+    );
 
     if (request.isEnd) {
-      this.changeFilterValue(this.firstFilterValue);
-      this.updateTagList(this.state.sessions);
-      this.setState({ isInitSessions: true });
-
+      setSettings("filterValue", filterValue);
       const searchInfo = await browser.runtime.sendMessage({ message: "getsearchInfo" });
       this.setState({ searchInfo: searchInfo });
     }
