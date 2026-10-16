@@ -60,7 +60,7 @@
     "message": "Fewest tabs"
   },
   "searchBarPlaceholder": {
-    "message": "Search by session or tab name"
+    "message": "Search sessions, tabs, groups · \"quotes\" for a phrase"
   },
   "search": {
     "message": "Search"

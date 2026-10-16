@@ -5,19 +5,20 @@ import { makeSearchInfo } from "../common/makeSearchInfo";
 
 const logDir = "background/sessions";
 
-// Store layout (DB version 2):
+// Store layout (DB version 3):
 //   sessions   — full session records (windows, tabs, favicons…), the source of truth
 //   summaries  — per-session list fields (SUMMARY_KEYS + masked tabGroups), a few
 //                hundred bytes each; answers every "light" read without decoding
 //                the full records
-//   searchText — per-session { id, tabsTitle, groupsTitle } for popup search
+//   searchText — per-session { id, tabsTitle, groupsTitle } for popup search,
+//                one title per line (v3; v2 joined them with spaces)
 // summaries/searchText are derived from sessions and written in the same
 // transaction on every put/delete, so they cannot drift. If their counts ever
 // disagree with sessions (first run after the upgrade, an interrupted
 // rebuild), init() rebuilds them. To change the derived format, bump DB_VERSION
 // and clear both stores in onupgradeneeded; the count check then rebuilds.
 const DB_NAME = "sessions";
-const DB_VERSION = 2;
+const DB_VERSION = 3;
 const SUMMARY_KEYS = [
   "id",
   "name",
@@ -139,6 +140,9 @@ const openDB = () =>
         const summaries = db.createObjectStore("summaries", { keyPath: "id" });
         summaries.createIndex("tag", "tag", { multiEntry: true });
         db.createObjectStore("searchText", { keyPath: "id" });
+      } else if (e.oldVersion < 3) {
+        // searchText format changed; emptying it makes init() rebuild the index.
+        request.transaction.objectStore("searchText").clear();
       }
     };
     request.onsuccess = () => {

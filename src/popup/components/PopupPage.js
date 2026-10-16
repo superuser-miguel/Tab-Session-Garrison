@@ -36,6 +36,7 @@ import Modal from "./Modal";
 import Error from "./Error";
 import "../styles/PopupPage.scss";
 import { makeSearchInfo } from "../../common/makeSearchInfo";
+import { parseSearchQuery, matchesSearchTerms } from "../../common/searchQuery";
 
 const logDir = "popup/components/PopupPage";
 
@@ -393,27 +394,17 @@ export default class PopupPage extends Component {
 
   searchSessions = searchWord => {
     log.info(logDir, "searchSessions()", searchWord);
-    const searchWords = searchWord.trim().toLowerCase().split(" ");
+    // Words and "quoted phrases"; see common/searchQuery.js.
+    const searchWords = parseSearchQuery(searchWord);
     this.setState({ searchWords: searchWords });
     if (searchWords.length === 0) return;
 
-    const matchedIdsBySessionName = this.state.sessions
-      .filter(session => searchWords.every(word => session.name.toLowerCase().includes(word)))
+    // Every term must match the session's name, one of its tab titles, or one
+    // of its group names. A phrase has to sit inside a single title or name.
+    const infoById = new Map(this.state.searchInfo.map(info => [info.id, info]));
+    const searchedSessionIds = this.state.sessions
+      .filter(session => matchesSearchTerms(searchWords, session.name, infoById.get(session.id)))
       .map(session => session.id);
-
-    // Matches on tab titles or on tab-group names — each field is matched as a
-    // whole, so every search word has to appear somewhere within that one field.
-    const matchedIdsByTabOrGroupTitle = this.state.searchInfo
-      .filter(
-        info =>
-          searchWords.every(word => info.tabsTitle.includes(word)) ||
-          searchWords.every(word => (info.groupsTitle || "").includes(word))
-      )
-      .map(info => info.id);
-
-    const searchedSessionIds = Array.from(
-      new Set(matchedIdsBySessionName.concat(matchedIdsByTabOrGroupTitle))
-    );
     this.setState({ searchedSessionIds: searchedSessionIds });
     log.info(logDir, "=>searchSessions()", searchedSessionIds);
   };
