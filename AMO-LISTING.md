@@ -48,6 +48,11 @@ Tab groups
 • Add a saved session to your current window as a single named tab group
 • Phantom-group masking cleans up older auto-saves that captured stray groups, non-destructively
 
+Search
+• Put words in quotes ("release notes") to find that exact phrase inside a single tab title,
+  session name or group name
+• Tab-group names are searchable too
+
 Reliability and polish
 • Durable auto-save — fixes an upstream bug where periodic auto-save could silently stop after
   the browser suspended or restarted; the alarm now self-heals
@@ -59,6 +64,9 @@ Reliability and polish
   default
 
 Fast on large profiles
+• A session index: the list appears in about a quarter of a second even with 3,500 saved
+  sessions, without decoding every saved tab and favicon
+• No memory creep: favicons are shrunk without the throwaway Blobs Firefox was slow to free
 • Selecting, searching, and arrow-keying no longer walk the whole list on every keystroke
 • Off-screen rows cost nothing to render until you scroll to them
 • Bulk delete is a single batched write instead of one rewrite of undo history per session
@@ -97,11 +105,10 @@ Source: https://github.com/superuser-miguel/Tab-Session-Garrison
 
 ## Screenshots
 
-Still to redo — the current `docs/screenshots/` set predates the green logo and the
-card layout. AMO wants at least one; up to ten.
+Upload the 1280×800 `docs/screenshots/*-amo.png` files in devhub (Edit Product Page →
+Screenshots). They're made from fictional demo data, so no real browsing shows up.
 
-Suggested shots:
-1. Popup with a multi-selection and the "N selected" summary panel
-2. Detail pane showing tab-group chips grouped by window
-3. Bulk-restore confirm
-4. Settings page with the scroll-focus card treatment
+Suggested captions:
+1. `list-and-details-amo.png` — Your saved sessions, with each session's tab groups shown by window
+2. `multi-select-amo.png` — Select many sessions with the keyboard, then open or delete them together
+3. `phrase-search-amo.png` — Quote a phrase to find it inside a single tab title

@@ -1,0 +1,4020 @@
+[
+ {
+  "windows": {
+   "10": {
+    "100": {
+     "id": 100,
+     "index": 0,
+     "windowId": 10,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026060000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.rome2rio.com/s/Tokyo/Kyoto",
+     "title": "Tokyo to Kyoto by Shinkansen — Rome2Rio",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzJlODZkZSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnI8L3RleHQ+PC9zdmc+",
+     "groupId": 1000
+    },
+    "101": {
+     "id": 101,
+     "index": 1,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026120000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.kayak.com/flight-routes/HND",
+     "title": "Cheap flights to Tokyo (HND) — KAYAK",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2ZmNjkwZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPks8L3RleHQ+PC9zdmc+",
+     "groupId": 1000
+    },
+    "102": {
+     "id": 102,
+     "index": 2,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026180000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.booking.com/region/jp/gion.html",
+     "title": "Ryokan stays in Gion, Kyoto — Booking.com",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzAwMzU4MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PC9zdmc+",
+     "groupId": 1001
+    },
+    "103": {
+     "id": 103,
+     "index": 3,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026240000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.booking.com/district/jp/kyoto/kyotostation.html",
+     "title": "Hotels near Kyoto Station — Booking.com",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzAwMzU4MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PC9zdmc+",
+     "groupId": 1001
+    },
+    "104": {
+     "id": 104,
+     "index": 4,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026300000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.japan-guide.com/e/e3931.html",
+     "title": "Nishiki Market — Kyoto Travel Guide",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2MwMzkyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPko8L3RleHQ+PC9zdmc+",
+     "groupId": 1002
+    },
+    "105": {
+     "id": 105,
+     "index": 5,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026360000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.seriouseats.com/okonomiyaki-japanese-pancake-recipe",
+     "title": "How to Make Okonomiyaki at Home — Serious Eats",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2QzNTQwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": 1002
+    },
+    "106": {
+     "id": 106,
+     "index": 6,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026420000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.japan-guide.com/e/e3970.html",
+     "title": "Kyoto Itinerary: 3 Days — japan-guide.com",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2MwMzkyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPko8L3RleHQ+PC9zdmc+",
+     "groupId": 1003
+    },
+    "107": {
+     "id": 107,
+     "index": 7,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026480000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.japan-guide.com/e/e3915.html",
+     "title": "Fushimi Inari Shrine — japan-guide.com",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2MwMzkyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPko8L3RleHQ+PC9zdmc+",
+     "groupId": 1003
+    },
+    "108": {
+     "id": 108,
+     "index": 8,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026540000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikivoyage.org/wiki/Arashiyama",
+     "title": "Arashiyama Bamboo Grove — Wikivoyage",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNhN2Q0NCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": 1003
+    },
+    "109": {
+     "id": 109,
+     "index": 9,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026600000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Japan_Rail_Pass",
+     "title": "Japan Rail Pass — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "110": {
+     "id": 110,
+     "index": 10,
+     "windowId": 10,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026660000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.openstreetmap.org/#map=13/35.0116/135.7681",
+     "title": "Kyoto — OpenStreetMap",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzdlYmM2ZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk88L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   },
+   "11": {
+    "111": {
+     "id": 111,
+     "index": 0,
+     "windowId": 11,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026540000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikivoyage.org/wiki/Japanese_phrasebook",
+     "title": "Japanese phrasebook — Wikivoyage",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNhN2Q0NCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": 1004
+    },
+    "112": {
+     "id": 112,
+     "index": 1,
+     "windowId": 11,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026600000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Hiragana",
+     "title": "Hiragana — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": 1004
+    },
+    "113": {
+     "id": 113,
+     "index": 2,
+     "windowId": 11,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792026660000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Kyoto#Climate",
+     "title": "Weather in Kyoto in April — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 2,
+  "windowsInfo": {
+   "10": {
+    "id": 10,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Tokyo to Kyoto by Shinkansen — Rome2Rio"
+   },
+   "11": {
+    "id": 11,
+    "focused": false,
+    "top": 0,
+    "left": 40,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Japanese phrasebook — Wikivoyage"
+   }
+  },
+  "tabsNumber": 14,
+  "name": "Kyoto trip planning",
+  "date": 1792026720000,
+  "lastEditedTime": 1792026720000,
+  "tag": [
+   "manual",
+   "travel"
+  ],
+  "sessionStartTime": 1792015920000,
+  "id": "8f14e45f-ceea-467a-aa36-dedd4bea2543",
+  "tabGroups": [
+   {
+    "id": 1000,
+    "title": "Flights",
+    "color": "blue",
+    "collapsed": false,
+    "windowId": 10
+   },
+   {
+    "id": 1001,
+    "title": "Stay",
+    "color": "purple",
+    "collapsed": false,
+    "windowId": 10
+   },
+   {
+    "id": 1002,
+    "title": "Food",
+    "color": "orange",
+    "collapsed": false,
+    "windowId": 10
+   },
+   {
+    "id": 1003,
+    "title": "Itinerary",
+    "color": "green",
+    "collapsed": false,
+    "windowId": 10
+   },
+   {
+    "id": 1004,
+    "title": "Language",
+    "color": "pink",
+    "collapsed": false,
+    "windowId": 11
+   }
+  ]
+ },
+ {
+  "windows": {
+   "12": {
+    "114": {
+     "id": 114,
+     "index": 0,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934260000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/book/",
+     "title": "The Rust Programming Language",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1005
+    },
+    "115": {
+     "id": 115,
+     "index": 1,
+     "windowId": 12,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934320000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html",
+     "title": "Understanding Ownership — The Rust Book",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1005
+    },
+    "116": {
+     "id": 116,
+     "index": 2,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934380000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html",
+     "title": "References and Borrowing — The Rust Book",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1005
+    },
+    "117": {
+     "id": 117,
+     "index": 3,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934440000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html",
+     "title": "Validating References with Lifetimes — The Rust Book",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1005
+    },
+    "118": {
+     "id": 118,
+     "index": 4,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934500000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/rust-lang/rustlings",
+     "title": "rust-lang/rustlings: Small exercises to get you used to reading and writing Rust code",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": 1006
+    },
+    "119": {
+     "id": 119,
+     "index": 5,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934560000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/rust-by-example/scope/borrow.html",
+     "title": "Rust by Example — Borrowing",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1006
+    },
+    "120": {
+     "id": 120,
+     "index": 6,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934620000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/std/collections/struct.HashMap.html",
+     "title": "std::collections::HashMap — Rust",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1007
+    },
+    "121": {
+     "id": 121,
+     "index": 7,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934680000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/std/rc/struct.Rc.html",
+     "title": "std::rc::Rc — Rust",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": 1007
+    },
+    "122": {
+     "id": 122,
+     "index": 8,
+     "windowId": 12,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791934740000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://stackoverflow.com/questions/tagged/rust",
+     "title": "What are lifetimes in Rust? — Stack Overflow",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2Y0ODAyNCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "12": {
+    "id": 12,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Understanding Ownership — The Rust Book"
+   }
+  },
+  "tabsNumber": 9,
+  "name": "Rust Book — Ownership",
+  "date": 1791934800000,
+  "lastEditedTime": 1791934800000,
+  "tag": [
+   "manual",
+   "learning"
+  ],
+  "sessionStartTime": 1791924000000,
+  "id": "c9f0f895-fb98-4b91-a9f5-1fd0297e236d",
+  "tabGroups": [
+   {
+    "id": 1005,
+    "title": "Book",
+    "color": "orange",
+    "collapsed": false,
+    "windowId": 12
+   },
+   {
+    "id": 1006,
+    "title": "Exercises",
+    "color": "green",
+    "collapsed": false,
+    "windowId": 12
+   },
+   {
+    "id": 1007,
+    "title": "std docs",
+    "color": "blue",
+    "collapsed": true,
+    "windowId": 12
+   }
+  ]
+ },
+ {
+  "windows": {
+   "13": {
+    "123": {
+     "id": 123,
+     "index": 0,
+     "windowId": 13,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791635160000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://news.ycombinator.com/",
+     "title": "Hacker News",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2ZmNjYwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlk8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "124": {
+     "id": 124,
+     "index": 1,
+     "windowId": 13,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791635220000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://news.ycombinator.com/item?id=1",
+     "title": "Show HN: A tiny SQLite-backed queue — Hacker News",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2ZmNjYwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlk8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "125": {
+     "id": 125,
+     "index": 2,
+     "windowId": 13,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791635280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/sqlite/sqlite",
+     "title": "sqlite/sqlite: Official Git mirror of the SQLite source tree",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "126": {
+     "id": 126,
+     "index": 3,
+     "windowId": 13,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791635340000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Write-ahead_logging",
+     "title": "Write-Ahead Logging — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "13": {
+    "id": 13,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Hacker News"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "Hacker News",
+  "date": 1791635400000,
+  "lastEditedTime": 1791635400000,
+  "tag": [
+   "regular"
+  ],
+  "sessionStartTime": 1791624600000,
+  "id": "45c48cce-2e2d-4fbd-aa1a-fc51c7c6ad26"
+ },
+ {
+  "windows": {
+   "14": {
+    "127": {
+     "id": 127,
+     "index": 0,
+     "windowId": 14,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791838800000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.bbcgoodfood.com/recipes/easy-vegetable-curry",
+     "title": "Easy Vegetable Curry — BBC Good Food",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzJkNmE0ZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PC9zdmc+",
+     "groupId": 1008
+    },
+    "128": {
+     "id": 128,
+     "index": 1,
+     "windowId": 14,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791838860000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.seriouseats.com/mushroom-risotto",
+     "title": "Mushroom Risotto — Serious Eats",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2QzNTQwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": 1008
+    },
+    "129": {
+     "id": 129,
+     "index": 2,
+     "windowId": 14,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791838920000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.allrecipes.com/recipe/garlic-noodles/",
+     "title": "15-Minute Garlic Noodles — Allrecipes",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2UwNGYxZSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkE8L3RleHQ+PC9zdmc+",
+     "groupId": 1009
+    },
+    "130": {
+     "id": 130,
+     "index": 3,
+     "windowId": 14,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791838980000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.bbcgoodfood.com/recipes/sheet-pan-gnocchi",
+     "title": "Sheet-Pan Gnocchi — BBC Good Food",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzJkNmE0ZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PC9zdmc+",
+     "groupId": 1009
+    },
+    "131": {
+     "id": 131,
+     "index": 4,
+     "windowId": 14,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791839040000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.seriouseats.com/how-to-cook-rice",
+     "title": "How to Cook Rice on the Stovetop — Serious Eats",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2QzNTQwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "14": {
+    "id": 14,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Easy Vegetable Curry — BBC Good Food"
+   }
+  },
+  "tabsNumber": 5,
+  "name": "Weeknight dinners",
+  "date": 1791839100000,
+  "lastEditedTime": 1791839100000,
+  "tag": [
+   "manual",
+   "recipes"
+  ],
+  "sessionStartTime": 1791828300000,
+  "id": "d3d94468-02a4-4259-a55d-38e6d163e820",
+  "tabGroups": [
+   {
+    "id": 1008,
+    "title": "Veggie",
+    "color": "green",
+    "collapsed": false,
+    "windowId": 14
+   },
+   {
+    "id": 1009,
+    "title": "Under 30 min",
+    "color": "yellow",
+    "collapsed": false,
+    "windowId": 14
+   }
+  ]
+ },
+ {
+  "windows": {
+   "15": {
+    "132": {
+     "id": 132,
+     "index": 0,
+     "windowId": 15,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746160000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://docs.example.com/d/v240-release-notes",
+     "title": "Draft: v2.4.0 release notes — docs",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkQ8L3RleHQ+PC9zdmc+",
+     "groupId": 1010
+    },
+    "133": {
+     "id": 133,
+     "index": 1,
+     "windowId": 15,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746220000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.mozilla.org/en-US/firefox/157.0/releasenotes/",
+     "title": "Firefox 157 Release Notes — Mozilla",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2U2NjAwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkY8L3RleHQ+PC9zdmc+",
+     "groupId": 1010
+    },
+    "134": {
+     "id": 134,
+     "index": 2,
+     "windowId": 15,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://semver.org/",
+     "title": "Semantic Versioning 2.0.0",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzVjNjM3MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": 1010
+    },
+    "135": {
+     "id": 135,
+     "index": 3,
+     "windowId": 15,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746340000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/example-org/app/actions",
+     "title": "Actions · example-org/app — GitHub",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": 1011
+    },
+    "136": {
+     "id": 136,
+     "index": 4,
+     "windowId": 15,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746400000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/example-org/app/pulls",
+     "title": "Pull requests · example-org/app — GitHub",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": 1011
+    },
+    "137": {
+     "id": 137,
+     "index": 5,
+     "windowId": 15,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791746460000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://keepachangelog.com/en/1.1.0/",
+     "title": "Keep a Changelog",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzVjNjM3MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPks8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "15": {
+    "id": 15,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Draft: v2.4.0 release notes — docs"
+   }
+  },
+  "tabsNumber": 6,
+  "name": "Release prep — v2.4",
+  "date": 1791746520000,
+  "lastEditedTime": 1791746520000,
+  "tag": [
+   "manual",
+   "work"
+  ],
+  "sessionStartTime": 1791735720000,
+  "id": "6512bd43-d9ca-46e0-ac99-0b0a82652dca",
+  "tabGroups": [
+   {
+    "id": 1010,
+    "title": "Release",
+    "color": "red",
+    "collapsed": false,
+    "windowId": 15
+   },
+   {
+    "id": 1011,
+    "title": "CI",
+    "color": "cyan",
+    "collapsed": false,
+    "windowId": 15
+   }
+  ]
+ },
+ {
+  "windows": {
+   "16": {
+    "138": {
+     "id": 138,
+     "index": 0,
+     "windowId": 16,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791555120000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://calendar.example.com/q4",
+     "title": "Q4 release calendar — Calendar",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzQyODVmNCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkM8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "139": {
+     "id": 139,
+     "index": 1,
+     "windowId": 16,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791555180000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.notion.so/templates/meeting-notes",
+     "title": "Meeting notes template — Notion",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzMzMyIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "140": {
+     "id": 140,
+     "index": 2,
+     "windowId": 16,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791555240000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.figma.com/board/roadmap",
+     "title": "Roadmap board — Figma",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2EyNTlmZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkY8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "16": {
+    "id": 16,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Q4 release calendar — Calendar"
+   }
+  },
+  "tabsNumber": 3,
+  "name": "Team planning",
+  "date": 1791555300000,
+  "lastEditedTime": 1791555300000,
+  "tag": [
+   "manual",
+   "work"
+  ],
+  "sessionStartTime": 1791544500000,
+  "id": "c20ad4d7-6fe9-4759-aa27-a0c99bff6710"
+ },
+ {
+  "windows": {
+   "17": {
+    "141": {
+     "id": 141,
+     "index": 0,
+     "windowId": 17,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792017840000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://react.dev/reference/react/hooks",
+     "title": "Built-in React Hooks — React",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzE0OWVjYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKamzwvdGV4dD48L3N2Zz4=",
+     "groupId": -1
+    },
+    "142": {
+     "id": 142,
+     "index": 1,
+     "windowId": 17,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792017900000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://react.dev/reference/react/useEffect",
+     "title": "useEffect — React",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzE0OWVjYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKamzwvdGV4dD48L3N2Zz4=",
+     "groupId": -1
+    },
+    "143": {
+     "id": 143,
+     "index": 2,
+     "windowId": 17,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792017960000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://react.dev/learn/you-might-not-need-an-effect",
+     "title": "You Might Not Need an Effect — React",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzE0OWVjYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKamzwvdGV4dD48L3N2Zz4=",
+     "groupId": -1
+    },
+    "144": {
+     "id": 144,
+     "index": 3,
+     "windowId": 17,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792018020000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://tailwindcss.com/docs/installation",
+     "title": "Installation — Tailwind CSS",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzM4YmRmOCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlQ8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "17": {
+    "id": 17,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Built-in React Hooks — React"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "React docs — Hooks",
+  "date": 1792018080000,
+  "lastEditedTime": 1792018080000,
+  "tag": [
+   "winClose"
+  ],
+  "sessionStartTime": 1792007280000,
+  "id": "c51ce410-c124-410e-adb5-e4b97fc2af39"
+ },
+ {
+  "windows": {
+   "18": {
+    "145": {
+     "id": 145,
+     "index": 0,
+     "windowId": 18,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791518160000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://blog.rust-lang.org/2026/09/18/Rust-1.90.0/",
+     "title": "Announcing Rust 1.90.0 — Rust Blog",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "146": {
+     "id": 146,
+     "index": 1,
+     "windowId": 18,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791518220000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/rust-lang/rust",
+     "title": "rust-lang/rust: Empowering everyone to build reliable and efficient software.",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "147": {
+     "id": 147,
+     "index": 2,
+     "windowId": 18,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791518280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/rust-lang/rust/blob/master/RELEASES.md",
+     "title": "RELEASES.md · rust-lang/rust — GitHub",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   },
+   "19": {
+    "148": {
+     "id": 148,
+     "index": 0,
+     "windowId": 19,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791518220000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://doc.rust-lang.org/cargo/",
+     "title": "The Cargo Book",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2NlNDIyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "149": {
+     "id": 149,
+     "index": 1,
+     "windowId": 19,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791518280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://rust-lang.github.io/rust-clippy/master/",
+     "title": "Clippy Lints",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzVjNjM3MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 2,
+  "windowsInfo": {
+   "18": {
+    "id": 18,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Announcing Rust 1.90.0 — Rust Blog"
+   },
+   "19": {
+    "id": 19,
+    "focused": false,
+    "top": 0,
+    "left": 40,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "The Cargo Book"
+   }
+  },
+  "tabsNumber": 5,
+  "name": "Rust 1.90 release notes — Rust Blog",
+  "date": 1791518340000,
+  "lastEditedTime": 1791518340000,
+  "tag": [
+   "browserExit"
+  ],
+  "sessionStartTime": 1791507540000,
+  "id": "aab32389-22bc-425a-af60-6eb525ffdc56"
+ },
+ {
+  "windows": {
+   "20": {
+    "150": {
+     "id": 150,
+     "index": 0,
+     "windowId": 20,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791332700000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://arxiv.org/abs/raft",
+     "title": "In Search of an Understandable Consensus Algorithm (Raft) — arXiv",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2IzMWIxYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmE8L3RleHQ+PC9zdmc+",
+     "groupId": 1012
+    },
+    "151": {
+     "id": 151,
+     "index": 1,
+     "windowId": 20,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791332760000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Lamport_timestamp",
+     "title": "Time, Clocks, and the Ordering of Events — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": 1012
+    },
+    "152": {
+     "id": 152,
+     "index": 2,
+     "windowId": 20,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791332820000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/CAP_theorem",
+     "title": "CAP theorem — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": 1012
+    },
+    "153": {
+     "id": 153,
+     "index": 3,
+     "windowId": 20,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791332880000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.youtube.com/watch?v=ddia",
+     "title": "Designing Data-Intensive Applications — talk",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2U2MjExNyIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKWtjwvdGV4dD48L3N2Zz4=",
+     "groupId": 1013
+    },
+    "154": {
+     "id": 154,
+     "index": 4,
+     "windowId": 20,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791332940000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.youtube.com/watch?v=jepsen",
+     "title": "Jepsen analyses — talk",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2U2MjExNyIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKWtjwvdGV4dD48L3N2Zz4=",
+     "groupId": 1013
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "20": {
+    "id": 20,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "In Search of an Understandable Consensus Algorithm (Raft) — arXiv"
+   }
+  },
+  "tabsNumber": 5,
+  "name": "Reading list — distributed systems",
+  "date": 1791333000000,
+  "lastEditedTime": 1791333000000,
+  "tag": [
+   "manual",
+   "reading"
+  ],
+  "sessionStartTime": 1791322200000,
+  "id": "9bf31c7f-f062-436a-a6d3-c8bd1f8f2ff3",
+  "tabGroups": [
+   {
+    "id": 1012,
+    "title": "Papers",
+    "color": "purple",
+    "collapsed": false,
+    "windowId": 20
+   },
+   {
+    "id": 1013,
+    "title": "Talks",
+    "color": "pink",
+    "collapsed": false,
+    "windowId": 20
+   }
+  ]
+ },
+ {
+  "windows": {
+   "21": {
+    "155": {
+     "id": 155,
+     "index": 0,
+     "windowId": 21,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792080300000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+     "title": "Using the Fetch API — MDN Web Docs",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "156": {
+     "id": 156,
+     "index": 1,
+     "windowId": 21,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792080360000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/API/Response",
+     "title": "Response — Web APIs | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "157": {
+     "id": 157,
+     "index": 2,
+     "windowId": 21,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792080420000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+     "title": "AbortController — Web APIs | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "158": {
+     "id": 158,
+     "index": 3,
+     "windowId": 21,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792080480000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled",
+     "title": "Promise.allSettled() — JavaScript | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "159": {
+     "id": 159,
+     "index": 4,
+     "windowId": 21,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792080540000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://stackoverflow.com/questions/tagged/fetch-api",
+     "title": "fetch — Stack Overflow",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2Y0ODAyNCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "21": {
+    "id": 21,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Using the Fetch API — MDN Web Docs"
+   }
+  },
+  "tabsNumber": 5,
+  "name": "MDN — Fetch API",
+  "date": 1792080600000,
+  "lastEditedTime": 1792080600000,
+  "tag": [
+   "regular"
+  ],
+  "sessionStartTime": 1792069800000,
+  "id": "c74d97b0-1eae-457e-a4aa-9d5bade97baf"
+ },
+ {
+  "windows": {
+   "22": {
+    "160": {
+     "id": 160,
+     "index": 0,
+     "windowId": 22,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791410280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://kubernetes.io/docs/concepts/workloads/pods/",
+     "title": "Pods | Kubernetes",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzMyNmNlNSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPks8L3RleHQ+PC9zdmc+",
+     "groupId": 1014
+    },
+    "161": {
+     "id": 161,
+     "index": 1,
+     "windowId": 22,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791410340000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/",
+     "title": "Deployments | Kubernetes",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzMyNmNlNSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPks8L3RleHQ+PC9zdmc+",
+     "groupId": 1014
+    },
+    "162": {
+     "id": 162,
+     "index": 2,
+     "windowId": 22,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791410400000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://kubernetes.io/docs/tasks/configure-pod-container/",
+     "title": "Configure Liveness, Readiness and Startup Probes | Kubernetes",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzMyNmNlNSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPks8L3RleHQ+PC9zdmc+",
+     "groupId": 1014
+    },
+    "163": {
+     "id": 163,
+     "index": 3,
+     "windowId": 22,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791410460000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://go.dev/tour/",
+     "title": "A Tour of Go",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzAwYWRkOCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "22": {
+    "id": 22,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Pods | Kubernetes"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "Kubernetes — Pods",
+  "date": 1791410520000,
+  "lastEditedTime": 1791410520000,
+  "tag": [
+   "winClose"
+  ],
+  "sessionStartTime": 1791399720000,
+  "id": "70efdf2e-c9b0-4607-a795-c442636b55fb",
+  "tabGroups": [
+   {
+    "id": 1014,
+    "title": "k8s docs",
+    "color": "blue",
+    "collapsed": false,
+    "windowId": 22
+   }
+  ]
+ },
+ {
+  "windows": {
+   "23": {
+    "164": {
+     "id": 164,
+     "index": 0,
+     "windowId": 23,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791139200000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://docs.python.org/3/library/asyncio.html",
+     "title": "asyncio — Asynchronous I/O — Python 3.14 documentation",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzM3NzZhYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "165": {
+     "id": 165,
+     "index": 1,
+     "windowId": 23,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791139260000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://docs.python.org/3/library/asyncio-task.html",
+     "title": "Coroutines and Tasks — Python 3.14 documentation",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzM3NzZhYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "166": {
+     "id": 166,
+     "index": 2,
+     "windowId": 23,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791139320000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://docs.python.org/3/whatsnew/3.14.html",
+     "title": "What's New In Python 3.14",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzM3NzZhYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "167": {
+     "id": 167,
+     "index": 3,
+     "windowId": 23,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1791139380000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.python.org/",
+     "title": "Welcome to Python.org",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzM3NzZhYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlA8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "23": {
+    "id": 23,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "asyncio — Asynchronous I/O — Python 3.14 documentation"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "Python asyncio",
+  "date": 1791139440000,
+  "lastEditedTime": 1791139440000,
+  "tag": [
+   "manual",
+   "learning"
+  ],
+  "sessionStartTime": 1791128640000,
+  "id": "6f4922f4-5568-461a-acdf-4ad2299f6d23"
+ },
+ {
+  "windows": {
+   "24": {
+    "168": {
+     "id": 168,
+     "index": 0,
+     "windowId": 24,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790946960000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikivoyage.org/wiki/Lake_District",
+     "title": "Lake District — Wikivoyage",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNhN2Q0NCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "169": {
+     "id": 169,
+     "index": 1,
+     "windowId": 24,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790947020000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Helvellyn",
+     "title": "Helvellyn — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "170": {
+     "id": 170,
+     "index": 2,
+     "windowId": 24,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790947080000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.openstreetmap.org/#map=14/54.5435/-2.9516",
+     "title": "Glenridding — OpenStreetMap",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzdlYmM2ZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk88L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "171": {
+     "id": 171,
+     "index": 3,
+     "windowId": 24,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790947140000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.rome2rio.com/s/London/Windermere",
+     "title": "Trains to Windermere — Rome2Rio",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzJlODZkZSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "24": {
+    "id": 24,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Lake District — Wikivoyage"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "Weekend hike — Lake District",
+  "date": 1790947200000,
+  "lastEditedTime": 1790947200000,
+  "tag": [
+   "manual",
+   "travel"
+  ],
+  "sessionStartTime": 1790936400000,
+  "id": "1f0e3dad-9990-4345-a743-9f8ffabdffc4"
+ },
+ {
+  "windows": {
+   "25": {
+    "172": {
+     "id": 172,
+     "index": 0,
+     "windowId": 25,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792035420000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://nodejs.org/api/stream.html",
+     "title": "Stream | Node.js v24 Documentation",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNjODczYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "173": {
+     "id": 173,
+     "index": 1,
+     "windowId": 25,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792035480000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://nodejs.org/en/learn/modules/backpressuring-in-streams",
+     "title": "Backpressuring in Streams | Node.js",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNjODczYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "174": {
+     "id": 174,
+     "index": 2,
+     "windowId": 25,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792035540000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://nodejs.org/en/blog/release/v24.10.0",
+     "title": "Node.js 24.10.0 release notes — nodejs.org",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNjODczYSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "175": {
+     "id": 175,
+     "index": 3,
+     "windowId": 25,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1792035600000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/nodejs/node",
+     "title": "nodejs/node — GitHub",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "25": {
+    "id": 25,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Stream | Node.js v24 Documentation"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "Node.js streams",
+  "date": 1792035660000,
+  "lastEditedTime": 1792035660000,
+  "tag": [
+   "browserExit"
+  ],
+  "sessionStartTime": 1792024860000,
+  "id": "98f13708-2101-44c4-a568-7be6106a3b84"
+ },
+ {
+  "windows": {
+   "26": {
+    "176": {
+     "id": 176,
+     "index": 0,
+     "windowId": 26,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790644320000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.gutenberg.org/ebooks/145",
+     "title": "Middlemarch by George Eliot — Project Gutenberg",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzhiNWEyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "177": {
+     "id": 177,
+     "index": 1,
+     "windowId": 26,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790644380000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.gutenberg.org/ebooks/2701",
+     "title": "Moby Dick; Or, The Whale — Project Gutenberg",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzhiNWEyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "178": {
+     "id": 178,
+     "index": 2,
+     "windowId": 26,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790644440000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.gutenberg.org/ebooks/1184",
+     "title": "The Count of Monte Cristo — Project Gutenberg",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzhiNWEyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "26": {
+    "id": 26,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Middlemarch by George Eliot — Project Gutenberg"
+   }
+  },
+  "tabsNumber": 3,
+  "name": "Classic novels to read",
+  "date": 1790644500000,
+  "lastEditedTime": 1790644500000,
+  "tag": [
+   "manual",
+   "reading"
+  ],
+  "sessionStartTime": 1790633700000,
+  "id": "3c59dc04-8e88-4024-abe8-079a5c74d079"
+ },
+ {
+  "windows": {
+   "27": {
+    "179": {
+     "id": 179,
+     "index": 0,
+     "windowId": 27,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790540940000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout",
+     "title": "CSS grid layout — MDN Web Docs",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1015
+    },
+    "180": {
+     "id": 180,
+     "index": 1,
+     "windowId": 27,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790541000000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas",
+     "title": "grid-template-areas — CSS | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1015
+    },
+    "181": {
+     "id": 181,
+     "index": 2,
+     "windowId": 27,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790541060000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts",
+     "title": "Basic concepts of flexbox — CSS | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1016
+    },
+    "182": {
+     "id": 182,
+     "index": 3,
+     "windowId": 27,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790541120000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_containment/Container_queries",
+     "title": "Container queries — CSS | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "27": {
+    "id": 27,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "CSS grid layout — MDN Web Docs"
+   }
+  },
+  "tabsNumber": 4,
+  "name": "MDN — CSS Grid",
+  "date": 1790541180000,
+  "lastEditedTime": 1790541180000,
+  "tag": [
+   "regular"
+  ],
+  "sessionStartTime": 1790530380000,
+  "id": "b6d767d2-f8ed-4d21-a44b-0e5886680cb9",
+  "tabGroups": [
+   {
+    "id": 1015,
+    "title": "Grid",
+    "color": "cyan",
+    "collapsed": false,
+    "windowId": 27
+   },
+   {
+    "id": 1016,
+    "title": "Flexbox",
+    "color": "yellow",
+    "collapsed": false,
+    "windowId": 27
+   }
+  ]
+ },
+ {
+  "windows": {
+   "28": {
+    "183": {
+     "id": 183,
+     "index": 0,
+     "windowId": 28,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790348340000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.seriouseats.com/sourdough-science",
+     "title": "The Science of Sourdough — Serious Eats",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2QzNTQwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "184": {
+     "id": 184,
+     "index": 1,
+     "windowId": 28,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790348400000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.bbcgoodfood.com/recipes/sourdough-bread",
+     "title": "Simple Sourdough Bread — BBC Good Food",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzJkNmE0ZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "185": {
+     "id": 185,
+     "index": 2,
+     "windowId": 28,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790348460000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Baker_percentage",
+     "title": "Baker percentage — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "28": {
+    "id": 28,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "The Science of Sourdough — Serious Eats"
+   }
+  },
+  "tabsNumber": 3,
+  "name": "Sourdough experiments",
+  "date": 1790348520000,
+  "lastEditedTime": 1790348520000,
+  "tag": [
+   "winClose"
+  ],
+  "sessionStartTime": 1790337720000,
+  "id": "37693cfc-7480-49e4-ad87-b8c7d8b9aacd"
+ },
+ {
+  "windows": {
+   "29": {
+    "186": {
+     "id": 186,
+     "index": 0,
+     "windowId": 29,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208000000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabGroups",
+     "title": "tabGroups — Mozilla | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1017
+    },
+    "187": {
+     "id": 187,
+     "index": 1,
+     "windowId": 29,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208060000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/sessions",
+     "title": "sessions — Mozilla | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1017
+    },
+    "188": {
+     "id": 188,
+     "index": 2,
+     "windowId": 29,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208120000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/local",
+     "title": "storage.local — Mozilla | MDN",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzFmNmZlYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk08L3RleHQ+PC9zdmc+",
+     "groupId": 1017
+    },
+    "189": {
+     "id": 189,
+     "index": 3,
+     "windowId": 29,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208180000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://github.com/mozilla/web-ext",
+     "title": "mozilla/web-ext: A command line tool to help build, run, and test web extensions",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzZlNzY4MSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "190": {
+     "id": 190,
+     "index": 4,
+     "windowId": 29,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208240000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://addons.mozilla.org/en-US/developers/",
+     "title": "Developer Hub — Add-ons for Firefox",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzAwNjBkZiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkE8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   },
+   "30": {
+    "191": {
+     "id": 191,
+     "index": 0,
+     "windowId": 30,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790208240000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://extensionworkshop.com/",
+     "title": "Extension Workshop — Mozilla",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzVjNjM3MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkU8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 2,
+  "windowsInfo": {
+   "29": {
+    "id": 29,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "tabGroups — Mozilla | MDN"
+   },
+   "30": {
+    "id": 30,
+    "focused": false,
+    "top": 0,
+    "left": 40,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Extension Workshop — Mozilla"
+   }
+  },
+  "tabsNumber": 6,
+  "name": "Firefox add-on dev",
+  "date": 1790208300000,
+  "lastEditedTime": 1790208300000,
+  "tag": [
+   "manual",
+   "work"
+  ],
+  "sessionStartTime": 1790197500000,
+  "id": "1ff1de77-4005-48da-a3f4-2943881c655f",
+  "tabGroups": [
+   {
+    "id": 1017,
+    "title": "WebExtension APIs",
+    "color": "orange",
+    "collapsed": false,
+    "windowId": 29
+   }
+  ]
+ },
+ {
+  "windows": {
+   "31": {
+    "192": {
+     "id": 192,
+     "index": 0,
+     "windowId": 31,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790012880000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.reddit.com/r/rust/",
+     "title": "r/rust",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2ZmNDUwMCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnI8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "193": {
+     "id": 193,
+     "index": 1,
+     "windowId": 31,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1790012940000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://this-week-in-rust.org/",
+     "title": "This Week in Rust",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzVjNjM3MCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlQ8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "31": {
+    "id": 31,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "r/rust"
+   }
+  },
+  "tabsNumber": 2,
+  "name": "r/rust",
+  "date": 1790013000000,
+  "lastEditedTime": 1790013000000,
+  "tag": [
+   "regular"
+  ],
+  "sessionStartTime": 1790002200000,
+  "id": "8e296a06-7a37-4633-a0de-d05f5a3bf3ec"
+ },
+ {
+  "windows": {
+   "32": {
+    "194": {
+     "id": 194,
+     "index": 0,
+     "windowId": 32,
+     "highlighted": true,
+     "active": true,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1789871220000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikivoyage.org/wiki/Kyoto",
+     "title": "Kyoto — Wikivoyage",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzNhN2Q0NCIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "195": {
+     "id": 195,
+     "index": 1,
+     "windowId": 32,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1789871280000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://en.wikipedia.org/wiki/Kinkaku-ji",
+     "title": "Kinkaku-ji — Wikipedia",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iIzU1NSIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlc8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    },
+    "196": {
+     "id": 196,
+     "index": 2,
+     "windowId": 32,
+     "highlighted": false,
+     "active": false,
+     "attention": false,
+     "pinned": false,
+     "status": "complete",
+     "hidden": false,
+     "discarded": false,
+     "incognito": false,
+     "width": 1600,
+     "height": 900,
+     "lastAccessed": 1789871340000,
+     "audible": false,
+     "autoDiscardable": true,
+     "mutedInfo": {
+      "muted": false
+     },
+     "isArticle": false,
+     "isInReaderMode": false,
+     "sharingState": {
+      "camera": false,
+      "microphone": false
+     },
+     "successorTabId": -1,
+     "cookieStoreId": "firefox-default",
+     "url": "https://www.japan-guide.com/e/e3906.html",
+     "title": "Philosopher's Path — japan-guide.com",
+     "favIconUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iMyIgZmlsbD0iI2MwMzkyYiIvPjx0ZXh0IHg9IjgiIHk9IjEyIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPko8L3RleHQ+PC9zdmc+",
+     "groupId": -1
+    }
+   }
+  },
+  "windowsNumber": 1,
+  "windowsInfo": {
+   "32": {
+    "id": 32,
+    "focused": true,
+    "top": 0,
+    "left": 0,
+    "width": 1600,
+    "height": 900,
+    "incognito": false,
+    "type": "normal",
+    "state": "maximized",
+    "alwaysOnTop": false,
+    "title": "Kyoto — Wikivoyage"
+   }
+  },
+  "tabsNumber": 3,
+  "name": "Kyoto — Wikivoyage",
+  "date": 1789871400000,
+  "lastEditedTime": 1789871400000,
+  "tag": [
+   "browserExit"
+  ],
+  "sessionStartTime": 1789860600000,
+  "id": "4e732ced-3463-406d-a0ca-9a15b6153677"
+ }
+]

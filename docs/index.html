@@ -122,7 +122,7 @@
     <a class="btn" href="https://github.com/superuser-miguel/Tab-Session-Garrison">View on GitHub</a>
   </div>
   <p class="note">Firefox only · on addons.mozilla.org · no telemetry</p>
-  <img class="shot" src="screenshots/multi-select-1.png" alt="Tab Session Garrison with nine sessions selected and the Open all / Delete summary panel">
+  <img class="shot" src="screenshots/list-and-details.png" alt="Tab Session Garrison: the session list, with a saved session and its tab groups in the detail pane">
 </header>
 
 <section class="wrap">
@@ -171,6 +171,10 @@
       <p>Every session shows how it was saved — <strong>Manual Save</strong> (green), <strong>Regularly</strong> (blue), <strong>Window closed</strong> (amber), <strong>Browser exited</strong> (red) — so deliberate saves stand out from the noise.</p>
     </div>
     <div class="card">
+      <h3>Phrase search</h3>
+      <p>Put words in quotes — <code>"release notes"</code> — to find that exact phrase inside one tab title, session name or group name. Group names are searchable too.</p>
+    </div>
+    <div class="card">
       <h3>Durable auto-save</h3>
       <p>Fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted — the alarm now self-heals.</p>
     </div>
@@ -194,6 +198,14 @@
       <p>With <code>content-visibility</code>, the browser only lays out and paints the rows you can actually see — the rest wait until you scroll to them.</p>
     </div>
     <div class="card">
+      <h3>A session index</h3>
+      <p>The list and search read a small index instead of decoding every saved tab and favicon. On a 3,500-session profile the list appears in about a quarter of a second.</p>
+    </div>
+    <div class="card">
+      <h3>No memory creep</h3>
+      <p>Favicons are shrunk without throwaway Blobs, which Firefox was slow to free — the background page no longer grows by hundreds of MB on busy profiles.</p>
+    </div>
+    <div class="card">
       <h3>Bulk delete in one write</h3>
       <p>Deleting dozens of sessions used to rewrite the whole undo history per item. Now it's a single batched operation with one screen update — near-instant.</p>
     </div>
@@ -205,12 +217,10 @@
   <p class="sub">Honest about what's next.</p>
   <ul class="road">
     <li><b>Backup overhaul</b> — a three-tier engine under your download folder that never deletes history: a full compressed <em>Complete</em> snapshot (shipped), plus per-session and append-only <em>Incremental</em> tiers, with a restore-from-backup UI.</li>
-    <li><b>fzf-style search</b> — fuzzy subsequence matching (<code>ghb</code> → GitHub), results ranked by match quality with the best hit floated to the top, matched characters highlighted, and URLs searched — not just titles.</li>
+    <li><b>Search overhaul</b> — phrase search is in. Next: site names and tags, <code>-exclude</code> and <code>site:</code>/<code>tag:</code>/<code>group:</code> filters, then fuzzy matching (<code>ghb</code> → GitHub) ranked by match quality.</li>
     <li><b>Rename saved windows</b> — give each window in a saved session its own editable name, right from the header in the detail pane.</li>
     <li><b>Firefox Split View</b> — split state is already captured on save; restoring waits on a Firefox extension API to recreate splits.</li>
     <li><b>Trash can</b> — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes.</li>
-    <li><b>Faster still</b> — a lightweight index store for instant loads on thousands of sessions, fetching heavy records only on selection.</li>
-    <li><b>Own branding</b> — logo, icons, and screenshots of its own.</li>
     <li><b>Chrome / Edge</b> — possibly, further down the line.</li>
   </ul>
 </section>

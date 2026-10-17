@@ -119,7 +119,7 @@ module.exports = [
               // *.xpi: signed release artifacts live at the repo root; they are build
               // *output*, and shipping them inside the source archive submitted to AMO
               // both bloats it and confuses what the reviewer is meant to build.
-              ignore: ["**/*.patch", "**/*.xpi", "**/screenshots/**", "**/ideas/**"]
+              ignore: ["**/*.patch", "**/*.xpi", "**/screenshots/**", "**/ideas/**", "**/tools/**"]
             }
           }
         ]

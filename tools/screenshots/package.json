@@ -1,0 +1,14 @@
+{
+  "name": "tsg-screenshots",
+  "description": "Demo-data screenshots of Tab Session Garrison in headless Firefox",
+  "scripts": {
+    "demo-data": "node make-demo-data.js",
+    "shoot": "node shoot.js"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "geckodriver": "^8.0.0",
+    "selenium-webdriver": "^4.51.0"
+  },
+  "private": true
+}

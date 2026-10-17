@@ -1,15 +1,12 @@
 # Screenshots
 
-README images live here. Reference them from the top-level `README.md` with
-relative paths, e.g. `docs/screenshots/multi-select-1.png`.
+Used by the top-level README and the GitHub Pages site (`docs/index.html`), which refer to
+them by relative path, e.g. `docs/screenshots/list-and-details.png`. All are made from
+fictional demo data by the harness in [`tools/screenshots`](../../tools/screenshots/).
 
-Current images and what the README uses them for:
-
-- `multi-select-1.png` — hero: sessions selected with the Open all / Delete summary panel ✅
-- `multi-select-2.png` — bulk-delete confirmation dialog ✅
-- `multi-select-3.png` — bulk-restore (Open all) confirmation dialog ✅
-- `tab-groups.png` — tab-group chips (detail pane) and dots (list) ✅
-- `manual-save.png` — the four colour-coded session types, incl. the green Manual Save pill ✅
-
-Committed images are version-controlled and travel with the repo. Keep them
-reasonably sized (a few hundred KB each; downscale huge captures).
+- `list-and-details.png` — hero: session list plus a session with tab groups in the detail pane
+- `multi-select.png` — several sessions selected, with the Open all / Delete panel
+- `phrase-search.png` — a quoted `"release notes"` search
+- `session-types.png` — the four colour-coded session types
+- `settings.png` — the Settings page with the focused card
+- `*-amo.png` — 1280×800 versions for the addons.mozilla.org listing

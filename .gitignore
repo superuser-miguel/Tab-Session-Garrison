@@ -9,4 +9,10 @@ src/credentials.js*~
 # Internal only: WIP visual / UI idea screenshots. Never committed to the
 # (public) repo, never shipped in the extension, never in the source archive.
 ideas/
-screenshots/
+/screenshots/
+
+# Screenshot harness tooling
+tools/screenshots/node_modules/
+tools/screenshots/bin/
+tools/screenshots/work/
+tools/screenshots/out/
