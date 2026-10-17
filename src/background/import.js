@@ -16,7 +16,13 @@ export default async function importSessions(importedSessions) {
     const existsSameSession = currentSessions.some(isSameSession);
     if (existsSameSession) continue;
 
+    // "temp" marks the extension's own live working copy. An imported session
+    // carrying it is hidden from the list and could be mistaken for the live
+    // copy (upstream TSM #1502), so drop it.
+    if (Array.isArray(importedSession.tag)) {
+      importedSession.tag = importedSession.tag.filter(tag => tag !== "temp");
+    }
     importedSession.lastEditedTime = Date.now();
-    saveSession(importedSession);
+    await saveSession(importedSession);
   }
 }
