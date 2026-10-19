@@ -182,6 +182,20 @@ export default class PopupPage extends Component {
       });
       setSettings("isShowUpdated", false);
     }
+
+    // Saves have been failing (see background/saveHealth.js).
+    const { saveFailure } = await browser.storage.local.get("saveFailure").catch(() => ({}));
+    if (saveFailure) {
+      this.openNotification({
+        message: browser.i18n.getMessage("saveFailedNotice", [
+          String(saveFailure.count),
+          new Date(saveFailure.since).toLocaleString(),
+          saveFailure.message
+        ]),
+        type: "error",
+        duration: 60000
+      });
+    }
   };
 
   // Settings that change how a list row looks. Rows are PureComponents, so

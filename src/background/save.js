@@ -2,6 +2,7 @@ import browser from "webextension-polyfill";
 import browserInfo from "browser-info";
 import { v4 as uuidv4 } from "uuid";
 import log from "loglevel";
+import { reportSaveFailure, reportSaveSuccess } from "./saveHealth";
 import Sessions from "./sessions.js";
 import { getSettings } from "src/settings/settings";
 import { returnReplaceParameter } from "./replace.js";
@@ -122,10 +123,12 @@ export async function saveSession(session, isSendResponce = true) {
       if (validatedTag !== "") session.tag.push(deviceName);
     }
     await Sessions.put(session);
+    reportSaveSuccess();
     if (isSendResponce) sendMessage("saveSession", { session: session });
     return session;
   } catch (e) {
     log.error(logDir, "saveSession()", e);
+    reportSaveFailure(e);
     return Promise.reject(e);
   }
 }
@@ -150,10 +153,12 @@ export async function updateSession(
   try {
     if (shouldUpdateEditedTime) session.lastEditedTime = Date.now();
     await Sessions.put(session);
+    reportSaveSuccess();
     if (isSendResponce) sendMessage("updateSession", { session: session });
     return session;
   } catch (e) {
     log.error(logDir, "updateSession()", e);
+    reportSaveFailure(e);
     return Promise.reject(e);
   }
 }

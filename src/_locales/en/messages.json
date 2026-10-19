@@ -748,5 +748,8 @@
   },
   "optimizingSessionsCaptionLabel": {
     "message": "This happens once after an update and can take a moment on large profiles."
+  },
+  "saveFailedNotice": {
+    "message": "Saving sessions has failed $1 times since $2, so recent changes may not be saved. Last error: $3"
   }
 }

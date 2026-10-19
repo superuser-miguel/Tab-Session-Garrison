@@ -52,14 +52,16 @@ export const onCommandListener = async command => {
   switch (command) {
     case "saveAllWindow": {
       const name = await getCurrentTabName();
-      saveCurrentSession(name, ["manual"], "saveAllWindows");
-      showDoneBadge();
+      // The ✓ only when it worked; a failure shows the "!" badge instead.
+      const saved = await saveCurrentSession(name, ["manual"], "saveAllWindows").catch(() => null);
+      if (saved) showDoneBadge();
       break;
     }
     case "saveCurrentWindow": {
       const name = await getCurrentTabName();
-      saveCurrentSession(name, ["manual"], "saveOnlyCurrentWindow");
-      showDoneBadge();
+      // The ✓ only when it worked; a failure shows the "!" badge instead.
+      const saved = await saveCurrentSession(name, ["manual"], "saveOnlyCurrentWindow").catch(() => null);
+      if (saved) showDoneBadge();
       break;
     }
     case "exportSessions": {

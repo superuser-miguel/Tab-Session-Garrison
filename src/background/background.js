@@ -45,6 +45,7 @@ import { updateLogLevel, overWriteLogLevel } from "../common/log";
 import { getsearchInfo } from "./search";
 import { recordChange, recordChanges, undo, redo, updateUndoStatus } from "./undo";
 import { compressAllSessions } from "./compressAllSessions";
+import { restoreSaveFailureBadge } from "./saveHealth";
 import { startTracking, endTrackingByWindowDelete, updateTrackingStatus } from "./track";
 
 const logDir = "background/background";
@@ -64,6 +65,7 @@ export const init = async () => {
     return;
   }
   await ensureAutoSaveAlarm();
+  restoreSaveFailureBadge();
   IsInit = true;
 };
 
