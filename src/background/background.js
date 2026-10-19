@@ -207,10 +207,17 @@ const onMessageListener = async (request, sender, sendResponse) => {
   }
 };
 
-const handleReplace = async () => {
+// A lazy-loading placeholder loads its page when its tab is activated. Use the
+// window the event is about: tabs.onActivated passes { windowId }, and
+// windows.onFocusChanged passes the id. Before, it always used the current
+// window, so activating a tab in an unfocused window did nothing.
+const handleReplace = async info => {
   await init();
-  replacePage();
+  const windowId = typeof info === "number" ? info : info?.windowId;
+  if (windowId === browser.windows.WINDOW_ID_NONE) return;
+  replacePage(windowId ?? browser.windows.WINDOW_ID_CURRENT);
 };
+
 
 const onChangeStorageListener = async (changes, areaName) => {
   await init();

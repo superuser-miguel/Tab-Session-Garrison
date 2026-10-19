@@ -97,7 +97,7 @@ export const setUpdateTempTimer = async () => {
   if (
     !getSettings("ifAutoSaveWhenClose") &&
     !getSettings("ifAutoSaveWhenExitBrowser") &&
-    !getSettings("ifOpenLastSessionWhenStartUp") &&
+    getSettings("startupBehavior") !== "previousSession" &&
     !isTracking
   )
     return;

@@ -2,6 +2,7 @@ import browser from "webextension-polyfill";
 import browserInfo from "browser-info";
 import log from "loglevel";
 import { getSettings } from "../settings/settings";
+import { withScheme } from "../common/urlUtils";
 
 const logDir = "background/replace";
 
@@ -77,10 +78,12 @@ export async function replacePage(windowId = browser.windows.WINDOW_ID_CURRENT) 
   if (parameter.isReplaced && parameter.state == "redirect") {
     log.info(logDir, "replacePage()", windowId);
     let updateProperties = {};
-    updateProperties.url = parameter.url;
+    updateProperties.url = withScheme(parameter.url);
 
     const bInfo = browserInfo();
-    const isEnabledLoadReplace = bInfo.name == "Firefox" && bInfo.version >= "57";
+    // A number, not "57": as text, "149" >= "57" is false, so the placeholder
+    // used to stay in the tab's history and Back returned to it.
+    const isEnabledLoadReplace = bInfo.name == "Firefox" && Number(bInfo.version) >= 57;
     if (isEnabledLoadReplace) updateProperties.loadReplace = true;
 
     browser.tabs

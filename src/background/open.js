@@ -5,6 +5,7 @@ import { getSettings } from "src/settings/settings";
 import { returnReplaceURL, replacePage } from "./replace.js";
 import { updateTabGroups, isEnabledTabGroups } from "../common/tabGroups";
 import { isTrackingSession, setLastFocusedWindowId, startTracking } from "./track.js";
+import { withScheme } from "../common/urlUtils";
 
 const logDir = "background/open";
 
@@ -272,6 +273,7 @@ let tabList = {};
 //実際にタブを開く
 function openTab(tab, currentWindow, isOpenToLastIndex = false) {
   log.log(logDir, "openTab()", tab, currentWindow, isOpenToLastIndex);
+  tab = { ...tab, url: withScheme(tab.url) };
   return new Promise(async function (resolve, reject) {
     let createOption = {
       active: tab.active,
@@ -306,7 +308,11 @@ function openTab(tab, currentWindow, isOpenToLastIndex = false) {
     //Lazy loading
     if (getSettings("ifLazyLoading")) {
       if (getSettings("isUseDiscarded") && isEnabledDiscarded) {
-        if (!createOption.active && !createOption.pinned) {
+        // Firefox refuses discarded about: tabs ("Cannot create a discarded new
+        // tab or about urls"), so about:blank / about:newtab would come back as
+        // "can not be opened". They're cheap to load anyway.
+        const isAboutUrl = !tab.url || tab.url.startsWith("about:");
+        if (!createOption.active && !createOption.pinned && !isAboutUrl) {
           createOption.discarded = true;
           createOption.title = tab.title;
         }
