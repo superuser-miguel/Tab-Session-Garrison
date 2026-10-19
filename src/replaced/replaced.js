@@ -49,6 +49,11 @@ document.querySelector(".copyButton").innerText = browser.i18n.getMessage("copyU
 if (parameter.state == "open_faild") {
   document.getElementsByClassName("replacedPageMessage")[0].innerText =
     browser.i18n.getMessage("replacedPageMessage");
+  // Firefox's reason, e.g. "Illegal URL" — helps when reporting the problem.
+  if (parameter.reason) {
+    document.getElementsByClassName("replacedPageReason")[0].innerText =
+      browser.i18n.getMessage("replacedPageReasonLabel", [parameter.reason]);
+  }
 }
 
 function returnReplaceParameter(url) {

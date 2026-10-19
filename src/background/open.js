@@ -340,14 +340,22 @@ function openTab(tab, currentWindow, isOpenToLastIndex = false) {
         tabList[tab.id] = newTab.id;
         resolve();
       } catch (e) {
-        log.warn(logDir, "openTab() tryOpen() replace", e);
-        const isRemovedContainer = e.message.startsWith("No cookie store exists with ID");
+        log.warn(logDir, "openTab() tryOpen() could not open", tab.url, e);
+        const isRemovedContainer = e?.message?.startsWith("No cookie store exists with ID");
         if (isRemovedContainer) delete createOption.cookieStoreId;
-        else createOption.url = returnReplaceURL("open_faild", tab.title, tab.url, tab.favIconUrl);
+        else
+          createOption.url = returnReplaceURL(
+            "open_faild",
+            tab.title,
+            tab.url,
+            tab.favIconUrl,
+            e?.message
+          );
         const newTab = await browser.tabs.create(createOption).catch(e => {
           log.error(logDir, "openTab() tryOpen() create", e);
-          reject();
-        }); //タブを開けなかった場合はreject
+        });
+        // The tab could not be opened at all.
+        if (!newTab) return reject();
         tabList[tab.id] = newTab.id;
         resolve();
       }

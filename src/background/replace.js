@@ -20,7 +20,8 @@ export function returnReplaceParameter(url) {
   return parameter;
 }
 
-export function returnReplaceURL(state, title, url, favIconUrl) {
+// reason: why the page could not be opened, shown on the placeholder page.
+export function returnReplaceURL(state, title, url, favIconUrl, reason = "") {
   const theme = getSettings("theme");
 
   let retUrl =
@@ -53,6 +54,7 @@ export function returnReplaceURL(state, title, url, favIconUrl) {
       theme;
   }
 
+  if (reason) retUrl += "&reason=" + encodeURIComponent(reason);
   return retUrl;
 }
 
@@ -88,12 +90,14 @@ export async function replacePage(windowId = browser.windows.WINDOW_ID_CURRENT) 
           toggleReaderMode(info[0].id);
         }
       })
-      .catch(() => {
+      .catch(e => {
+        log.warn(logDir, "replacePage() could not open", parameter.url, e);
         updateProperties.url = returnReplaceURL(
           "open_faild",
           parameter.title,
           parameter.url,
-          parameter.favIconUrl
+          parameter.favIconUrl,
+          e?.message
         );
         browser.tabs.update(info[0].id, updateProperties);
       });

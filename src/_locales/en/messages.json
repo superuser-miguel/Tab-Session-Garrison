@@ -743,6 +743,9 @@
   "replacedPageMessage": {
     "message": "This page can not be opened by Tab Session Garrison."
   },
+  "replacedPageReasonLabel": {
+    "message": "Reason: $1"
+  },
   "copyUrlLabel": {
     "message": "Copy URL"
   },
