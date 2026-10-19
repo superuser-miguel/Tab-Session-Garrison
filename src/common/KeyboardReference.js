@@ -25,7 +25,7 @@ const KeyboardReference = () => {
               {POPUP_KEYMAP.filter(entry => entry.area === area).map(entry => (
                 <tr key={entry.action}>
                   <td className="keys">
-                    {entry.bindings.map((binding, i) => (
+                    {(entry.display || entry.bindings).map((binding, i) => (
                       <kbd key={i}>{formatBinding(binding, getMessage)}</kbd>
                     ))}
                   </td>

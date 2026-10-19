@@ -75,6 +75,16 @@ async function main() {
         await save("session-types.png", await driver.findElement(By.css(".column.sidebar")));
       }
 
+      if (want("keyboard")) {
+        // the "?" cheat sheet over the list
+        await openPopup(w, h);
+        await clickRow("Kyoto trip planning");
+        await driver.actions().keyDown(Key.SHIFT).sendKeys("/").keyUp(Key.SHIFT).perform();
+        await sleep(800);
+        await parkMouse();
+        await save("keyboard.png");
+      }
+
       if (want("settings")) {
         // show the auto-savers ON (their defaults) — they were only switched off
         // so the throwaway browser wouldn't save sessions of its own

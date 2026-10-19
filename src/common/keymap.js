@@ -10,7 +10,8 @@
 //   shift  true / false; "any" when the key itself needs Shift on some layouts ("?")
 //   alt    true / false
 // A binding with `text` instead of `key` is shown in lists but never matched
-// (e.g. "type any text").
+// (e.g. "type any text"). An entry's optional `display` replaces its bindings
+// in lists when spelling every binding out would be too long.
 
 export const KEY_AREAS = ["list", "search", "tabs", "dialogs", "anywhere"];
 
@@ -23,7 +24,8 @@ export const POPUP_KEYMAP = [
     action: "extend",
     area: "list",
     label: "keyExtendLabel",
-    bindings: MOVE_KEYS.map(key => ({ key, shift: true }))
+    bindings: MOVE_KEYS.map(key => ({ key, shift: true })),
+    display: [{ text: "keyShiftMoveKeysLabel", i18n: true }]
   },
   { action: "toggle", area: "list", label: "keyToggleLabel", bindings: [{ key: " " }] },
   { action: "selectAll", area: "list", label: "keySelectAllLabel", bindings: [{ key: "a", accel: true }] },

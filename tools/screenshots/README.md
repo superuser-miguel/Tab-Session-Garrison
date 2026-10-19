@@ -16,7 +16,15 @@ ONLY=phrase-search,settings node shoot.js "" ./out   # just some shots
   session types, tags, tab groups, multi-window sessions). Edit it, then
   `node make-demo-data.js`.
 - Shots: `list-and-details`, `multi-select`, `phrase-search` (1200×720, plus 1280×800
-  `-amo` versions for the store), `session-types` (a crop of the list) and `settings`.
+  `-amo` versions for the store), `session-types` (a crop of the list), `keyboard`
+  (the "?" cheat sheet) and `settings`.
+
+## Keyboard test
+
+`node keytest.js` presses every popup key on the demo data and checks the result
+(selection, search, cheat sheet, rename/tag dialogs, menus, tab list, delete + undo,
+the Shortcuts page, the "can not be opened" reason and the failed-save notice). Run it
+before each release; it exits non-zero on any failure. `harness.js` is the shared setup.
 - geckodriver must run with `--allow-system-access` (shoot.js does this), or Firefox
   157+ refuses to open the extension's pages. Puppeteer can't drive extension pages
   in Firefox, which is why this uses Selenium.

@@ -15,7 +15,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 ### Selection & bulk actions
 
 - **Multi-select** sessions with Ctrl/Cmd-click, Shift-click ranges, or the keyboard
-- **Full keyboard navigation** of the list — move, extend, select-all, restore, and delete without touching the mouse
+- **Full keyboard navigation** — the list, search, the tab list, menus and dialogs all work from the keyboard, with a **?** cheat sheet in the popup (see the [keyboard reference](#keyboard-reference))
 - **Bulk delete** with a single **"undo all"** — clear out dozens of stale auto-saves at once, and still get them back if you misclick
 - **Bulk restore** — open every selected session at once, each in its own new window (with a confirm so a stray keypress doesn't flood your screen)
 - An **"N selected" summary** panel — with **Open all** and **Delete** actions — so you always know what a bulk action will hit
@@ -24,7 +24,7 @@ Everything Tab Session Manager does — save and restore the state of windows an
 
 ### Tab groups
 
-- **Group indicators** — every session shows its Firefox tab groups at a glance: colored, named chips **grouped by window** in the detail pane, and colored dots on each list row
+- **Group indicators** — every session shows its Firefox tab groups at a glance: colored, named chips in the detail pane, colored dots on each list row, and in the tab list each group's tabs carry the group's colour and name
 - **Add a session to your current window as a tab group** — drop a saved session's tabs into the window you're in, tidied into one named group (and it preserves the session's own groups when it already has them)
 - **Phantom-group masking** — older auto-saves that captured stray groups from other windows are cleaned up at display time, non-destructively
 
@@ -32,12 +32,15 @@ Everything Tab Session Manager does — save and restore the state of windows an
 
 - **Exact phrases** — put words in quotes (`"release notes"`) to find that phrase inside a single tab title, session name or group name. Without quotes, each word can match anywhere in the session. An unfinished quote counts as a phrase while you type, and curly quotes work too
 - **Tab-group names are searchable** — type a group's name to find every session that contains it
-- Matches are highlighted in the list and in the detail pane
+- Matches are highlighted in the list and in the detail pane, and the filter menu shows how many sessions match (`All [3/20]`)
 
 ![A quoted search for "release notes" — only sessions with the phrase inside one tab title remain](docs/screenshots/phrase-search.png)
 
 ### Reliability & polish
 
+- **Failed saves are visible** — if saving ever fails (a full disk, a broken database), a red **!** appears on the toolbar icon and the popup says since when and why, instead of auto-save quietly stopping ([upstream #1667](https://github.com/sienori/Tab-Session-Manager/issues/1667)). The next successful save clears it
+- **Says why a tab couldn't open** — the "This page can not be opened" placeholder now shows Firefox's reason, e.g. "Illegal URL"
+- **Device name in backup file names** — optional, so backups from several computers sharing one folder can be told apart ([upstream #1664](https://github.com/sienori/Tab-Session-Manager/issues/1664))
 - **Durable auto-save** — fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted; the alarm now self-heals
 - **Session types at a glance** — every session shows how it was saved, each with its own icon and tint: **Manual Save** (green bookmark), **Regularly** (blue clock), **Window closed** (amber window), **Browser exited** (red power). The saves you deliberately keep finally stand out from the auto-save noise (see [How a session gets its type](#how-a-session-gets-its-type))
 - **Undo count at a glance** — the undo/redo buttons carry a small badge with how many steps you can go back or forward
@@ -72,20 +75,42 @@ The three automatic types carry a stored marker, so they're always exact. **Manu
 
 ![The four colour-coded session types in the list](docs/screenshots/session-types.png)
 
-### Keyboard & selection reference
+### Keyboard reference
 
-| Input | Action |
+Everything works without the mouse. Press **?** in the popup for this list, or see **Settings → Shortcuts**. Both come from one list in the code ([`src/common/keymap.js`](src/common/keymap.js)), and `tools/screenshots/keytest.js` presses every key before a release.
+
+![The "?" cheat sheet in the popup](docs/screenshots/keyboard.png)
+
+**Session list**
+
+| Keys | Action |
 |---|---|
-| Click | Select one session |
-| Ctrl/Cmd + Click | Toggle one session in/out of the selection |
-| Shift + Click | Select the range from the anchor to the clicked row |
-| ↑ / ↓ | Move the selection |
-| Shift + ↑ / ↓ | Extend the selection |
-| Space | Toggle the focused row |
-| Ctrl/Cmd + A | Select all visible sessions (respects filter/search) |
+| ↑ ↓ Home End PgUp PgDn | Move the selection |
+| Shift + the same keys | Extend the selection |
+| Space | Add or remove the session from the selection |
+| Ctrl/⌘ + A | Select all visible sessions (respects filter and search) |
+| Esc | Back to a single selection |
+| Enter | Open (several: each in its own new window, after a confirm) |
+| Ctrl/⌘ + Enter | Open in the current window, replacing its tabs |
+| Alt + Enter | Add to the current window |
 | Delete / Backspace | Delete the selection (confirms when more than one) |
-| Esc | Collapse back to a single selection |
-| Enter / Shift + Enter | Restore the selection — one session directly, or several each in their own new window (confirms first) |
+| F2 | Rename the session |
+| Shift + F2 | Add tags |
+| Shift + F10 / Menu key | Open the session menu |
+| → | Move into the tab list |
+| / or just start typing | Search (`"` starts a phrase) |
+
+**Search box:** Enter or ↓ goes to the first result; Esc clears the search, then closes it.
+
+**Tab list:** ↑ ↓ Home End move between tabs, Enter opens the tab, Delete removes it from the session, ← or Esc goes back to the session list.
+
+**Menus and dialogs:** ↑ ↓ move between menu items, Esc closes.
+
+**Anywhere in the popup:** Ctrl/⌘ + Z undo, Ctrl/⌘ + Shift + Z (or Ctrl + Y) redo, ? shows the list of keys, Tab / Shift + Tab move between the list, the search box and the save box.
+
+**Mouse:** Ctrl/⌘ + click toggles one session in or out of the selection; Shift + click selects a range.
+
+**Browser-wide** (change them in Settings → Shortcuts): open the popup (Ctrl+Shift+L by default), save all windows, save the current window, export sessions.
 
 ---
 

@@ -767,6 +767,9 @@
   "keyCloseLabel": {
     "message": "Close the menu or dialog"
   },
+  "keyShiftMoveKeysLabel": {
+    "message": "Shift + any move key"
+  },
   "keyMoveLabel": {
     "message": "Move the selection"
   },

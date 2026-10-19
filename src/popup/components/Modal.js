@@ -72,6 +72,7 @@ export default class Modal extends Component {
       >
         <div
           id="modal"
+          className="scrollbar"
           ref="modal"
           role="dialog"
           onKeyDown={this.loopFocus}

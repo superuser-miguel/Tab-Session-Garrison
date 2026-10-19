@@ -40,6 +40,12 @@
     -moz-user-select: none;
     -webkit-user-select: none;
 
+    // The "?" key list needs more room than a normal dialog.
+    &:has(.keyboardReference) {
+      width: 560px;
+      max-width: 92%;
+    }
+
     hr {
       background-color: var(--line);
       height: 1px;

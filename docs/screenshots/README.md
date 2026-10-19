@@ -8,5 +8,6 @@ fictional demo data by the harness in [`tools/screenshots`](../../tools/screensh
 - `multi-select.png` — several sessions selected, with the Open all / Delete panel
 - `phrase-search.png` — a quoted `"release notes"` search
 - `session-types.png` — the four colour-coded session types
+- `keyboard.png` — the "?" keyboard cheat sheet in the popup
 - `settings.png` — the Settings page with the focused card
 - `*-amo.png` — 1280×800 versions for the addons.mozilla.org listing

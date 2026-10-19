@@ -166,6 +166,16 @@
   }
   .also { color: var(--muted); margin: 24px 0 0; font-size: .95rem; }
 
+  /* Keyboard */
+  .keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+  .keys div {
+    padding: 14px 16px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    color: var(--muted); font-size: .92rem;
+  }
+  .keys span { display: block; color: var(--text); font-weight: 600; margin-bottom: 4px; }
+  .keys p { margin: 0; }
+
   footer.wrap { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; padding: 36px 16px 48px; }
   footer p { margin: 6px 0; }
 </style>
@@ -195,6 +205,7 @@
   <nav>
     <a href="#search">Search</a>
     <a href="#roadmap">Roadmap</a>
+    <a class="opt" href="#keyboard">Keyboard</a>
     <a class="opt" href="https://github.com/superuser-miguel/Tab-Session-Garrison">GitHub</a>
   </nav>
 </div>
@@ -332,15 +343,35 @@
   </div>
 </section>
 
+<section class="wrap" id="keyboard">
+  <span class="eyebrow">Keyboard first</span>
+  <h2>Never reach for the mouse.</h2>
+  <p class="sub">
+    Every part of the popup works from the keyboard. Press <kbd>?</kbd> in the popup to see
+    the keys; they're also listed in Settings → Shortcuts. An automated test presses every
+    key before each release, so they keep working.
+  </p>
+  <div class="keys">
+    <div><span><kbd>/</kbd> or just type</span><p>Search (<kbd>"</kbd> starts a phrase)</p></div>
+    <div><span><kbd>↑</kbd> <kbd>↓</kbd> <kbd>Home</kbd> <kbd>End</kbd></span><p>Move through sessions</p></div>
+    <div><span><kbd>Shift</kbd> + move</span><p>Select a range</p></div>
+    <div><span><kbd>Enter</kbd></span><p>Open</p></div>
+    <div><span><kbd>Ctrl</kbd>+<kbd>Enter</kbd> · <kbd>Alt</kbd>+<kbd>Enter</kbd></span><p>Replace or add to this window</p></div>
+    <div><span><kbd>→</kbd> <kbd>←</kbd></span><p>Into the tab list and back</p></div>
+    <div><span><kbd>F2</kbd> · <kbd>Shift</kbd>+<kbd>F2</kbd></span><p>Rename · add tags</p></div>
+    <div><span><kbd>Del</kbd> · <kbd>Ctrl</kbd>+<kbd>Z</kbd></span><p>Delete · undo</p></div>
+  </div>
+</section>
+
 <section class="wrap" id="more">
   <span class="eyebrow">The rest of the toolkit</span>
   <h2>Built for big profiles.</h2>
-  <p class="sub">Once you've found it, everything else stays fast and keyboard-friendly.</p>
+  <p class="sub">Once you've found it, everything else stays fast.</p>
   <div class="grid">
     <div class="card">
-      <h3>Keyboard first</h3>
-      <p>Arrows to move, <kbd>Shift</kbd>+arrows to extend, <kbd>Ctrl</kbd>+<kbd>A</kbd> to
-        select all, <kbd>Enter</kbd> to restore.</p>
+      <h3>Failures you can see</h3>
+      <p>If saving ever fails, a red <b>!</b> on the toolbar icon tells you, instead of auto-save
+        quietly stopping.</p>
     </div>
     <div class="card">
       <h3>Bulk actions, one undo</h3>
