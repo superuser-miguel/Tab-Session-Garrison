@@ -64,6 +64,13 @@ function generateFileName(sessions, isBackup) {
     fileName = `${sessionsCount} - ${moment().format(getSettings("dateFormat"))}`;
   }
 
+  // Optional device name in front of backup files, so backups from several
+  // computers sharing one folder can be told apart (upstream TSM #1664).
+  const deviceName = (getSettings("deviceName") || "").trim();
+  if (isBackup && getSettings("backupIncludeDeviceName") && deviceName) {
+    fileName = `${deviceName} - ${fileName}`;
+  }
+
   const pattern = /\\|\/|\:|\?|\.|"|<|>|\|/g;
   fileName = fileName.replace(pattern, "-").replace(/^( )+/, "");
   return fileName;

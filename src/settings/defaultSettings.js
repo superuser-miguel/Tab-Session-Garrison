@@ -291,6 +291,13 @@ export default [
             default: true
           },
           {
+            id: "backupIncludeDeviceName",
+            title: "backupIncludeDeviceNameLabel",
+            captions: ["backupIncludeDeviceNameCaptionLabel"],
+            type: "checkbox",
+            default: false
+          },
+          {
             id: "backupFolder",
             title: "backupFolderLabel",
             captions: ["backupFolderCaptionLabel"],

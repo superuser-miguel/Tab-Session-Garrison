@@ -401,6 +401,12 @@
   "backupCompleteLabel": {
     "message": "Complete snapshot (recommended)"
   },
+  "backupIncludeDeviceNameLabel": {
+    "message": "Add the device name to backup file names"
+  },
+  "backupIncludeDeviceNameCaptionLabel": {
+    "message": "Puts the device name from <b>Device name</b> in front of each backup file, so backups from several computers sharing one folder can be told apart. Has no effect while the device name is empty."
+  },
   "backupCompleteCaptionLabel": {
     "message": "Periodically save a full, compressed (.zip) snapshot of every session into a <b>complete</b> subfolder. Kept indefinitely for disaster recovery — old snapshots are never deleted."
   },

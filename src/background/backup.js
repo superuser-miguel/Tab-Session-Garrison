@@ -38,6 +38,14 @@ const getSessionsFingerprint = async () => {
   return `${sessions.length}:${hash >>> 0}`;
 };
 
+// "<device name>-" for complete-snapshot names when the user opted in
+// (upstream TSM #1664); characters that can't go in a file name become "-".
+const deviceFilePart = () => {
+  const deviceName = (getSettings("deviceName") || "").trim();
+  if (!getSettings("backupIncludeDeviceName") || !deviceName) return "";
+  return `${deviceName.replace(/[\\/:*?"<>|.]/g, "-")}-`;
+};
+
 // Complete tier: a full, timestamped snapshot of every session, written as a
 // single .zip into <backupFolder>/complete/. Kept indefinitely — space is
 // managed by compression, not deletion — so a snapshot is only written when
@@ -56,9 +64,10 @@ const backupComplete = async () => {
 
   const folder = backupBaseFolder();
   const stamp = moment().format("YYYY-MM-DD HH-mm-ss");
-  const jsonName = `TSG-complete-${stamp}.json`;
+  const device = deviceFilePart();
+  const jsonName = `TSG-complete-${device}${stamp}.json`;
   const zipBytes = buildZip({ [jsonName]: JSON.stringify(sessions, null, "  ") });
-  const filename = `${folder}complete/TSG-complete-${stamp}.zip`;
+  const filename = `${folder}complete/TSG-complete-${device}${stamp}.zip`;
 
   const downloadId = await writeBackupFile(zipBytes, filename);
   if (downloadId) {
