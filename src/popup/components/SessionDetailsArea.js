@@ -76,8 +76,8 @@ export default class SessionDetailsArea extends Component {
 
   // Tab-group chips as one flat, wrapping row. A session (esp. a "Regularly"
   // save of every open window) can carry groups from several windows, so on
-  // multi-window sessions each chip gets a small ·<window#> suffix to show
-  // which window it came from without stacking a label per window.
+  // multi-window sessions each chip's tooltip says which window it is in. The
+  // tab list below marks each group's tabs with its colour and name.
   renderTabGroups(session) {
     const groups = referencedTabGroups(session.tabGroups || [], session.windows);
     if (!groups || groups.length === 0) return null;
@@ -95,10 +95,17 @@ export default class SessionDetailsArea extends Component {
           {groups.map((g, i) => {
             const ord = windowOrdinal(g.windowId);
             return (
-              <span key={i} className="tabGroupChip">
+              <span
+                key={i}
+                className="tabGroupChip"
+                title={
+                  isMultiWindow && ord
+                    ? browser.i18n.getMessage("tabGroupInWindowLabel", [String(ord)])
+                    : undefined
+                }
+              >
                 <span className="chipDot" style={{ backgroundColor: tabGroupColorHex(g.color) }} />
                 <span className="chipLabel">{g.title || g.color}</span>
-                {isMultiWindow && ord && <span className="chipWin">·{ord}</span>}
               </span>
             );
           })}

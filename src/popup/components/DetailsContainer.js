@@ -13,6 +13,7 @@ import WindowIncognitoFirefoxIcon from "../icons/window_incognito_firefox.svg";
 
 import "../styles/DetailsContainer.scss";
 import Highlighter from "react-highlight-words";
+import { referencedTabGroups, tabGroupColorHex } from "../../common/tabGroupUtils";
 
 const FavIcon = props => (
   <img
@@ -46,7 +47,7 @@ const EditButton = props => (
 );
 
 const TabContainer = props => {
-  const { tab, windowId, allTabsNumber, searchWords, handleRemoveTab } = props;
+  const { tab, windowId, allTabsNumber, searchWords, handleRemoveTab, groupColor } = props;
   const handleRemoveClick = () => {
     handleRemoveTab(windowId, tab.id);
   };
@@ -57,7 +58,10 @@ const TabContainer = props => {
   };
 
   return (
-    <div className="tabContainer">
+    <div
+      className={`tabContainer${groupColor ? " inGroup" : ""}`}
+      style={groupColor ? { "--group-color": groupColor } : undefined}
+    >
       <button className="tabButton" onMouseUp={handleOpenClick} title={`${tab.title}\n${tab.url}`}>
         <FavIcon favIconUrl={tab.favIconUrl} />
         <span className="tabTitle">
@@ -120,7 +124,8 @@ class WindowContainer extends Component {
       windowsNumber,
       allTabsNumber,
       searchWords,
-      handleRemoveTab
+      handleRemoveTab,
+      groupsById
     } = this.props;
     const sortedTabs = Object.values(tabs).sort((a, b) => a.index - b.index);
     const isIncognito = Object.values(tabs)[0].incognito;
@@ -148,9 +153,15 @@ class WindowContainer extends Component {
               onClick={this.handleOpenClick}
               title={browser.i18n.getMessage("openInNewWindowLabel")}
             >
-              {windowTitle ||
-                Object.values(tabs).find(tab => tab.active)?.title ||
-                browser.i18n.getMessage("windowLabel")}
+              <Highlighter
+                searchWords={searchWords}
+                textToHighlight={
+                  windowTitle ||
+                  Object.values(tabs).find(tab => tab.active)?.title ||
+                  browser.i18n.getMessage("windowLabel")
+                }
+                autoEscape={true}
+              />
             </button>
             <span className="tabsNumber">{this.getTabsNumberText()}</span>
           </div>
@@ -160,16 +171,35 @@ class WindowContainer extends Component {
           </div>
         </div>
         <div className="tabs">
-          {Object.values(sortedTabs).map(tab => (
-            <TabContainer
-              tab={tab}
-              windowId={windowId}
-              allTabsNumber={allTabsNumber}
-              searchWords={searchWords}
-              handleRemoveTab={handleRemoveTab}
-              key={tab.id}
-            />
-          ))}
+          {/* Tabs of one tab group sit together; mark each run with the
+              group's colour and name so membership is visible. */}
+          {sortedTabs.map((tab, i) => {
+            const group = tab.groupId > 0 ? groupsById?.get(tab.groupId) : null;
+            const color = group ? tabGroupColorHex(group.color) : null;
+            const startsGroup = group && sortedTabs[i - 1]?.groupId !== tab.groupId;
+            return (
+              <React.Fragment key={tab.id}>
+                {startsGroup && (
+                  <div className="groupHeader" style={{ "--group-color": color }}>
+                    <span className="groupDot" />
+                    <Highlighter
+                      searchWords={searchWords}
+                      textToHighlight={group.title || group.color}
+                      autoEscape={true}
+                    />
+                  </div>
+                )}
+                <TabContainer
+                  tab={tab}
+                  windowId={windowId}
+                  allTabsNumber={allTabsNumber}
+                  searchWords={searchWords}
+                  handleRemoveTab={handleRemoveTab}
+                  groupColor={color}
+                />
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
     );
@@ -180,6 +210,10 @@ export default props => {
   const { session, searchWords, removeWindow, removeTab, openMenu } = props;
 
   if (!session.windows) return null;
+
+  const groupsById = new Map(
+    (referencedTabGroups(session.tabGroups || [], session.windows) || []).map(g => [g.id, g])
+  );
 
   const handleRemoveWindow = windowId => {
     removeWindow(session, windowId);
@@ -200,6 +234,7 @@ export default props => {
           windowsNumber={session.windowsNumber}
           allTabsNumber={session.tabsNumber}
           searchWords={searchWords}
+          groupsById={groupsById}
           handleRemoveWindow={handleRemoveWindow}
           handleRemoveTab={handleRemoveTab}
           openMenu={openMenu}

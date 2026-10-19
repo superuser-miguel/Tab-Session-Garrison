@@ -1,5 +1,6 @@
 .sideBar {
   position: fixed;
+  width: 220px;
   font-size: 17px;
   font-weight: 400;
   text-align: right;
@@ -14,16 +15,17 @@
     align-items: center;
 
     .logo {
-      height: 64px;
-      width: 64px;
-      margin-right: 5px;
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      flex-shrink: 0;
     }
     .logoTitle {
       text-align: left;
-      font-size: 14px;
-      font-weight: 300;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
       color: var(--highlight);
-      margin: auto;
     }
   }
 

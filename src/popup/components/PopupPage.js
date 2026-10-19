@@ -735,6 +735,8 @@ export default class PopupPage extends Component {
               changeSearchWord={this.changeSearchWord}
               changeFilter={this.changeFilterValue}
               changeSort={this.changeSortValue}
+              searchWords={this.state.searchWords}
+              searchedSessionIds={this.state.searchedSessionIds || []}
               optionsAreaRef={this.optionsAreaElement}
               searchBarRef={this.searchBarElement}
               sessionsAreaRef={this.sessionsAreaElement}

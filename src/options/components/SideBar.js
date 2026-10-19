@@ -10,13 +10,7 @@ const SideBar = props => (
   <div className="sideBar">
     <div className="titleContainer">
       <img src="/icons/icon.svg" className="logo" />
-      <span className="logoTitle">
-        Tab
-        <br />
-        Session
-        <br />
-        Garrison
-      </span>
+      <span className="logoTitle">Tab Session Garrison</span>
     </div>
     <ul>
       <li

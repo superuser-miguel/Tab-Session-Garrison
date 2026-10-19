@@ -743,6 +743,9 @@
   "replacedPageMessage": {
     "message": "This page can not be opened by Tab Session Garrison."
   },
+  "tabGroupInWindowLabel": {
+    "message": "In window $1"
+  },
   "replacedPageReasonLabel": {
     "message": "Reason: $1"
   },

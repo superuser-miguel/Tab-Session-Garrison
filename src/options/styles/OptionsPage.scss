@@ -31,7 +31,11 @@ body {
   font-weight: 400;
   color: var(--main-text);
   line-height: 1.5;
-  margin: 20px 40px;
+  // Centred on wide screens. The fixed sidebar has no left offset, so it
+  // follows this box instead of sticking to the window edge.
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 40px;
 }
 
 ::-moz-selection {

@@ -102,6 +102,21 @@ export default class OptionsArea extends Component {
 
   render() {
     const tagsCount = countAllTags(this.props.sessions);
+    // While searching, each option shows "matches/total".
+    const { searchWords = [], searchedSessionIds = [] } = this.props;
+    const isSearching = searchWords.join() !== "";
+    let shownCount = null;
+    if (isSearching) {
+      const ids = new Set(searchedSessionIds);
+      shownCount = countAllTags(this.props.sessions.filter(session => ids.has(session.id)));
+    }
+    const label = key =>
+      shownCount ? `${shownCount[key]}/${tagsCount[key]}` : `${tagsCount[key]}`;
+    const tagLabel = tag => {
+      if (!shownCount) return `${tag.count}`;
+      const shown = shownCount.tags.find(t => t.name === tag.name);
+      return `${shown ? shown.count : 0}/${tag.count}`;
+    };
     return (
       <div id="optionsArea">
         <div className="line">
@@ -112,36 +127,36 @@ export default class OptionsArea extends Component {
               title={browser.i18n.getMessage("categoryFilterLabel")}
             >
               <option value="_displayAll">
-                {browser.i18n.getMessage("displayAllLabel")} [{tagsCount.all}]
+                {browser.i18n.getMessage("displayAllLabel")} [{label("all")}]
               </option>
               {isShowAutoOption(tagsCount) && (
                 <option value="_auto">
-                  {browser.i18n.getMessage("displayAutoLabel")} [{tagsCount.auto}]
+                  {browser.i18n.getMessage("displayAutoLabel")} [{label("auto")}]
                 </option>
               )}
               {tagsCount.winClose > 0 && (
                 <option value="winClose">
-                  {browser.i18n.getMessage("winCloseSessionName")} [{tagsCount.winClose}]
+                  {browser.i18n.getMessage("winCloseSessionName")} [{label("winClose")}]
                 </option>
               )}
               {tagsCount.browserExit > 0 && (
                 <option value="browserExit">
-                  {browser.i18n.getMessage("browserExitSessionName")} [{tagsCount.browserExit}]
+                  {browser.i18n.getMessage("browserExitSessionName")} [{label("browserExit")}]
                 </option>
               )}
               {tagsCount.regular > 0 && (
                 <option value="regular">
-                  {browser.i18n.getMessage("regularSaveSessionName")} [{tagsCount.regular}]
+                  {browser.i18n.getMessage("regularSaveSessionName")} [{label("regular")}]
                 </option>
               )}
               {tagsCount.user > 0 && (
                 <option value="_user">
-                  {browser.i18n.getMessage("displayUserLabel")} [{tagsCount.user}]
+                  {browser.i18n.getMessage("displayUserLabel")} [{label("user")}]
                 </option>
               )}
               {tagsCount.tags.map((tag, index) => (
                 <option value={tag.name} key={index}>
-                  {generateTagLabel(tag.name)} [{tag.count}]
+                  {generateTagLabel(tag.name)} [{tagLabel(tag)}]
                 </option>
               ))}
             </select>
