@@ -14,6 +14,7 @@ import WindowIncognitoFirefoxIcon from "../icons/window_incognito_firefox.svg";
 import "../styles/DetailsContainer.scss";
 import Highlighter from "react-highlight-words";
 import { referencedTabGroups, tabGroupColorHex } from "../../common/tabGroupUtils";
+import { actionFor } from "../../common/keymap";
 
 const FavIcon = props => (
   <img
@@ -57,12 +58,32 @@ const TabContainer = props => {
     else if (e.button === 1) openUrl(tab.url, tab.title, false);
   };
 
+  // Enter opens the focused tab; Delete removes it (keymap area "tabs").
+  // Focus moves to a neighbouring tab first so the keyboard isn't stranded.
+  const handleKeyDown = e => {
+    const action = actionFor(e, "tabs");
+    if (action === "tabOpen") {
+      openUrl(tab.url, tab.title, true);
+    } else if (action === "tabRemove" && allTabsNumber > 1) {
+      const buttons = [...document.querySelectorAll(".detailsContainer .tabButton")];
+      const i = buttons.indexOf(e.currentTarget);
+      (buttons[i + 1] || buttons[i - 1])?.focus();
+      handleRemoveTab(windowId, tab.id);
+    } else return;
+    e.preventDefault();
+  };
+
   return (
     <div
       className={`tabContainer${groupColor ? " inGroup" : ""}`}
       style={groupColor ? { "--group-color": groupColor } : undefined}
     >
-      <button className="tabButton" onMouseUp={handleOpenClick} title={`${tab.title}\n${tab.url}`}>
+      <button
+        className="tabButton"
+        onMouseUp={handleOpenClick}
+        onKeyDown={handleKeyDown}
+        title={`${tab.title}\n${tab.url}`}
+      >
         <FavIcon favIconUrl={tab.favIconUrl} />
         <span className="tabTitle">
           <Highlighter
@@ -207,7 +228,7 @@ class WindowContainer extends Component {
 }
 
 export default props => {
-  const { session, searchWords, removeWindow, removeTab, openMenu } = props;
+  const { session, searchWords, removeWindow, removeTab, openMenu, focusSessionList } = props;
 
   if (!session.windows) return null;
 
@@ -223,8 +244,27 @@ export default props => {
     removeTab(session, windowId, tabId);
   };
 
+  // ↑/↓/Home/End move between tabs; ←/Esc go back to the session list.
+  const handleKeyDown = e => {
+    const action = actionFor(e, "tabs");
+    if (action !== "tabMove" && action !== "tabBack") return;
+    if (action === "tabBack") {
+      focusSessionList?.();
+    } else {
+      const buttons = [...e.currentTarget.querySelectorAll(".tabButton")].filter(
+        button => button.offsetParent !== null
+      );
+      const i = buttons.indexOf(document.activeElement);
+      if (i === -1) return;
+      const last = buttons.length - 1;
+      const next = { ArrowUp: i - 1, ArrowDown: i + 1, Home: 0, End: last }[e.key];
+      buttons[Math.min(last, Math.max(0, next))].focus();
+    }
+    e.preventDefault();
+  };
+
   return (
-    <div className="detailsContainer scrollbar">
+    <div className="detailsContainer scrollbar" onKeyDown={handleKeyDown}>
       {Object.keys(session.windows).map(windowId => (
         <WindowContainer
           tabs={session.windows[windowId]}

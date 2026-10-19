@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
 import PlusIcon from "../icons/plus.svg";
 import "../styles/Modal.scss";
+import { actionFor } from "../../common/keymap";
 
 export default class Modal extends Component {
   constructor(props) {
@@ -23,6 +24,13 @@ export default class Modal extends Component {
   };
 
   loopFocus = e => {
+    // Keymap area "dialogs": Esc closes.
+    if (actionFor(e, "dialogs") === "close") {
+      e.preventDefault();
+      e.stopPropagation();
+      this.props.closeModal();
+      return;
+    }
     const isNextFocus = e.key === "Tab" && !e.shiftKey;
     const isPrevFocus = e.key === "Tab" && e.shiftKey;
     if (!isNextFocus && !isPrevFocus) return;

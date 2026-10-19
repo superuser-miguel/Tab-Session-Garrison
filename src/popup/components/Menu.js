@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
 import { getSettings } from "src/settings/settings";
 import PlusIcon from "../icons/plus.svg";
+import { actionFor } from "../../common/keymap";
 import "../styles/Menu.scss";
 
 export default class Menu extends Component {
@@ -39,11 +40,27 @@ export default class Menu extends Component {
   };
 
   loopFocus = e => {
+    const menu = ReactDOM.findDOMNode(this.refs.menu);
+    // Keymap area "dialogs": Esc closes, ↑/↓ move between the menu items.
+    const action = actionFor(e, "dialogs");
+    if (action === "close") {
+      e.preventDefault();
+      this.props.closeMenu?.();
+      return;
+    }
+    if (action === "menuMove") {
+      e.preventDefault();
+      const items = [...menu.querySelectorAll("button:not(.closeMenuButton)")];
+      const i = items.indexOf(document.activeElement);
+      const next = e.key === "ArrowDown" ? i + 1 : i - 1;
+      items[(next + items.length) % items.length]?.focus();
+      return;
+    }
+
     const isNextFocus = e.key === "Tab" && !e.shiftKey;
     const isPrevFocus = e.key === "Tab" && e.shiftKey;
     if (!isNextFocus && !isPrevFocus) return;
 
-    const menu = ReactDOM.findDOMNode(this.refs.menu);
     const buttons = menu.querySelectorAll("button");
     const firstButton = buttons[0];
     const lastButton = buttons[buttons.length - 1];

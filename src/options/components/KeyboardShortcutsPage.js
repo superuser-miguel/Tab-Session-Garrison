@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import browser from "webextension-polyfill";
 import getShortcut from "src/common/getShortcut";
 import CategoryContainer from "./CategoryContainer";
+import KeyboardReference from "src/common/KeyboardReference";
 
 export default class KeyboardShortcutPage extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ export default class KeyboardShortcutPage extends Component {
     }));
 
     const shortcutCategory = {
-      category: "",
+      category: "shortcutsBrowserWideLabel",
       elements: [
         {
           id: "keyboard",
@@ -59,6 +60,12 @@ export default class KeyboardShortcutPage extends Component {
             <CategoryContainer {...shortcutCategory} isActive={true} />
           </ul>
         )}
+        {/* Popup keys come from common/keymap.js, the same list the popup uses. */}
+        <div className="categoryContainer isActive popupKeys">
+          <p className="categoryTitle">{browser.i18n.getMessage("shortcutsInPopupLabel")}</p>
+          <p className="caption">{browser.i18n.getMessage("shortcutsInPopupCaptionLabel")}</p>
+          <KeyboardReference />
+        </div>
       </div>
     );
   }

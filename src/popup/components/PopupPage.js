@@ -18,6 +18,9 @@ import {
   sendSessionUpdateMessage,
   sendUndoMessage,
   sendUndoManyMessage,
+  sendRedoMessage,
+  sendSesssionRenameMessage,
+  sendTagAddMessage,
   sendEndTrackingByWindowDeleteMessage
 } from "../actions/controlSessions";
 import { applyTheme, watchTheme } from "../actions/applyTheme";
@@ -29,6 +32,11 @@ import SessionsArea, { getSortedSessions } from "./SessionsArea";
 import SessionDetailsArea from "./SessionDetailsArea";
 import SelectionSummary from "./SelectionSummary";
 import ConfirmModalContent from "./ConfirmModalContent";
+import SessionMenuItems from "./SessionMenuItems";
+import TextInputModalContent from "./TextInputModalContent";
+import TagInputModalContent from "./TagInputModalContent";
+import KeyboardReference from "../../common/KeyboardReference";
+import { actionFor } from "../../common/keymap";
 import Notification from "./Notification";
 import SaveArea from "./SaveArea";
 import Menu from "./Menu";
@@ -169,6 +177,7 @@ export default class PopupPage extends Component {
 
     browser.storage.local.onChanged.addListener(this.handleStorageChange);
     window.addEventListener("unload", this.handleUnload, { once: true });
+    document.addEventListener("keydown", this.handleGlobalKeyDown);
     browser.runtime.sendMessage({ message: "updateUndoStatus" });
     browser.runtime.sendMessage({ message: "updateTrackingStatus" });
 
@@ -362,6 +371,7 @@ export default class PopupPage extends Component {
   };
 
   handleUnload = () => {
+    document.removeEventListener("keydown", this.handleGlobalKeyDown);
     browser.storage.local.onChanged.removeListener(this.handleStorageChange);
     browser.storage.session.onChanged?.removeListener(this.handleSessionStorageChange);
   };
@@ -576,6 +586,101 @@ export default class PopupPage extends Component {
     );
   };
 
+  // Ctrl+Enter / Alt+Enter: open the cursor session in a specific way. With
+  // several sessions selected these fall back to the normal Enter behaviour.
+  openSelectedAs = property => {
+    const ids = this.state.selectedSessionIds;
+    if (!ids || ids.length !== 1) return this.requestOpenSelected();
+    sendOpenMessage(ids[0], property);
+  };
+
+  // F2: rename the session under the cursor (same dialog as clicking its name).
+  requestRename = () => {
+    const session = this.state.selectedSession;
+    if (!session.id || this.state.selectedSessionIds.length > 1) return;
+    this.openModal(
+      browser.i18n.getMessage("renameSessionLabel"),
+      <TextInputModalContent
+        onSave={name => {
+          if (name.trim() === "" || name === session.name) return;
+          sendSesssionRenameMessage(session.id, name);
+        }}
+        closeModal={this.closeModal}
+        defaultText={session.name}
+      />
+    );
+  };
+
+  // Shift+F2: add tags to the session under the cursor.
+  requestAddTag = () => {
+    const session = this.state.selectedSession;
+    if (!session.id || this.state.selectedSessionIds.length > 1) return;
+    this.openModal(
+      browser.i18n.getMessage("addTagLabel"),
+      <TagInputModalContent
+        onSave={tagName => {
+          if (tagName.trim() !== "") sendTagAddMessage(session.id, tagName);
+        }}
+        closeModal={this.closeModal}
+        tagList={this.state.tagList}
+      />
+    );
+  };
+
+  // →: move into the selected session's tab list, on the first tab that
+  // matches the search if there is one.
+  focusTabs = () => {
+    const buttons = [...document.querySelectorAll(".detailsContainer .tabButton")].filter(
+      button => button.offsetParent !== null
+    );
+    const target = buttons.find(button => button.querySelector("mark")) || buttons[0];
+    target?.focus();
+  };
+
+  // ←/Esc from the tab list: back to the session list.
+  focusSessionList = () => {
+    const selected = this.sessionsAreaElement.current?.querySelector(
+      ".sessionItem.isSelected .selectButton"
+    );
+    (selected || this.sessionsAreaElement.current)?.focus();
+  };
+
+  // Shift+F10 / Menu key: the session's right-click menu, next to its row.
+  openSessionMenu = () => {
+    const session = this.state.selectedSession;
+    const row = this.sessionsAreaElement.current?.querySelector(".sessionItem.isSelected");
+    if (!session.id || !row) return;
+    const rect = row.getBoundingClientRect();
+    this.openMenu(rect.left + 24, rect.top + rect.height / 2, <SessionMenuItems session={session} />);
+  };
+
+  openHelp = () => {
+    if (this.state.modal.isOpen) return;
+    this.openModal(
+      browser.i18n.getMessage("keyboardShortcutsLabel"),
+      <KeyboardReference />
+    );
+  };
+
+  // Keys that work anywhere in the popup: undo/redo, "?" and "/". The list
+  // handles its own keys first (and marks them handled); typing in a text box
+  // is never intercepted.
+  handleGlobalKeyDown = e => {
+    if (e.defaultPrevented || this.state.modal.isOpen || this.state.menu.isOpen) return;
+    const target = e.target;
+    const isTyping =
+      target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName);
+    if (isTyping) return;
+
+    const action = actionFor(e, "anywhere");
+    if (action === "undo") sendUndoMessage();
+    else if (action === "redo") sendRedoMessage();
+    else if (action === "help") this.openHelp();
+    else if (actionFor(e, "list") === "search") this.toggleSearchBar(true);
+    else return;
+    e.preventDefault();
+  };
+
   saveSession = async (name, property) => {
     log.info(logDir, "saveSession()", name, property);
     try {
@@ -759,6 +864,12 @@ export default class PopupPage extends Component {
               clearSelection={this.clearSelection}
               requestRemoveSelected={this.requestRemoveSelected}
               requestOpenSelected={this.requestOpenSelected}
+              openSelectedAs={this.openSelectedAs}
+              requestRename={this.requestRename}
+              requestAddTag={this.requestAddTag}
+              focusTabs={this.focusTabs}
+              openHelp={this.openHelp}
+              openSessionMenu={this.openSessionMenu}
               openMenu={this.openMenu}
               toggleSearchBar={this.toggleSearchBar}
               isInitSessions={this.state.isInitSessions}
@@ -799,11 +910,12 @@ export default class PopupPage extends Component {
                 openMenu={this.openMenu}
                 openModal={this.openModal}
                 closeModal={this.closeModal}
+                focusSessionList={this.focusSessionList}
               />
             )}
           </div>
         </div>
-        <Menu menu={this.state.menu} />
+        <Menu menu={this.state.menu} closeMenu={this.closeMenu} />
         <Modal modal={this.state.modal} closeModal={this.closeModal} />
       </div>
     );

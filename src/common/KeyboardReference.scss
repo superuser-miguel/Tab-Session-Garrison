@@ -1,0 +1,40 @@
+.keyboardReference {
+  font-size: 13px;
+  color: var(--main-text);
+  section + section {
+    margin-top: 12px;
+  }
+  h4 {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sub-text);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 3px 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--line);
+  }
+  tr:last-child td {
+    border-bottom: none;
+  }
+  .keys {
+    width: 45%;
+    padding-right: 10px;
+  }
+  kbd {
+    display: inline-block;
+    margin: 1px 4px 1px 0;
+    padding: 0 5px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 11px;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+}

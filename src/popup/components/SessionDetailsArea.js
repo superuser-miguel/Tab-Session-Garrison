@@ -196,6 +196,7 @@ export default class SessionDetailsArea extends Component {
           removeWindow={removeWindow}
           removeTab={removeTab}
           openMenu={openMenu}
+          focusSessionList={this.props.focusSessionList}
         />
       </div>
     );

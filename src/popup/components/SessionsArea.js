@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
 import SessionItem from "./SessionItem";
+import { actionFor } from "../../common/keymap";
 import "../styles/SessionsArea.scss";
 
 const matchesFilter = (tags, filterValue) => {
@@ -132,6 +133,7 @@ export default class SessionsArea extends Component {
     this.props.selectSession(id, modifiers);
   };
 
+  // Keys are defined in common/keymap.js (area "list").
   handleKeyDown = e => {
     const {
       selectSession,
@@ -140,45 +142,109 @@ export default class SessionsArea extends Component {
       clearSelection,
       requestRemoveSelected,
       requestOpenSelected,
+      openSelectedAs,
+      requestRename,
+      requestAddTag,
+      focusTabs,
+      openHelp,
+      openSessionMenu,
       optionsAreaRef,
       saveAreaRef,
       selectedSessionId
     } = this.props;
 
-    const isAccel = e.ctrlKey || e.metaKey;
-
-    if (e.key === "ArrowUp") {
-      // Shift extends the selection; plain arrow moves it.
-      selectSession(this.prevSession.id, { shift: e.shiftKey });
+    // Tab moves between the popup's areas (not listed in the keymap's handlers).
+    if (e.key === "Tab" && !e.ctrlKey && !e.altKey && !e.metaKey) {
+      (e.shiftKey ? optionsAreaRef : saveAreaRef).focus();
       e.preventDefault();
-    } else if (e.key === "ArrowDown") {
-      selectSession(this.nextSession.id, { shift: e.shiftKey });
-      e.preventDefault();
-    } else if (isAccel && (e.key === "a" || e.key === "A")) {
-      selectAllSessions();
-      e.preventDefault();
-    } else if (e.key === " ") {
-      toggleSelectSession(selectedSessionId);
-      e.preventDefault();
-    } else if (e.key === "Delete" || e.key === "Backspace") {
-      requestRemoveSelected();
-      e.preventDefault();
-    } else if (e.key === "Escape") {
-      clearSelection();
-      e.preventDefault();
-    } else if (e.key === "Tab" && e.shiftKey) {
-      optionsAreaRef.focus();
-      e.preventDefault();
-    } else if (e.key === "Tab" && !e.shiftKey) {
-      saveAreaRef.focus();
-      e.preventDefault();
-    } else if (e.key === "Enter") {
-      // Restore the selection: one session directly, several via a confirm.
-      requestOpenSelected();
-      e.preventDefault();
-    } else if (!e.shiftKey && !isAccel) {
-      this.props.toggleSearchBar(true);
+      return;
     }
+
+    const action = actionFor(e, "list") || actionFor(e, "anywhere");
+    switch (action) {
+      case "move":
+      case "extend": {
+        const target = this.sessionAfterMove(e.key);
+        if (target) selectSession(target.id, { shift: action === "extend" });
+        break;
+      }
+      case "toggle":
+        toggleSelectSession(selectedSessionId);
+        break;
+      case "selectAll":
+        selectAllSessions();
+        break;
+      case "clear":
+        clearSelection();
+        break;
+      case "open":
+        requestOpenSelected();
+        break;
+      case "openReplace":
+        openSelectedAs("openInCurrentWindow");
+        break;
+      case "openAdd":
+        openSelectedAs("addToCurrentWindow");
+        break;
+      case "delete":
+        requestRemoveSelected();
+        break;
+      case "rename":
+        requestRename();
+        break;
+      case "addTag":
+        requestAddTag();
+        break;
+      case "menu":
+        openSessionMenu();
+        break;
+      case "toTabs":
+        focusTabs();
+        break;
+      case "search":
+        this.props.toggleSearchBar(true);
+        break;
+      case "help":
+        openHelp();
+        break;
+      default: {
+        // Undo/redo are handled for the whole popup in PopupPage.
+        if (action) return;
+        // Any other printable character starts a search with that character
+        // (Shift included, so capitals and the " that starts a phrase work).
+        const isPrintable = e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey;
+        if (isPrintable) this.props.toggleSearchBar(true);
+        return;
+      }
+    }
+    e.preventDefault();
+  };
+
+  // The session a move key lands on, in the list's visible order.
+  sessionAfterMove = key => {
+    const sessions = this.sortedSessions || [];
+    if (sessions.length === 0) return null;
+    const current = sessions.findIndex(session => session.id === this.props.selectedSessionId);
+    const last = sessions.length - 1;
+    const page = this.rowsPerPage();
+    const next = {
+      ArrowUp: current - 1,
+      ArrowDown: current + 1,
+      Home: 0,
+      End: last,
+      PageUp: current - page,
+      PageDown: current + page
+    }[key];
+    if (next === undefined) return null;
+    return sessions[Math.min(last, Math.max(0, current === -1 ? 0 : next))];
+  };
+
+  // How many rows fit in the list, for PageUp/PageDown.
+  rowsPerPage = () => {
+    const area = this.props.sessionsAreaRef.current;
+    const row = area?.querySelector(".sessionItem");
+    if (!area || !row || !row.offsetHeight) return 10;
+    return Math.max(1, Math.floor(area.clientHeight / row.offsetHeight) - 1);
   };
 
   componentDidMount() {
@@ -243,9 +309,7 @@ export default class SessionsArea extends Component {
     // scroll-to-selected lands where the fully rendered list will have it.
     const renderLimit = Math.max(this.state.renderLimit, order + 1 + INITIAL_RENDER_COUNT);
     this.visibleCount = sortedSessions.length;
-    const maxOrder = sortedSessions.length - 1;
-    this.nextSession = sortedSessions[order < maxOrder ? order + 1 : maxOrder];
-    this.prevSession = sortedSessions[order > 0 ? order - 1 : 0];
+    this.sortedSessions = sortedSessions;
 
     // Sets for O(1) per-row membership. Array.includes here made the row map
     // O(n^2) during an active search or a large multi-selection (e.g. Ctrl+A).

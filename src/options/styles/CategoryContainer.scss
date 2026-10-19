@@ -50,3 +50,17 @@
     margin-bottom: 20px;
   }
 }
+
+// Settings → Shortcuts: the read-only list of keys inside the popup.
+.popupKeys {
+  margin-top: 16px;
+  padding: 14px 20px 18px;
+  .caption {
+    color: var(--sub-text);
+    font-size: 13px;
+    margin: 2px 0 12px;
+  }
+  .keyboardReference {
+    font-size: 14px;
+  }
+}

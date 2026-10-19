@@ -746,6 +746,111 @@
   "tabGroupInWindowLabel": {
     "message": "In window $1"
   },
+  "keyAreaListLabel": {
+    "message": "Session list"
+  },
+  "keyAreaSearchLabel": {
+    "message": "Search box"
+  },
+  "keyAreaTabsLabel": {
+    "message": "Tab list"
+  },
+  "keyAreaAnywhereLabel": {
+    "message": "Anywhere in the popup"
+  },
+  "keyAreaDialogsLabel": {
+    "message": "Menus and dialogs"
+  },
+  "keyMenuMoveLabel": {
+    "message": "Move between menu items"
+  },
+  "keyCloseLabel": {
+    "message": "Close the menu or dialog"
+  },
+  "keyMoveLabel": {
+    "message": "Move the selection"
+  },
+  "keyExtendLabel": {
+    "message": "Extend the selection"
+  },
+  "keyToggleLabel": {
+    "message": "Add or remove the session from the selection"
+  },
+  "keySelectAllLabel": {
+    "message": "Select all visible sessions"
+  },
+  "keyClearSelectionLabel": {
+    "message": "Back to a single selection"
+  },
+  "keyOpenLabel": {
+    "message": "Open (several: each in its own new window, after a confirm)"
+  },
+  "keyOpenReplaceLabel": {
+    "message": "Open in the current window, replacing its tabs"
+  },
+  "keyOpenAddLabel": {
+    "message": "Add to the current window"
+  },
+  "keyDeleteLabel": {
+    "message": "Delete the selection"
+  },
+  "keyRenameLabel": {
+    "message": "Rename the session"
+  },
+  "keyAddTagLabel": {
+    "message": "Add tags"
+  },
+  "keyMenuLabel": {
+    "message": "Open the session menu"
+  },
+  "keyToTabsLabel": {
+    "message": "Move into the tab list"
+  },
+  "keySearchLabel": {
+    "message": "Search"
+  },
+  "keyTypeAnyTextLabel": {
+    "message": "Type any text"
+  },
+  "keySearchResultsLabel": {
+    "message": "Go to the first result"
+  },
+  "keySearchClearLabel": {
+    "message": "Clear the search, then close it"
+  },
+  "keyTabMoveLabel": {
+    "message": "Move between tabs"
+  },
+  "keyTabOpenLabel": {
+    "message": "Open the tab"
+  },
+  "keyTabRemoveLabel": {
+    "message": "Remove the tab from the session"
+  },
+  "keyTabBackLabel": {
+    "message": "Back to the session list"
+  },
+  "keyUndoLabel": {
+    "message": "Undo"
+  },
+  "keyRedoLabel": {
+    "message": "Redo"
+  },
+  "keyHelpLabel": {
+    "message": "Show this list of keys"
+  },
+  "keyFocusNextLabel": {
+    "message": "Move between the list, the search box and the save box"
+  },
+  "shortcutsBrowserWideLabel": {
+    "message": "Browser-wide"
+  },
+  "shortcutsInPopupLabel": {
+    "message": "Inside the popup"
+  },
+  "shortcutsInPopupCaptionLabel": {
+    "message": "These keys work while the session list is open. Press ? there to see this list. They can't be changed yet."
+  },
   "replacedPageReasonLabel": {
     "message": "Reason: $1"
   },
