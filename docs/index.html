@@ -3,236 +3,478 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tab Session Garrison — keyboard-first session manager for Firefox</title>
-<meta name="description" content="A power-user fork of Tab Session Manager for Firefox: full keyboard navigation, multi-select, bulk restore/delete with undo-all, tab-group awareness, and speed on profiles with hundreds of sessions.">
+<title>Tab Session Garrison — find any tab you ever saved</title>
+<meta name="description" content="A Firefox session manager built around search: exact &quot;quoted phrases&quot;, tab-group names, and soon links, filters and fuzzy ranking — fast even with thousands of saved sessions.">
+<link rel="icon" href="favicon.png">
 <style>
   :root {
-    --bg: #f5f8f6; --surface: #ffffff; --text: #16201a; --muted: #566158;
-    --border: #e2eae5; --accent: #1f9d5f; --accent-2: #14743f;
-    --ok: #1f9d5f; --no: #c3ccc6;
+    --bg: #f5f8f6; --surface: #ffffff; --surface-2: #eef4f0; --text: #16201a; --muted: #566158;
+    --border: #e2eae5; --accent: #1f9d5f; --accent-2: #14743f; --on-accent: #ffffff;
+    --mark-bg: #ffe866; --mark-text: #1a1a1a;
+    --live: #1f9d5f; --next: #c27a00; --later: #6b7a71;
+    --shadow: 0 20px 50px rgba(20, 60, 40, .16);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #121814; --surface: #1b231e; --text: #eaf1ec; --muted: #9faca3;
-      --border: #29342d; --accent: #4fd08a; --accent-2: #2ea86a;
-      --ok: #4fd08a; --no: #414d46;
+      --bg: #101511; --surface: #19211c; --surface-2: #141b16; --text: #eaf1ec; --muted: #9faca3;
+      --border: #29342d; --accent: #4fd08a; --accent-2: #2ea86a; --on-accent: #0b1a11;
+      --mark-bg: #f2d94e; --mark-text: #111;
+      --live: #4fd08a; --next: #f0b54a; --later: #8e9c93;
+      --shadow: 0 20px 50px rgba(0, 0, 0, .45);
     }
   }
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0; background: var(--bg); color: var(--text);
     font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
   a { color: var(--accent); }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 56px 0; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  section.wrap { padding: 64px 16px; }
+  h2 { font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -.015em; margin: 0 0 8px; line-height: 1.2; }
+  .sub { color: var(--muted); margin: 0 0 28px; max-width: 62ch; }
+  .eyebrow {
+    display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  code, kbd {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    padding: 1px 6px; border-radius: 6px; font-size: .88em; white-space: nowrap;
+  }
+  mark { background: var(--mark-bg); color: var(--mark-text); border-radius: 3px; padding: 0 1px; }
+
+  /* Top bar */
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--text); text-decoration: none; }
+  .brand svg { width: 32px; height: 32px; flex: none; }
+  .top nav { display: flex; gap: 18px; font-size: .92rem; }
+  .top nav a { color: var(--muted); text-decoration: none; }
+  .top nav a:hover { color: var(--text); }
+  @media (max-width: 560px) { .top nav .opt { display: none; } }
 
   /* Hero */
-  .hero { text-align: center; padding: 72px 0 48px; }
-  .icon {
-    width: 88px; height: 88px; border-radius: 22px; display: block; margin: 0 auto 22px;
-    box-shadow: 0 10px 30px rgba(20,116,63,.35);
+  .hero { padding: 40px 16px 24px; text-align: center; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);
+    font-size: .84rem; font-weight: 600; margin-bottom: 20px;
   }
-  h1 { font-size: 2.6rem; margin: 0 0 6px; letter-spacing: -.02em; }
-  .tagline { font-size: 1.25rem; color: var(--text); font-weight: 600; margin: 0 auto 14px; max-width: 34ch; }
-  .lede { color: var(--muted); max-width: 58ch; margin: 0 auto 26px; }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  h1 {
+    font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.08; letter-spacing: -.03em;
+    margin: 0 auto 16px; max-width: 16ch;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lede { color: var(--muted); font-size: 1.1rem; max-width: 56ch; margin: 0 auto 28px; }
   .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn {
-    display: inline-block; padding: 11px 20px; border-radius: 11px; text-decoration: none;
-    font-weight: 600; border: 1px solid var(--border);
+    display: inline-block; padding: 12px 22px; border-radius: 12px; text-decoration: none;
+    font-weight: 600; border: 1px solid var(--border); color: var(--text); background: var(--surface);
   }
-  .btn.primary { background: var(--accent); color: #fff; border-color: transparent; }
-  .badge {
-    display: inline-block; margin-bottom: 18px; padding: 4px 12px; border-radius: 999px;
-    background: color-mix(in srgb, var(--accent) 14%, transparent);
-    color: var(--accent); font-size: .82rem; font-weight: 600;
-  }
-  .note { color: var(--muted); font-size: .88rem; margin: 18px auto 0; }
-  .shot {
-    display: block; max-width: 620px; width: 100%; height: auto; margin: 40px auto 0;
-    border: 1px solid var(--border); border-radius: 14px;
-    box-shadow: 0 20px 50px rgba(0,0,0,.25);
-  }
+  .btn.primary { background: var(--accent); color: var(--on-accent); border-color: transparent; }
+  .note { color: var(--muted); font-size: .86rem; margin: 16px 0 0; }
 
-  h2 { font-size: 1.6rem; letter-spacing: -.01em; margin: 0 0 8px; }
-  .sub { color: var(--muted); margin: 0 0 26px; }
+  /* Live demo */
+  .demo {
+    margin: 44px auto 0; max-width: 760px; text-align: left;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .demo-bar { padding: 16px 16px 12px; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+  .demo-label { font-size: .8rem; color: var(--muted); margin: 0 0 8px; }
+  .searchbox {
+    display: flex; align-items: center; gap: 10px; padding: 0 14px;
+    background: var(--surface); border: 1.5px solid var(--accent); border-radius: 12px;
+  }
+  .searchbox svg { width: 18px; height: 18px; color: var(--muted); flex: none; }
+  .searchbox input {
+    flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text);
+    font: 500 1.05rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; padding: 13px 0;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip {
+    font: 500 .84rem/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; cursor: pointer;
+    padding: 7px 10px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text);
+  }
+  .chip:hover, .chip[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+  .demo-status { font-size: .88rem; color: var(--muted); padding: 12px 16px 0; min-height: 2.2em; }
+  .demo-status b { color: var(--text); }
+  .results { list-style: none; margin: 0; padding: 8px 16px 18px; display: grid; gap: 8px; }
+  .result { border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; }
+  .result .name { font-weight: 600; }
+  .result .meta { font-size: .8rem; color: var(--muted); }
+  .result .hits { list-style: none; margin: 6px 0 0; padding: 0; font-size: .9rem; color: var(--muted); }
+  .result .hits li { padding-left: 14px; position: relative; overflow-wrap: anywhere; }
+  .result .hits li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--border); }
+  .result .why { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); margin-right: 6px; }
+  .result.future { border-style: dashed; opacity: .85; }
+  .result.future .why { color: var(--next); }
+  .empty { color: var(--muted); padding: 6px 2px; }
 
-  /* Comparison table */
-  .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; }
-  table { width: 100%; border-collapse: collapse; min-width: 620px; background: var(--surface); }
-  th, td { padding: 13px 14px; text-align: center; border-bottom: 1px solid var(--border); }
-  th:first-child, td:first-child { text-align: left; font-weight: 600; }
-  thead th { font-size: .8rem; color: var(--muted); font-weight: 600; }
+  /* Before/after */
+  .compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
+  .panel h3 { margin: 0 0 4px; font-size: 1.05rem; }
+  .panel .q { margin: 10px 0 12px; }
+  .panel p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .panel.good { border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+
+  /* Search roadmap */
+  .phases { list-style: none; margin: 0; padding: 0; position: relative; }
+  .phases::before { content: ""; position: absolute; left: 15px; top: 8px; bottom: 8px; width: 2px; background: var(--border); }
+  .phase { position: relative; padding: 0 0 30px 48px; }
+  .phase:last-child { padding-bottom: 0; }
+  .phase .node {
+    position: absolute; left: 6px; top: 3px; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--later);
+  }
+  .phase.live .node { border-color: var(--live); background: var(--live); }
+  .phase.next .node { border-color: var(--next); }
+  .phase h3 { margin: 0 0 4px; font-size: 1.12rem; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .phase p { margin: 0 0 8px; color: var(--muted); max-width: 64ch; }
+  .phase ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .phase li { margin: 3px 0; }
+  .status {
+    font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 999px; border: 1px solid currentColor;
+  }
+  .status.live { color: var(--live); }
+  .status.next { color: var(--next); }
+  .status.later { color: var(--later); }
+
+  /* Syntax table */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; margin-top: 40px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; }
+  @media (max-width: 560px) { th, td { padding: 10px; } td code { white-space: normal; overflow-wrap: anywhere; } }
+  th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead th { font-size: .78rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
   tbody tr:last-child td { border-bottom: 0; }
-  tr.me { background: color-mix(in srgb, var(--accent) 9%, transparent); }
-  tr.me td:first-child { color: var(--accent); }
-  .y { color: var(--ok); font-weight: 700; }
-  .n { color: var(--no); }
+  td:last-child { white-space: nowrap; }
+  td .muted { color: var(--muted); font-size: .92rem; }
 
-  /* Features */
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
-  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
-
-  /* Roadmap */
-  .road { list-style: none; padding: 0; margin: 0; color: var(--muted); }
-  .road li { padding: 8px 0; border-bottom: 1px solid var(--border); }
-  .road li:last-child { border: 0; }
-  .road b { color: var(--text); }
-
-  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
-  footer p { margin: 6px 0; }
-  code, kbd {
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
-    padding: 1px 6px; border-radius: 6px; font-size: .9em;
+  /* Rest of the app */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .92rem; }
+  .shot {
+    display: block; width: 100%; height: auto; margin: 28px 0 0;
+    border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow);
   }
+  .also { color: var(--muted); margin: 24px 0 0; font-size: .95rem; }
+
+  footer.wrap { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; padding: 36px 16px 48px; }
+  footer p { margin: 6px 0; }
 </style>
 </head>
 <body>
 
+<div class="wrap top">
+  <a class="brand" href="./">
+    <svg viewBox="0 0 128 128" aria-hidden="true">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2bb673"/><stop offset="1" stop-color="#14743f"/>
+        </linearGradient>
+      </defs>
+      <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#bg)"/>
+      <g transform="translate(26 30)">
+        <rect x="0" y="0"  width="76" height="18" rx="5" fill="#ffffff"/>
+        <rect x="0" y="25" width="76" height="18" rx="5" fill="#ffffff" opacity=".9"/>
+        <rect x="0" y="50" width="76" height="18" rx="5" fill="#ffffff" opacity=".78"/>
+        <circle cx="11" cy="9"  r="4" fill="#14743f"/>
+        <circle cx="11" cy="34" r="4" fill="#2bb673"/>
+        <circle cx="11" cy="59" r="4" fill="#8fe0b4"/>
+      </g>
+    </svg>
+    Tab Session Garrison
+  </a>
+  <nav>
+    <a href="#search">Search</a>
+    <a href="#roadmap">Roadmap</a>
+    <a class="opt" href="https://github.com/superuser-miguel/Tab-Session-Garrison">GitHub</a>
+  </nav>
+</div>
+
 <header class="hero wrap">
-  <svg class="icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-label="Tab Session Garrison icon">
-    <defs>
-      <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#2bb673"/><stop offset="1" stop-color="#14743f"/>
-      </linearGradient>
-    </defs>
-    <rect x="8" y="8" width="112" height="112" rx="26" fill="url(#bg)"/>
-    <g transform="translate(26 30)">
-      <rect x="0" y="0"  width="76" height="18" rx="5" fill="#ffffff"/>
-      <rect x="0" y="25" width="76" height="18" rx="5" fill="#ffffff" opacity=".9"/>
-      <rect x="0" y="50" width="76" height="18" rx="5" fill="#ffffff" opacity=".78"/>
-      <circle cx="11" cy="9"  r="4" fill="#14743f"/>
-      <circle cx="11" cy="34" r="4" fill="#2bb673"/>
-      <circle cx="11" cy="59" r="4" fill="#8fe0b4"/>
-    </g>
-  </svg>
-  <span class="badge">Personal fork · Firefox · daily-driven</span>
-  <h1>Tab Session Garrison</h1>
-  <p class="tagline">Save, restore, and wrangle hundreds of sessions — without leaving the keyboard.</p>
+  <span class="pill"><span class="dot"></span>New in 0.3.4 — "quoted phrase" search</span>
+  <h1>Find <em>any tab</em> you ever saved.</h1>
   <p class="lede">
-    A power-user fork of <strong>Tab Session Manager</strong> for Firefox. Everything the
-    original does — save/restore, auto-save, tags, search, native tab groups — plus
-    <strong>full keyboard navigation</strong>, <strong>multi-select</strong>, bulk actions
-    with a single <strong>undo-all</strong>, and speed that holds up on big profiles.
+    A Firefox session manager built around search. Thousands of saved sessions are only
+    useful if you can find the one tab you need, so search is where this project is heading.
   </p>
   <div class="btns">
     <a class="btn primary" href="https://addons.mozilla.org/firefox/addon/3035144/">Add to Firefox</a>
-    <a class="btn" href="https://github.com/superuser-miguel/Tab-Session-Garrison">View on GitHub</a>
+    <a class="btn" href="#roadmap">See the search roadmap</a>
   </div>
-  <p class="note">Firefox only · on addons.mozilla.org · no telemetry</p>
-  <img class="shot" src="screenshots/list-and-details.png" alt="Tab Session Garrison: the session list, with a saved session and its tab groups in the detail pane">
+  <p class="note">Free · Firefox only · everything stays on your computer</p>
+
+  <div class="demo" id="demo">
+    <div class="demo-bar">
+      <p class="demo-label">Try it: this searches a few demo sessions the same way the extension does.</p>
+      <label class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" value='"stop light"' autocomplete="off" spellcheck="false" aria-label="Search demo sessions">
+      </label>
+      <div class="chips" id="chips">
+        <button class="chip" type="button">stop light</button>
+        <button class="chip" type="button">"stop light"</button>
+        <button class="chip" type="button">"release notes"</button>
+        <button class="chip" type="button">"release no</button>
+        <button class="chip" type="button">itinerary</button>
+        <button class="chip" type="button">reels</button>
+      </div>
+    </div>
+    <p class="demo-status" id="status" aria-live="polite"></p>
+    <ul class="results" id="results"></ul>
+  </div>
 </header>
 
-<section class="wrap">
-  <h2>Why Tab Session Garrison?</h2>
-  <p class="sub">It's a fork of Tab Session Manager — the whole engine is kept; power-user ergonomics and speed are added on top.</p>
+<section class="wrap" id="search">
+  <span class="eyebrow">Search today</span>
+  <h2>Quotes mean exactly what you typed.</h2>
+  <p class="sub">
+    Plain words can match anywhere in a session. Put them in quotes and they have to appear
+    together, inside one tab title, session name or tab-group name.
+  </p>
+  <div class="compare">
+    <div class="panel">
+      <h3>Words</h3>
+      <div class="q"><code>stop light</code></div>
+      <p>Finds sessions where “stop” and “light” both appear, even in different tabs. Good for
+        casting a wide net.</p>
+    </div>
+    <div class="panel good">
+      <h3>Phrase</h3>
+      <div class="q"><code>"stop light"</code></div>
+      <p>Finds only the tab that actually says “stop light”. A phrase never spans two tabs.
+        Results update while you type, even before the closing quote.</p>
+    </div>
+    <div class="panel">
+      <h3>Tab groups</h3>
+      <div class="q"><code>itinerary</code></div>
+      <p>Group names are searchable too, so typing a group's name surfaces every session that
+        contains it. Matches are highlighted in the list and the tab list.</p>
+    </div>
+  </div>
+  <img class="shot" src="screenshots/phrase-search.png" width="1200" height="720"
+       alt="The extension with a search for &quot;release notes&quot;: three sessions remain, with the phrase highlighted in tab titles">
+</section>
+
+<section class="wrap" id="roadmap">
+  <span class="eyebrow">Search roadmap</span>
+  <h2>Where search is going.</h2>
+  <p class="sub">
+    Each step ships on its own. The order follows how people actually look for things: by a
+    site they half remember, or a few words from a page title.
+  </p>
+
+  <ol class="phases">
+    <li class="phase live">
+      <span class="node"></span>
+      <h3>Phrases and group names <span class="status live">Live · 0.3.4</span></h3>
+      <p>Exact <code>"quoted phrases"</code> that stay inside one tab, searchable tab-group
+        names, and highlighted matches.</p>
+    </li>
+    <li class="phase next">
+      <span class="node"></span>
+      <h3>Search inside links <span class="status next">Next</span></h3>
+      <p>Many sites give every tab the same title. Five tabs all called “Instagram” only differ
+        by their address, so <code>reels</code> or a profile name should find
+        <code>instagram.com/some_profile/reels/</code>. Full links will be searched, without the
+        <code>https://</code> and <code>www.</code> noise, with title matches ranked first.</p>
+    </li>
+    <li class="phase next">
+      <span class="node"></span>
+      <h3>Tags, exclusions and filters <span class="status next">Next</span></h3>
+      <p>Narrow a search down instead of scrolling:</p>
+      <ul>
+        <li>Your own <b>tags</b> become searchable.</li>
+        <li><code>-word</code> leaves out sessions that match it.</li>
+        <li><code>site:</code> <code>url:</code> <code>tag:</code> <code>group:</code>
+          <code>title:</code> <code>name:</code> search one place only.</li>
+      </ul>
+    </li>
+    <li class="phase">
+      <span class="node"></span>
+      <h3>Fuzzy matching, best result first <span class="status later">Planned</span></h3>
+      <p>In the spirit of <a href="https://github.com/junegunn/fzf">fzf</a>: <code>ghb</code>
+        finds GitHub, exact hits rank above fuzzy ones, the best session floats to the top and is
+        pre-selected, and <kbd>Enter</kbd> opens it. Clear the box and your own sort order comes
+        back.</p>
+    </li>
+    <li class="phase">
+      <span class="node"></span>
+      <h3>Why did it match? <span class="status later">Planned</span></h3>
+      <p>Each result says what matched (“tab: Stop light timing…”, “link: github.com/…”,
+        “group: Projects”), the detail pane jumps to the matching tabs, and a count shows how
+        many tabs matched.</p>
+    </li>
+  </ol>
+
   <div class="tablewrap">
     <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Full-session save/restore</th>
-          <th>Keyboard multi-select</th>
-          <th>Bulk actions + undo-all</th>
-          <th>Tab-group aware</th>
-          <th>Fast on large profiles</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Type</th><th>Finds</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td>Firefox built-in restore</td><td class="n">~</td><td class="n">✗</td><td class="n">✗</td><td class="n">~</td><td class="n">~</td></tr>
-        <tr><td>OneTab</td><td class="y">✓</td><td class="n">✗</td><td class="n">~</td><td class="n">✗</td><td class="y">✓</td></tr>
-        <tr><td>Tab Session Manager</td><td class="y">✓</td><td class="n">✗</td><td class="n">~</td><td class="y">✓</td><td class="n">✗</td></tr>
-        <tr class="me"><td>Tab Session Garrison</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+        <tr><td><code>stop light</code></td><td>Both words, anywhere in the session</td><td><span class="status live">Live</span></td></tr>
+        <tr><td><code>"stop light"</code></td><td>The exact phrase, inside one title or name</td><td><span class="status live">Live</span></td></tr>
+        <tr><td><code>reels</code></td><td>…also inside tab links <span class="muted">(today: titles, names and groups)</span></td><td><span class="status next">Next</span></td></tr>
+        <tr><td><code>github -issues</code></td><td>Sessions with “github” but without “issues”</td><td><span class="status next">Next</span></td></tr>
+        <tr><td><code>site:github.com</code></td><td>Tabs on that site only</td><td><span class="status next">Next</span></td></tr>
+        <tr><td><code>tag:work</code></td><td>Sessions with that tag</td><td><span class="status next">Next</span></td></tr>
+        <tr><td><code>group:Projects</code></td><td>Tab-group names only</td><td><span class="status next">Next</span></td></tr>
+        <tr><td><code>ghb</code></td><td>Fuzzy: <b>G</b>it<b>H</b>u<b>b</b>, ranked by match quality</td><td><span class="status later">Planned</span></td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<section class="wrap">
-  <h2>Features</h2>
-  <p class="sub">Built for selecting, restoring, and clearing sessions at speed — mouse optional.</p>
+<section class="wrap" id="more">
+  <span class="eyebrow">The rest of the toolkit</span>
+  <h2>Built for big profiles.</h2>
+  <p class="sub">Once you've found it, everything else stays fast and keyboard-friendly.</p>
   <div class="grid">
     <div class="card">
-      <h3>Keyboard-first multi-select</h3>
-      <p>Ctrl/Cmd-click, Shift-click ranges, or the keyboard: arrows to move, <kbd>Shift</kbd>+arrows to extend, <kbd>Space</kbd> to toggle, <kbd>Ctrl</kbd>+<kbd>A</kbd> to select all (respecting your filter).</p>
+      <h3>Keyboard first</h3>
+      <p>Arrows to move, <kbd>Shift</kbd>+arrows to extend, <kbd>Ctrl</kbd>+<kbd>A</kbd> to
+        select all, <kbd>Enter</kbd> to restore.</p>
     </div>
     <div class="card">
-      <h3>Bulk restore &amp; delete</h3>
-      <p>Open every selected session at once — each in its own window — or clear dozens of stale auto-saves in one go, with a single <strong>undo-all</strong> if you misfire.</p>
+      <h3>Bulk actions, one undo</h3>
+      <p>Open or delete dozens of sessions at once, and get them all back with a single undo.</p>
     </div>
     <div class="card">
       <h3>Tab-group aware</h3>
-      <p>Colored dots on each row and named chips grouped by window in the detail pane. Drop a saved session into your current window as one tidy named group.</p>
+      <p>Named, coloured groups are saved and restored, and shown on every session.</p>
     </div>
     <div class="card">
-      <h3>Session types at a glance</h3>
-      <p>Every session shows how it was saved — <strong>Manual Save</strong> (green), <strong>Regularly</strong> (blue), <strong>Window closed</strong> (amber), <strong>Browser exited</strong> (red) — so deliberate saves stand out from the noise.</p>
-    </div>
-    <div class="card">
-      <h3>Phrase search</h3>
-      <p>Put words in quotes — <code>"release notes"</code> — to find that exact phrase inside one tab title, session name or group name. Group names are searchable too.</p>
-    </div>
-    <div class="card">
-      <h3>Durable auto-save</h3>
-      <p>Fixes an upstream bug where periodic auto-save could silently stop after the browser suspended or restarted — the alarm now self-heals.</p>
-    </div>
-    <div class="card">
-      <h3>Restore respects your settings</h3>
-      <p>With <em>Save tab groups</em> turned off, restoring no longer recreates — and re-saves — the groups you opted out of. Tabs come back flat.</p>
+      <h3>Fast at any size</h3>
+      <p>The list appears in about a quarter of a second, even with 3,500 saved sessions.</p>
     </div>
   </div>
-</section>
-
-<section class="wrap">
-  <h2>Fast, even on big profiles</h2>
-  <p class="sub">The popup was rebuilt to stay responsive when you've got hundreds — or thousands — of saved sessions.</p>
-  <div class="grid">
-    <div class="card">
-      <h3>Instant list interactions</h3>
-      <p>Selecting, searching, and arrow-keying stay snappy: per-row array scans were replaced with <code>Map</code> / <code>Set</code> lookups, so a keystroke no longer walks the whole list.</p>
-    </div>
-    <div class="card">
-      <h3>Off-screen rows cost nothing</h3>
-      <p>With <code>content-visibility</code>, the browser only lays out and paints the rows you can actually see — the rest wait until you scroll to them.</p>
-    </div>
-    <div class="card">
-      <h3>A session index</h3>
-      <p>The list and search read a small index instead of decoding every saved tab and favicon. On a 3,500-session profile the list appears in about a quarter of a second.</p>
-    </div>
-    <div class="card">
-      <h3>No memory creep</h3>
-      <p>Favicons are shrunk without throwaway Blobs, which Firefox was slow to free — the background page no longer grows by hundreds of MB on busy profiles.</p>
-    </div>
-    <div class="card">
-      <h3>Bulk delete in one write</h3>
-      <p>Deleting dozens of sessions used to rewrite the whole undo history per item. Now it's a single batched operation with one screen update — near-instant.</p>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <h2>Roadmap</h2>
-  <p class="sub">Honest about what's next.</p>
-  <ul class="road">
-    <li><b>Backup overhaul</b> — a three-tier engine under your download folder that never deletes history: a full compressed <em>Complete</em> snapshot (shipped), plus per-session and append-only <em>Incremental</em> tiers, with a restore-from-backup UI.</li>
-    <li><b>Search overhaul</b> — phrase search is in. Next: site names and tags, <code>-exclude</code> and <code>site:</code>/<code>tag:</code>/<code>group:</code> filters, then fuzzy matching (<code>ghb</code> → GitHub) ranked by match quality.</li>
-    <li><b>Rename saved windows</b> — give each window in a saved session its own editable name, right from the header in the detail pane.</li>
-    <li><b>Firefox Split View</b> — split state is already captured on save; restoring waits on a Firefox extension API to recreate splits.</li>
-    <li><b>Trash can</b> — deleted sessions go to a recoverable trash instead of vanishing once the undo window passes.</li>
-    <li><b>Chrome / Edge</b> — possibly, further down the line.</li>
-  </ul>
+  <img class="shot" src="screenshots/list-and-details.png" width="1200" height="720"
+       alt="The session list, with a saved trip-planning session and its tab groups in the detail pane">
+  <p class="also"><b>Also on the list:</b> a backup overhaul, renaming saved windows, a trash can
+    for deleted sessions, and restoring Firefox split views once Firefox allows it.
+    <a href="https://github.com/superuser-miguel/Tab-Session-Garrison#roadmap">Full roadmap →</a></p>
 </section>
 
 <footer class="wrap">
-  <section>
-    <p><strong>Help:</strong> <a href="help/import-sessions.html">Importing sessions from other extensions</a> · <a href="help/indexeddb-error.html">Fixing the IndexedDB error</a></p>
-    <p><strong>Tab Session Garrison</strong> is free software, <strong>GPL-3.0-or-later</strong>.</p>
-    <p>A fork of <a href="https://github.com/sienori/Tab-Session-Manager">Tab Session Manager</a> © 2017– Sienori (MPL-2.0) — all of the core functionality is theirs. If you want a polished, signed, cross-browser build, install <a href="https://github.com/sienori/Tab-Session-Manager">the original</a>.</p>
-    <p><a href="https://github.com/superuser-miguel/Tab-Session-Garrison">github.com/superuser-miguel/Tab-Session-Garrison</a></p>
-  </section>
+  <p><strong>Help:</strong> <a href="help/import-sessions.html">Importing sessions from other extensions</a> · <a href="help/indexeddb-error.html">Fixing the IndexedDB error</a></p>
+  <p><strong>Tab Session Garrison</strong> is free software, <strong>GPL-3.0-or-later</strong>. No accounts, no servers, no telemetry.</p>
+  <p>A fork of <a href="https://github.com/sienori/Tab-Session-Manager">Tab Session Manager</a> © 2017– Sienori (MPL-2.0) — all of the core functionality is theirs. If you want a cross-browser build, install <a href="https://github.com/sienori/Tab-Session-Manager">the original</a>.</p>
+  <p><a href="https://github.com/superuser-miguel/Tab-Session-Garrison">github.com/superuser-miguel/Tab-Session-Garrison</a></p>
 </footer>
+
+<script>
+// Same rules as src/common/searchQuery.js in the extension.
+const QUOTES = new Set(['"', "“", "”", "„"]);
+function parseSearchQuery(query) {
+  const terms = []; let current = ""; let inPhrase = false;
+  const push = () => {
+    const term = inPhrase ? current.replace(/\s+/g, " ").trim() : current;
+    if (term !== "") terms.push({ text: term.toLowerCase(), phrase: inPhrase });
+    current = "";
+  };
+  for (const ch of query) {
+    if (QUOTES.has(ch)) { push(); inPhrase = !inPhrase; }
+    else if (!inPhrase && /\s/.test(ch)) push();
+    else current += ch;
+  }
+  push();
+  return terms;
+}
+
+const SESSIONS = [
+  { name: "City commute research", type: "Manual Save", tabs: [
+    ["Stop light timing explained — Traffic Engineering Blog", "trafficblog.example/stop-light-timing"],
+    ["Protected bike lanes — Wikipedia", "en.wikipedia.org/wiki/Segregated_cycle_facility"],
+    ["Bus rapid transit map — City Transit", "citytransit.example/brt"] ], groups: ["Transit"] },
+  { name: "Photography ideas", type: "Regularly", tabs: [
+    ["Light painting for beginners — PetaPixel", "petapixel.com/light-painting-guide"],
+    ["Bus stop portraits — a photo series", "flickr.com/photos/example/albums/bus-stops"],
+    ["Golden hour calculator", "goldenhour.example/calculator"] ], groups: [] },
+  { name: "Release prep — v2.4", type: "Manual Save", tabs: [
+    ["Draft: v2.4.0 release notes — docs", "docs.example.org/drafts/v2-4-0"],
+    ["Firefox 157 Release Notes — Mozilla", "mozilla.org/firefox/157.0/releasenotes/"],
+    ["Keep a Changelog", "keepachangelog.com/en/1.1.0/"] ], groups: ["Release", "CI"] },
+  { name: "Team planning", type: "Window closed", tabs: [
+    ["Release checklist — Notion", "notion.so/example/release-checklist"],
+    ["Meeting notes, 14 Oct — Docs", "docs.example.org/meetings/2026-10-14"],
+    ["Sprint board — GitHub", "github.com/orgs/example-org/projects/3"] ], groups: [] },
+  { name: "Kyoto trip planning", type: "Manual Save", tabs: [
+    ["Tokyo to Kyoto by Shinkansen — Rome2Rio", "rome2rio.com/s/Tokyo/Kyoto"],
+    ["Fushimi Inari Shrine — japan-guide.com", "japan-guide.com/e/e3915.html"],
+    ["Ryokan stays in Gion — Booking.com", "booking.com/searchresults.html?ss=Gion"] ], groups: ["Itinerary", "Stay", "Food"] },
+  { name: "Instagram", type: "Browser exited", tabs: [
+    ["Instagram", "instagram.com/some_profile/reels/"],
+    ["Instagram", "instagram.com/explore/tags/streetphotography/"],
+    ["Instagram", "instagram.com/another_profile/"] ], groups: [] }
+];
+
+const esc = s => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function highlight(text, terms) {
+  const lower = text.toLowerCase(); const marks = new Array(text.length).fill(false);
+  for (const t of terms) {
+    let i = lower.indexOf(t.text);
+    while (t.text && i !== -1) { for (let k = i; k < i + t.text.length; k++) marks[k] = true; i = lower.indexOf(t.text, i + 1); }
+  }
+  let out = ""; let open = false;
+  for (let i = 0; i < text.length; i++) {
+    if (marks[i] && !open) { out += "<mark>"; open = true; }
+    if (!marks[i] && open) { out += "</mark>"; open = false; }
+    out += esc(text[i]);
+  }
+  return out + (open ? "</mark>" : "");
+}
+const has = (s, t) => s.toLowerCase().includes(t.text);
+const sessionMatches = (s, terms) =>
+  terms.every(t => has(s.name, t) || s.tabs.some(([title]) => has(title, t)) || s.groups.some(g => has(g, t)));
+
+const q = document.getElementById("q");
+const results = document.getElementById("results");
+const status = document.getElementById("status");
+const chips = [...document.querySelectorAll("#chips .chip")];
+
+function render() {
+  const terms = parseSearchQuery(q.value);
+  chips.forEach(c => c.setAttribute("aria-pressed", String(c.textContent === q.value)));
+  if (terms.length === 0) { status.textContent = "Type something, or pick an example above."; results.innerHTML = ""; return; }
+  const hits = SESSIONS.filter(s => sessionMatches(s, terms));
+  const kinds = terms.map(t => t.phrase ? `the phrase <b>“${esc(t.text)}”</b>` : `<b>${esc(t.text)}</b>`).join(" and ");
+  let html = "";
+  for (const s of hits) {
+    const tabHits = s.tabs.filter(([title]) => terms.some(t => has(title, t))).slice(0, 3);
+    const groupHits = s.groups.filter(g => terms.some(t => has(g, t)));
+    html += `<li class="result"><div class="name">${highlight(s.name, terms)}</div>
+      <div class="meta">${esc(s.type)} · ${s.tabs.length} tabs</div><ul class="hits">` +
+      tabHits.map(([title]) => `<li><span class="why">tab</span>${highlight(title, terms)}</li>`).join("") +
+      groupHits.map(g => `<li><span class="why">group</span>${highlight(g, terms)}</li>`).join("") +
+      `</ul></li>`;
+  }
+  // Show what link search (next on the roadmap) would add.
+  const future = SESSIONS.filter(s => !hits.includes(s) &&
+    terms.every(t => has(s.name, t) || s.tabs.some(([title, url]) => has(title, t) || has(url, t)) || s.groups.some(g => has(g, t))));
+  for (const s of future) {
+    const linkHits = s.tabs.filter(([, url]) => terms.some(t => has(url, t))).slice(0, 2);
+    html += `<li class="result future"><div class="name">${esc(s.name)}</div>
+      <div class="meta">Found once link search ships (next on the roadmap)</div><ul class="hits">` +
+      linkHits.map(([, url]) => `<li><span class="why">link</span>${highlight(url, terms)}</li>`).join("") + `</ul></li>`;
+  }
+  status.innerHTML = hits.length
+    ? `${hits.length} of ${SESSIONS.length} sessions match ${kinds}.`
+    : future.length
+      ? `No match today: ${kinds} only appears in a tab's link.`
+      : `No session matches ${kinds}.`;
+  results.innerHTML = html || `<li class="empty">Nothing here. Try one of the examples.</li>`;
+}
+q.addEventListener("input", render);
+chips.forEach(c => c.addEventListener("click", () => { q.value = c.textContent; render(); q.focus(); }));
+render();
+</script>
 
 </body>
 </html>
