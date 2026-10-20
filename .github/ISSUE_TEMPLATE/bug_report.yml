@@ -1,0 +1,55 @@
+name: Bug report
+description: Something doesn't work the way it should.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this. Please check the [open issues](https://github.com/superuser-miguel/Tab-Session-Garrison/issues) first in case it's already known.
+        **Don't paste session contents or private URLs.** A short description of the tabs is enough.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The shortest list of steps that makes it happen, if you know them.
+      placeholder: |
+        1. Open the popup
+        2. Search for "..."
+        3. ...
+  - type: input
+    id: version
+    attributes:
+      label: Tab Session Garrison version
+      description: Settings → Information shows it.
+      placeholder: "0.3.4"
+    validations:
+      required: true
+  - type: input
+    id: firefox
+    attributes:
+      label: Firefox version and operating system
+      placeholder: "Firefox 144, Fedora 44"
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Roughly how many saved sessions do you have?
+      options:
+        - Under 100
+        - 100 – 1,000
+        - Over 1,000
+        - Not sure
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: |
+        Screenshots help. For errors, you can turn on Settings → Debug mode, then copy any red lines from about:debugging → This Firefox → Tab Session Garrison → Inspect → Console.

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Help: \"IndexedDB error\" in the popup"
+    url: https://superuser-miguel.github.io/Tab-Session-Garrison/help/indexeddb-error.html
+    about: Steps that fix the most common startup error.
+  - name: "Help: importing sessions from other extensions"
+    url: https://superuser-miguel.github.io/Tab-Session-Garrison/help/import-sessions.html
+    about: Moving sessions over from Tab Session Manager and others.

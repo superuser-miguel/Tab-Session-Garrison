@@ -1,0 +1,25 @@
+name: Feature idea
+description: Suggest something new or a change to how something works.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The [roadmap](https://github.com/superuser-miguel/Tab-Session-Garrison#roadmap) lists what's already planned. Ideas for it are welcome too.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The situation or annoyance behind the idea. This matters more than the exact solution.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: How you picture it working, including any keys you'd expect to use.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, mock-ups, or how another extension does it.
