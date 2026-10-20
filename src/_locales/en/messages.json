@@ -266,6 +266,9 @@
   "informationLabel": {
     "message": "Information"
   },
+  "reportIssueLabel": {
+    "message": "Report a bug or suggest a feature"
+  },
   "generalLabel": {
     "message": "General"
   },

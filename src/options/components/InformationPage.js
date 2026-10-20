@@ -47,6 +47,11 @@ export default props => {
                   GitHub
                 </a>
               </p>
+              <p>
+                <a href={`${repoUrl}/issues/new/choose`} target="_blank">
+                  {browser.i18n.getMessage("reportIssueLabel")}
+                </a>
+              </p>
             </div>
           }
         />

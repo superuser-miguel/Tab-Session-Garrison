@@ -122,6 +122,7 @@ This is a **personal fork**, built and used on **Firefox (Linux)**. A few things
 - **On addons.mozilla.org.** Install it from the store (below); Firefox keeps it updated.
 - **Local-only by design.** No cloud sync, no accounts — the upstream Google Drive sync isn't offered here. Everything lives in your browser, on your machine.
 - **No telemetry.** Sessions are stored by the browser, on your machine.
+- **Found a bug or have an idea?** [Open an issue](https://github.com/superuser-miguel/Tab-Session-Garrison/issues/new/choose). Please report problems with this fork here, not on the upstream Tab Session Manager tracker.
 
 ---
 
