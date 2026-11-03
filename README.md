@@ -28,6 +28,16 @@ Everything Tab Session Manager does — save and restore the state of windows an
 - **Add a session to your current window as a tab group** — drop a saved session's tabs into the window you're in, tidied into one named group (and it preserves the session's own groups when it already has them)
 - **Phantom-group masking** — older auto-saves that captured stray groups from other windows are cleaned up at display time, non-destructively
 
+### Copy links
+
+- **Copy a saved group's links without opening it** — right-click a tab-group header in the tab list (or use its copy button) and pick **Copy N links** or **Copy as Markdown**. The same choices are in the window menu, the session menu and each tab's right-click menu
+- Works for **any group the extension has saved**, including old groups that Firefox's own saved groups no longer have
+- **Links** puts one link per line, the format **Settings → Import URL list** reads, so a copied group can become a new session. **Markdown** gives each tab group a heading (and each window, for a whole session), ready for notes apps like Obsidian
+- Duplicate links are copied once and the notice says how many were left out (switch it off in Settings → Popup). Tabs that were waiting to load are copied as their real link, not the placeholder page
+- **Keys:** Ctrl/⌘ + C on a focused tab, group header or session; add Shift for Markdown
+
+![The right-click menu of a saved tab group, offering Copy 2 links and Copy as Markdown](docs/screenshots/copy-links.png)
+
 ### Search
 
 - **Exact phrases** — put words in quotes (`"release notes"`) to find that phrase inside a single tab title, session name or group name. Without quotes, each word can match anywhere in the session. An unfinished quote counts as a phrase while you type, and curly quotes work too
@@ -97,12 +107,13 @@ Everything works without the mouse. Press **?** in the popup for this list, or s
 | F2 | Rename the session |
 | Shift + F2 | Add tags |
 | Shift + F10 / Menu key | Open the session menu |
+| Ctrl/⌘ + C · Ctrl/⌘ + Shift + C | Copy the session's links · as Markdown |
 | → | Move into the tab list |
 | / or just start typing | Search (`"` starts a phrase) |
 
 **Search box:** Enter or ↓ goes to the first result; Esc clears the search, then closes it.
 
-**Tab list:** ↑ ↓ Home End move between tabs, Enter opens the tab, Delete removes it from the session, ← or Esc goes back to the session list.
+**Tab list:** ↑ ↓ Home End move between tabs and tab-group headers, Enter opens the tab, Delete removes it from the session, Ctrl/⌘ + C copies the links of the focused tab, group or window (add Shift for Markdown), Shift + F10 opens its menu, ← or Esc goes back to the session list.
 
 **Menus and dialogs:** ↑ ↓ move between menu items, Esc closes.
 

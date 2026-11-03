@@ -13,6 +13,7 @@
     --mark-bg: #ffe866; --mark-text: #1a1a1a;
     --live: #1f9d5f; --next: #c27a00; --later: #6b7a71;
     --shadow: 0 20px 50px rgba(20, 60, 40, .16);
+    color-scheme: light dark;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -176,6 +177,25 @@
   .keys span { display: block; color: var(--text); font-weight: 600; margin-bottom: 4px; }
   .keys p { margin: 0; }
 
+  /* Copy links */
+  .copy { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 22px; align-items: start; margin-top: 8px; }
+  @media (max-width: 760px) { .copy { grid-template-columns: minmax(0, 1fr); } }
+  .copy .shot { margin: 0; }
+  .clip { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .clip-head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--border); background: var(--surface-2); flex-wrap: wrap; }
+  .clip-head .label { font-size: .8rem; color: var(--muted); margin-right: auto; }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+  .seg button { font: 600 .8rem/1 system-ui, sans-serif; padding: 7px 12px; border: 0; background: var(--surface); color: var(--muted); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+  .seg button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .clip pre { margin: 0; padding: 14px; font: .8rem/1.65 ui-monospace, "SF Mono", Menlo, Consolas, monospace; overflow-x: auto; white-space: pre; scrollbar-color: var(--border) transparent; scrollbar-width: thin; }
+  .clip-foot { padding: 10px 14px; border-top: 1px solid var(--border); font-size: .85rem; color: var(--muted); }
+  .clip-foot b { color: var(--accent); font-weight: 600; }
+  .copy-points { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 10px; }
+  .copy-points li { color: var(--muted); font-size: .92rem; padding-left: 18px; position: relative; }
+  .copy-points li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .copy-points b { color: var(--text); font-weight: 600; }
+
   footer.wrap { border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; padding: 36px 16px 48px; }
   footer p { margin: 6px 0; }
 </style>
@@ -205,13 +225,14 @@
   <nav>
     <a href="#search">Search</a>
     <a href="#roadmap">Roadmap</a>
+    <a class="opt" href="#copy">Copy links</a>
     <a class="opt" href="#keyboard">Keyboard</a>
     <a class="opt" href="https://github.com/superuser-miguel/Tab-Session-Garrison">GitHub</a>
   </nav>
 </div>
 
 <header class="hero wrap">
-  <span class="pill"><span class="dot"></span>New in 0.3.4 — "quoted phrase" search</span>
+  <a class="pill" href="#copy" style="text-decoration:none"><span class="dot"></span>New in 0.3.6: copy a saved group's links</a>
   <h1>Find <em>any tab</em> you ever saved.</h1>
   <p class="lede">
     A Firefox session manager built around search. Thousands of saved sessions are only
@@ -343,6 +364,39 @@
   </div>
 </section>
 
+<section class="wrap" id="copy">
+  <span class="eyebrow">New in 0.3.6</span>
+  <h2>Get the links back out.</h2>
+  <p class="sub">
+    Right-click a saved tab group, window, session or tab and copy its links, without opening
+    a single tab. That works for old groups too, including the ones Firefox's own saved groups
+    no longer have.
+  </p>
+  <div class="copy">
+    <img class="shot" src="screenshots/copy-links.png" width="1200" height="720"
+         alt="The right-click menu of a saved tab group named Stay, offering Copy 2 links and Copy as Markdown">
+    <div>
+      <div class="clip">
+        <div class="clip-head">
+          <span class="label">On your clipboard</span>
+          <div class="seg" role="group" aria-label="Format">
+            <button type="button" id="fmt-links" aria-pressed="true">Links</button>
+            <button type="button" id="fmt-md" aria-pressed="false">Markdown</button>
+          </div>
+        </div>
+        <pre id="clip-text"></pre>
+        <div class="clip-foot"><b>Copied 9 links</b> · 1 duplicate left out</div>
+      </div>
+      <ul class="copy-points">
+        <li><b>Links</b> puts one link per line, the format Settings → Import URL list reads, so a copied group can become a new session.</li>
+        <li><b>Markdown</b> gives each tab group its own heading, ready for notes apps like Obsidian.</li>
+        <li><b>Keys:</b> <kbd>Ctrl</kbd>+<kbd>C</kbd> on a focused tab, group or session; add <kbd>Shift</kbd> for Markdown.</li>
+        <li>Nothing opens and nothing leaves your computer. It only writes to the clipboard.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="wrap" id="keyboard">
   <span class="eyebrow">Keyboard first</span>
   <h2>Never reach for the mouse.</h2>
@@ -360,6 +414,7 @@
     <div><span><kbd>→</kbd> <kbd>←</kbd></span><p>Into the tab list and back</p></div>
     <div><span><kbd>F2</kbd> · <kbd>Shift</kbd>+<kbd>F2</kbd></span><p>Rename · add tags</p></div>
     <div><span><kbd>Del</kbd> · <kbd>Ctrl</kbd>+<kbd>Z</kbd></span><p>Delete · undo</p></div>
+    <div><span><kbd>Ctrl</kbd>+<kbd>C</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></span><p>Copy links · as Markdown</p></div>
   </div>
 </section>
 
@@ -401,6 +456,27 @@
 </footer>
 
 <script>
+// Copy links: what the clipboard holds for the first window of the demo session.
+(() => {
+  const groups = [
+    ["Flights", [["Tokyo to Kyoto by Shinkansen — Rome2Rio", "https://www.rome2rio.com/s/Tokyo/Kyoto"], ["Cheap flights to Tokyo (HND) — KAYAK", "https://www.kayak.com/flight-routes/HND"]]],
+    ["Stay", [["Ryokan stays in Gion, Kyoto — Booking.com", "https://www.booking.com/region/jp/gion.html"], ["Hotels near Kyoto Station — Booking.com", "https://www.booking.com/district/jp/kyoto/kyotostation.html"]]],
+    ["Food", [["Nishiki Market — Kyoto Travel Guide", "https://www.japan-guide.com/e/e3931.html"]]],
+    ["Itinerary", [["Kyoto Itinerary: 3 Days — japan-guide.com", "https://www.japan-guide.com/e/e3970.html"], ["Fushimi Inari Shrine — japan-guide.com", "https://www.japan-guide.com/e/e3915.html"], ["Nishiki Market (again)", "https://www.japan-guide.com/e/e3931.html"]]],
+    [null, [["Japan Rail Pass — Wikipedia", "https://en.wikipedia.org/wiki/Japan_Rail_Pass"], ["Kyoto — OpenStreetMap", "https://www.openstreetmap.org/#map=13/35.0116/135.7681"]]]
+  ];
+  const seen = new Set();
+  const kept = groups.map(([name, tabs]) => [name, tabs.filter(([, url]) => !seen.has(url) && seen.add(url))]);
+  const links = kept.flatMap(([, tabs]) => tabs.map(([, url]) => url)).join("\n");
+  const md = kept.map(([name, tabs]) => (name ? `## ${name}\n` : "") + tabs.map(([t, u]) => `- [${t}](${u})`).join("\n")).join("\n\n");
+  const pre = document.getElementById("clip-text");
+  const bL = document.getElementById("fmt-links"), bM = document.getElementById("fmt-md");
+  const show = isMd => { pre.textContent = isMd ? md : links; bL.setAttribute("aria-pressed", String(!isMd)); bM.setAttribute("aria-pressed", String(isMd)); };
+  bL.addEventListener("click", () => show(false));
+  bM.addEventListener("click", () => show(true));
+  show(false);
+})();
+
 // Same rules as src/common/searchQuery.js in the extension.
 const QUOTES = new Set(['"', "“", "”", "„"]);
 function parseSearchQuery(query) {

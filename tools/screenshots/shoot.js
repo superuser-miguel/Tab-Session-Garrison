@@ -65,7 +65,17 @@ async function main() {
         await save(`phrase-search${sfx}.png`);
       }
 
-      if (variant === "amo") continue; // shots 4–5 are README-only
+      if (want("copy-links")) {
+        // the right-click menu of a saved tab group ("Stay")
+        await openPopup(w, h);
+        await clickRow("Kyoto trip planning");
+        const header = (await driver.findElements(By.css(".groupHeader")))[1];
+        await driver.actions().contextClick(header).perform();
+        await sleep(600);
+        await save(`copy-links${sfx}.png`);
+      }
+
+      if (variant === "amo") continue; // the shots below are README-only
 
       if (want("session-types")) {
         await openPopup(w, h);
