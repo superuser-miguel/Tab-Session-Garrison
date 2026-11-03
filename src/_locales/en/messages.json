@@ -825,13 +825,70 @@
     "message": "Clear the search, then close it"
   },
   "keyTabMoveLabel": {
-    "message": "Move between tabs"
+    "message": "Move between tabs and tab-group headers"
   },
   "keyTabOpenLabel": {
     "message": "Open the tab"
   },
   "keyTabRemoveLabel": {
     "message": "Remove the tab from the session"
+  },
+  "copyLinksSectionLabel": {
+    "message": "Copy links"
+  },
+  "copyLinkLabel": {
+    "message": "Copy link"
+  },
+  "copyOneLinkLabel": {
+    "message": "Copy 1 link"
+  },
+  "copyNLinksLabel": {
+    "message": "Copy $1 links"
+  },
+  "copyAllLinksLabel": {
+    "message": "Copy all links"
+  },
+  "copyAsMarkdownLabel": {
+    "message": "Copy as Markdown"
+  },
+  "copiedOneLinkLabel": {
+    "message": "Copied 1 link"
+  },
+  "copiedLinksLabel": {
+    "message": "Copied $1 links"
+  },
+  "duplicatesLeftOutLabel": {
+    "message": "$1 duplicates left out"
+  },
+  "duplicateLeftOutLabel": {
+    "message": "1 duplicate left out"
+  },
+  "copyLinksFailedLabel": {
+    "message": "Couldn't copy to the clipboard: $1"
+  },
+  "groupHeaderTitleLabel": {
+    "message": "Right-click or press Ctrl+C to copy this group's links"
+  },
+  "copyLinksSkipDuplicatesLabel": {
+    "message": "Leave out duplicate links when copying"
+  },
+  "copyLinksSkipDuplicatesCaptionLabel": {
+    "message": "When you copy the links of a session, window or tab group, the same link is copied only once. The notice says how many were left out."
+  },
+  "keyCopyLinksLabel": {
+    "message": "Copy the links of the focused tab, tab group or window"
+  },
+  "keyCopyMarkdownLabel": {
+    "message": "Copy them as Markdown"
+  },
+  "keyTabMenuLabel": {
+    "message": "Open the menu of the focused tab, tab group or window"
+  },
+  "keyCopySessionLinksLabel": {
+    "message": "Copy the session's links"
+  },
+  "keyCopySessionMarkdownLabel": {
+    "message": "Copy the session's links as Markdown"
   },
   "keyTabBackLabel": {
     "message": "Back to the session list"

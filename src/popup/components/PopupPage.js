@@ -26,6 +26,7 @@ import {
 import { applyTheme, watchTheme } from "../actions/applyTheme";
 import { deleteWindow, deleteTab } from "../../common/editSessions.js";
 import openUrl from "../actions/openUrl";
+import { copyLinks, setCopyNotifier } from "../actions/copyLinks";
 import Header from "./Header";
 import OptionsArea from "./OptionsArea";
 import SessionsArea, { getSortedSessions } from "./SessionsArea";
@@ -178,6 +179,7 @@ export default class PopupPage extends Component {
     browser.storage.local.onChanged.addListener(this.handleStorageChange);
     window.addEventListener("unload", this.handleUnload, { once: true });
     document.addEventListener("keydown", this.handleGlobalKeyDown);
+    setCopyNotifier(this.openNotification);
     browser.runtime.sendMessage({ message: "updateUndoStatus" });
     browser.runtime.sendMessage({ message: "updateTrackingStatus" });
 
@@ -645,6 +647,14 @@ export default class PopupPage extends Component {
     (selected || this.sessionsAreaElement.current)?.focus();
   };
 
+  // Ctrl+C in the session list: copy the session's links. Copying several
+  // selected sessions at once is not supported yet.
+  copySelectedLinks = format => {
+    const session = this.state.selectedSession;
+    if (!session.id || this.state.selectedSessionIds.length > 1) return;
+    copyLinks(session, {}, format);
+  };
+
   // Shift+F10 / Menu key: the session's right-click menu, next to its row.
   openSessionMenu = () => {
     const session = this.state.selectedSession;
@@ -870,6 +880,7 @@ export default class PopupPage extends Component {
               focusTabs={this.focusTabs}
               openHelp={this.openHelp}
               openSessionMenu={this.openSessionMenu}
+              copySelectedLinks={this.copySelectedLinks}
               openMenu={this.openMenu}
               toggleSearchBar={this.toggleSearchBar}
               isInitSessions={this.state.isInitSessions}

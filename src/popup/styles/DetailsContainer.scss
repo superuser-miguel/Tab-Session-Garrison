@@ -127,6 +127,29 @@
         font-weight: 600;
         color: var(--sub-text);
         box-shadow: inset 2px 0 0 var(--group-color);
+        border-radius: 0 3px 3px 0;
+        .groupMenuButton {
+          margin-left: auto;
+          margin-right: 6px;
+          padding: 0 4px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          visibility: hidden;
+          line-height: 0;
+          svg {
+            width: 11px;
+            height: 11px;
+            fill: var(--sub-text);
+          }
+          &:hover svg {
+            fill: var(--main-text);
+          }
+        }
+        &:hover .groupMenuButton,
+        &:focus-visible .groupMenuButton {
+          visibility: visible;
+        }
         .groupDot {
           width: 8px;
           height: 8px;

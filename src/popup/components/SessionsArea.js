@@ -148,6 +148,7 @@ export default class SessionsArea extends Component {
       focusTabs,
       openHelp,
       openSessionMenu,
+      copySelectedLinks,
       optionsAreaRef,
       saveAreaRef,
       selectedSessionId
@@ -197,6 +198,10 @@ export default class SessionsArea extends Component {
         break;
       case "menu":
         openSessionMenu();
+        break;
+      case "copyLinks":
+      case "copyMarkdown":
+        copySelectedLinks?.(action === "copyMarkdown" ? "markdown" : "links");
         break;
       case "toTabs":
         focusTabs();

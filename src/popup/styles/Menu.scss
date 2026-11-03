@@ -37,6 +37,14 @@
         &:focus {
           outline: var(--button) 1px solid;
         }
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        .menuShortcut {
+          margin-left: auto;
+          font-size: 11px;
+          color: var(--sub-text);
+        }
       }
       &.section {
         font-size: 12px;
@@ -49,6 +57,22 @@
           height: 12px;
           padding-right: 3px;
           fill: var(--sub-text);
+          flex-shrink: 0;
+        }
+        // leave room for the close button
+        padding-right: 26px;
+        .sectionTitle {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .groupDot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          flex-shrink: 0;
+          margin-right: 5px;
+          background-color: var(--group-color);
         }
       }
     }

@@ -59,6 +59,18 @@ export const POPUP_KEYMAP = [
   },
   { action: "toTabs", area: "list", label: "keyToTabsLabel", bindings: [{ key: "ArrowRight" }] },
   {
+    action: "copyLinks",
+    area: "list",
+    label: "keyCopySessionLinksLabel",
+    bindings: [{ key: "c", accel: true }]
+  },
+  {
+    action: "copyMarkdown",
+    area: "list",
+    label: "keyCopySessionMarkdownLabel",
+    bindings: [{ key: "c", accel: true, shift: true }]
+  },
+  {
     action: "search",
     area: "list",
     label: "keySearchLabel",
@@ -83,6 +95,19 @@ export const POPUP_KEYMAP = [
   },
   { action: "tabOpen", area: "tabs", label: "keyTabOpenLabel", bindings: [{ key: "Enter" }] },
   { action: "tabRemove", area: "tabs", label: "keyTabRemoveLabel", bindings: [{ key: "Delete" }] },
+  {
+    action: "copyLinks",
+    area: "tabs",
+    label: "keyCopyLinksLabel",
+    bindings: [{ key: "c", accel: true }]
+  },
+  {
+    action: "copyMarkdown",
+    area: "tabs",
+    label: "keyCopyMarkdownLabel",
+    bindings: [{ key: "c", accel: true, shift: true }]
+  },
+  { action: "menu", area: "tabs", label: "keyTabMenuLabel", bindings: [{ key: "F10", shift: true }, { key: "ContextMenu" }] },
   {
     action: "tabBack",
     area: "tabs",

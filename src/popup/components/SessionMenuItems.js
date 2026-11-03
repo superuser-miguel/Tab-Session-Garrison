@@ -11,6 +11,8 @@ import {
 } from "../actions/controlSessions";
 import NewWindowIcon from "../icons/newWindow.svg";
 import EditIcon from "../icons/edit.svg";
+import CopyIcon from "../icons/copy.svg";
+import { CopyLinksItems } from "./CopyLinksMenuItems";
 
 export default props => {
   const handleOpenInNewWindow = () => {
@@ -127,6 +129,12 @@ export default props => {
           {browser.i18n.getMessage("exportButtonLabel")}
         </button>
       </li>
+      <hr />
+      <li className="section" onClick={handleClickSection}>
+        <CopyIcon />
+        {browser.i18n.getMessage("copyLinksSectionLabel")}
+      </li>
+      <CopyLinksItems session={props.session} scope={{}} />
     </ul>
   );
 };

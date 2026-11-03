@@ -2,6 +2,7 @@ import React from "react";
 import browser from "webextension-polyfill";
 import { addCurrentTab } from "../actions/controlSessions";
 import EditIcon from "../icons/edit.svg";
+import { CopyLinksItems } from "./CopyLinksMenuItems";
 
 export default props => {
   const handleAddCurrentTab = () => {
@@ -23,6 +24,12 @@ export default props => {
           {browser.i18n.getMessage("addCurrentTabLabel")}
         </button>
       </li>
+      {props.session && (
+        <>
+          <hr />
+          <CopyLinksItems session={props.session} scope={{ windowId: props.windowId }} />
+        </>
+      )}
     </ul>
   );
 };

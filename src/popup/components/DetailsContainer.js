@@ -6,7 +6,10 @@ import { sendOpenMessage } from "../actions/controlSessions";
 import PlusIcon from "../icons/plus.svg";
 import CollapseIcon from "../icons/collapse.svg";
 import EditIcon from "../icons/edit.svg";
+import CopyIcon from "../icons/copy.svg";
 import WindowMenuItems from "./WindowMenuItems";
+import { GroupMenuItems, TabMenuItems } from "./CopyLinksMenuItems";
+import { copyLinks } from "../actions/copyLinks";
 import WindowIcon from "../icons/window.svg";
 import WindowIncognitoChromeIcon from "../icons/window_incognito_chrome.svg";
 import WindowIncognitoFirefoxIcon from "../icons/window_incognito_firefox.svg";
@@ -47,8 +50,20 @@ const EditButton = props => (
   </button>
 );
 
+// Open a right-click menu next to the element (for Shift+F10 / the Menu key).
+const openMenuAt = (openMenu, element, items) => {
+  const rect = element.getBoundingClientRect();
+  openMenu(rect.left + 24, rect.bottom, items);
+};
+
 const TabContainer = props => {
   const { tab, windowId, allTabsNumber, searchWords, handleRemoveTab, groupColor } = props;
+  const { session, openMenu } = props;
+  const menuItems = () => <TabMenuItems session={session} windowId={windowId} tab={tab} />;
+  const handleContextMenu = e => {
+    e.preventDefault();
+    openMenu(e.pageX, e.pageY, menuItems());
+  };
   const handleRemoveClick = () => {
     handleRemoveTab(windowId, tab.id);
   };
@@ -69,6 +84,10 @@ const TabContainer = props => {
       const i = buttons.indexOf(e.currentTarget);
       (buttons[i + 1] || buttons[i - 1])?.focus();
       handleRemoveTab(windowId, tab.id);
+    } else if (action === "copyLinks" || action === "copyMarkdown") {
+      copyLinks(session, { windowId, tabId: tab.id }, action === "copyMarkdown" ? "markdown" : "links");
+    } else if (action === "menu") {
+      openMenuAt(openMenu, e.currentTarget, menuItems());
     } else return;
     e.preventDefault();
   };
@@ -77,6 +96,7 @@ const TabContainer = props => {
     <div
       className={`tabContainer${groupColor ? " inGroup" : ""}`}
       style={groupColor ? { "--group-color": groupColor } : undefined}
+      onContextMenu={handleContextMenu}
     >
       <button
         className="tabButton"
@@ -124,11 +144,54 @@ class WindowContainer extends Component {
     sendOpenMessage(sessionId, "openInNewWindow", windowId);
   };
 
+  windowMenu = () => {
+    const { session, sessionId, windowId } = this.props;
+    return <WindowMenuItems session={session} sessionId={sessionId} windowId={windowId} />;
+  };
+
   handleEditClick = e => {
-    const { sessionId, windowId } = this.props;
     const rect = e.target.getBoundingClientRect();
     const { x, y } = { x: e.pageX || rect.x, y: e.pageY || rect.y };
-    this.props.openMenu(x, y, <WindowMenuItems sessionId={sessionId} windowId={windowId} />);
+    this.props.openMenu(x, y, this.windowMenu());
+    e.preventDefault();
+  };
+
+  // Ctrl+C / Ctrl+Shift+C on the window title copy the window's links.
+  handleWindowKeyDown = e => {
+    const action = actionFor(e, "tabs");
+    const { session, windowId, openMenu } = this.props;
+    if (action === "copyLinks" || action === "copyMarkdown") {
+      copyLinks(session, { windowId }, action === "copyMarkdown" ? "markdown" : "links");
+    } else if (action === "menu") {
+      openMenuAt(openMenu, e.currentTarget, this.windowMenu());
+    } else return;
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  groupMenu = (group, color) => (
+    <GroupMenuItems
+      session={this.props.session}
+      windowId={this.props.windowId}
+      group={group}
+      color={color}
+    />
+  );
+
+  // A group header: right-click for its menu; Ctrl+C copies the group's links.
+  handleGroupContextMenu = (e, group, color) => {
+    e.preventDefault();
+    this.props.openMenu(e.pageX, e.pageY, this.groupMenu(group, color));
+  };
+
+  handleGroupKeyDown = (e, group, color) => {
+    const action = actionFor(e, "tabs");
+    const { session, windowId, openMenu } = this.props;
+    if (action === "copyLinks" || action === "copyMarkdown") {
+      copyLinks(session, { windowId, groupId: group.id }, action === "copyMarkdown" ? "markdown" : "links");
+    } else if (action === "menu") {
+      openMenuAt(openMenu, e.currentTarget, this.groupMenu(group, color));
+    } else return;
     e.preventDefault();
   };
 
@@ -146,7 +209,9 @@ class WindowContainer extends Component {
       allTabsNumber,
       searchWords,
       handleRemoveTab,
-      groupsById
+      groupsById,
+      session,
+      openMenu
     } = this.props;
     const sortedTabs = Object.values(tabs).sort((a, b) => a.index - b.index);
     const isIncognito = Object.values(tabs)[0].incognito;
@@ -172,6 +237,7 @@ class WindowContainer extends Component {
             <button
               className="windowTitle"
               onClick={this.handleOpenClick}
+              onKeyDown={this.handleWindowKeyDown}
               title={browser.i18n.getMessage("openInNewWindowLabel")}
             >
               <Highlighter
@@ -201,13 +267,28 @@ class WindowContainer extends Component {
             return (
               <React.Fragment key={tab.id}>
                 {startsGroup && (
-                  <div className="groupHeader" style={{ "--group-color": color }}>
+                  <div
+                    className="groupHeader"
+                    style={{ "--group-color": color }}
+                    tabIndex={0}
+                    title={browser.i18n.getMessage("groupHeaderTitleLabel")}
+                    onContextMenu={e => this.handleGroupContextMenu(e, group, color)}
+                    onKeyDown={e => this.handleGroupKeyDown(e, group, color)}
+                  >
                     <span className="groupDot" />
                     <Highlighter
                       searchWords={searchWords}
                       textToHighlight={group.title || group.color}
                       autoEscape={true}
                     />
+                    <button
+                      className="groupMenuButton"
+                      tabIndex={-1}
+                      title={browser.i18n.getMessage("copyLinksSectionLabel")}
+                      onClick={e => this.handleGroupContextMenu(e, group, color)}
+                    >
+                      <CopyIcon />
+                    </button>
                   </div>
                 )}
                 <TabContainer
@@ -217,6 +298,8 @@ class WindowContainer extends Component {
                   searchWords={searchWords}
                   handleRemoveTab={handleRemoveTab}
                   groupColor={color}
+                  session={session}
+                  openMenu={openMenu}
                 />
               </React.Fragment>
             );
@@ -251,7 +334,8 @@ export default props => {
     if (action === "tabBack") {
       focusSessionList?.();
     } else {
-      const buttons = [...e.currentTarget.querySelectorAll(".tabButton")].filter(
+      // group headers are stops too, so a whole group can be copied by key
+      const buttons = [...e.currentTarget.querySelectorAll(".tabButton, .groupHeader")].filter(
         button => button.offsetParent !== null
       );
       const i = buttons.indexOf(document.activeElement);
@@ -271,6 +355,7 @@ export default props => {
           windowTitle={session?.windowsInfo?.[windowId]?.title}
           windowId={windowId}
           sessionId={session.id}
+          session={session}
           windowsNumber={session.windowsNumber}
           allTabsNumber={session.tabsNumber}
           searchWords={searchWords}

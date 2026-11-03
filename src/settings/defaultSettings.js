@@ -371,6 +371,13 @@ export default [
         captions: ["isSessionListOpenInTabCaptionLabel"],
         type: "checkbox",
         default: false
+      },
+      {
+        id: "copyLinksSkipDuplicates",
+        title: "copyLinksSkipDuplicatesLabel",
+        captions: ["copyLinksSkipDuplicatesCaptionLabel"],
+        type: "checkbox",
+        default: true
       }
     ]
   },

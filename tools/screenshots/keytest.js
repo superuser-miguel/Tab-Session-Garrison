@@ -164,6 +164,37 @@ async function main() {
     s = await state();
     check("← goes back to the session list", s.focus === "list", s.focus);
 
+    // --- copy links (the clipboard is caught, not really written)
+    await driver.executeScript(
+      "window.__clip = []; navigator.clipboard.writeText = t => (window.__clip.push(t), Promise.resolve());"
+    );
+    const lastCopy = () => driver.executeScript("return window.__clip[window.__clip.length - 1] || ''");
+    const notice = () =>
+      driver.executeScript("const n = document.querySelector('.notification .message'); return n ? n.textContent : ''");
+    await clickRow("Kyoto trip planning");
+    await press(Key.ARROW_RIGHT);
+    await withMods([Key.CONTROL], "c");
+    check("Ctrl+C on a tab copies its link", (await lastCopy()) === "https://www.rome2rio.com/s/Tokyo/Kyoto", await lastCopy());
+    check('…and says "Copied 1 link"', /Copied 1 link/.test(await notice()), await notice());
+    await press(Key.ARROW_UP);
+    const onHeader = await driver.executeScript("return document.activeElement.classList.contains('groupHeader')");
+    check("↑ from a group's first tab reaches the group header", onHeader);
+    await withMods([Key.CONTROL], "c");
+    check("Ctrl+C on a group header copies the group's links",
+      (await lastCopy()) === "https://www.rome2rio.com/s/Tokyo/Kyoto\nhttps://www.kayak.com/flight-routes/HND", await lastCopy());
+    await withMods([Key.CONTROL, Key.SHIFT], "c");
+    check("Ctrl+Shift+C copies Markdown", /^- \[Tokyo to Kyoto by Shinkansen/.test(await lastCopy()), await lastCopy());
+    const header = await driver.findElement(By.css(".groupHeader"));
+    await driver.actions().contextClick(header).perform();
+    await sleep(400);
+    const menuText = await driver.executeScript("const m = document.querySelector('#menu'); return m ? m.textContent : ''");
+    check("Right-clicking a group header offers Copy 2 links", /Copy 2 links/.test(menuText), menuText);
+    await press(Key.ESCAPE);
+    await press(Key.ARROW_LEFT);
+    await withMods([Key.CONTROL], "c");
+    check("Ctrl+C in the session list copies the whole session",
+      (await lastCopy()).split("\n").length === 14, `${(await lastCopy()).split("\n").length} lines`);
+
     // --- delete + undo/redo
     await clickRow("Weeknight dinners");
     const before = (await state()).names.length;
