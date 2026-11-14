@@ -1,0 +1,126 @@
+.addLinksModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+
+  textarea {
+    background-color: var(--sub-bg, var(--main-bg));
+    color: var(--main-text);
+    font: 12px/1.5 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    width: 100%;
+    min-height: 90px;
+    max-height: 180px;
+    resize: vertical;
+    padding: 6px;
+    box-sizing: border-box;
+    border: var(--button) solid 1px;
+    border-radius: 2px;
+    outline: none;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow: auto;
+    &:focus {
+      border-color: var(--highlight);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .facts {
+    font-size: 13px;
+    li.ok {
+      font-weight: 600;
+      &::before {
+        content: "✓ ";
+        color: var(--highlight);
+      }
+    }
+    li.note {
+      color: var(--sub-text);
+      &::before {
+        content: "· ";
+      }
+    }
+  }
+
+  .preview {
+    border: var(--line) solid 1px;
+    border-radius: 2px;
+    padding: 4px 0;
+    font-size: 13px;
+    max-height: 170px;
+    overflow: auto;
+
+    li {
+      padding: 1px 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .previewGroup {
+      font-weight: 600;
+      color: var(--sub-text);
+      padding-top: 4px;
+      .groupNote {
+        font-weight: normal;
+        color: var(--highlight);
+        margin-left: 6px;
+        font-size: 11px;
+      }
+    }
+    .untitled {
+      color: var(--sub-text);
+    }
+    .previewMore {
+      color: var(--sub-text);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    .tip {
+      margin-right: auto;
+      color: var(--sub-text);
+      font-size: 12px;
+    }
+
+    button {
+      background-color: var(--main-bg);
+      color: var(--main-text);
+      border: var(--button) solid 1px;
+      border-radius: 2px;
+      padding: 5px 8px;
+      transition: border-color 150ms ease;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        border-color: var(--highlight);
+      }
+      &:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
+    .saveButton {
+      background-color: var(--highlight);
+      color: var(--main-bg);
+      border-color: var(--highlight);
+      &:hover,
+      &:focus {
+        border-color: var(--main-text);
+      }
+    }
+  }
+}

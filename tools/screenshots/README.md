@@ -17,14 +17,14 @@ ONLY=phrase-search,settings node shoot.js "" ./out   # just some shots
   session types, tags, tab groups, multi-window sessions). Edit it, then
   `node make-demo-data.js`.
 - Shots: `list-and-details`, `multi-select`, `phrase-search` (1200×720, plus 1280×800
-  `-amo` versions for the store), `copy-links` (a saved group's right-click menu, plus `-amo`), `session-types` (a crop of the list), `keyboard`
+  `-amo` versions for the store), `copy-links` (a saved group's right-click menu, plus `-amo`), `add-links` (an email pasted into a group, plus `-amo`), `session-types` (a crop of the list), `keyboard`
   (the "?" cheat sheet) and `settings`.
 
 ## Keyboard test
 
 `node keytest.js` presses every popup key on the demo data and checks the result
 (selection, search, cheat sheet, rename/tag dialogs, menus, tab list, delete + undo,
-copy links from a tab, group header and session, the Shortcuts page, the "can not be opened" reason and the failed-save notice). Run it
+copy links from a tab, group header and session, paste links into a group, a new session and from the window menu (a real Ctrl+C/Ctrl+V through the clipboard), undo, the Shortcuts page, the "can not be opened" reason and the failed-save notice). Run it
 before each release; it exits non-zero on any failure. `harness.js` is the shared setup.
 - geckodriver must run with `--allow-system-access` (shoot.js does this), or Firefox
   157+ refuses to open the extension's pages. Puppeteer can't drive extension pages

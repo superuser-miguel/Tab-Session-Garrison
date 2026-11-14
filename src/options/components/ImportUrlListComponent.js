@@ -2,65 +2,16 @@ import React, { Component } from "react";
 import browser from "webextension-polyfill";
 import { v4 as uuidv4 } from "uuid";
 import OptionContainer from "./OptionContainer";
+import { parseLinks, sessionFromTabs, fallbackTitle } from "../../common/pasteLinks";
 
+// One session from the pasted text, read the same way as pasting links in
+// the popup (one link per line, "link title", Markdown, links inside text).
+// No favicons: Firefox fills them in when the tabs are opened, and nothing is
+// fetched from other sites.
 const createSessionByUrl = inputText => {
-  let session = {
-    windows: {
-      1: {}
-    },
-    windowsNumber: 1,
-    tabsNumber: 0,
-    name: "",
-    date: Date.now(),
-    lastEditedTime: Date.now(),
-    tag: [],
-    sessionStartTime: Date.now(),
-    id: uuidv4()
-  };
-
-  const urlList = inputText.split(/\r\n|\r|\n/);
-  let tabId = 0;
-  for (const urlLine of urlList) {
-    const tab = createTabByUrl(urlLine, tabId);
-    if (!tab) continue;
-
-    session.windows[1][tabId] = tab;
-    session.tabsNumber++;
-    tabId++;
-  }
-
-  if (session.tabsNumber == 0) return;
-  session.name = session.windows[1][0].title;
-  return session;
-};
-
-const createTabByUrl = (urlLine, tabId) => {
-  urlLine = urlLine.replace(/\t/g, " ").trim();
-  const spaceIndex = urlLine.indexOf(" ");
-
-  const url = spaceIndex == -1 ? urlLine : urlLine.slice(0, spaceIndex);
-  const title = spaceIndex == -1 ? urlLine : urlLine.slice(spaceIndex + 1);
-
-  if (url == "") return;
-  if (!url.match(/^(http:|https:|file:|ftp:|about:|chrome:|moz-extension:|chrome-extension)/))
-    return;
-
-  return {
-    active: tabId == 0 ? true : false,
-    highlighted: false,
-    id: tabId,
-    incognito: false,
-    index: tabId,
-    isArticle: false,
-    isInReaderMode: false,
-    lastAccessed: Date.now(),
-    pinned: false,
-    selected: false,
-    title: title,
-    url: url,
-    windowId: 1,
-    favIconUrl: `http://www.google.com/s2/favicons?domain=${encodeURIComponent(url)}`
-  };
+  const { tabs } = parseLinks(inputText);
+  if (tabs.length === 0) return;
+  return sessionFromTabs(tabs, { id: uuidv4(), fallbackName: fallbackTitle(tabs[0].url) });
 };
 
 export default class ImportSessionsComponent extends Component {

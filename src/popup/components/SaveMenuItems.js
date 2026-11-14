@@ -1,5 +1,6 @@
 import React from "react";
 import browser from "webextension-polyfill";
+import { AddLinksItem } from "./CopyLinksMenuItems";
 
 export default props => {
   const handlesaveAllWindows = () => {
@@ -27,6 +28,8 @@ export default props => {
           {browser.i18n.getMessage("saveOnlyCurrentWindowLabel")}
         </button>
       </li>
+      <hr />
+      <AddLinksItem session={null} target={{ newSession: true }} label="newSessionFromLinksMenuLabel" />
     </ul>
   );
 };

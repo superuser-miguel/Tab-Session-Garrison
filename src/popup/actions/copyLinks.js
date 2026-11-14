@@ -10,6 +10,7 @@ const logDir = "popup/actions/copyLinks";
 // handler can say "Copied 12 links" without passing it down.
 let notify = () => {};
 export const setCopyNotifier = fn => (notify = fn);
+export const popupNotify = notification => notify(notification);
 
 // How many links a copy would give, for menu labels. null if the session's
 // tabs aren't loaded yet.

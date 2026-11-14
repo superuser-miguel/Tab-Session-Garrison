@@ -45,6 +45,10 @@
       width: 560px;
       max-width: 92%;
     }
+    &:has(.addLinksModalContent) {
+      width: 480px;
+      max-width: 92%;
+    }
 
     hr {
       background-color: var(--line);

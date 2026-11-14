@@ -657,7 +657,7 @@
     "message": "Import URL list"
   },
   "urlImportCaptionLabel": {
-    "message": "Create a session from list of URLs and add it to the session list.<br>Format: &lt;URL&gt; &lt;page title (optionally)&gt;"
+    "message": "Create a session from a list of links and add it to the session list.<br>One link per line, optionally followed by the page title. Markdown links, and text with links in it, work too."
   },
   "exportLabel": {
     "message": "Export Sessions"
@@ -870,10 +870,10 @@
     "message": "Right-click or press Ctrl+C to copy this group's links"
   },
   "copyLinksSkipDuplicatesLabel": {
-    "message": "Leave out duplicate links when copying"
+    "message": "Leave out duplicate links when copying or adding"
   },
   "copyLinksSkipDuplicatesCaptionLabel": {
-    "message": "When you copy the links of a session, window or tab group, the same link is copied only once. The notice says how many were left out."
+    "message": "When you copy the links of a session, window or tab group, the same link is copied only once. When you add links, ones already in that place are left out. The notice says how many."
   },
   "keyCopyLinksLabel": {
     "message": "Copy the links of the focused tab, tab group or window"
@@ -931,5 +931,104 @@
   },
   "saveFailedNotice": {
     "message": "Saving sessions has failed $1 times since $2, so recent changes may not be saved. Last error: $3"
+  },
+  "addLinksMenuLabel": {
+    "message": "Add links…"
+  },
+  "addLinksAfterTabMenuLabel": {
+    "message": "Add links after this tab…"
+  },
+  "newSessionFromLinksMenuLabel": {
+    "message": "New session from links…"
+  },
+  "addLinksNewSessionTitle": {
+    "message": "New session from links"
+  },
+  "addLinksToWindowTitle": {
+    "message": "Add links to this window"
+  },
+  "addLinksToGroupTitle": {
+    "message": "Add links to “$1”"
+  },
+  "addLinksAfterTabTitle": {
+    "message": "Add links after this tab"
+  },
+  "addLinksHintLabel": {
+    "message": "Paste links here (Ctrl+V): one per line, Markdown, or any text with links in it."
+  },
+  "addLinksBoxLabel": {
+    "message": "Links to add"
+  },
+  "addLinksTipLabel": {
+    "message": "adds"
+  },
+  "oneLinkToAddLabel": {
+    "message": "1 link to add"
+  },
+  "linksToAddLabel": {
+    "message": "$1 links to add"
+  },
+  "oneAlreadyThereLabel": {
+    "message": "1 is already there, left out"
+  },
+  "alreadyThereLabel": {
+    "message": "$1 are already there, left out"
+  },
+  "oneLineIgnoredLabel": {
+    "message": "1 line without a link, ignored"
+  },
+  "linesIgnoredLabel": {
+    "message": "$1 lines without a link, ignored"
+  },
+  "headingsIgnoredLabel": {
+    "message": "Headings are ignored here: every link goes into this place"
+  },
+  "windowsCountLabel": {
+    "message": "$1 windows"
+  },
+  "newGroupLabel": {
+    "message": "new group"
+  },
+  "joinsGroupLabel": {
+    "message": "joins the existing group"
+  },
+  "andMoreLabel": {
+    "message": "and $1 more"
+  },
+  "addLabel": {
+    "message": "Add"
+  },
+  "addOneLinkLabel": {
+    "message": "Add 1 link"
+  },
+  "addNLinksLabel": {
+    "message": "Add $1 links"
+  },
+  "addedOneLinkLabel": {
+    "message": "Added 1 link"
+  },
+  "addedLinksLabel": {
+    "message": "Added $1 links"
+  },
+  "addedLinksNewSessionLabel": {
+    "message": "New session with $1"
+  },
+  "oneLinkLabel": {
+    "message": "1 link"
+  },
+  "nLinksLabel": {
+    "message": "$1 links"
+  },
+  "addLinksFailedLabel": {
+    "message": "Couldn't add the links: $1"
+  },
+  "pastedLinksSessionName": {
+    "message": "Pasted links"
+  },
+  "keyPasteLinksLabel": {
+    "message": "Add the links on the clipboard to the focused tab, group or window"
+  },
+  "keyPasteSessionLabel": {
+    "message": "New session from the links on the clipboard"
   }
 }

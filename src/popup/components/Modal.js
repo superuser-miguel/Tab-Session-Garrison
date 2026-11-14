@@ -17,7 +17,7 @@ export default class Modal extends Component {
       const closeButton = modal.querySelector("button");
       const focusElementInContent = modal
         .querySelector(".modalContent")
-        .querySelector("input, button, a");
+        .querySelector("textarea, input, button, a");
       if (focusElementInContent) focusElementInContent.focus();
       else closeButton.focus();
     }, 100);
@@ -36,7 +36,7 @@ export default class Modal extends Component {
     if (!isNextFocus && !isPrevFocus) return;
 
     const modal = ReactDOM.findDOMNode(this.refs.modal);
-    const focusElements = modal.querySelectorAll("input, button, a");
+    const focusElements = modal.querySelectorAll("textarea, input, button:not(:disabled), a");
     const firstElement = focusElements[0];
     const lastElement = focusElements[focusElements.length - 1];
 

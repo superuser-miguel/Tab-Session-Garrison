@@ -195,6 +195,92 @@ async function main() {
     check("Ctrl+C in the session list copies the whole session",
       (await lastCopy()).split("\n").length === 14, `${(await lastCopy()).split("\n").length} lines`);
 
+    // --- add links (a real Ctrl+C from a scratch text box, then Ctrl+V)
+    const setClipboard = async text => {
+      await driver.executeScript(
+        "const t = document.createElement('textarea'); t.id = '__clipsrc'; t.value = arguments[0];" +
+          "document.body.appendChild(t); t.focus(); t.select();",
+        text
+      );
+      await withMods([Key.CONTROL], "c");
+      await driver.executeScript("document.getElementById('__clipsrc').remove()");
+    };
+    const dialog = () =>
+      driver.executeScript(`
+        const m = document.querySelector("#modalBackground.isOpen");
+        if (!m) return null;
+        return {
+          title: m.querySelector(".modalTitle").textContent,
+          facts: [...m.querySelectorAll(".addLinksModalContent .facts li")].map(li => li.textContent),
+          button: (m.querySelector(".addLinksModalContent .saveButton") || {}).textContent
+        };`);
+    const groupSize = name =>
+      driver.executeScript(
+        `const h = [...document.querySelectorAll(".groupHeader")].find(h => h.textContent.trim() === arguments[0]);
+         if (!h) return -1;
+         let n = 0, el = h.nextElementSibling;
+         while (el && el.classList.contains("tabContainer") && el.classList.contains("inGroup")) { n++; el = el.nextElementSibling; }
+         return n;`,
+        name
+      );
+
+    await clickRow("Kyoto trip planning");
+    const flightsBefore = await groupSize("Flights");
+    await setClipboard("Two more:\nhttps://www.kayak.com/flight-routes/HND\nhttps://www.jal.co.jp/jp/en/");
+    await driver.executeScript(
+      "[...document.querySelectorAll('.groupHeader')].find(h => h.textContent.trim() === 'Flights').focus()"
+    );
+    await withMods([Key.CONTROL], "v");
+    await sleep(400);
+    let d = await dialog();
+    check("Ctrl+V on a group header opens Add links for that group", d && /Flights/.test(d.title), JSON.stringify(d));
+    check(
+      "…which leaves out a link already in the group and ignores plain text",
+      d && d.facts.join("|") === "1 link to add|1 is already there, left out|1 line without a link, ignored",
+      d && d.facts.join("|")
+    );
+    await withMods([Key.CONTROL], Key.ENTER);
+    await sleep(1200);
+    check("Ctrl+Enter adds it to the end of the group", (await groupSize("Flights")) === flightsBefore + 1,
+      `${flightsBefore} → ${await groupSize("Flights")}`);
+    check('…and says "Added 1 link"', /Added 1 link/.test(await notice()), await notice());
+    await withMods([Key.CONTROL], "z");
+    await sleep(1200);
+    check("Ctrl+Z takes the added link back out", (await groupSize("Flights")) === flightsBefore,
+      `${await groupSize("Flights")}`);
+
+    await clickRow("Kyoto trip planning");
+    await setClipboard("## Ramen\n- [Ichiran Kyoto](https://ichiran.com/shop/kansai/kyoto/)\n- [Menya Inoichi](https://tabelog.com/en/kyoto/A2601/)");
+    await clickRow("Kyoto trip planning");
+    await withMods([Key.CONTROL], "v");
+    await sleep(400);
+    d = await dialog();
+    check("Ctrl+V in the session list offers a new session", d && /New session/.test(d.title) && d.button === "Add 2 links", JSON.stringify(d));
+    await withMods([Key.CONTROL], Key.ENTER);
+    await sleep(1500);
+    s = await state();
+    check("…which appears in the list, named after the first link", s.names.includes("Ichiran Kyoto"), s.names.slice(0, 3).join(" | "));
+    await clickRow("Ichiran Kyoto");
+    await sleep(500);
+    const ramen = await groupSize("Ramen");
+    check("…with the Markdown heading as a tab group", ramen === 2, `group size ${ramen}`);
+    await withMods([Key.CONTROL], "z");
+    await sleep(1200);
+
+    await clickRow("Kyoto trip planning");
+    const windowTitle = await driver.findElement(By.css(".windowTitle"));
+    await driver.actions().contextClick(windowTitle).perform();
+    await sleep(400);
+    await driver.executeScript(
+      "[...document.querySelectorAll('#menu button')].find(b => /^Add links/.test(b.textContent)).click()"
+    );
+    await sleep(500);
+    d = await dialog();
+    const focusInBox = await driver.executeScript("return document.activeElement.tagName === 'TEXTAREA'");
+    check('"Add links…" in the window menu opens an empty box to paste into', d && /window/.test(d.title) && focusInBox,
+      JSON.stringify(d));
+    await press(Key.ESCAPE);
+
     // --- delete + undo/redo
     await clickRow("Weeknight dinners");
     const before = (await state()).names.length;

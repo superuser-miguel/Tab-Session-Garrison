@@ -12,6 +12,10 @@
 // A binding with `text` instead of `key` is shown in lists but never matched
 // (e.g. "type any text"). An entry's optional `display` replaces its bindings
 // in lists when spelling every binding out would be too long.
+//
+// "pasteLinks" (Ctrl+V) is listed here but handled by the paste event in
+// PopupPage, which carries the clipboard text without any permission. Key
+// handlers must not call preventDefault() on it, or the paste never happens.
 
 export const KEY_AREAS = ["list", "search", "tabs", "dialogs", "anywhere"];
 
@@ -71,6 +75,12 @@ export const POPUP_KEYMAP = [
     bindings: [{ key: "c", accel: true, shift: true }]
   },
   {
+    action: "pasteLinks",
+    area: "list",
+    label: "keyPasteSessionLabel",
+    bindings: [{ key: "v", accel: true }]
+  },
+  {
     action: "search",
     area: "list",
     label: "keySearchLabel",
@@ -106,6 +116,12 @@ export const POPUP_KEYMAP = [
     area: "tabs",
     label: "keyCopyMarkdownLabel",
     bindings: [{ key: "c", accel: true, shift: true }]
+  },
+  {
+    action: "pasteLinks",
+    area: "tabs",
+    label: "keyPasteLinksLabel",
+    bindings: [{ key: "v", accel: true }]
   },
   { action: "menu", area: "tabs", label: "keyTabMenuLabel", bindings: [{ key: "F10", shift: true }, { key: "ContextMenu" }] },
   {

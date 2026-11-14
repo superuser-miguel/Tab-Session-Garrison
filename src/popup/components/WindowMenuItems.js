@@ -2,7 +2,7 @@ import React from "react";
 import browser from "webextension-polyfill";
 import { addCurrentTab } from "../actions/controlSessions";
 import EditIcon from "../icons/edit.svg";
-import { CopyLinksItems } from "./CopyLinksMenuItems";
+import { CopyLinksItems, AddLinksItem } from "./CopyLinksMenuItems";
 
 export default props => {
   const handleAddCurrentTab = () => {
@@ -28,6 +28,8 @@ export default props => {
         <>
           <hr />
           <CopyLinksItems session={props.session} scope={{ windowId: props.windowId }} />
+          <hr />
+          <AddLinksItem session={props.session} target={{ windowId: props.windowId }} />
         </>
       )}
     </ul>

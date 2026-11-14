@@ -27,6 +27,8 @@ import { applyTheme, watchTheme } from "../actions/applyTheme";
 import { deleteWindow, deleteTab } from "../../common/editSessions.js";
 import openUrl from "../actions/openUrl";
 import { copyLinks, setCopyNotifier } from "../actions/copyLinks";
+import { setAddLinksOpener, pasteTargetOf } from "../actions/pasteLinks";
+import AddLinksModalContent from "./AddLinksModalContent";
 import Header from "./Header";
 import OptionsArea from "./OptionsArea";
 import SessionsArea, { getSortedSessions } from "./SessionsArea";
@@ -180,6 +182,8 @@ export default class PopupPage extends Component {
     window.addEventListener("unload", this.handleUnload, { once: true });
     document.addEventListener("keydown", this.handleGlobalKeyDown);
     setCopyNotifier(this.openNotification);
+    setAddLinksOpener(this.openAddLinksDialog);
+    document.addEventListener("paste", this.handlePaste);
     browser.runtime.sendMessage({ message: "updateUndoStatus" });
     browser.runtime.sendMessage({ message: "updateTrackingStatus" });
 
@@ -649,6 +653,46 @@ export default class PopupPage extends Component {
 
   // Ctrl+C in the session list: copy the session's links. Copying several
   // selected sessions at once is not supported yet.
+  // Ctrl+V on a tab, tab-group header or window title adds the links on the
+  // clipboard there; in the session list it makes a new session. The paste
+  // event carries the text, so no clipboard permission is needed.
+  handlePaste = e => {
+    if (e.defaultPrevented || this.state.modal.isOpen || this.state.menu.isOpen) return;
+    const target = pasteTargetOf(document.activeElement);
+    if (!target) return;
+    const text = e.clipboardData?.getData("text/plain") || "";
+    if (!text.trim()) return;
+    const session = this.state.selectedSession;
+    if (!target.newSession && !session.id) return;
+    e.preventDefault();
+    this.openAddLinksDialog(session, target, text);
+  };
+
+  addLinksTitle = (session, target) => {
+    const msg = (key, subs) => browser.i18n.getMessage(key, subs);
+    if (target.newSession) return msg("addLinksNewSessionTitle");
+    if (target.groupId !== undefined) {
+      const group = (session?.tabGroups || []).find(g => g.id === target.groupId);
+      return msg("addLinksToGroupTitle", [group?.title || group?.color || ""]);
+    }
+    if (target.tabId !== undefined) return msg("addLinksAfterTabTitle");
+    return msg("addLinksToWindowTitle");
+  };
+
+  openAddLinksDialog = (session, target, text = "") => {
+    if (this.state.menu.isOpen) this.closeMenu();
+    this.openModal(
+      this.addLinksTitle(session, target),
+      <AddLinksModalContent
+        key={Date.now()}
+        session={session || {}}
+        target={target}
+        text={text}
+        closeModal={this.closeModal}
+      />
+    );
+  };
+
   copySelectedLinks = format => {
     const session = this.state.selectedSession;
     if (!session.id || this.state.selectedSessionIds.length > 1) return;

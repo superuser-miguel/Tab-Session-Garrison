@@ -75,6 +75,28 @@ async function main() {
         await save(`copy-links${sfx}.png`);
       }
 
+      if (want("add-links")) {
+        // Ctrl+V on the "Food" group header, with an email-style text copied
+        await openPopup(w, h);
+        await clickRow("Kyoto trip planning");
+        await driver.executeScript(
+          "const t = document.createElement('textarea'); t.id = '__clipsrc'; t.value = arguments[0];" +
+            "document.body.appendChild(t); t.focus(); t.select();",
+          "Places from Aki's email:\n\nThe market is best early (https://www.japan-guide.com/e/e3931.html), and\n" +
+            "this guide to Pontocho is good: https://www.insidekyoto.com/pontocho-alley-kyoto.\n" +
+            "Book the omurice place ahead, kichikichi.com/en\n- [Ichiran Kyoto](https://ichiran.com/shop/kansai/kyoto/)"
+        );
+        await driver.actions().keyDown(Key.CONTROL).sendKeys("c").keyUp(Key.CONTROL).perform();
+        await driver.executeScript(
+          "document.getElementById('__clipsrc').remove();" +
+            "[...document.querySelectorAll('.groupHeader')].find(h => h.textContent.trim() === 'Food').focus()"
+        );
+        await driver.actions().keyDown(Key.CONTROL).sendKeys("v").keyUp(Key.CONTROL).perform();
+        await sleep(900);
+        await parkMouse();
+        await save(`add-links${sfx}.png`);
+      }
+
       if (variant === "amo") continue; // the shots below are README-only
 
       if (want("session-types")) {

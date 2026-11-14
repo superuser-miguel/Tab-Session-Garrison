@@ -1,6 +1,7 @@
 import React from "react";
 import browser from "webextension-polyfill";
 import { copyLinks, countLinks } from "../actions/copyLinks";
+import { openAddLinks } from "../actions/pasteLinks";
 import { formatBinding, POPUP_KEYMAP } from "../../common/keymap";
 import CopyIcon from "../icons/copy.svg";
 
@@ -37,6 +38,18 @@ export const CopyLinksItems = ({ session, scope, single = false }) => {
   );
 };
 
+// "Add links…": opens the Add links dialog empty, to paste into. Reading the
+// clipboard from a menu click would need an extra permission; a paste the
+// user makes doesn't.
+export const AddLinksItem = ({ session, target, label = "addLinksMenuLabel" }) => (
+  <li>
+    <button onClick={() => openAddLinks(session, target)}>
+      {browser.i18n.getMessage(label)}
+      <span className="menuShortcut">{shortcut("pasteLinks")}</span>
+    </button>
+  </li>
+);
+
 const stop = e => e.stopPropagation();
 
 // Right-click menu of a tab-group header in the tab list.
@@ -47,6 +60,8 @@ export const GroupMenuItems = ({ session, windowId, group, color }) => (
       {group.title || group.color}
     </li>
     <CopyLinksItems session={session} scope={{ windowId, groupId: group.id }} />
+    <hr />
+    <AddLinksItem session={session} target={{ windowId, groupId: group.id }} />
   </ul>
 );
 
@@ -58,5 +73,7 @@ export const TabMenuItems = ({ session, windowId, tab }) => (
       <span className="sectionTitle">{tab.title || tab.url}</span>
     </li>
     <CopyLinksItems session={session} scope={{ windowId, tabId: tab.id }} single />
+    <hr />
+    <AddLinksItem session={session} target={{ windowId, tabId: tab.id }} label="addLinksAfterTabMenuLabel" />
   </ul>
 );

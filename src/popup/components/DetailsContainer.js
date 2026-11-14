@@ -102,6 +102,7 @@ const TabContainer = props => {
         className="tabButton"
         onMouseUp={handleOpenClick}
         onKeyDown={handleKeyDown}
+        data-paste-target={JSON.stringify({ windowId, tabId: tab.id })}
         title={`${tab.title}\n${tab.url}`}
       >
         <FavIcon favIconUrl={tab.favIconUrl} />
@@ -238,6 +239,7 @@ class WindowContainer extends Component {
               className="windowTitle"
               onClick={this.handleOpenClick}
               onKeyDown={this.handleWindowKeyDown}
+              data-paste-target={JSON.stringify({ windowId })}
               title={browser.i18n.getMessage("openInNewWindowLabel")}
             >
               <Highlighter
@@ -274,6 +276,7 @@ class WindowContainer extends Component {
                     title={browser.i18n.getMessage("groupHeaderTitleLabel")}
                     onContextMenu={e => this.handleGroupContextMenu(e, group, color)}
                     onKeyDown={e => this.handleGroupKeyDown(e, group, color)}
+                    data-paste-target={JSON.stringify({ windowId, groupId: group.id })}
                   >
                     <span className="groupDot" />
                     <Highlighter
