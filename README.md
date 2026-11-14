@@ -32,11 +32,22 @@ Everything Tab Session Manager does — save and restore the state of windows an
 
 - **Copy a saved group's links without opening it** — right-click a tab-group header in the tab list (or use its copy button) and pick **Copy N links** or **Copy as Markdown**. The same choices are in the window menu, the session menu and each tab's right-click menu
 - Works for **any group the extension has saved**, including old groups that Firefox's own saved groups no longer have
-- **Links** puts one link per line, the format **Settings → Import URL list** reads, so a copied group can become a new session. **Markdown** gives each tab group a heading (and each window, for a whole session), ready for notes apps like Obsidian
+- **Links** puts one link per line, so a copied group can be pasted back in as a new session (see below). **Markdown** gives each tab group a heading (and each window, for a whole session), ready for notes apps like Obsidian
 - Duplicate links are copied once and the notice says how many were left out (switch it off in Settings → Popup). Tabs that were waiting to load are copied as their real link, not the placeholder page
 - **Keys:** Ctrl/⌘ + C on a focused tab, group header or session; add Shift for Markdown
 
 ![The right-click menu of a saved tab group, offering Copy 2 links and Copy as Markdown](docs/screenshots/copy-links.png)
+
+### Paste links
+
+- **Add links to a saved session without opening it** — copy links from anywhere (a list, a notes app, an email), focus a tab-group header, window or tab in the tab list and press **Ctrl/⌘ + V**. In the session list, Ctrl/⌘ + V makes a **new session**
+- A **check comes first**: an editable box, how many links will be added, which are already there and which lines had no link. **Ctrl/⌘ + Enter** adds, and **Ctrl/⌘ + Z** takes it back
+- Reads **one link per line**, **Markdown** (`[title](link)`), "link title" lines, links inside ordinary text, and `example.com/page` without `https://`. Our own Markdown from **Copy as Markdown** comes back with its windows and tab groups
+- Into a **group**: the links join that group. After a **tab**: right after it, in its group. Into a **window**: pasted groups are kept, and one with the same name as an existing group joins it
+- The same is in the right-click menus (**Add links…**) and the Save menu (**New session from links…**). These open the box empty for you to paste into, so the extension never reads the clipboard by itself and needs no clipboard permission
+- Links without a title show their site and path until the tab is opened. Nothing is fetched to look titles up
+
+![Pasting an email into a saved tab group: 3 links to add, 1 already there, 1 line without a link](docs/screenshots/add-links.png)
 
 ### Search
 
@@ -108,12 +119,13 @@ Everything works without the mouse. Press **?** in the popup for this list, or s
 | Shift + F2 | Add tags |
 | Shift + F10 / Menu key | Open the session menu |
 | Ctrl/⌘ + C · Ctrl/⌘ + Shift + C | Copy the session's links · as Markdown |
+| Ctrl/⌘ + V | New session from the links on the clipboard |
 | → | Move into the tab list |
 | / or just start typing | Search (`"` starts a phrase) |
 
 **Search box:** Enter or ↓ goes to the first result; Esc clears the search, then closes it.
 
-**Tab list:** ↑ ↓ Home End move between tabs and tab-group headers, Enter opens the tab, Delete removes it from the session, Ctrl/⌘ + C copies the links of the focused tab, group or window (add Shift for Markdown), Shift + F10 opens its menu, ← or Esc goes back to the session list.
+**Tab list:** ↑ ↓ Home End move between tabs and tab-group headers, Enter opens the tab, Delete removes it from the session, Ctrl/⌘ + C copies the links of the focused tab, group or window (add Shift for Markdown), Ctrl/⌘ + V adds the links on the clipboard there, Shift + F10 opens its menu, ← or Esc goes back to the session list.
 
 **Menus and dialogs:** ↑ ↓ move between menu items, Esc closes.
 

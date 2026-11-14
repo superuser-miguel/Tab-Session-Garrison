@@ -225,14 +225,14 @@
   <nav>
     <a href="#search">Search</a>
     <a href="#roadmap">Roadmap</a>
-    <a class="opt" href="#copy">Copy links</a>
+    <a class="opt" href="#copy">Copy &amp; paste</a>
     <a class="opt" href="#keyboard">Keyboard</a>
     <a class="opt" href="https://github.com/superuser-miguel/Tab-Session-Garrison">GitHub</a>
   </nav>
 </div>
 
 <header class="hero wrap">
-  <a class="pill" href="#copy" style="text-decoration:none"><span class="dot"></span>New in 0.3.6: copy a saved group's links</a>
+  <a class="pill" href="#paste" style="text-decoration:none"><span class="dot"></span>New in 0.3.7: paste links into a saved session</a>
   <h1>Find <em>any tab</em> you ever saved.</h1>
   <p class="lede">
     A Firefox session manager built around search. Thousands of saved sessions are only
@@ -388,12 +388,32 @@
         <div class="clip-foot"><b>Copied 9 links</b> · 1 duplicate left out</div>
       </div>
       <ul class="copy-points">
-        <li><b>Links</b> puts one link per line, the format Settings → Import URL list reads, so a copied group can become a new session.</li>
+        <li><b>Links</b> puts one link per line, so a copied group can be pasted back in as a new session.</li>
         <li><b>Markdown</b> gives each tab group its own heading, ready for notes apps like Obsidian.</li>
         <li><b>Keys:</b> <kbd>Ctrl</kbd>+<kbd>C</kbd> on a focused tab, group or session; add <kbd>Shift</kbd> for Markdown.</li>
         <li>Nothing opens and nothing leaves your computer. It only writes to the clipboard.</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="wrap" id="paste">
+  <span class="eyebrow">New in 0.3.7</span>
+  <h2>And paste them back in.</h2>
+  <p class="sub">
+    Copy links from anywhere, a list, your notes or an email, then press <kbd>Ctrl</kbd>+<kbd>V</kbd>
+    on a saved tab group, window or tab. In the session list, it makes a new session.
+  </p>
+  <div class="copy">
+    <img class="shot" src="screenshots/add-links.png" width="1200" height="720"
+         alt="Pasting an email into the saved tab group Food: 3 links to add, 1 already there and left out, 1 line without a link ignored">
+    <ul class="copy-points" style="margin-top:0">
+      <li><b>A check first.</b> The box shows how many links will be added, which are already there, and which lines had no link. You can edit it; <kbd>Ctrl</kbd>+<kbd>Enter</kbd> adds and <kbd>Ctrl</kbd>+<kbd>Z</kbd> takes it back.</li>
+      <li><b>Reads what you have:</b> one link per line, Markdown, links inside ordinary text, even <code>example.com/page</code> without https://.</li>
+      <li><b>Round trip.</b> Markdown from Copy links comes back with its windows and tab groups.</li>
+      <li><b>Where it lands:</b> into a group, the links join it. After a tab, right after it. Into a window, pasted groups are kept.</li>
+      <li><b>No clipboard permission.</b> Only your own paste brings text in; the menus' <b>Add links…</b> opens an empty box to paste into. Nothing is fetched to look up titles.</li>
+    </ul>
   </div>
 </section>
 
@@ -415,6 +435,7 @@
     <div><span><kbd>F2</kbd> · <kbd>Shift</kbd>+<kbd>F2</kbd></span><p>Rename · add tags</p></div>
     <div><span><kbd>Del</kbd> · <kbd>Ctrl</kbd>+<kbd>Z</kbd></span><p>Delete · undo</p></div>
     <div><span><kbd>Ctrl</kbd>+<kbd>C</kbd> · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd></span><p>Copy links · as Markdown</p></div>
+    <div><span><kbd>Ctrl</kbd>+<kbd>V</kbd></span><p>Paste links into a group, window or new session</p></div>
   </div>
 </section>
 
